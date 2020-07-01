@@ -93,19 +93,22 @@ class Result:
         self.constraints = dict()
     
     def __repr__(self):
-        return '[{}]'.format(
-            ','.join([self.device, self.grade, self.ip, self.synth_method]))
+        return '{}'.format(
+            ', '.join([self.ip, self.synth_method, self.device, self.grade]))
 
     def GetUtilizationResult(self, constraint, label):
         if constraint not in self.constraints:
-            print('{} missing results for constraint: {}'.format(repr(self), constraint))
+            print('{} missing results for constraint: {}, see {}'.format(
+                repr(self), constraint, self.path))
             return None
         util = self.constraints[constraint].util
         if util is None:
-            print('{} missing results for utilization'.format(repr(self)))
+            print('{} missing results for utilization, see {}'.format(
+                repr(self), self.constraints[constraint].file_path))
             return None
         if label not in util.results:
-            print('{} missing results for label: {}'.format(repr(self), label))
+            print('{} missing results for label: {}, see {}'.format(
+                repr(self), label, self.constraints[constraint].file_path))
             return None
         return util.results[label]
 
