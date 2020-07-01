@@ -1,6 +1,6 @@
 // Benchmark "lif/9symml" written by ABC on Thu Mar 19 13:02:36 2020
 
-module \lif/9symml  ( 
+module lif_9symml  ( 
     pi0, pi1, pi2, pi3, pi4, pi5, pi6, pi7, pi8,
     po0  );
   input  pi0, pi1, pi2, pi3, pi4, pi5, pi6, pi7, pi8;

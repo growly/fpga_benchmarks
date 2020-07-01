@@ -1,6 +1,6 @@
 // Benchmark "C1355.iscas" written by ABC on Thu Mar 19 13:02:35 2020
 
-module \C1355.iscas  ( 
+module C1355_iscas  ( 
     pi00, pi01, pi02, pi03, pi04, pi05, pi06, pi07, pi08, pi09, pi10, pi11,
     pi12, pi13, pi14, pi15, pi16, pi17, pi18, pi19, pi20, pi21, pi22, pi23,
     pi24, pi25, pi26, pi27, pi28, pi29, pi30, pi31, pi32, pi33, pi34, pi35,

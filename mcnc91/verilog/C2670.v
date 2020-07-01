@@ -1,6 +1,6 @@
 // Benchmark "C2670.iscas" written by ABC on Thu Mar 19 13:02:35 2020
 
-module \C2670.iscas  ( 
+module C2670_iscas  ( 
     pi000, pi001, pi002, pi003, pi004, pi005, pi006, pi007, pi008, pi009,
     pi010, pi011, pi012, pi013, pi014, pi015, pi016, pi017, pi018, pi019,
     pi020, pi021, pi022, pi023, pi024, pi025, pi026, pi027, pi028, pi029,

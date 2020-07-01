@@ -1,6 +1,6 @@
 // Benchmark "C17.iscas" written by ABC on Thu Mar 19 13:02:36 2020
 
-module \C17.iscas  ( 
+module C17_iscas  ( 
     pi0, pi1, pi2, pi3, pi4,
     po0, po1  );
   input  pi0, pi1, pi2, pi3, pi4;
