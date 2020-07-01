@@ -15,7 +15,7 @@ module multiclock_output_and_latch(
     output  out;
 
     reg wire_selector;
-    reg	[1:0]   temp;
+    wire	[1:0]   temp;
 
     assign out = (wire_selector == 0)? temp[0]: temp[1];
 
@@ -52,7 +52,7 @@ module and_latch(
     input	a_in;
     input	b_in;
 
-    output	out;
+    output reg	out;
 
     // ASSIGN STATEMENTS
     always @(posedge clock)

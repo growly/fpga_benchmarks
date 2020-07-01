@@ -200,7 +200,7 @@ parameter WORD_SEL_LSB      = 2;                          // = 2
 
 input                               i_clk;
 input                               i_core_stall;
-output                              o_stall;
+output                          reg o_stall;
  
 // Read / Write requests from core
 input                               i_select;
@@ -269,7 +269,7 @@ wire [CACHE_ADDR_WIDTH-1:0] data_address;
 wire [31:0]                 write_data_word; 
  
 wire                        idle_hit; 
-reg                        read_miss; //jing
+wire                        read_miss; //jing
 wire                        read_miss_fill; 
 wire                        invalid_read; 
 wire                        fill_state; 
@@ -725,7 +725,7 @@ input       [127:0]         i_wb_read_data;
 input                       i_wb_ready;
  
 wire                        core_stall;		//jing - add wire -> reg
-reg                        cache_stall;		//jing- add wire -> reg
+wire                        cache_stall;		//jing- add wire -> reg
 //reg                        o_fetch_stall;	//jing+
 wire    [127:0]             cache_read_data128; 
 wire    [31:0]              cache_read_data; 
@@ -7191,8 +7191,8 @@ reg                         busy_reading_r  = 1'd0;
 reg                         wait_rdata_valid_r = 1'd0;
 wire                        in_wreq;
 reg                         ack_owed_r      = 1'd0;
-reg			    push;  //wire to reg	
-reg			    pop;	//wire to reg
+wire			    push;  //wire to reg	
+wire			    pop;	//wire to reg
  
 // ----------------------------------------------------
 // Access Buffer

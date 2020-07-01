@@ -1704,8 +1704,8 @@ input [31:0] b_reg;
 input [31:0] c_reg;
 output [31:0] a_readdataout;
 output [31:0] b_readdataout;
-reg [31:0] a_readdataout;
-reg [31:0] b_readdataout;
+wire [31:0] a_readdataout;
+wire [31:0] b_readdataout;
 
 
 wire [31:0] a_readdataout_temp;
