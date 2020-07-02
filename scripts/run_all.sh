@@ -10,7 +10,7 @@ pushd ${RUN_DIR}
 i=0
 for f in ${BENCHMARK_DIR}/*.v; do
   for method in vivado yosys yosys-abc9; do
-    ${TEST_SCRIPT} -i ${f} ${STATIC_TEST_ARGS} -y ${method} &
+    ${TEST_SCRIPT} -i ${f} ${STATIC_TEST_ARGS} -m ${method} &
     pids[${i}]=$!
     let "i=i+1"
   done

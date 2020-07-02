@@ -5,6 +5,7 @@ import collections
 import csv
 import os
 import re
+import sys
 
 TEST_DIR_RE = re.compile(
     r'tab_(vivado|yosys|yosys-abc9)_([a-zA-Z0-9_.]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)')
@@ -129,10 +130,15 @@ class Result:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Collect benchmarks results')
+    parser = argparse.ArgumentParser(
+            description='Collect synthesis benchmark results from a given directory')
     parser.add_argument('--from_dir', type=str, help='Results directory')
     args = parser.parse_args()
 
+    if len(sys.argv) < 2:
+        parser.print_help()
+        parser.exit()
+        
     source_dir = None
     try:
         source_dir = os.path.realpath(args.from_dir)
@@ -140,6 +146,7 @@ def main():
         print('Could not find results in {}'.format(source_dir))
 
     results = []
+    synth_methods = set()
     results_by_device = collections.defaultdict(
         lambda: collections.defaultdict(lambda: collections.defaultdict(None)))
     for d in os.listdir(source_dir):
@@ -149,6 +156,7 @@ def main():
             results.append(result)
             results_by_device[(result.device, result.grade)][result.ip][
                     result.synth_method] = result
+            synth_methods.add(result.synth_method)
             result.ParseResults()
         else:
             print('Could not parse result dir name: {}'.format(d))
@@ -159,25 +167,29 @@ def main():
     # index of the 'number used' tally in each output row of the Vivado results
     used = 1
     value_if_no_result = 'none'
-    metrics = ['Slice LUTs', 'LUT as Logic', 'LUT as Memory', 'LUT as Shift Register',
-               'Bonded IOB']
-    with open('xc7a200-1.csv', 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        csvwriter.writerow(['ip', 'metric', 'vivado', 'yosys', 'yosys-abc9'])
-        for ip_name, result_by_synth_method in results_by_device[('xc7a200', '1')].items():
-            for metric in metrics:
-                vivado_value = result_by_synth_method[
-                        'vivado'].GetUtilizationResult(constr, metric)
-                yosys_value = result_by_synth_method[
-                        'yosys'].GetUtilizationResult(constr, metric)
-                yosysabc9_value = result_by_synth_method[
-                        'yosys-abc9'].GetUtilizationResult(constr, metric)
-                line = [ip_name,
-                        metric,
-                        vivado_value[used] if vivado_value else value_if_no_result,
-                        yosys_value[used] if yosys_value else value_if_no_result,
-                        yosysabc9_value[used] if yosysabc9_value else value_if_no_result]
-                csvwriter.writerow(line)
+    # These vary by device.
+    metrics = ['CLB LUTs', 'Slice LUTs', 'LUT as Logic', 'LUT as Memory',
+               'LUT as Shift Register', 'Bonded IOB']
+    synth_method_list = sorted(synth_methods)
+    for device_and_grade, synth_results in results_by_device.items():
+        csv_name = '{}-{}.csv'.format(*device_and_grade)
+        with open(csv_name, 'w', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"',
+                                   quoting=csv.QUOTE_MINIMAL)
+            csvwriter.writerow(['ip', 'metric'] + synth_method_list)
+            for ip_name, result_by_synth_method in synth_results.items():
+                for metric in metrics:
+                    line = [ip_name, metric]
+                    for method in synth_method_list:
+                        if method in result_by_synth_method:
+                            value = result_by_synth_method[
+                                    method].GetUtilizationResult(constr, metric)
+                            line.append(
+                                    value[used] if value else value_if_no_result)
+                        else:
+                            line.append(value_if_no_result)
+                    csvwriter.writerow(line)
+            print('wrote {}'.format(csv_name))
 
 
 if __name__ == '__main__':

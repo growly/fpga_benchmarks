@@ -27,7 +27,7 @@ while [ "$1" != "" ]; do
     -s | --speed )          shift
                             speed="$1"
                             ;;
-    -y | --synth )          shift
+    -m | --synth_method )   shift
                             synth="$1"
                             ;;
     -c | --clean )          shift
@@ -39,7 +39,12 @@ while [ "$1" != "" ]; do
   shift
 done
 
+if ! [ -f "${input}" ]; then
+  echo "Input file not found: ${input}"
+  exit 1
+fi
 path=$(readlink -f "${input}")
+echo "Input file is: ${path}"
 ip="$(basename -- ${path})"
 ip=${ip%.gz}
 ip=${ip%.*}
@@ -60,15 +65,15 @@ esac
 YOSYS=${YOSYS:-/home/arya/src/yosys/yosys}
 VIVADO=${VIVADO:-/opt/Xilinx/Vivado/2020.1/bin/vivado}
 
-echo "speed=${speed}"
-echo "dev=${dev}"
-echo "grade=${grade}"
-echo "ip=${ip}"
-echo "path=${path}"
-echo "clean=${clean}"
-echo "xl_device=${xl_device}"
-echo "YOSYS=${YOSYS}"
-echo "VIVADO=${VIVADO}"
+# echo "speed=${speed}"
+# echo "dev=${dev}"
+# echo "grade=${grade}"
+# echo "ip=${ip}"
+# echo "path=${path}"
+# echo "clean=${clean}"
+# echo "xl_device=${xl_device}"
+# echo "YOSYS=${YOSYS}"
+# echo "VIVADO=${VIVADO}"
 
 if ${clean}; then
   rm -rf tab_${synth}_${ip}_${dev}_${grade}
