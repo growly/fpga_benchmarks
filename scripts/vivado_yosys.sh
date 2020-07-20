@@ -44,7 +44,7 @@ if ! [ -f "${input}" ]; then
   exit 1
 fi
 path=$(readlink -f "${input}")
-echo "Input file is: ${path}"
+echo "Running '${synth}' on '${path}'"
 ip="$(basename -- ${path})"
 ip=${ip%.gz}
 ip=${ip%.*}
@@ -95,20 +95,18 @@ EOT
 
   pwd=${PWD}
   if [ "${synth}" = "vivado" ]; then
-    #cat >> test_${1}.tcl <<- EOT
-    #  cd $(dirname ${path})
-    echo $(dirname ${path})
-
-    #EOT
-    #if [ "${path##*.}" == "gz" ]; then
-    #  gunzip -f -k ${path}
-    #fi
+    cat >> test_${1}.tcl <<EOT
+cd $(dirname ${path})
+EOT
+    if [ "${path##*.}" == "gz" ]; then
+      gunzip -f -k ${path}
+    fi
     cat >> test_${1}.tcl <<EOT
 if {[file exists "$(dirname ${path})/${ip}_vivado.tcl"] == 1} {
   source ${ip}_vivado.tcl
 } else {
-  #read_verilog $(basename ${path%.gz})
-  read_verilog ${path}
+  read_verilog $(basename ${path%.gz})
+  #read_verilog ${path}
 }
 if {[file exists "$(dirname ${path})/${ip}.top"] == 1} {
   set fp [open $(dirname ${path})/${ip}.top]
@@ -116,7 +114,7 @@ if {[file exists "$(dirname ${path})/${ip}.top"] == 1} {
 } else {
   set_property TOP [lindex [find_top] 0] [current_fileset]
 }
-cd ${PWD}
+cd ${pwd}
 read_xdc test_${1}.xdc
 synth_design -part ${xl_device} -mode out_of_context ${SYNTH_DESIGN_OPTS}
 opt_design -directive Explore
@@ -133,14 +131,11 @@ EOT
     else
       if [ -f "$(dirname ${path})/${ip}.ys" ]; then
         echo "script ${ip}.ys" > ${ip}.ys
+      elif [ ${path:-5} == ".vhdl" ]; then
+          echo "read -vhdl $(basename ${path})" > ${ip}.ys
       else
-        if [ ${path:-5} == ".vhdl" ]
-        then
-            echo "read -vhdl $(basename ${path})" > ${ip}.ys
-        else
-            echo "#read_verilog $(basename ${path})" > ${ip}.ys
-            echo "read_verilog ${path}" > ${ip}.ys
-        fi
+          #echo "read_verilog $(basename ${path})" > ${ip}.ys
+          echo "read_verilog ${path}" > ${ip}.ys
       fi
 
       cat >> ${ip}.ys <<EOT
