@@ -114,7 +114,7 @@ class TimingResult(RegexResult):
         return re.compile(spec)
 
     def MatchCriticalPathSlack():
-        spec = (r'^\s+slack\s+(\d+\.\d+)\s+$')
+        spec = (r'^\s+slack\s+(-?\d+\.\d+)\s+$')
         return re.compile(spec)
 
     def __init__(self):
