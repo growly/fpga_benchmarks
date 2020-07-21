@@ -24,8 +24,10 @@ make verilog CONFIG=MediumBoomConfig
 
 ```
 cat ${CHIPYARD_ROOT}/sims/verilator/generated-src/chipyard.TestHarness.SmallBoomConfig/*.v >> SmallBoom.v
-echo "DigitalTop" > SmallBoom.top
-
 ```
 
 4. Determine the top module and write this to the `.top` file we have.
+
+```
+echo "DigitalTop" > SmallBoom.top
+```
