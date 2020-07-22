@@ -7,13 +7,17 @@ STATIC_TEST_ARGS="-s 100"
 BENCHMARK_DIR=  # $(readlink -f "${1:-vtr/verilog}")
 BATCH_SIZE=6 # Runs 6x3 jobs in parallel (one for each synth method)
 
+# NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
+# nice too to recursively expand symlinks, but it isn't available on BWRC
+# servers, and we have a more portable solution so I'm not installing it.
+
 while [ "$1" != "" ]; do
   case $1 in
     -o | --output )         shift
-                            RUN_DIR="$(realpath "$1")"
+                            RUN_DIR="$(readlink -f "$1")"
                             ;;
     -i | --input )          shift
-                            BENCHMARK_DIR="$(realpath "$1")"
+                            BENCHMARK_DIR="$(readlink -f "$1")"
                             ;;
     -j | --batch_size)      shift
                             BATCH_SIZE="$1"
