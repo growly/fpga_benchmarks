@@ -138,6 +138,14 @@ EOT
           echo "read_verilog ${path}" > ${ip}.ys
       fi
 
+      # If the top is specified in a .top file, specify that to Yosys so that
+      # the hierarchy can be trimmed of other garbage (I mean, unnecessary
+      # artifacts).
+      top_file="$(dirname ${path})/${ip}.top"
+      if [ -f "${top_file}" ]; then
+        echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
+      fi
+
       cat >> ${ip}.ys <<EOT
 synth_xilinx -dff -flatten ${synth_with_abc9} -edif ${edif}
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v

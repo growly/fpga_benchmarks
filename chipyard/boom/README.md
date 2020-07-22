@@ -20,13 +20,14 @@ cd ${CHIPYARD_ROOT}/sims/verilator
 make verilog CONFIG=MediumBoomConfig
 ```
 
-3. Dump all verilog files into one file. There will be references to simulation modules that do not exist, but they won't matter if the top module is set to the design top and not the chip or test harness tops.
+3. Remove modules with weird verilog, such as those intended for the simulator to read.
+
+4. Dump all verilog files into one file. There will be references to simulation modules that do not exist, but they won't matter if the top module is set to the design top and not the chip or test harness tops.
 
 ```
-cat ${CHIPYARD_ROOT}/sims/verilator/generated-src/chipyard.TestHarness.SmallBoomConfig/*.v >> SmallBoom.v
 ```
 
-4. Determine the top module and write this to the `.top` file we have.
+5. Determine the top module and write this to the `.top` file we have.
 
 ```
 echo "DigitalTop" > SmallBoom.top
