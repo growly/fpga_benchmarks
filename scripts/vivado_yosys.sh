@@ -9,7 +9,7 @@
 input=
 dev="xc7a200"
 grade=1
-speed=50
+speed=5000  # picoseconds
 synth="yosys" # yosys | yosys-abc9 | vivado
 clean=false
 
@@ -44,7 +44,7 @@ if ! [ -f "${input}" ]; then
   exit 1
 fi
 path=$(readlink -f "${input}")
-echo "Running '${synth}' on '${path}'"
+echo "Starting '${synth}' on '${path}'"
 ip="$(basename -- ${path})"
 ip=${ip%.gz}
 ip=${ip%.*}
@@ -75,16 +75,20 @@ VIVADO=${VIVADO:-/opt/Xilinx/Vivado/2020.1/bin/vivado}
 # echo "YOSYS=${YOSYS}"
 # echo "VIVADO=${VIVADO}"
 
+test_name="tab_${synth}_${ip}_${dev}_${grade}"
+
 if ${clean}; then
-  rm -rf tab_${synth}_${ip}_${dev}_${grade}
+  rm -rf "${test_name}"
 fi
-mkdir -p tab_${synth}_${ip}_${dev}_${grade}
-cd tab_${synth}_${ip}_${dev}_${grade}
+mkdir -p ${test_name}
+cd ${test_name}
 #rm -f ${ip}.edif
 
 synth_case() {
+  run_name="test_${1}"
+
   if [ -f test_${1}.txt ]; then
-    echo "Reusing cached tab_${synth}_${ip}_${dev}_${grade}/test_${1}."
+    echo "${test_name} reusing cached test_${1}."
     return
   fi
 
@@ -127,7 +131,7 @@ EOT
       synth_with_abc9="-abc9"
     fi
     if [ -f "${edif}" ]; then
-      echo "Reusing cached tab_${synth}_${ip}_${dev}_${grade}/${edif}"
+      echo "${test_name} reusing cached ${edif}"
     else
       if [ -f "$(dirname ${path})/${ip}.ys" ]; then
         echo "script ${ip}.ys" > ${ip}.ys
@@ -151,7 +155,7 @@ synth_xilinx -dff -flatten ${synth_with_abc9} -edif ${edif}
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT
 
-      echo "Running tab_${synth}_${ip}_${dev}_${grade}/${ip}.ys.."
+      echo "${test_name} running ${ip}.ys..."
       #pushd $(dirname ${path}) > /dev/null
       if ! ${YOSYS} -l ${pwd}/yosys.log ${pwd}/${ip}.ys > /dev/null 2>&1; then
         cat ${pwd}/yosys.log
@@ -168,8 +172,9 @@ link_design -part ${xl_device} -mode out_of_context -top ${ip}
 EOT
   fi
 
+  speed_ns=$(printf %.2f "$((speed))e-3")
   cat > test_${1}.xdc <<EOT
-create_clock -period ${speed:0: -1}.${speed: -1} [get_ports -nocase -regexp .*cl(oc)?k.*]
+create_clock -period ${speed_ns} [get_ports -nocase -regexp .*cl(oc)?k.*]
 EOT
   cat >> test_${1}.tcl <<EOT
 report_design_analysis
@@ -180,7 +185,7 @@ report_timing -no_report_unconstrained
 report_design_analysis
 EOT
 
-  echo "Running tab_${synth}_${ip}_${dev}_${grade}/test_${1}..."
+  echo "${test_name} running test_${1}..."
   if ! $VIVADO -nojournal -log test_${1}.log -mode batch -source test_${1}.tcl > /dev/null 2>&1; then
     cat test_${1}.log
     exit 1
@@ -188,4 +193,57 @@ EOT
   mv test_${1}.log test_${1}.txt
 }
 
-synth_case "${speed}"
+remaining_iterations=3
+speed_upper_bound=${speed}
+speed_lower_bound=0
+met_timing=false
+
+# TODO(aryap): Might not want this to exit the script if a run is broken, since
+# previous runs might have had results we want to keep (i.e. dump to
+# 'best_speed.txt').
+check_timing() {
+  timing_results_file="test_${1}.txt"
+  if [ ! -f "${timing_results_file}" ]; then
+    echo "${test_name} broken run; could not find timing results: ${timing_results_file}"
+    exit 3
+  fi
+
+  if grep -qE '^Slack \(MET\)' "${timing_results_file}"; then 
+    met_timing=true
+  elif grep -qE '^Slack \(VIOLATED\)' "${timing_results_file}"; then 
+    met_timing=false
+  else
+    echo "${test_name} broken run, could not find 'Slack: (VIOLATED|MET)' in results file: ${timing_results_file}"
+    exit 4
+  fi
+}
+
+last_speed=
+while [ ${remaining_iterations} -gt 0 ]; do
+  echo "${test_name} Commencing iteration @ speed: ${speed}"
+  synth_case "${speed}"
+
+  check_timing "${speed}"
+
+  if [ "${met_timing}" = true ]; then
+    speed_upper_bound=${speed}
+    best_speed=${speed}
+    echo "${test_name} MET      timing @ speed: ${speed}"
+  elif [ "${met_timing}" = false ]; then
+    speed_lower_bound=${speed}
+    echo "${test_name} VIOLATED timing @ speed: ${speed}"
+  fi
+  last_speed=${speed}
+  speed=$(((speed_upper_bound + speed_lower_bound) / 2))
+  remaining_iterations=$((remaining_iterations - 1))
+
+  # If we're trying to run the same speed twice in a row, we should stop.
+  if [ -n "${last_speed}" -a "${last_speed}" = "${speed}" ]; then
+    echo "${test_name} search not making progress since last speed: ${speed}"
+    break
+  fi
+done
+
+if [ -n "${best_speed}" ]; then
+  echo "${best_speed}" > best_speed.txt
+fi
