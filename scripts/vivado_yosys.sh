@@ -63,7 +63,16 @@ case "${dev}" in
 esac
 
 YOSYS=${YOSYS:-/home/arya/src/yosys/yosys}
+if [[ "${synth}" == *"yosys"* ]] && [ ! -x "${YOSYS}" ]; then
+  echo "yosys required for synth but executable not usable: ${YOSYS}"
+  exit 10
+fi
+
 VIVADO=${VIVADO:-/opt/Xilinx/Vivado/2020.1/bin/vivado}
+if [[ "${synth}" == *"vivado"* ]] && [ ! -x "${VIVADO}" ]; then
+  echo "vivado required for synth but executable not usable: ${VIVADO}"
+  exit 11
+fi
 
 # echo "speed=${speed}"
 # echo "dev=${dev}"
