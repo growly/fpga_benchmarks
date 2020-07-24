@@ -3,7 +3,7 @@
 SCRIPT_DIR="$( dirname "$( readlink -f "${BASH_SOURCE[0]}" )" )"
 RUN_DIR="${SCRIPT_DIR}/../runs"
 TEST_SCRIPT="${SCRIPT_DIR}/vivado_yosys.sh"
-STATIC_TEST_ARGS="-s 100"
+STATIC_TEST_ARGS="-s 30000"
 BENCHMARK_DIR=  # $(readlink -f "${1:-vtr/verilog}")
 BATCH_SIZE=6 # Runs 6x3 jobs in parallel (one for each synth method)
 
