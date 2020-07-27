@@ -5,7 +5,9 @@ RUN_DIR="${SCRIPT_DIR}/../runs"
 TEST_SCRIPT="${SCRIPT_DIR}/vivado_yosys.sh"
 STATIC_TEST_ARGS="-s 30000"
 BENCHMARK_DIR=  # $(readlink -f "${1:-vtr/verilog}")
-BATCH_SIZE=6 # Runs 6x3 jobs in parallel (one for each synth method)
+BATCH_SIZE=8 # Will run 3x as many jobs as this at once
+USE_LSF=false
+DEVICE="xc7a200"
 
 # NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
 # nice too to recursively expand symlinks, but it isn't available on BWRC
@@ -21,6 +23,12 @@ while [ "$1" != "" ]; do
                             ;;
     -j | --batch_size)      shift
                             BATCH_SIZE="$1"
+                            ;;
+    -l | --lsf)             shift
+                            USE_LSF=true
+                            ;;
+    -d | --device )         shift
+                            DEVICE="$1"
                             ;;
     * )                     echo "computer says no: ${1}"
                             exit 1
@@ -58,13 +66,28 @@ pushd ${RUN_DIR}
 i=0
 pids=()
 
+LSF_PREFIX=
+LSF_PREFIX_LOG=
+LSF_MEMORY_LIMIT_KB=$((192*1024))  # 192 GB, our default unit is apparently MB
+LSF_SWAP_LIMIT_KB=$((50*1024)) # 50 GB
+if [ ${USE_LSF} = true ]; then
+  # -K prefix should make this behave as any subprocess; we block until the job
+  # completes and return when it does. So bash can background the job as per
+  # usual.
+  LSF_PREFIX="bsub -K -q normal -M ${LSF_MEMORY_LIMIT_KB} -v ${LSF_SWAP_LIMIT_KB}"
+fi
+
 # Dispatch ${BATCH_SIZE}-many jobs in parallel and wait for them to complete,
 # then continue, until all jobs are complete.
 while [ ${i} -lt ${num_benchmarks} ]; do
   for ((j=0;j<${BATCH_SIZE} && i < ${num_benchmarks};j++)); do
     for method in vivado yosys yosys-abc9; do
-      echo ${TEST_SCRIPT} -i ${benchmarks[i]} ${STATIC_TEST_ARGS} -m ${method}
-      ${TEST_SCRIPT} -i ${benchmarks[i]} ${STATIC_TEST_ARGS} -m ${method} &
+      if [ -n "${LSF_PREFIX}" ]; then
+        # Add a meaningful log file to the LSF command if it's being used.
+        LSF_PREFIX_LOG="-o bsub_${method}_$(basename ${benchmarks[i]}).log"
+      fi
+      echo ${LSF_PREFIX} ${LSF_PREFIX_LOG} ${TEST_SCRIPT} -i ${benchmarks[i]} ${STATIC_TEST_ARGS} -m ${method} -d ${DEVICE}
+      ${LSF_PREFIX} ${LSF_PREFIX_LOG} ${TEST_SCRIPT} -i ${benchmarks[i]} ${STATIC_TEST_ARGS} -m ${method} -d ${DEVICE} &
     done
     pids[${j}]=$!
     let "i=i+1"
