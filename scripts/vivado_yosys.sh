@@ -230,6 +230,7 @@ check_timing() {
 last_speed=
 while [ ${remaining_iterations} -gt 0 ]; do
   echo "${test_name} Commencing iteration @ speed: ${speed}"
+
   synth_case "${speed}"
 
   check_timing "${speed}"
