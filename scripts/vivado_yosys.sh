@@ -60,6 +60,7 @@ case "${dev}" in
   xcvu2104) xl_device="xcvu35p-fsvh2104-${grade}-e" ;; # needs license
   xckup) xl_device="" ;;
   xcvu2892) xl_device="xcvu35p-fsvh2892-${grade}-e" ;; # needs license
+  xcvu440) xl_device="xcvu440-flga2892-${grade}-i" ;; # needs license
 esac
 
 YOSYS=${YOSYS:-/home/arya/src/yosys/yosys}
@@ -202,7 +203,7 @@ EOT
   mv test_${1}.log test_${1}.txt
 }
 
-remaining_iterations=3
+remaining_iterations=6
 speed_upper_bound=${speed}
 speed_lower_bound=0
 met_timing=false
@@ -217,9 +218,9 @@ check_timing() {
     exit 3
   fi
 
-  if grep -qE '^Slack \(MET\)' "${timing_results_file}"; then 
+  if grep -qE '^Slack \(MET\)' "${timing_results_file}"; then
     met_timing=true
-  elif grep -qE '^Slack \(VIOLATED\)' "${timing_results_file}"; then 
+  elif grep -qE '^Slack \(VIOLATED\)' "${timing_results_file}"; then
     met_timing=false
   else
     echo "${test_name} broken run, could not find 'Slack: (VIOLATED|MET)' in results file: ${timing_results_file}"
