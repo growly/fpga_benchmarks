@@ -39,6 +39,7 @@ done
 6. Our scripts can sometimes deal with `gzip`'d verilog source files, but we have to be careful about which version of `gzip`/`gunzip` we rely on. To avoid that, these files are encoded with tar. So decompress with tar too:
 
 ```
-for file in *.tar.xz; do
+for f in *.tar.xz; do
   tar -Jxf ${f} &
 done
+```
