@@ -32,6 +32,13 @@ Remember also that github has a 50MB size limit.
 for size in Small Medium Large Mega; do
   ls ${CHIPYARD_ROOT}/sims/verilator/generated-src/chipyard.TestHarness.${size}BoomConfig/*.v | grep -Ev 'Sim.*\.v' | xargs cat > ${size}Boom.v;
   echo "DigitalTop" > ${size}Boom.top;
-  tar zcf ${size}Boom.gz ${size}Boom.v
+  tar -Jcf ${size}Boom.tar.xz ${size}Boom.v
 done
 ```
+
+6. Our scripts can sometimes deal with `gzip`'d verilog source files, but we have to be careful about which version of `gzip`/`gunzip` we rely on. To avoid that, these files are encoded with tar. So decompress with tar too:
+
+```
+for file in *.tar.xz; do
+  tar -Jxf ${f} &
+done
