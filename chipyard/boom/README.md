@@ -32,6 +32,6 @@ Remember also that github has a 50MB size limit.
 for size in Small Medium Large Mega; do
   ls ${CHIPYARD_ROOT}/sims/verilator/generated-src/chipyard.TestHarness.${size}BoomConfig/*.v | grep -Ev 'Sim.*\.v' | xargs cat > ${size}Boom.v;
   echo "DigitalTop" > ${size}Boom.top;
-  tar zcf ${size}Boom.tar.gz ${size}Boom.v
+  tar zcf ${size}Boom.gz ${size}Boom.v
 done
 ```
