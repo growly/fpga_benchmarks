@@ -44,8 +44,16 @@ fi
 # TODO(aryap): It'd be nice to be able to handle a list of sources, or any
 # expansion.
 if [ -d "${BENCHMARK_DIR}" ]; then
-  benchmarks=(${BENCHMARK_DIR}/*.{v,vhdl,gz})
+  # TODO(aryap): This is a dangerously-bash bashism
+  shopt -s nullglob
+  benchmarks=( ${BENCHMARK_DIR}/*.{v,vhdl,gz} )
   num_benchmarks=${#benchmarks[@]}
+  echo "there are ${num_benchmarks} benchmarks"
+  for file in "${benchmarks[@]}"; do
+    echo ${file}
+  done
+  exit 99
+  shopt -u nullglob
 elif [ -f "${BENCHMARK_DIR}" ]; then
   # Input is just one file
   benchmarks="${BENCHMARK_DIR}"
