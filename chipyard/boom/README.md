@@ -25,6 +25,8 @@ make verilog CONFIG=MediumBoomConfig
 4. Dump all verilog files into one file. There will be references to simulation modules that do not exist, but they won't matter if the top module is set to the design top and not the chip or test harness tops.
 
 ```
+cd ${CHIPYARD_ROOT}/sims/verilator/generated-src/chipyard.TestHarness.MediumBoomConfig
+ls *.v | grep -Ev 'Sim.*\.v' | xargs cat > MediumBoom.v
 ```
 
 5. Determine the top module and write this to the `.top` file we have.
