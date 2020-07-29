@@ -24,13 +24,14 @@ make verilog CONFIG=MediumBoomConfig
 
 4. Dump all verilog files into one file. There will be references to simulation modules that do not exist, but they won't matter if the top module is set to the design top and not the chip or test harness tops.
 
-```
-cd ${CHIPYARD_ROOT}/sims/verilator/generated-src/chipyard.TestHarness.MediumBoomConfig
-ls *.v | grep -Ev 'Sim.*\.v' | xargs cat > MediumBoom.v
-```
+Remember also that github has a 50MB size limit.
 
 5. Determine the top module and write this to the `.top` file we have.
 
 ```
-echo "DigitalTop" > SmallBoom.top
+for size in Small Medium Large Mega; do
+  ls ${CHIPYARD_ROOT}/sims/verilator/generated-src/chipyard.TestHarness.${size}BoomConfig/*.v | grep -Ev 'Sim.*\.v' | xargs cat > ${size}Boom.v;
+  echo "DigitalTop" > ${size}Boom.top;
+  tar zcf ${size}Boom.tar.gz ${size}Boom.v
+done
 ```
