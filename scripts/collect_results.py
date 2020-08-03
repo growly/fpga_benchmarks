@@ -7,6 +7,15 @@ import os
 import re
 import sys
 
+import functools
+import operator
+
+#import matplotlib
+#matplotlib.use('gtk3agg')
+#
+import matplotlib.pyplot as plt
+import numpy as np
+
 TEST_DIR_RE = re.compile(
     r'tab_(vivado|yosys|yosys-abc9)_([a-zA-Z0-9_.]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)')
 TEST_RESULT_FILE_RE = re.compile(r'test_(\d+).txt')
@@ -219,6 +228,26 @@ class Result:
             constraint_result.timing = timing
 
 
+def MakePrettyGraphs(results):
+    fig, ax = plt.subplots()
+
+    width = 0.35
+    x_labels = []
+
+    synth_method_list = sorted(synth_methods)
+    device_and_grade = ('xc7a200', '1')
+    for ip_name, result_by_synth_method in synth_results.items():
+        for method_fetch, match_group, labels in metrics:
+            label = 'Slice LUTs'
+            for method in synth_method_list:
+                if method in result_by_synth_method:
+                    value = result_by_synth_method[method].GetUtilizationResult(constr, label)
+                    line.append(
+                            value[match_group] if value else value_if_no_result)
+                else:
+                    line.append(value_if_no_result)
+
+
 def main():
     parser = argparse.ArgumentParser(
             description='Collect synthesis benchmark results from a given directory')
@@ -258,7 +287,6 @@ def main():
     print('Found {} IP(s); {} synth method(s)'.format(
         len(ips), len(synth_methods)))
 
-    constr = '100'
     value_if_no_result = 'none'
     # These vary by device.
     metrics = [
@@ -275,27 +303,36 @@ def main():
                 ['place_design', 'route_design']),
             (lambda x: x.GetTimingResult, 0,
                     [1, 2])]
+
     synth_method_list = sorted(synth_methods)
     for device_and_grade, synth_results in results_by_device.items():
         csv_name = '{}-{}.csv'.format(*device_and_grade)
         with open(csv_name, 'w', newline='') as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"',
                                    quoting=csv.QUOTE_MINIMAL)
-            csvwriter.writerow(['ip', 'metric'] + synth_method_list)
+            csvwriter.writerow(['ip', 'clk constraint (ps)', 'metric'] + synth_method_list)
             for ip_name, result_by_synth_method in synth_results.items():
-                for method_fetch, match_group, labels in metrics:
-                    for label in labels:
-                        line = [ip_name, label]
-                        for method in synth_method_list:
-                            getter = method_fetch(result_by_synth_method[method])
-                            if method in result_by_synth_method:
-                                value = getter(constr, label)
-                                line.append(
-                                        value[match_group] if value else value_if_no_result)
-                            else:
-                                line.append(value_if_no_result)
-                        csvwriter.writerow(line)
+                # Collect the available constraints across all methods and runs for this IP.
+                all_constraints = sorted(
+                        set(functools.reduce(operator.add,
+                                         [list(result_by_synth_method[x].constraints.keys()) for x in synth_method_list])),
+                        key=int)
+                for constr in all_constraints:
+                    for method_fetch, match_group, labels in metrics:
+                        for label in labels:
+                            line = [ip_name, constr, label]
+                            for method in synth_method_list:
+                                getter = method_fetch(result_by_synth_method[method])
+                                if method in result_by_synth_method:
+                                    value = getter(constr, label)
+                                    line.append(
+                                            value[match_group] if value else value_if_no_result)
+                                else:
+                                    line.append(value_if_no_result)
+                            csvwriter.writerow(line)
             print('wrote {}'.format(csv_name))
+
+    #MakePrettyGraphs(results)
 
 
 if __name__ == '__main__':
