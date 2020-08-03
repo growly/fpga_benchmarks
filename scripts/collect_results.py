@@ -301,6 +301,10 @@ def MakePrettyGraph(synth_results, label, ip_names=None):
         for key, value in value_by_method.items():
             y_by_method[key].append(value)
 
+    if not synth_methods:
+        print("Cannot generate graphs (label={}): no synth methods found.".format(label))
+        return
+
     def autolabel(rects):
         for rect in rects:
             ax.annotate('@ {}ps'.format(acting_constraints[i]),
@@ -338,6 +342,8 @@ def MakePrettyGraph(synth_results, label, ip_names=None):
 
 def FindAllClockConstraintsAcrossAllMethods(result_by_synth_method):
     # Collect the available constraints across all methods and runs for this IP.
+    if not result_by_synth_method:
+        return []
     return sorted(
         # Flatten the list of lists and de-duplicate elements through a set.
         set(functools.reduce(
@@ -386,7 +392,7 @@ def main():
     if len(sys.argv) < 2:
         parser.print_help()
         parser.exit()
-        
+
     source_dir = None
     try:
         source_dir = os.path.realpath(args.from_dir)
@@ -399,10 +405,13 @@ def main():
     synth_methods = set()
     results_by_device = collections.defaultdict(
         lambda: collections.defaultdict(lambda: collections.defaultdict(None)))
-    for d in os.listdir(source_dir):
-        match = TEST_DIR_RE.match(d)
+    for entry in os.scandir(source_dir):
+        if not entry.is_dir(follow_symlinks=True):
+            # Skip non-directories.
+            continue
+        match = TEST_DIR_RE.match(entry.name)
         if match:
-            result = Result(*match.groups(), os.path.join(source_dir, d))
+            result = Result(*match.groups(), os.path.join(entry.path))
             results.append(result)
             results_by_device[(result.device, result.grade)][result.ip][
                     result.synth_method] = result
@@ -410,7 +419,7 @@ def main():
             ips.add(result.ip)
             result.ParseResults()
         else:
-            print('Could not parse result dir name: {}'.format(d))
+            print('Could not parse result dir name: {}'.format(entry.name))
 
     print('Scanned {} result files'.format(len(results)))
     print('Found {} IP(s); {} synth method(s)'.format(
