@@ -117,6 +117,9 @@ class RuntimeResult(RegexResult):
                          RuntimeResult.MatchTimeRow)
 
 class TimingResult(RegexResult):
+    SLACK_MET_OR_NOT_LABEL = 1
+    CRITICAL_PATH_SLACK_LABEL = 2
+
     @staticmethod
     def MatchSlackMetOrNot():
         spec = (r'^Slack \(([A-Z]+)\).*$')
@@ -128,14 +131,16 @@ class TimingResult(RegexResult):
 
     def __init__(self):
         LABELS = {
-            1: TimingResult.MatchSlackMetOrNot(),
-            2: TimingResult.MatchCriticalPathSlack()
+            TimingResult.SLACK_MET_OR_NOT_LABEL:
+                TimingResult.MatchSlackMetOrNot(),
+            TimingResult.CRITICAL_PATH_SLACK_LABEL:
+                TimingResult.MatchCriticalPathSlack()
         }
 
         super().__init__(LABELS, lambda x: LABELS[x])
 
 
-class ConstraintResult:
+class ClockConstraintResult:
 
     def __init__(self, file_path):
         self.file_path = file_path
@@ -152,14 +157,14 @@ class Result:
         self.device = device
         self.grade = grade
         self.path = path
-        # This should be a dict of constraint: ConstraintResult
+        # This should be a dict of constraint: ClockConstraintResult
         self.constraints = dict()
     
     def __repr__(self):
         return '({}-{}) {}, {} '.format(
             self.device, self.grade, self.ip, self.synth_method)
 
-    def GetConstraintResult(self, constraint):
+    def GetClockConstraintResult(self, constraint):
         if constraint not in self.constraints:
             raise ValueError('missing results for constraint: {}'.format(
                     constraint))
@@ -171,7 +176,7 @@ class Result:
     # TODO(aryap): Refactor between this and GetUtilizationResult!
     def GetRuntimeResult(self, constraint, label):
         try:
-            constr = self.GetConstraintResult(constraint)
+            constr = self.GetClockConstraintResult(constraint)
             if constr.runtime is None:
                 raise ValueError('missing results for runtime'.format(
                     repr(self)))
@@ -183,7 +188,7 @@ class Result:
 
     def GetUtilizationResult(self, constraint, label):
         try:
-            constr = self.GetConstraintResult(constraint)
+            constr = self.GetClockConstraintResult(constraint)
             if constr.util is None:
                 raise ValueError('missing results for utilisation'.format(
                     repr(self)))
@@ -193,9 +198,17 @@ class Result:
                 repr(self), err, self.path), file=sys.stderr)
             return None
 
+    def MetTimingAt(self, constr):
+        """Whether the results show that timing was met at the given constraint."""
+        result = self.GetTimingResult(
+            constr, TimingResult.SLACK_MET_OR_NOT_LABEL)
+        if result is None:
+            return False
+        return result[0] == 'MET'
+
     def GetTimingResult(self, constraint, label):
         try:
-            constr = self.GetConstraintResult(constraint)
+            constr = self.GetClockConstraintResult(constraint)
             if constr.util is None:
                 raise ValueError('missing results for utilisation'.format(
                     repr(self)))
@@ -212,7 +225,7 @@ class Result:
             if (match):
                 constraint = match.group(1)
                 result_file = os.path.join(self.path, f)
-                self.constraints[constraint] = ConstraintResult(result_file)
+                self.constraints[constraint] = ClockConstraintResult(result_file)
 
         for constraint, constraint_result in self.constraints.items():
             util = UtilizationResult()
@@ -228,24 +241,102 @@ class Result:
             constraint_result.timing = timing
 
 
-def MakePrettyGraphs(results):
+def MakePrettyGraphs(synth_results):
     fig, ax = plt.subplots()
 
     width = 0.35
     x_labels = []
 
-    synth_method_list = sorted(synth_methods)
     device_and_grade = ('xc7a200', '1')
     for ip_name, result_by_synth_method in synth_results.items():
-        for method_fetch, match_group, labels in metrics:
-            label = 'Slice LUTs'
-            for method in synth_method_list:
-                if method in result_by_synth_method:
-                    value = result_by_synth_method[method].GetUtilizationResult(constr, label)
-                    line.append(
-                            value[match_group] if value else value_if_no_result)
-                else:
-                    line.append(value_if_no_result)
+        synth_methods = list(result_by_synth_method.keys())
+        label = 'Slice LUTs'
+
+        result_by_method = dict()
+        
+        all_constraints = list(
+                map(int, FindAllClockConstraintsAcrossAllMethods(result_by_synth_method)))
+        # Ok, attempt to find the best constraint for which all methods pass.
+        best_constraint = max(all_constraints)
+
+        for clk in all_constraints:
+            meets = [result_by_synth_method[method].MetTimingAt(str(clk)) for method in synth_methods]
+            if all(meets) and clk < best_constraint:
+                best_constraint = clk
+            #for method in synth_methods:
+            #    if result_by_synth_method[method].MetTimingAt(str(clk)):
+            #        print('{} {} met @ {} ps'.format(ip_name, method, clk))
+        print('{} best clk: {}'.format(ip_name, best_constraint))
+
+        #for method in synth_method_list:
+        #    if method not in result_by_synth_method:
+        #        continue
+        #    result = result_by_synth_method[method]
+        #    constraints = sorted(list(result.constraints.keys()),
+        #                         key=int)
+        #    # Find the best constraint for which all methods pass.
+        #    if method in result_by_synth_method:
+        #        value = result_by_synth_method[method].GetUtilizationResult(constr, label)
+        #        line.append(
+        #                value[match_group] if value else value_if_no_result)
+        #    else:
+        #        line.append(value_if_no_result)
+
+
+def FindAllClockConstraintsAcrossAllMethods(result_by_synth_method):
+    # Collect the available constraints across all methods and runs for this IP.
+    return sorted(
+        # Flatten the list of lists and de-duplicate elements through a set.
+        set(functools.reduce(
+            operator.add,
+            # The following a list of a list of every key in the constraints dicts.
+            [list(
+                result_by_synth_method[x].constraints.keys())
+             for x in result_by_synth_method.keys()])),
+        # Impose natural number ordering on the values, even though they're strings.
+        key=int)
+
+
+def DumpAllAsCSV(results_by_device, synth_methods):
+    value_if_no_result = 'none'
+    # These vary by device.
+    metrics = [
+            # 1 is the index of the 'number used' column in each output row of
+            # the Vivado results
+            (lambda x: x.GetUtilizationResult, 1,
+                ['CLB LUTs', 'Slice LUTs', 'LUT as Logic', 'LUT as Memory',
+                  'LUT as Shift Register', 'Slice Registers', 'Register as Flip Flop',
+                  'Register as Latch', 'Block RAM Tile', 'Bonded IOB']),
+                  #'LUT6', 'LUT5', 'LUT4', 'LUT3', 'LUT2', 'LUT1']),
+            (lambda x: x.GetRuntimeResult, 1,
+                ['place_design', 'route_design']),
+            (lambda x: x.GetRuntimeResult, 2,
+                ['place_design', 'route_design']),
+            (lambda x: x.GetTimingResult, 0,
+                    [1, 2])]
+    synth_method_list = sorted(synth_methods)
+    for device_and_grade, synth_results in results_by_device.items():
+        csv_name = '{}-{}.csv'.format(*device_and_grade)
+        with open(csv_name, 'w', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"',
+                                   quoting=csv.QUOTE_MINIMAL)
+            csvwriter.writerow(['ip', 'clk constraint (ps)', 'metric'] + synth_method_list)
+            for ip_name, result_by_synth_method in synth_results.items():
+                all_constraints = FindAllClockConstraintsAcrossAllMethods(result_by_synth_method)
+                for constr in all_constraints:
+                    for method_fetch, match_group, labels in metrics:
+                        for label in labels:
+                            line = [ip_name, constr, label]
+                            for method in synth_method_list:
+                                getter = method_fetch(result_by_synth_method[method])
+                                if method in result_by_synth_method:
+                                    value = getter(constr, label)
+                                    line.append(
+                                            value[match_group] if value else value_if_no_result)
+                                else:
+                                    line.append(value_if_no_result)
+                            csvwriter.writerow(line)
+            print('wrote {}'.format(csv_name))
 
 
 def main():
@@ -287,58 +378,9 @@ def main():
     print('Found {} IP(s); {} synth method(s)'.format(
         len(ips), len(synth_methods)))
 
-    value_if_no_result = 'none'
-    # These vary by device.
-    metrics = [
-            # 1 is the index of the 'number used' column in each output row of
-            # the Vivado results
-            (lambda x: x.GetUtilizationResult, 1,
-                ['CLB LUTs', 'Slice LUTs', 'LUT as Logic', 'LUT as Memory',
-                  'LUT as Shift Register', 'Slice Registers', 'Register as Flip Flop',
-                  'Register as Latch', 'Block RAM Tile', 'Bonded IOB']),
-                  #'LUT6', 'LUT5', 'LUT4', 'LUT3', 'LUT2', 'LUT1']),
-            (lambda x: x.GetRuntimeResult, 1,
-                ['place_design', 'route_design']),
-            (lambda x: x.GetRuntimeResult, 2,
-                ['place_design', 'route_design']),
-            (lambda x: x.GetTimingResult, 0,
-                    [1, 2])]
+    #DumpAllAsCSV(results_by_device, synth_methods)
 
-    synth_method_list = sorted(synth_methods)
-    for device_and_grade, synth_results in results_by_device.items():
-        csv_name = '{}-{}.csv'.format(*device_and_grade)
-        with open(csv_name, 'w', newline='') as csvfile:
-            csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"',
-                                   quoting=csv.QUOTE_MINIMAL)
-            csvwriter.writerow(['ip', 'clk constraint (ps)', 'metric'] + synth_method_list)
-            for ip_name, result_by_synth_method in synth_results.items():
-                # Collect the available constraints across all methods and runs for this IP.
-                all_constraints = sorted(
-                    # Flatten the list of lists and de-duplicate elements through a set.
-                    set(functools.reduce(
-                        operator.add,
-                        # The following a list of a list of every key in the constraints dicts.
-                        [list(
-                            result_by_synth_method[x].constraints.keys())
-                         for x in synth_method_list])),
-                    # Import natural number ordering on the values, even though they're strings.
-                    key=int)
-                for constr in all_constraints:
-                    for method_fetch, match_group, labels in metrics:
-                        for label in labels:
-                            line = [ip_name, constr, label]
-                            for method in synth_method_list:
-                                getter = method_fetch(result_by_synth_method[method])
-                                if method in result_by_synth_method:
-                                    value = getter(constr, label)
-                                    line.append(
-                                            value[match_group] if value else value_if_no_result)
-                                else:
-                                    line.append(value_if_no_result)
-                            csvwriter.writerow(line)
-            print('wrote {}'.format(csv_name))
-
-    #MakePrettyGraphs(results)
+    MakePrettyGraphs(results_by_device[('xc7a200', '1')])
 
 
 if __name__ == '__main__':
