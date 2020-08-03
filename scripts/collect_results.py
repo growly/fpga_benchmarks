@@ -241,19 +241,26 @@ class Result:
             constraint_result.timing = timing
 
 
-def MakePrettyGraphs(synth_results):
-    fig, ax = plt.subplots()
-
-    width = 0.35
-    x_labels = []
-
+def MakePrettyGraph(synth_results, label, ip_names=None):
     device_and_grade = ('xc7a200', '1')
-    for ip_name, result_by_synth_method in synth_results.items():
-        synth_methods = list(result_by_synth_method.keys())
-        label = 'Slice LUTs'
+    # This could automatically filter results by designs with non-zero results.
+    ip_names = ip_names or list(synth_results.keys())
 
-        result_by_method = dict()
-        
+    y_by_method = collections.defaultdict(list)
+
+    synth_methods_set = set()
+    # Find all the methods used over all results for all designs:
+    for ip_name, result_by_synth_method in synth_results.items():
+        synth_methods_set.update(result_by_synth_method.keys())
+    synth_methods = sorted(list(synth_methods_set))
+
+    acting_constraints = []
+
+    # Fill in the values achieved by each design under each method for the
+    # given label:
+    for ip_name in ip_names:
+        result_by_synth_method = synth_results[ip_name]
+
         all_constraints = list(
                 map(int, FindAllClockConstraintsAcrossAllMethods(result_by_synth_method)))
         # Ok, attempt to find the best constraint for which all methods pass.
@@ -266,21 +273,65 @@ def MakePrettyGraphs(synth_results):
             #for method in synth_methods:
             #    if result_by_synth_method[method].MetTimingAt(str(clk)):
             #        print('{} {} met @ {} ps'.format(ip_name, method, clk))
-        print('{} best clk: {}'.format(ip_name, best_constraint))
+        acting_constraints.append(best_constraint)
+        #print('{} best clk: {}'.format(ip_name, best_constraint))
 
-        #for method in synth_method_list:
-        #    if method not in result_by_synth_method:
-        #        continue
-        #    result = result_by_synth_method[method]
-        #    constraints = sorted(list(result.constraints.keys()),
-        #                         key=int)
-        #    # Find the best constraint for which all methods pass.
-        #    if method in result_by_synth_method:
-        #        value = result_by_synth_method[method].GetUtilizationResult(constr, label)
-        #        line.append(
-        #                value[match_group] if value else value_if_no_result)
-        #    else:
-        #        line.append(value_if_no_result)
+        value_by_method = dict()
+
+        for method in synth_methods:
+            if method not in result_by_synth_method:
+                print('{}: {} has no results'.format(ip_name, method))
+                value_by_method[method] = 0
+                continue
+            value = result_by_synth_method[method].GetUtilizationResult(str(best_constraint), label)
+            if value is None:
+                print('{}: {}/{} has no results'.format(ip_name, method, label))
+                value_by_method[method] = 0
+                continue
+            # Extract the appropriate match group.
+            value = value[1]
+            try:
+                value_by_method[method] = int(value)
+            except ValueError as e:
+                print(e, file=sys.stderr)
+                value_by_method[method] = 0
+                continue
+        for key, value in value_by_method.items():
+            y_by_method[key].append(value)
+
+    def autolabel(rects):
+        for rect in rects:
+            ax.annotate('@ {}ps'.format(acting_constraints[i]),
+                xy=(rect.get_x() + rect.get_width()/2, rect.get_height()),
+                xytext=(0, 3),
+                textcoords='offset points',
+                ha='center', va='bottom')
+
+    x = np.arange(len(ip_names))
+
+    fig, ax = plt.subplots()
+
+    num_bars = len(synth_methods)
+    width = (1.0 - 0.2)/num_bars
+    for i in range(num_bars):
+        # You specify the centre of the bars on the x axis as the first argument.
+        rects = ax.bar(x - (num_bars - 1)*width/2 + i*width,
+                       y_by_method[synth_methods[i]],
+                       width,
+                       label=synth_methods[i])
+
+        y_labels = map(lambda x: '{}\n@ {:.2f} ns'.format(x[0], x[1]/1000.0), zip(ip_names, acting_constraints))
+
+    ax.set_xlabel('designs')
+    ax.set_xticks(x)
+    ax.set_xticklabels(y_labels, rotation='vertical')
+    #plt.xticks(rotation=45)
+    ax.set_ylabel(label)
+    ax.legend()
+    ax.set_title('{} vs designs'.format(label))
+
+    fig.tight_layout()
+    plt.show()
 
 
 def FindAllClockConstraintsAcrossAllMethods(result_by_synth_method):
@@ -297,23 +348,8 @@ def FindAllClockConstraintsAcrossAllMethods(result_by_synth_method):
         key=int)
 
 
-def DumpAllAsCSV(results_by_device, synth_methods):
+def DumpAllAsCSV(results_by_device, synth_methods, metrics):
     value_if_no_result = 'none'
-    # These vary by device.
-    metrics = [
-            # 1 is the index of the 'number used' column in each output row of
-            # the Vivado results
-            (lambda x: x.GetUtilizationResult, 1,
-                ['CLB LUTs', 'Slice LUTs', 'LUT as Logic', 'LUT as Memory',
-                  'LUT as Shift Register', 'Slice Registers', 'Register as Flip Flop',
-                  'Register as Latch', 'Block RAM Tile', 'Bonded IOB']),
-                  #'LUT6', 'LUT5', 'LUT4', 'LUT3', 'LUT2', 'LUT1']),
-            (lambda x: x.GetRuntimeResult, 1,
-                ['place_design', 'route_design']),
-            (lambda x: x.GetRuntimeResult, 2,
-                ['place_design', 'route_design']),
-            (lambda x: x.GetTimingResult, 0,
-                    [1, 2])]
     synth_method_list = sorted(synth_methods)
     for device_and_grade, synth_results in results_by_device.items():
         csv_name = '{}-{}.csv'.format(*device_and_grade)
@@ -378,9 +414,31 @@ def main():
     print('Found {} IP(s); {} synth method(s)'.format(
         len(ips), len(synth_methods)))
 
-    #DumpAllAsCSV(results_by_device, synth_methods)
+    # These vary by device.
+    metrics = [
+            # 1 is the index of the 'number used' column in each output row of
+            # the Vivado results
+            (lambda x: x.GetUtilizationResult, 1,
+                ['CLB LUTs', 'Slice LUTs', 'LUT as Logic', 'LUT as Memory',
+                  'LUT as Shift Register', 'Slice Registers', 'Register as Flip Flop',
+                  'Register as Latch', 'Block RAM Tile', 'Bonded IOB']),
+                  #'LUT6', 'LUT5', 'LUT4', 'LUT3', 'LUT2', 'LUT1']),
+            (lambda x: x.GetRuntimeResult, 1,
+                ['place_design', 'route_design']),
+            (lambda x: x.GetRuntimeResult, 2,
+                ['place_design', 'route_design']),
+            (lambda x: x.GetTimingResult, 0,
+                    [1, 2])]
+    #DumpAllAsCSV(results_by_device, synth_methods, metrics
 
-    MakePrettyGraphs(results_by_device[('xc7a200', '1')])
+    ip_names = ['stereovision0', 'bgm', 'blob_merge', 'LU32PEEng', 'LU8PEEng',
+            'boundtop', 'sha', 'LU64PEEng', 'arm_core', 'stereovision2']
+    MakePrettyGraph(results_by_device[('xc7a200', '1')],
+                    'Slice LUTs',
+                    ip_names)
+    MakePrettyGraph(results_by_device[('xc7a200', '1')],
+                    'Slice LUTs',
+                    ip_names)
 
 
 if __name__ == '__main__':
