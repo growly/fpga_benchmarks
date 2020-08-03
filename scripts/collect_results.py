@@ -159,7 +159,7 @@ class Result:
         self.path = path
         # This should be a dict of constraint: ClockConstraintResult
         self.constraints = dict()
-    
+
     def __repr__(self):
         return '({}-{}) {}, {} '.format(
             self.device, self.grade, self.ip, self.synth_method)
@@ -264,6 +264,8 @@ def MakePrettyGraph(synth_results, label, ip_names=None):
         all_constraints = list(
                 map(int, FindAllClockConstraintsAcrossAllMethods(result_by_synth_method)))
         # Ok, attempt to find the best constraint for which all methods pass.
+        if not all_constraints:
+          continue
         best_constraint = max(all_constraints)
 
         for clk in all_constraints:
