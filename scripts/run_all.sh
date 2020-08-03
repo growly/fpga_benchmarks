@@ -8,6 +8,7 @@ BENCHMARK_DIR=  # $(readlink -f "${1:-vtr/verilog}")
 BATCH_SIZE=8 # Will run 3x as many jobs as this at once
 USE_LSF=false
 DEVICE="xc7a200"
+SYNTH_METHODS="vivado yosys yosys-abc9"
 
 # NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
 # nice too to recursively expand symlinks, but it isn't available on BWRC
@@ -30,6 +31,9 @@ while [ "$1" != "" ]; do
     -d | --device )         shift
                             DEVICE="$1"
                             ;;
+    -m | --synth_method )   shift
+                            SYNTH_METHODS="$1"
+                            ;;
     * )                     echo "computer says no: ${1}"
                             exit 1
   esac
@@ -48,11 +52,10 @@ if [ -d "${BENCHMARK_DIR}" ]; then
   shopt -s nullglob
   benchmarks=( ${BENCHMARK_DIR}/*.{v,vhdl,gz} )
   num_benchmarks=${#benchmarks[@]}
-  echo "there are ${num_benchmarks} benchmarks"
+  echo "Found ${num_benchmarks} benchmarks:"
   for file in "${benchmarks[@]}"; do
-    echo ${file}
+    echo "  ${file}"
   done
-  exit 99
   shopt -u nullglob
 elif [ -f "${BENCHMARK_DIR}" ]; then
   # Input is just one file
@@ -89,7 +92,7 @@ fi
 # then continue, until all jobs are complete.
 while [ ${i} -lt ${num_benchmarks} ]; do
   for ((j=0;j<${BATCH_SIZE} && i < ${num_benchmarks};j++)); do
-    for method in vivado yosys yosys-abc9; do
+    for method in ${SYNTH_METHODS}; do
       if [ -n "${LSF_PREFIX}" ]; then
         # Add a meaningful log file to the LSF command if it's being used.
         LSF_PREFIX_LOG="-o bsub_${method}_$(basename ${benchmarks[i]}).log"

@@ -183,8 +183,15 @@ EOT
   fi
 
   speed_ns=$(printf %.2f "$((speed))e-3")
+  clock_file="$(dirname ${path})/${ip}.clock"
+  clock_expr=
+  if [ -f "${clock_file}" ]; then
+    clock_expr=$(<${clock_file})
+  else
+    clock_expr="[get_ports -nocase -regexp .*cl(oc)?k.*]"
+  fi
   cat > test_${1}.xdc <<EOT
-create_clock -period ${speed_ns} [get_ports -nocase -regexp .*cl(oc)?k.*]
+create_clock -period ${speed_ns} ${clock_expr}
 EOT
   cat >> test_${1}.tcl <<EOT
 report_design_analysis
