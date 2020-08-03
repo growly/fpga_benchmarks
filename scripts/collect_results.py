@@ -314,9 +314,15 @@ def main():
             for ip_name, result_by_synth_method in synth_results.items():
                 # Collect the available constraints across all methods and runs for this IP.
                 all_constraints = sorted(
-                        set(functools.reduce(operator.add,
-                                         [list(result_by_synth_method[x].constraints.keys()) for x in synth_method_list])),
-                        key=int)
+                    # Flatten the list of lists and de-duplicate elements through a set.
+                    set(functools.reduce(
+                        operator.add,
+                        # The following a list of a list of every key in the constraints dicts.
+                        [list(
+                            result_by_synth_method[x].constraints.keys())
+                         for x in synth_method_list])),
+                    # Import natural number ordering on the values, even though they're strings.
+                    key=int)
                 for constr in all_constraints:
                     for method_fetch, match_group, labels in metrics:
                         for label in labels:
