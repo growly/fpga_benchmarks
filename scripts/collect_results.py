@@ -159,7 +159,7 @@ class Result:
         self.path = path
         # This should be a dict of constraint: ClockConstraintResult
         self.constraints = dict()
-    
+
     def __repr__(self):
         return '({}-{}) {}, {} '.format(
             self.device, self.grade, self.ip, self.synth_method)
@@ -242,7 +242,6 @@ class Result:
 
 
 def MakePrettyGraph(synth_results, label, ip_names=None):
-    device_and_grade = ('xc7a200', '1')
     # This could automatically filter results by designs with non-zero results.
     ip_names = ip_names or list(synth_results.keys())
 
@@ -264,6 +263,8 @@ def MakePrettyGraph(synth_results, label, ip_names=None):
         all_constraints = list(
                 map(int, FindAllClockConstraintsAcrossAllMethods(result_by_synth_method)))
         # Ok, attempt to find the best constraint for which all methods pass.
+        if not all_constraints:
+          continue
         best_constraint = max(all_constraints)
 
         for clk in all_constraints:
@@ -298,6 +299,10 @@ def MakePrettyGraph(synth_results, label, ip_names=None):
                 continue
         for key, value in value_by_method.items():
             y_by_method[key].append(value)
+
+    if not synth_methods:
+        print("Cannot generate graphs (label={}): no synth methods found.".format(label))
+        return
 
     def autolabel(rects):
         for rect in rects:
@@ -336,6 +341,8 @@ def MakePrettyGraph(synth_results, label, ip_names=None):
 
 def FindAllClockConstraintsAcrossAllMethods(result_by_synth_method):
     # Collect the available constraints across all methods and runs for this IP.
+    if not result_by_synth_method:
+        return []
     return sorted(
         # Flatten the list of lists and de-duplicate elements through a set.
         set(functools.reduce(
@@ -384,7 +391,7 @@ def main():
     if len(sys.argv) < 2:
         parser.print_help()
         parser.exit()
-        
+
     source_dir = None
     try:
         source_dir = os.path.realpath(args.from_dir)
@@ -397,10 +404,13 @@ def main():
     synth_methods = set()
     results_by_device = collections.defaultdict(
         lambda: collections.defaultdict(lambda: collections.defaultdict(None)))
-    for d in os.listdir(source_dir):
-        match = TEST_DIR_RE.match(d)
+    for entry in os.scandir(source_dir):
+        if not entry.is_dir(follow_symlinks=True):
+            # Skip non-directories.
+            continue
+        match = TEST_DIR_RE.match(entry.name)
         if match:
-            result = Result(*match.groups(), os.path.join(source_dir, d))
+            result = Result(*match.groups(), os.path.join(entry.path))
             results.append(result)
             results_by_device[(result.device, result.grade)][result.ip][
                     result.synth_method] = result
@@ -408,7 +418,7 @@ def main():
             ips.add(result.ip)
             result.ParseResults()
         else:
-            print('Could not parse result dir name: {}'.format(d))
+            print('Could not parse result dir name: {}'.format(entry.name))
 
     print('Scanned {} result files'.format(len(results)))
     print('Found {} IP(s); {} synth method(s)'.format(
@@ -429,7 +439,7 @@ def main():
                 ['place_design', 'route_design']),
             (lambda x: x.GetTimingResult, 0,
                     [1, 2])]
-    #DumpAllAsCSV(results_by_device, synth_methods, metrics
+    DumpAllAsCSV(results_by_device, synth_methods, metrics)
 
     ip_names = ['stereovision0', 'bgm', 'blob_merge', 'LU32PEEng', 'LU8PEEng',
             'boundtop', 'sha', 'LU64PEEng', 'arm_core', 'stereovision2']
