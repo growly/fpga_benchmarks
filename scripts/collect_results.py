@@ -241,8 +241,37 @@ class Result:
             constraint_result.timing = timing
 
 
-def MakePrettyGraph(synth_results, label, ip_names=None):
-    device_and_grade = ('xc7a200', '1')
+def GraphMetricAcrossConstraints(synth_results, label, ip_name):
+    results_by_synth_method = synth_results[ip_name]
+    synth_methods = sorted(list(results_by_synth_method.keys()))
+
+    all_valid_results = dict()
+    for method in synth_methods:
+        # Extract constraints and parameter if valid.
+        valid_results = dict()
+        method_results = results_by_synth_method[method]
+        for clk in method_results.constraints.keys():
+            if method_results.MetTimingAt(clk):
+                result = method_results.GetUtilizationResult(clk, label)[1]
+                valid_results[int(clk)] = int(result)
+        all_valid_results[method] = valid_results
+
+    # Now generate a plot of one line per method.
+    fig, ax = plt.subplots()
+
+    for method, results in all_valid_results.items():
+        data = sorted(results.items(), key=lambda x: x[0])
+        clks, values = zip(*data)
+        ax.plot(clks, values, label=method)
+
+    ax.set(title='{} vs clock for "{}"'.format(label, ip_name),
+           ylabel=label,
+           xlabel='clock constraint (ps)')
+    ax.legend()
+    plt.show()
+
+
+def MakePrettyGraph(synth_results, label, ip_names=None, normalise=True):
     # This could automatically filter results by designs with non-zero results.
     ip_names = ip_names or list(synth_results.keys())
 
@@ -316,9 +345,7 @@ def MakePrettyGraph(synth_results, label, ip_names=None):
                 ha='center', va='bottom')
 
     x = np.arange(len(ip_names))
-
     fig, ax = plt.subplots()
-
     num_bars = len(synth_methods)
     width = (1.0 - 0.2)/num_bars
     for i in range(num_bars):
@@ -458,6 +485,11 @@ def main():
     MakePrettyGraph(results_by_device[('xcvu440', '1')],
                     'CLB LUTs',
                     None)
+
+    #for ip in ip_names:
+    #    GraphMetricAcrossConstraints(results_by_device[('xc7a200', '1')],
+    #                                 'Slice LUTs',
+    #                                 ip)
 
 
 if __name__ == '__main__':
