@@ -452,6 +452,12 @@ def main():
     MakePrettyGraph(results_by_device[('xc7a200', '1')],
                     'Slice LUTs',
                     ip_names)
+    MakePrettyGraph(results_by_device[('xcvu440', '1')],
+                    'CLB LUTs',
+                    None)
+    MakePrettyGraph(results_by_device[('xcvu440', '1')],
+                    'CLB LUTs',
+                    None)
 
 
 if __name__ == '__main__':
