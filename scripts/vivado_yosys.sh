@@ -199,7 +199,10 @@ place_design -directive Explore
 route_design -directive Explore
 report_utilization
 report_timing -no_report_unconstrained
+report_clocks
 report_design_analysis
+report_power
+report_io
 EOT
 
   echo "${test_name} running test_${1}..."

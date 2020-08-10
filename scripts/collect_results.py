@@ -119,14 +119,15 @@ class RuntimeResult(RegexResult):
 class TimingResult(RegexResult):
     SLACK_MET_OR_NOT_LABEL = 1
     CRITICAL_PATH_SLACK_LABEL = 2
+    ARRIVAL_TIME_LABEL = 3
 
     @staticmethod
     def MatchSlackMetOrNot():
         spec = (r'^Slack \(([A-Z]+)\).*$')
         return re.compile(spec)
 
-    def MatchCriticalPathSlack():
-        spec = (r'^\s+slack\s+(-?\d+\.\d+)\s+$')
+    def MatchTimingReportLine(label):
+        spec = (r'^\s+{}\s+(-?\d+\.\d+)\s+$'.format(label))
         return re.compile(spec)
 
     def __init__(self):
@@ -134,7 +135,9 @@ class TimingResult(RegexResult):
             TimingResult.SLACK_MET_OR_NOT_LABEL:
                 TimingResult.MatchSlackMetOrNot(),
             TimingResult.CRITICAL_PATH_SLACK_LABEL:
-                TimingResult.MatchCriticalPathSlack()
+                TimingResult.MatchTimingReportLine('slack')
+            TimingResult.ARRIVAL_TIME_LABEL:
+                TimingResult.MatchTimingReportLine('arrival time')
         }
 
         super().__init__(LABELS, lambda x: LABELS[x])
@@ -271,7 +274,7 @@ def GraphMetricAcrossConstraints(synth_results, label, ip_name):
     plt.show()
 
 
-def MakePrettyGraph(synth_results, label, ip_names=None, normalise=True):
+def MakePrettyGraph(synth_results, label, ip_names=None, normalise_to='vivado'):
     # This could automatically filter results by designs with non-zero results.
     ip_names = ip_names or list(synth_results.keys())
 
@@ -335,6 +338,13 @@ def MakePrettyGraph(synth_results, label, ip_names=None, normalise=True):
     if not synth_methods:
         print("Cannot generate graphs (label={}): no synth methods found.".format(label))
         return
+
+    if normalise_to and normalise_to in y_by_method:
+        denominators = y_by_method[normalise_to]
+        for method, y_values in y_by_method.items():
+            y_by_method[method] = list(
+                map(lambda x: float(x[0])/float(x[1]) if x[1] != 0 else 0,
+                    zip(y_values, denominators)))
 
     def autolabel(rects):
         for rect in rects:
@@ -468,23 +478,32 @@ def main():
             (lambda x: x.GetRuntimeResult, 2,
                 ['place_design', 'route_design']),
             (lambda x: x.GetTimingResult, 0,
-                    [1, 2])]
+                    [TimingResult.SLACK_MET_OR_NOT_LABEL,
+                     TimingResult.CRITICAL_PATH_SLACK_LABEL,
+                     TimingResult.ARRIVAL_TIME_LABEL])]
     #DumpAllAsCSV(results_by_device, synth_methods, metrics
 
-    ip_names = ['stereovision0', 'bgm', 'blob_merge', 'LU32PEEng', 'LU8PEEng',
-            'boundtop', 'sha', 'LU64PEEng', 'arm_core', 'stereovision2']
-    MakePrettyGraph(results_by_device[('xc7a200', '1')],
+    #ip_names = ['stereovision0', 'bgm', 'blob_merge', 'LU32PEEng', 'LU8PEEng',
+    #        'boundtop', 'sha', 'LU64PEEng', 'arm_core', 'stereovision2']
+    device_and_grade = ('xc7a200', '1')
+    synth_results=results_by_device[device_and_grade]
+    ip_names = set(synth_results.keys()) - set(['mkSMAdapter4B'])
+    MakePrettyGraph(synth_results,
                     'Slice LUTs',
                     ip_names)
-    MakePrettyGraph(results_by_device[('xc7a200', '1')],
+    MakePrettyGraph(synth_results,
                     'Slice LUTs',
                     ip_names)
-    MakePrettyGraph(results_by_device[('xcvu440', '1')],
+
+    device_and_grade = ('xcvu440', '1')
+    synth_results=results_by_device[device_and_grade]
+    ip_names = set(synth_results.keys()) - set(['mkSMAdapter4B'])
+    MakePrettyGraph(synth_results,
                     'CLB LUTs',
-                    None)
-    MakePrettyGraph(results_by_device[('xcvu440', '1')],
+                    ip_names)
+    MakePrettyGraph(synth_results,
                     'CLB LUTs',
-                    None)
+                    ip_names)
 
     #for ip in ip_names:
     #    GraphMetricAcrossConstraints(results_by_device[('xc7a200', '1')],
