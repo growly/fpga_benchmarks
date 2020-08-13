@@ -13,6 +13,7 @@ import operator
 #import matplotlib
 #matplotlib.use('gtk3agg')
 #
+from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -135,7 +136,7 @@ class TimingResult(RegexResult):
             TimingResult.SLACK_MET_OR_NOT_LABEL:
                 TimingResult.MatchSlackMetOrNot(),
             TimingResult.CRITICAL_PATH_SLACK_LABEL:
-                TimingResult.MatchTimingReportLine('slack')
+                TimingResult.MatchTimingReportLine('slack'),
             TimingResult.ARRIVAL_TIME_LABEL:
                 TimingResult.MatchTimingReportLine('arrival time')
         }
@@ -244,173 +245,155 @@ class Result:
             constraint_result.timing = timing
 
 
-def GraphMetricAcrossConstraints(synth_results, label, ip_name):
-    results_by_synth_method = synth_results[ip_name]
-    synth_methods = sorted(list(results_by_synth_method.keys()))
+class LabelConfig:
 
-    all_valid_results = dict()
-    for method in synth_methods:
-        # Extract constraints and parameter if valid.
-        valid_results = dict()
-        method_results = results_by_synth_method[method]
-        for clk in method_results.constraints.keys():
-            if method_results.MetTimingAt(clk):
-                result = method_results.GetUtilizationResult(clk, label)[1]
-                valid_results[int(clk)] = int(result)
-        all_valid_results[method] = valid_results
-
-    # Now generate a plot of one line per method.
-    fig, ax = plt.subplots()
-
-    for method, results in all_valid_results.items():
-        data = sorted(results.items(), key=lambda x: x[0])
-        clks, values = zip(*data)
-        ax.plot(clks, values, label=method)
-
-    ax.set(title='{} vs clock for "{}"'.format(label, ip_name),
-           ylabel=label,
-           xlabel='clock constraint (ps)')
-    ax.legend()
-    plt.show()
+    def __init__(self):
+        self.label = None
+        self.getter_fn_template = None
+        self.match_group = None
 
 
-def MakePrettyGraph(synth_results, label, ip_names=None, normalise_to='vivado'):
-    # This could automatically filter results by designs with non-zero results.
-    ip_names = ip_names or list(synth_results.keys())
+class ResultCollection:
 
-    y_by_method = collections.defaultdict(list)
+    def __init__(self):
+        self.ip_names = []
+        self.synth_methods = []
+        self.results_by_device = None
+        self.device_and_grade = None
 
-    synth_methods_set = set()
-    # Find all the methods used over all results for all designs:
-    for ip_name, result_by_synth_method in synth_results.items():
-        synth_methods_set.update(result_by_synth_method.keys())
-    synth_methods = sorted(list(synth_methods_set))
+        # These properties are pointers to sub dicts in self.results_by_device:
+        self.synth_results = None
 
-    acting_constraints = []
+        # These vary by device.
+        self.metrics = [
+                # 1 is the index of the 'number used' column in each output row of
+                # the Vivado results
+                (lambda x: x.GetUtilizationResult, 1,
+                    ['CLB LUTs', 'Slice LUTs', 'LUT as Logic', 'LUT as Memory',
+                      'LUT as Shift Register', 'Slice Registers', 'Register as Flip Flop',
+                      'Register as Latch', 'Block RAM Tile', 'Bonded IOB']),
+                      #'LUT6', 'LUT5', 'LUT4', 'LUT3', 'LUT2', 'LUT1']),
+                (lambda x: x.GetRuntimeResult, 1,
+                    ['place_design', 'route_design']),
+                (lambda x: x.GetRuntimeResult, 2,
+                    ['place_design', 'route_design']),
+                (lambda x: x.GetTimingResult, 0,
+                        [TimingResult.SLACK_MET_OR_NOT_LABEL,
+                         TimingResult.CRITICAL_PATH_SLACK_LABEL,
+                         TimingResult.ARRIVAL_TIME_LABEL])]
 
-    # Fill in the values achieved by each design under each method for the
-    # given label:
-    for ip_name in ip_names:
-        result_by_synth_method = synth_results[ip_name]
+        self.label_configs = dict()
+        for getter, match_group, labels in self.metrics:
+            for label in labels:
+                config = LabelConfig()
+                config.label = label
+                config.getter_fn_template = getter
+                config.match_group = match_group
+                self.label_configs[label] = config
+        
 
-        all_constraints = list(
-                map(int, FindAllClockConstraintsAcrossAllMethods(result_by_synth_method)))
-        # Ok, attempt to find the best constraint for which all methods pass.
-        if not all_constraints:
-          continue
-        best_constraint = max(all_constraints)
+    def GetLabel(self, ip_name, method, constr, label):
+        try:
+            config = self.label_configs[label]
+            result_by_synth_method = self.synth_results[ip_name]
+            getter_fn = config.getter_fn_template(result_by_synth_method[method])
+            result = getter_fn(constr, label)
+            if result is None:
+                return None
+            return result[config.match_group]
 
-        for clk in all_constraints:
-            meets = [result_by_synth_method[method].MetTimingAt(str(clk))
-                    if method in result_by_synth_method else False
-                    for method in synth_methods]
-            if all(meets) and clk < best_constraint:
-                best_constraint = clk
-            #for method in synth_methods:
-            #    if result_by_synth_method[method].MetTimingAt(str(clk)):
-            #        print('{} {} met @ {} ps'.format(ip_name, method, clk))
-        acting_constraints.append(best_constraint)
-        #print('{} best clk: {}'.format(ip_name, best_constraint))
+        except KeyError as e:
+            print('label {} {} {} not found: {}'.format(ip_name, method, label, e))
+            return None
+        
 
-        value_by_method = dict()
-
-        for method in synth_methods:
-            if method not in result_by_synth_method:
-                print('{}: {} has no results'.format(ip_name, method))
-                value_by_method[method] = 0
+    def ReadDirectory(self, source_dir):
+        results = []
+        ips = set()
+        synth_methods = set()
+        results_by_device = collections.defaultdict(
+            lambda: collections.defaultdict(lambda: collections.defaultdict(None)))
+        first_device = None
+        for entry in os.scandir(source_dir):
+            if not entry.is_dir(follow_symlinks=True):
+                # Skip non-directories.
                 continue
-            value = result_by_synth_method[method].GetUtilizationResult(str(best_constraint), label)
-            if value is None:
-                print('{}: {}/{} has no results'.format(ip_name, method, label))
-                value_by_method[method] = 0
-                continue
-            # Extract the appropriate match group.
-            value = value[1]
-            try:
-                value_by_method[method] = int(value)
-            except ValueError as e:
-                print(e, file=sys.stderr)
-                value_by_method[method] = 0
-                continue
-        for key, value in value_by_method.items():
-            y_by_method[key].append(value)
+            match = TEST_DIR_RE.match(entry.name)
+            if match:
+                result = Result(*match.groups(), os.path.join(entry.path))
+                results.append(result)
+                device_and_grade = (result.device, result.grade)
+                if first_device is None:
+                    first_device = device_and_grade
+                results_by_device[device_and_grade][result.ip][result.synth_method] = result
+                synth_methods.add(result.synth_method)
+                ips.add(result.ip)
+                result.ParseResults()
+            else:
+                print('Could not parse result dir name: {}'.format(entry.name))
 
-    if not synth_methods:
-        print("Cannot generate graphs (label={}): no synth methods found.".format(label))
-        return
+        print('Scanned {} result files'.format(len(results)))
+        print('Found {} IP(s); {} synth method(s)'.format(
+            len(ips), len(synth_methods)))
 
-    if normalise_to and normalise_to in y_by_method:
-        denominators = y_by_method[normalise_to]
-        for method, y_values in y_by_method.items():
-            y_by_method[method] = list(
-                map(lambda x: float(x[0])/float(x[1]) if x[1] != 0 else 0,
-                    zip(y_values, denominators)))
+        self.ip_names = sorted(list(ips))
+        self.synth_methods = sorted(list(synth_methods))
+        self.results_by_device = results_by_device
+        self.SetDefaultDevice(*device_and_grade)
 
-    def autolabel(rects):
-        for rect in rects:
-            ax.annotate('@ {}ps'.format(acting_constraints[i]),
-                xy=(rect.get_x() + rect.get_width()/2, rect.get_height()),
-                xytext=(0, 3),
-                textcoords='offset points',
-                ha='center', va='bottom')
+    def GetDevices(self):
+        return sorted(list(self.results_by_device.keys()))
 
-    x = np.arange(len(ip_names))
-    fig, ax = plt.subplots()
-    num_bars = len(synth_methods)
-    width = (1.0 - 0.2)/num_bars
-    for i in range(num_bars):
-        # You specify the centre of the bars on the x axis as the first argument.
-        rects = ax.bar(x - (num_bars - 1)*width/2 + i*width,
-                       y_by_method[synth_methods[i]],
-                       width,
-                       label=synth_methods[i])
+    def SetDefaultDevice(self, device, grade):
+        """Helper to remove one dimension of lookups."""
+        self.device_and_grade = (device, grade)
+        self.synth_results = self.results_by_device[self.device_and_grade]
 
-        y_labels = map(lambda x: '{}\n@ {:.2f} ns'.format(x[0], x[1]/1000.0), zip(ip_names, acting_constraints))
+    # def GetAllIPs(synth_results):
+    #     """Sorted list of all IPs mentioned in synth results."""
+    #     return sorted(list(synth_results.keys()))
 
-    ax.set_xlabel('designs')
-    ax.set_xticks(x)
-    ax.set_xticklabels(y_labels, rotation='vertical')
-    #plt.xticks(rotation=45)
-    ax.set_ylabel(label)
-    ax.legend()
-    ax.set_title('{} vs designs'.format(label))
+    # def GetAllSynthMethods(synth_results):
+    #     """Return sorted list of every synth method mentioned in results."""
+    #     synth_methods_set = set()
+    #     # Find all the methods used over all results for all designs:
+    #     for ip_name, result_by_synth_method in synth_results.items():
+    #         synth_methods_set.update(result_by_synth_method.keys())
+    #     synth_methods = sorted(list(synth_methods_set))
 
-    fig.tight_layout()
-    plt.show()
+    def FindClockConstraintsForIP(self, ip_name):
+        assert (self.device_and_grade is not None), "call SetDefaultDevice"
+        # Collect the available constraints across all methods and runs for this IP.
+        result_by_synth_method = self.synth_results[ip_name]
+        return sorted(
+            # Flatten the list of lists and de-duplicate elements through a set.
+            set(functools.reduce(
+                operator.add,
+                # The following a list of a list of every key in the constraints dicts.
+                [list(
+                    result_by_synth_method[x].constraints.keys())
+                 for x in result_by_synth_method.keys()])),
+            # Impose natural number ordering on the values, even though they're strings.
+            key=int)
 
+    def WriteAllCSVs(self):
+        for device_and_grade, synth_results in self.results_by_device.items():
+            self.WriteOneCSV(device_and_grade, synth_results)
 
-def FindAllClockConstraintsAcrossAllMethods(result_by_synth_method):
-    # Collect the available constraints across all methods and runs for this IP.
-    if not result_by_synth_method:
-        return []
-    return sorted(
-        # Flatten the list of lists and de-duplicate elements through a set.
-        set(functools.reduce(
-            operator.add,
-            # The following a list of a list of every key in the constraints dicts.
-            [list(
-                result_by_synth_method[x].constraints.keys())
-             for x in result_by_synth_method.keys()])),
-        # Impose natural number ordering on the values, even though they're strings.
-        key=int)
-
-
-def DumpAllAsCSV(results_by_device, synth_methods, metrics):
-    value_if_no_result = 'none'
-    synth_method_list = sorted(synth_methods)
-    for device_and_grade, synth_results in results_by_device.items():
+    def WriteOneCSV(self, device_and_grade, synth_results):
+        value_if_no_result = 'none'
         csv_name = '{}-{}.csv'.format(*device_and_grade)
         with open(csv_name, 'w', newline='') as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=',', quotechar='"',
                                    quoting=csv.QUOTE_MINIMAL)
-            csvwriter.writerow(['ip', 'clk constraint (ps)', 'metric'] + synth_method_list)
+            csvwriter.writerow(['ip', 'clk constraint (ps)', 'metric'] + self.synth_methods)
             for ip_name, result_by_synth_method in synth_results.items():
-                all_constraints = FindAllClockConstraintsAcrossAllMethods(result_by_synth_method)
+                all_constraints = self.FindClockConstraintsForIP(ip_name)
                 for constr in all_constraints:
-                    for method_fetch, match_group, labels in metrics:
+                    for method_fetch, match_group, labels in self.metrics:
                         for label in labels:
                             line = [ip_name, constr, label]
-                            for method in synth_method_list:
+                            for method in self.synth_methods:
                                 getter = method_fetch(result_by_synth_method[method])
                                 if method in result_by_synth_method:
                                     value = getter(constr, label)
@@ -420,6 +403,235 @@ def DumpAllAsCSV(results_by_device, synth_methods, metrics):
                                     line.append(value_if_no_result)
                             csvwriter.writerow(line)
             print('wrote {}'.format(csv_name))
+
+    def GraphLabelForAllMethods(self, label, exclude_ips=set(), normalise_to='vivado'):
+        """Grouped bar chart of a label for every IP name.
+
+        Uses the value of constraint for which all other dimensions have
+        results, or the worst case if none.
+        """
+        # This could automatically filter results by designs with non-zero results.
+        ip_names = sorted(list(set(self.ip_names) - exclude_ips))
+        print(ip_names)
+        y_by_method = collections.defaultdict(list)
+        synth_methods = self.synth_methods
+        acting_constraints = []
+
+        # Fill in the values achieved by each design under each method for the
+        # given label:
+        for ip_name in ip_names:
+            result_by_synth_method = self.synth_results[ip_name]
+
+            all_constraints = list(map(int, self.FindClockConstraintsForIP(ip_name)))
+            # Ok, attempt to find the best constraint for which all methods pass.
+            if not all_constraints:
+              continue
+            best_constraint = max(all_constraints)
+
+            for clk in all_constraints:
+                meets = [result_by_synth_method[method].MetTimingAt(str(clk))
+                        if method in result_by_synth_method else False
+                        for method in synth_methods]
+                if all(meets) and clk < best_constraint:
+                    best_constraint = clk
+                #for method in synth_methods:
+                #    if result_by_synth_method[method].MetTimingAt(str(clk)):
+                #        print('{} {} met @ {} ps'.format(ip_name, method, clk))
+            acting_constraints.append(best_constraint)
+            #print('{} best clk: {}'.format(ip_name, best_constraint))
+
+            value_by_method = dict()
+
+            for method in synth_methods:
+                if method not in result_by_synth_method:
+                    print('{}: {} has no results'.format(ip_name, method))
+                    value_by_method[method] = 0
+                    continue
+                value = result_by_synth_method[method].GetUtilizationResult(str(best_constraint), label)
+                if value is None:
+                    print('{}: {}/{} has no results'.format(ip_name, method, label))
+                    value_by_method[method] = 0
+                    continue
+                # Extract the appropriate match group.
+                value = value[1]
+                try:
+                    value_by_method[method] = int(value)
+                except ValueError as e:
+                    print(e, file=sys.stderr)
+                    value_by_method[method] = 0
+                    continue
+            for key, value in value_by_method.items():
+                y_by_method[key].append(value)
+
+        if not synth_methods:
+            print("Cannot generate graphs (label={}): no synth methods found.".format(label))
+            return
+
+        if normalise_to and normalise_to in y_by_method:
+            denominators = y_by_method[normalise_to]
+            for method, y_values in y_by_method.items():
+                y_by_method[method] = list(
+                    map(lambda x: float(x[0])/float(x[1]) if x[1] != 0 else 0,
+                        zip(y_values, denominators)))
+
+        def autolabel(rects):
+            for rect in rects:
+                # FIXME(aryap): BAD USE OF i
+                ax.annotate('@ {}ps'.format(acting_constraints[i]),
+                    xy=(rect.get_x() + rect.get_width()/2, rect.get_height()),
+                    xytext=(0, 3),
+                    textcoords='offset points',
+                    ha='center', va='bottom')
+
+        x = np.arange(len(ip_names))
+        fig, ax = plt.subplots()
+        num_bars = len(synth_methods)
+        width = (1.0 - 0.2)/num_bars
+        for i in range(num_bars):
+            # You specify the centre of the bars on the x axis as the first argument.
+            rects = ax.bar(x - (num_bars - 1)*width/2 + i*width,
+                           y_by_method[synth_methods[i]],
+                           width,
+                           label=synth_methods[i])
+            #autolabel(rects)
+
+            y_labels = map(lambda x: '{}\n@ {:.2f} ns'.format(x[0], x[1]/1000.0), zip(ip_names, acting_constraints))
+
+        ax.set_xlabel('designs')
+        ax.set_xticks(x)
+        ax.set_xticklabels(y_labels, rotation='vertical')
+        #plt.xticks(rotation=45)
+        ax.set_ylabel('{}{}'.format(label,
+                                    ', norm. {} = 1'.format(normalise_to)
+                                    if normalise_to is not None else ''))
+        ax.legend()
+        ax.set_title('{} vs designs'.format(label))
+
+        fig.tight_layout()
+        plt.show()
+
+
+    def GraphMetricAcrossConstraints(self, label, ip_name):
+        results_by_synth_method = self.synth_results[ip_name]
+
+        all_valid_results = dict()
+        for method in self.synth_methods:
+            # Extract constraints and parameter if valid.
+            valid_results = dict()
+            method_results = results_by_synth_method[method]
+            for clk in method_results.constraints.keys():
+                if method_results.MetTimingAt(clk):
+                    result = method_results.GetUtilizationResult(clk, label)[1]
+                    valid_results[int(clk)] = int(result)
+            all_valid_results[method] = valid_results
+
+        # Now generate a plot of one line per method.
+        fig, ax = plt.subplots()
+
+        for method, results in all_valid_results.items():
+            data = sorted(results.items(), key=lambda x: x[0])
+            if not data:
+                print('{} has no results for {}/{}'.format(method, ip_name, label))
+                continue
+            clks, values = zip(*data)
+            ax.plot(clks, values, label=method)
+
+        ax.set(title='{} vs clock for "{}"'.format(label, ip_name),
+               ylabel=label,
+               xlabel='clock constraint (ps)')
+        ax.legend()
+        plt.show()
+
+
+    def GraphMinConstraintWithLabel(self, label, exclude_ips=set(), normalise_to='vivado'):
+        ip_names = sorted(list(set(self.ip_names) - exclude_ips))
+        y_by_method = collections.defaultdict(list)
+        annotation_by_method = collections.defaultdict(list)
+        synth_methods = self.synth_methods
+
+        for ip_name in ip_names:
+            result_by_synth_method = self.synth_results[ip_name]
+            all_constraints = list(map(int, self.FindClockConstraintsForIP(ip_name)))
+            if not all_constraints:
+                continue
+            value_by_method = dict()
+            for method in synth_methods:
+                values = [self.GetLabel(ip_name, method, str(clk), label)
+                          for clk in all_constraints]
+                # Pairs are (constraint, value)
+                pairs = list(zip(all_constraints, values))
+                pairs = [x for x in pairs if x[1] is not None]
+                #pairs = list((filter(lambda x: x[1] is not None, pairs))
+                pairs = list(map(lambda x: (x[0], float(x[1])), pairs))
+                # Find the minimum in the first dimension, the constraint.
+                least_pair = min(pairs, key=lambda x: x[0], default=None)
+                print(ip_name, label, method, least_pair)
+                #if not least_pair:
+                #    print('{} {} {} has no min value'.format(method, ip_name, label))
+
+                # Could be None
+                value_by_method[method] = least_pair
+            for key, value in value_by_method.items():
+                # 1/(time in s) = 1E12/(time in ps)
+                # as MHz, / 1E6 -> 1E6/(time in ps)
+                y, annotation = (1.0E6/value[0], str(value[1])) if value else (0, '')
+                print(y, annotation)
+                y_by_method[key].append(y)
+                annotation_by_method[key].append(annotation)
+
+        # FIXME(aryap): This is a copypasta of the previous graph fn. Refactor and reuse.
+        if not synth_methods:
+            print("Cannot generate graphs (label={}): no synth methods found.".format(label))
+            return
+
+        if normalise_to and normalise_to in y_by_method:
+            denominators = y_by_method[normalise_to]
+            for method, y_values in y_by_method.items():
+                y_by_method[method] = list(
+                    map(lambda x: float(x[0])/float(x[1]) if x[1] != 0 else 0,
+                        zip(y_values, denominators)))
+
+        def autolabel(rects, annotations):
+            for rect in range(len(rects)):
+                rect = rects[i]
+                annotation = annotations[i]
+                ax.annotate('@ {}ps'.format(annotation),
+                    xy=(rect.get_x() + rect.get_width()/2, rect.get_height()),
+                    xytext=(0, 3),
+                    textcoords='offset points',
+                    ha='center', va='bottom')
+
+        x = np.arange(len(ip_names))
+        fig, ax = plt.subplots()
+        num_bars = len(synth_methods)
+        width = (1.0 - 0.2)/num_bars
+        for i in range(num_bars):
+            # You specify the centre of the bars on the x axis as the first argument.
+            rects = ax.bar(x - (num_bars - 1)*width/2 + i*width,
+                           y_by_method[synth_methods[i]],
+                           width,
+                           label=synth_methods[i])
+            annotations = annotation_by_method[synth_methods[i]]
+
+            x_labels = map(lambda x: '{}\n@ {}'.format(x[0], x[1]),
+                    zip(ip_names, annotations))
+
+            autolabel(rects, annotations)
+
+        ax.set_xlabel('designs')
+        ax.set_xticks(x)
+        ax.set_xticklabels(x_labels, rotation='vertical')
+        #plt.xticks(rotation=45)
+        ax.set_ylabel('max freq. (MHz) {}'.format(
+                ', norm. {} = 1'.format(normalise_to)
+                if normalise_to is not None else ''))
+        ax.legend()
+        ax.set_title('{} vs designs'.format(label))
+
+        fig.tight_layout()
+        plt.show()
+
+
 
 
 def main():
@@ -439,71 +651,28 @@ def main():
         print('Could not find results in {}'.format(source_dir), file=sys.stderr)
         sys.exit(1)
 
-    results = []
-    ips = set()
-    synth_methods = set()
-    results_by_device = collections.defaultdict(
-        lambda: collections.defaultdict(lambda: collections.defaultdict(None)))
-    for entry in os.scandir(source_dir):
-        if not entry.is_dir(follow_symlinks=True):
-            # Skip non-directories.
-            continue
-        match = TEST_DIR_RE.match(entry.name)
-        if match:
-            result = Result(*match.groups(), os.path.join(entry.path))
-            results.append(result)
-            results_by_device[(result.device, result.grade)][result.ip][
-                    result.synth_method] = result
-            synth_methods.add(result.synth_method)
-            ips.add(result.ip)
-            result.ParseResults()
-        else:
-            print('Could not parse result dir name: {}'.format(entry.name))
+    collection = ResultCollection()
+    collection.ReadDirectory(source_dir)
 
-    print('Scanned {} result files'.format(len(results)))
-    print('Found {} IP(s); {} synth method(s)'.format(
-        len(ips), len(synth_methods)))
-
-    # These vary by device.
-    metrics = [
-            # 1 is the index of the 'number used' column in each output row of
-            # the Vivado results
-            (lambda x: x.GetUtilizationResult, 1,
-                ['CLB LUTs', 'Slice LUTs', 'LUT as Logic', 'LUT as Memory',
-                  'LUT as Shift Register', 'Slice Registers', 'Register as Flip Flop',
-                  'Register as Latch', 'Block RAM Tile', 'Bonded IOB']),
-                  #'LUT6', 'LUT5', 'LUT4', 'LUT3', 'LUT2', 'LUT1']),
-            (lambda x: x.GetRuntimeResult, 1,
-                ['place_design', 'route_design']),
-            (lambda x: x.GetRuntimeResult, 2,
-                ['place_design', 'route_design']),
-            (lambda x: x.GetTimingResult, 0,
-                    [TimingResult.SLACK_MET_OR_NOT_LABEL,
-                     TimingResult.CRITICAL_PATH_SLACK_LABEL,
-                     TimingResult.ARRIVAL_TIME_LABEL])]
-    #DumpAllAsCSV(results_by_device, synth_methods, metrics
+    collection.WriteAllCSVs()
 
     #ip_names = ['stereovision0', 'bgm', 'blob_merge', 'LU32PEEng', 'LU8PEEng',
     #        'boundtop', 'sha', 'LU64PEEng', 'arm_core', 'stereovision2']
-    device_and_grade = ('xc7a200', '1')
-    synth_results=results_by_device[device_and_grade]
-    ip_names = set(synth_results.keys()) - set(['mkSMAdapter4B'])
-    MakePrettyGraph(synth_results,
-                    'Slice LUTs',
-                    ip_names)
-    MakePrettyGraph(synth_results,
-                    'Slice LUTs',
-                    ip_names)
+    collection.SetDefaultDevice('xc7a200', '1')
+    #collection.GraphLabelForAllMethods('Slice LUTs', set(['mkSMAdapter4B']))
+    #collection.GraphMetricAcrossConstraints('Slice LUTs', 'mkPktMerge')
+    collection.GraphMinConstraintWithLabel('Slice LUTs', normalise_to='vivado')
 
-    device_and_grade = ('xcvu440', '1')
-    synth_results=results_by_device[device_and_grade]
-    ip_names = set(synth_results.keys()) - set(['mkSMAdapter4B'])
-    MakePrettyGraph(synth_results,
-                    'CLB LUTs',
-                    ip_names)
-    MakePrettyGraph(synth_results,
-                    'CLB LUTs',
-                    ip_names)
+    #device_and_grade = ('xcvu440', '1')
+    #if device_and_grade in results_by_device:
+    #    synth_results = results_by_device[device_and_grade]
+    #    ip_names = set(synth_results.keys()) - set(['mkSMAdapter4B'])
+    #    GraphLabelAllMethods(synth_results,
+    #                         'CLB LUTs',
+    #                         ip_names)
+    #    GraphLabelAllMethods(synth_results,
+    #                         'CLB LUTs',
+    #                         ip_names)
 
     #for ip in ip_names:
     #    GraphMetricAcrossConstraints(results_by_device[('xc7a200', '1')],

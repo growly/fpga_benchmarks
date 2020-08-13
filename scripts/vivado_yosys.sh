@@ -161,7 +161,7 @@ EOT
       fi
 
       cat >> ${ip}.ys <<EOT
-synth_xilinx -dff -flatten_before_abc ${synth_with_abc9} -edif ${edif}
+synth_xilinx -dff -flatten ${synth_with_abc9} -edif ${edif}
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT
 
