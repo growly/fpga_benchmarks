@@ -362,9 +362,12 @@ class ResultCollection:
     #     synth_methods = sorted(list(synth_methods_set))
 
     def FindClockConstraintsForIP(self, ip_name):
-        assert (self.device_and_grade is not None), "call SetDefaultDevice"
+        assert (self.device_and_grade is not None), 'call SetDefaultDevice'
         # Collect the available constraints across all methods and runs for this IP.
         result_by_synth_method = self.synth_results[ip_name]
+        if not result_by_synth_method.keys():
+            print('{}: No results for any clock constraints'.format(ip_name))
+            return []
         return sorted(
             # Flatten the list of lists and de-duplicate elements through a set.
             set(functools.reduce(
@@ -605,10 +608,16 @@ class ResultCollection:
         fig, ax = plt.subplots()
         num_bars = len(synth_methods)
         width = (1.0 - 0.2)/num_bars
+        xlabels = None
+
+        # Generate the vertical bars for each of the different synth methods.
         for i in range(num_bars):
+            y_values = y_by_method[synth_methods[i]]
+            if not y_values:
+                continue
             # You specify the centre of the bars on the x axis as the first argument.
             rects = ax.bar(x - (num_bars - 1)*width/2 + i*width,
-                           y_by_method[synth_methods[i]],
+                           y_values,
                            width,
                            label=synth_methods[i])
             annotations = annotation_by_method[synth_methods[i]]
@@ -620,7 +629,8 @@ class ResultCollection:
 
         ax.set_xlabel('designs')
         ax.set_xticks(x)
-        ax.set_xticklabels(x_labels, rotation='vertical')
+        if xlabels:
+            ax.set_xticklabels(x_labels, rotation='vertical')
         #plt.xticks(rotation=45)
         ax.set_ylabel('max freq. (MHz) {}'.format(
                 ', norm. {} = 1'.format(normalise_to)
