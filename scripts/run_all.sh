@@ -25,8 +25,7 @@ while [ "$1" != "" ]; do
     -j | --batch_size)      shift
                             BATCH_SIZE="$1"
                             ;;
-    -l | --lsf)             shift
-                            USE_LSF=true
+    -l | --lsf)             USE_LSF=true
                             ;;
     -d | --device )         shift
                             DEVICE="$1"
