@@ -113,7 +113,10 @@ EOT
 cd $(dirname ${path})
 EOT
     if [ "${path##*.}" == "gz" ]; then
-      gunzip -f -k ${path}
+      # This is portable to BWRC machines:
+      gunzip -c ${path} > ${path%.gz}
+      # This is too modern:
+      # gunzip -f -k ${path}
     fi
     cat >> test_${1}.tcl <<EOT
 if {[file exists "$(dirname ${path})/${ip}_vivado.tcl"] == 1} {
