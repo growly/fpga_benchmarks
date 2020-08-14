@@ -210,6 +210,14 @@ class Result:
             return False
         return result[0] == 'MET'
 
+    def BestMetTiming(self):
+        best_constraint = None
+        for constraint, result in self.constraints.items():
+            if self.MetTimingAt(constraint) and (
+                    best_constraint is None or float(constraint) < best_constraint):
+                best_constraint = float(constraint)
+        return best_constraint
+
     def GetTimingResult(self, constraint, label):
         try:
             constr = self.GetClockConstraintResult(constraint)
@@ -406,6 +414,32 @@ class ResultCollection:
                                     line.append(value_if_no_result)
                             csvwriter.writerow(line)
             print('wrote {}'.format(csv_name))
+
+    def SummariseWorkingIPs(self, csv_name=None):
+        """Print one row per IP indicating which methods passed timing."""
+        csvfile = open(csv_name, 'w', newline='') if csv_name else None
+        csvwriter = csv.writer(
+            csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL) if csvfile else None
+        line_format = '{:<30} {:>20} {:>20} {:>20}'
+        def WriteLine(entries):
+            if csvwriter:
+                csvwriter.writerow(entries)
+            else:
+                print(line_format.format(*entries))
+        WriteLine(['ip'] + self.synth_methods)
+        for ip_name in self.ip_names:
+            result_by_synth_method = self.synth_results[ip_name]
+            summary = [ip_name]
+            for synth_method in self.synth_methods:
+                if synth_method in result_by_synth_method:
+                    result = result_by_synth_method[synth_method]
+                    summary.append(result.BestMetTiming() or 'no timing')
+                else:
+                    summary.append('no result')
+
+            WriteLine(summary)
+        if csvfile:
+            csvfile.close()
 
     def GraphLabelForAllMethods(self, label, exclude_ips=set(), normalise_to='vivado'):
         """Grouped bar chart of a label for every IP name.
@@ -669,9 +703,10 @@ def main():
     #ip_names = ['stereovision0', 'bgm', 'blob_merge', 'LU32PEEng', 'LU8PEEng',
     #        'boundtop', 'sha', 'LU64PEEng', 'arm_core', 'stereovision2']
     collection.SetDefaultDevice('xc7a200', '1')
+    collection.SummariseWorkingIPs('summary.csv')
     #collection.GraphLabelForAllMethods('Slice LUTs', set(['mkSMAdapter4B']))
     #collection.GraphMetricAcrossConstraints('Slice LUTs', 'mkPktMerge')
-    collection.GraphMinConstraintWithLabel('Slice LUTs', normalise_to='vivado')
+    #collection.GraphMinConstraintWithLabel('Slice LUTs', normalise_to='vivado')
 
     #device_and_grade = ('xcvu440', '1')
     #if device_and_grade in results_by_device:
