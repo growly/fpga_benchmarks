@@ -112,7 +112,7 @@ batch_controlled_launch() {
   while [ ${i} -lt ${num_benchmarks} ]; do
     for ((j=0;j<${BATCH_SIZE} && i < ${num_benchmarks};j++)); do
       for method in ${SYNTH_METHODS}; do
-        launch_job "${benchmarks[i]}" "${method}" &
+        launch_job "${benchmarks[i]}" "${method}"
       done
       pids[${j}]=$!
       let "i=i+1"
