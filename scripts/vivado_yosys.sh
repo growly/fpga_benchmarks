@@ -103,6 +103,7 @@ synth_case() {
   fi
 
   cat > test_${1}.tcl <<EOT
+# generated at $(date)
 set_param general.maxThreads 1
 set_property IS_ENABLED 0 [get_drc_checks {PDRC-43}]
 EOT
@@ -112,12 +113,16 @@ EOT
     cat >> test_${1}.tcl <<EOT
 cd $(dirname ${path})
 EOT
-    if [ "${path##*.}" == "gz" ]; then
-      # This is portable to BWRC machines:
-      gunzip -c ${path} > ${path%.gz}
-      # This is too modern:
-      # gunzip -f -k ${path}
-    fi
+    verilog_source=
+    # FIXME(aryap): When spawning these jobs in parallel. If one jobs reads the
+    # .gz and another reads a .v (created on a previous run and included as an
+    # input to this run), they might both write to the same .tcl file here.
+    #if [ "${path##*.}" == "gz" ]; then
+    #  # This is portable to BWRC machines:
+    #  gunzip -c ${path} > ${path%.gz}
+    #  # This is too modern:
+    #  # gunzip -f -k ${path}
+    #fi
     cat >> test_${1}.tcl <<EOT
 if {[file exists "$(dirname ${path})/${ip}_vivado.tcl"] == 1} {
   source ${ip}_vivado.tcl
