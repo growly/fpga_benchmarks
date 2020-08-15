@@ -134,9 +134,7 @@ token_controlled_launch() {
   while [ ${i} -lt ${num_benchmarks} ]; do
     for ((j=0;j<${BATCH_SIZE} && i < ${num_benchmarks};j++)); do
       for method in ${SYNTH_METHODS}; do
-        #launch_job "${benchmarks[i]}" "${method}"
-        sleep 5 &
-        echo launch_job "${benchmarks[i]}" "${method}"
+        launch_job "${benchmarks[i]}" "${method}"
         if (( tokens++ >= BATCH_SIZE )); then
           wait -n
           let "tokens=tokens-1"
