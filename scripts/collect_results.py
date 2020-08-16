@@ -20,6 +20,8 @@ import numpy as np
 TEST_DIR_RE = re.compile(
     r'tab_(vivado|yosys|yosys-abc9)_([a-zA-Z0-9_.]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)')
 TEST_RESULT_FILE_RE = re.compile(r'test_(\d+).txt')
+TEST_LOG_FILE_RE = re.compile(r'test_(\d+)\.log')
+YOSYS_LOG_FILE_RE = re.compile(r'yosys\.log')
 
 
 class LineMatcher:
@@ -121,14 +123,21 @@ class TimingResult(RegexResult):
     SLACK_MET_OR_NOT_LABEL = 1
     CRITICAL_PATH_SLACK_LABEL = 2
     ARRIVAL_TIME_LABEL = 3
+    SAYS_NO_TIMING_PATHS_FOUND = 4
 
     @staticmethod
     def MatchSlackMetOrNot():
         spec = (r'^Slack \(([A-Z]+)\).*$')
         return re.compile(spec)
 
+    @staticmethod
     def MatchTimingReportLine(label):
         spec = (r'^\s+{}\s+(-?\d+\.\d+)\s+$'.format(label))
+        return re.compile(spec)
+
+    @staticmethod
+    def MatchSaysNoTimingPathsFound():
+        spec = r'No timing paths found\.'
         return re.compile(spec)
 
     def __init__(self):
@@ -138,7 +147,9 @@ class TimingResult(RegexResult):
             TimingResult.CRITICAL_PATH_SLACK_LABEL:
                 TimingResult.MatchTimingReportLine('slack'),
             TimingResult.ARRIVAL_TIME_LABEL:
-                TimingResult.MatchTimingReportLine('arrival time')
+                TimingResult.MatchTimingReportLine('arrival time'),
+            TimingResult.SAYS_NO_TIMING_PATHS_FOUND:
+                TimingResult.MatchSaysNoTimingPathsFound()
         }
 
         super().__init__(LABELS, lambda x: LABELS[x])
@@ -146,8 +157,9 @@ class TimingResult(RegexResult):
 
 class ClockConstraintResult:
 
-    def __init__(self, file_path):
-        self.file_path = file_path
+    def __init__(self):
+        self.file_path = None
+        self.log_path = None
         self.util = None
         self.timing = None
         self.runtime = None
@@ -163,10 +175,26 @@ class Result:
         self.path = path
         # This should be a dict of constraint: ClockConstraintResult
         self.constraints = dict()
+        # Usually this indicates an error.
+        self.yosys_logs = []
 
     def __repr__(self):
         return '({}-{}) {}, {} '.format(
             self.device, self.grade, self.ip, self.synth_method)
+
+    def ErrorsInYosysLogs(self):
+        ERROR_MATCH_RE = re.compile(r'error', re.IGNORECASE)
+        errors_found = []
+        for log in self.yosys_logs:
+            try:
+                with open(log) as f:
+                    for i, line in enumerate(f):
+                        match = ERROR_MATCH_RE.match(line)
+                        if match:
+                            errors_found.append('{}: {}'.format(i, line))
+            except Error as e:
+                print('Error opening {}'.format(log), file=sys.stderr)
+        return errors_found
 
     def GetClockConstraintResult(self, constraint):
         if constraint not in self.constraints:
@@ -202,7 +230,7 @@ class Result:
                 repr(self), err, self.path), file=sys.stderr)
             return None
 
-    def MetTimingAt(self, constr):
+    def DidMeetTimingAt(self, constr):
         """Whether the results show that timing was met at the given constraint."""
         result = self.GetTimingResult(
             constr, TimingResult.SLACK_MET_OR_NOT_LABEL)
@@ -213,16 +241,27 @@ class Result:
     def BestMetTiming(self):
         best_constraint = None
         for constraint, result in self.constraints.items():
-            if self.MetTimingAt(constraint) and (
+            if self.DidMeetTimingAt(constraint) and (
                     best_constraint is None or float(constraint) < best_constraint):
                 best_constraint = float(constraint)
         return best_constraint
 
+    def IsProbablyCombinational(self):
+        all_constraints = sorted([float(x) for x in self.constraints.keys()])
+        if not all_constraints:
+            return False
+        most_loose_constraint = all_constraints.pop()
+        return self.GetTimingResult(most_loose_constraint,
+                                    TimingResult.SAYS_NO_TIMING_PATHS_FOUND)
+
+    def HasResults(self):
+        return bool(self.constraints)
+
     def GetTimingResult(self, constraint, label):
         try:
             constr = self.GetClockConstraintResult(constraint)
-            if constr.util is None:
-                raise ValueError('missing results for utilisation'.format(
+            if constr.timing is None:
+                raise ValueError('missing results for timing'.format(
                     repr(self)))
             return constr.timing.GetLabel(label)
         except ValueError as err:
@@ -230,14 +269,27 @@ class Result:
                 repr(self), err, self.path), file=sys.stderr)
             return None
 
-
     def ParseResults(self):
         for f in os.listdir(self.path):
+            f_path = os.path.join(self.path, f)
             match = TEST_RESULT_FILE_RE.match(f)
-            if (match):
+            if match:
                 constraint = match.group(1)
-                result_file = os.path.join(self.path, f)
-                self.constraints[constraint] = ClockConstraintResult(result_file)
+                result = ClockConstraintResult()
+                result.file_path = f_path
+                self.constraints[constraint] = result
+                continue
+            match = TEST_LOG_FILE_RE.match(f)
+            if match:
+                constraint = match.group(1)
+                assert constraint not in self.constraints
+                result = ClockConstraintResult()
+                result.file_path = f_path
+                self.constraints[constraint] = result
+                continue
+            match = YOSYS_LOG_FILE_RE.match(f)
+            if match:
+                self.yosys_logs.append(f_path)
 
         for constraint, constraint_result in self.constraints.items():
             util = UtilizationResult()
@@ -288,7 +340,9 @@ class ResultCollection:
                 (lambda x: x.GetTimingResult, 0,
                         [TimingResult.SLACK_MET_OR_NOT_LABEL,
                          TimingResult.CRITICAL_PATH_SLACK_LABEL,
-                         TimingResult.ARRIVAL_TIME_LABEL])]
+                         TimingResult.ARRIVAL_TIME_LABEL]),
+                (lambda x: x.GetTimingResult, None,
+                        [TimingResult.SAYS_NO_TIMING_PATHS_FOUND])]
 
         self.label_configs = dict()
         for getter, match_group, labels in self.metrics:
@@ -298,7 +352,6 @@ class ResultCollection:
                 config.getter_fn_template = getter
                 config.match_group = match_group
                 self.label_configs[label] = config
-        
 
     def GetLabel(self, ip_name, method, constr, label):
         try:
@@ -308,12 +361,14 @@ class ResultCollection:
             result = getter_fn(constr, label)
             if result is None:
                 return None
+            if match_group is None:
+                # We know result isn't None, so there was a match. So this must be true.
+                return True
             return result[config.match_group]
 
         except KeyError as e:
             print('label {} {} {} not found: {}'.format(ip_name, method, label, e))
             return None
-        
 
     def ReadDirectory(self, source_dir):
         results = []
@@ -405,11 +460,17 @@ class ResultCollection:
                         for label in labels:
                             line = [ip_name, constr, label]
                             for method in self.synth_methods:
+                                if method not in result_by_synth_method:
+                                    line.append(value_if_no_result)
+                                    continue
                                 getter = method_fetch(result_by_synth_method[method])
                                 if method in result_by_synth_method:
                                     value = getter(constr, label)
-                                    line.append(
-                                            value[match_group] if value else value_if_no_result)
+                                    if match_group is None:
+                                        line.append(value)
+                                    else:
+                                        line.append(value[match_group]
+                                            if value else value_if_no_result)
                                 else:
                                     line.append(value_if_no_result)
                             csvwriter.writerow(line)
@@ -431,14 +492,29 @@ class ResultCollection:
             result_by_synth_method = self.synth_results[ip_name]
             summary = [ip_name]
             for synth_method in self.synth_methods:
+                description = '?'
                 if synth_method in result_by_synth_method:
                     result = result_by_synth_method[synth_method]
-                    summary.append(result.BestMetTiming() or 'no timing')
+                    if not result.HasResults():
+                        description = 'no results'
+                    else:
+                        best_met_timing = result.BestMetTiming()
+                        if best_met_timing is not None:
+                            description = str(best_met_timing)
+                        elif result.IsProbablyCombinational():
+                            description = 'yes'
+                        else:
+                            description = 'no timing'
+                    yosys_errors = result.ErrorsInYosysLogs()
+                    if yosys_errors:
+                        description = 'yosys errors: ' + '; '.join(yosys_errors)
                 else:
-                    summary.append('no result')
+                    description = 'no result'
+                summary.append(description)
 
             WriteLine(summary)
         if csvfile:
+            print('wrote {}'.format(csv_name))
             csvfile.close()
 
     def GraphLabelForAllMethods(self, label, exclude_ips=set(), normalise_to='vivado'):
@@ -466,13 +542,13 @@ class ResultCollection:
             best_constraint = max(all_constraints)
 
             for clk in all_constraints:
-                meets = [result_by_synth_method[method].MetTimingAt(str(clk))
+                meets = [result_by_synth_method[method].DidMeetTimingAt(str(clk))
                         if method in result_by_synth_method else False
                         for method in synth_methods]
                 if all(meets) and clk < best_constraint:
                     best_constraint = clk
                 #for method in synth_methods:
-                #    if result_by_synth_method[method].MetTimingAt(str(clk)):
+                #    if result_by_synth_method[method].DidMeetTimingAt(str(clk)):
                 #        print('{} {} met @ {} ps'.format(ip_name, method, clk))
             acting_constraints.append(best_constraint)
             #print('{} best clk: {}'.format(ip_name, best_constraint))
@@ -557,7 +633,7 @@ class ResultCollection:
             valid_results = dict()
             method_results = results_by_synth_method[method]
             for clk in method_results.constraints.keys():
-                if method_results.MetTimingAt(clk):
+                if method_results.DidMeetTimingAt(clk):
                     result = method_results.GetUtilizationResult(clk, label)[1]
                     valid_results[int(clk)] = int(result)
             all_valid_results[method] = valid_results
@@ -676,8 +752,6 @@ class ResultCollection:
         plt.show()
 
 
-
-
 def main():
     parser = argparse.ArgumentParser(
             description='Collect synthesis benchmark results from a given directory')
@@ -703,7 +777,7 @@ def main():
     #ip_names = ['stereovision0', 'bgm', 'blob_merge', 'LU32PEEng', 'LU8PEEng',
     #        'boundtop', 'sha', 'LU64PEEng', 'arm_core', 'stereovision2']
     collection.SetDefaultDevice('xc7a200', '1')
-    collection.SummariseWorkingIPs('summary.csv')
+    collection.SummariseWorkingIPs('summary_xc7a200-1.csv')
     #collection.GraphLabelForAllMethods('Slice LUTs', set(['mkSMAdapter4B']))
     #collection.GraphMetricAcrossConstraints('Slice LUTs', 'mkPktMerge')
     #collection.GraphMinConstraintWithLabel('Slice LUTs', normalise_to='vivado')
@@ -723,6 +797,9 @@ def main():
     #    GraphMetricAcrossConstraints(results_by_device[('xc7a200', '1')],
     #                                 'Slice LUTs',
     #                                 ip)
+
+    collection.SetDefaultDevice('xcvu440', '1')
+    collection.SummariseWorkingIPs('summary_xcvu440.csv')
 
 
 if __name__ == '__main__':
