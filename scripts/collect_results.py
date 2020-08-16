@@ -24,6 +24,19 @@ TEST_LOG_FILE_RE = re.compile(r'test_(\d+)\.log')
 YOSYS_LOG_FILE_RE = re.compile(r'yosys\.log')
 
 
+def GetErrorsInFile(filename, matcher=re.compile(r'^error:', re.IGNORECASE)):
+    errors_found = []
+    try:
+        with open(filename) as f:
+            for i, line in enumerate(f):
+                match = matcher.match(line)
+                if match:
+                    errors_found.append('{}: {}'.format(i, line))
+    except Exception as e:
+        print('Error opening {}'.format(filename), file=sys.stderr)
+    return errors_found
+
+
 class LineMatcher:
 
     def __init__(self):
@@ -123,9 +136,9 @@ class RuntimeResult(RegexResult):
                          RuntimeResult.MatchTimeRow)
 
 class TimingResult(RegexResult):
-    SLACK_MET_OR_NOT_LABEL = 1
-    CRITICAL_PATH_SLACK_LABEL = 2
-    ARRIVAL_TIME_LABEL = 3
+    SLACK_MET_OR_NOT_LABEL = 'Slack Met'
+    CRITICAL_PATH_SLACK_LABEL = 'Critical Path Slack'
+    ARRIVAL_TIME_LABEL = 'Arrival Time'
 
     @staticmethod
     def MatchSlackMetOrNot():
@@ -149,18 +162,19 @@ class TimingResult(RegexResult):
         super().__init__(LABELS, lambda x: LABELS[x])
 
 
-class ErrorResult(RegexResult):
-    SAYS_NO_TIMING_PATHS_FOUND = 'NoTimingPathsFound'
+class MiscResult(RegexResult):
+    """This class is for finding errors in successful runs, i.e. when the output is a .txt."""
+    SAYS_NO_TIMING_PATHS_FOUND = 'NoTimingPathsFound?'
 
     @staticmethod
     def MatchSaysNoTimingPathsFound():
-        spec = r'^No timing paths found\.$'
+        spec = r'^No timing paths found.$'
         return re.compile(spec)
 
     def __init__(self):
         LABELS = {
-            ErrorResult.SAYS_NO_TIMING_PATHS_FOUND:
-                ErrorResult.MatchSaysNoTimingPathsFound()
+            MiscResult.SAYS_NO_TIMING_PATHS_FOUND:
+                MiscResult.MatchSaysNoTimingPathsFound()
         }
         super().__init__(tuple(LABELS.keys()), lambda x: LABELS[x])
 
@@ -173,7 +187,7 @@ class ClockConstraintResult:
         self.util = None
         self.timing = None
         self.runtime = None
-        self.errors = None
+        self.misc = None
 
 
 class Result:
@@ -194,17 +208,9 @@ class Result:
             self.device, self.grade, self.ip, self.synth_method)
 
     def ErrorsInYosysLogs(self):
-        ERROR_MATCH_RE = re.compile(r'error', re.IGNORECASE)
         errors_found = []
         for log in self.yosys_logs:
-            try:
-                with open(log) as f:
-                    for i, line in enumerate(f):
-                        match = ERROR_MATCH_RE.match(line)
-                        if match:
-                            errors_found.append('{}: {}'.format(i, line))
-            except Error as e:
-                print('Error opening {}'.format(log), file=sys.stderr)
+            errors_found.extend(GetErrorsInFile(log))
         return errors_found
 
     def GetClockConstraintResult(self, constraint):
@@ -258,12 +264,22 @@ class Result:
         return best_constraint
 
     def IsProbablyCombinational(self):
-        all_constraints = sorted([float(x) for x in self.constraints.keys()])
+        all_constraints = sorted(list(self.constraints.keys()), key=lambda x: float(x))
         if not all_constraints:
             return False
         most_loose_constraint = all_constraints.pop()
-        return self.GetErrorResult(most_loose_constraint,
-                                   ErrorResult.SAYS_NO_TIMING_PATHS_FOUND)
+        result = self.GetMiscResult(most_loose_constraint,
+                                    MiscResult.SAYS_NO_TIMING_PATHS_FOUND)
+        return result == True
+
+    def GenericErrors(self):
+        """Collect all the 'error's in the log_path, if any."""
+        errors = []
+        for _, result in self.constraints.items():
+            if result.log_path is None:
+                continue
+            errors.extend(GetErrorsInFile(result.log_path))
+        return errors
 
     def HasResults(self):
         return bool(self.constraints)
@@ -280,13 +296,13 @@ class Result:
                 repr(self), err, self.path), file=sys.stderr)
             return None
 
-    def GetErrorResult(self, constraint, label):
+    def GetMiscResult(self, constraint, label):
         try:
-            constr = self.GetClockConstraintResult(constraint)
-            if constr.errors is None:
-                raise ValueError('missing results for errors'.format(
+            result = self.GetClockConstraintResult(constraint)
+            if result.misc is None:
+                raise ValueError('missing results for misc'.format(
                     repr(self)))
-            return constr.errors.GetLabel(label)
+            return result.misc.GetLabel(label)
         except ValueError as err:
             print('{} {}, see {}'.format(
                 repr(self), err, self.path), file=sys.stderr)
@@ -307,7 +323,7 @@ class Result:
                 constraint = match.group(1)
                 assert constraint not in self.constraints
                 result = ClockConstraintResult()
-                result.file_path = f_path
+                result.log_path = f_path
                 self.constraints[constraint] = result
                 continue
             match = YOSYS_LOG_FILE_RE.match(f)
@@ -315,20 +331,22 @@ class Result:
                 self.yosys_logs.append(f_path)
 
         for constraint, constraint_result in self.constraints.items():
+            if not constraint_result.file_path:
+                continue
             util = UtilizationResult()
             runtime = RuntimeResult()
             timing = TimingResult()
-            errors = ErrorResult()
+            misc = MiscResult()
             with open(constraint_result.file_path) as f:
                 for i, line in enumerate(f):
                     util.MatchNext(line)
                     runtime.MatchNext(line)
                     timing.MatchNext(line)
-                    errors.MatchNext(line)
+                    misc.MatchNext(line)
             constraint_result.util = util
             constraint_result.runtime = runtime
             constraint_result.timing = timing
-            constraint_result.errors = errors
+            constraint_result.misc = misc
 
 
 class LabelConfig:
@@ -367,8 +385,8 @@ class ResultCollection:
                         [TimingResult.SLACK_MET_OR_NOT_LABEL,
                          TimingResult.CRITICAL_PATH_SLACK_LABEL,
                          TimingResult.ARRIVAL_TIME_LABEL]),
-                (lambda x: x.GetErrorResult, None,
-                        [ErrorResult.SAYS_NO_TIMING_PATHS_FOUND])]
+                (lambda x: x.GetMiscResult, None,
+                        [MiscResult.SAYS_NO_TIMING_PATHS_FOUND])]
 
         self.label_configs = dict()
         for getter, match_group, labels in self.metrics:
@@ -493,7 +511,7 @@ class ResultCollection:
                                 if method in result_by_synth_method:
                                     value = getter(constr, label)
                                     if match_group is None:
-                                        line.append(value)
+                                        line.append(value or value_if_no_result)
                                     else:
                                         line.append(value[match_group]
                                             if value else value_if_no_result)
@@ -530,7 +548,11 @@ class ResultCollection:
                         elif result.IsProbablyCombinational():
                             description = 'yes'
                         else:
-                            description = 'no timing'
+                            errors = result.GenericErrors()
+                            if errors:
+                                description = 'vivado errors: ' + '; '.join(errors)
+                            else:
+                                description = 'unknown failure'
                     yosys_errors = result.ErrorsInYosysLogs()
                     if yosys_errors:
                         description = 'yosys errors: ' + '; '.join(yosys_errors)
