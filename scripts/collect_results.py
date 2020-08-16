@@ -67,7 +67,10 @@ class RegexResult:
     def MatchNext(self, text):
         key, match = self.matcher.MatchText(text)
         if match:
-            self.results[key] = match.groups()
+            if match.groups():
+                self.results[key] = match.groups()
+            else:
+                self.results[key] = True
             if self.line_matchers:
                 self.matcher = self.line_matchers.popleft()
 
@@ -123,7 +126,6 @@ class TimingResult(RegexResult):
     SLACK_MET_OR_NOT_LABEL = 1
     CRITICAL_PATH_SLACK_LABEL = 2
     ARRIVAL_TIME_LABEL = 3
-    SAYS_NO_TIMING_PATHS_FOUND = 4
 
     @staticmethod
     def MatchSlackMetOrNot():
@@ -135,11 +137,6 @@ class TimingResult(RegexResult):
         spec = (r'^\s+{}\s+(-?\d+\.\d+)\s+$'.format(label))
         return re.compile(spec)
 
-    @staticmethod
-    def MatchSaysNoTimingPathsFound():
-        spec = r'No timing paths found\.'
-        return re.compile(spec)
-
     def __init__(self):
         LABELS = {
             TimingResult.SLACK_MET_OR_NOT_LABEL:
@@ -147,12 +144,25 @@ class TimingResult(RegexResult):
             TimingResult.CRITICAL_PATH_SLACK_LABEL:
                 TimingResult.MatchTimingReportLine('slack'),
             TimingResult.ARRIVAL_TIME_LABEL:
-                TimingResult.MatchTimingReportLine('arrival time'),
-            TimingResult.SAYS_NO_TIMING_PATHS_FOUND:
-                TimingResult.MatchSaysNoTimingPathsFound()
+                TimingResult.MatchTimingReportLine('arrival time')
         }
-
         super().__init__(LABELS, lambda x: LABELS[x])
+
+
+class ErrorResult(RegexResult):
+    SAYS_NO_TIMING_PATHS_FOUND = 'NoTimingPathsFound'
+
+    @staticmethod
+    def MatchSaysNoTimingPathsFound():
+        spec = r'^No timing paths found\.$'
+        return re.compile(spec)
+
+    def __init__(self):
+        LABELS = {
+            ErrorResult.SAYS_NO_TIMING_PATHS_FOUND:
+                ErrorResult.MatchSaysNoTimingPathsFound()
+        }
+        super().__init__(tuple(LABELS.keys()), lambda x: LABELS[x])
 
 
 class ClockConstraintResult:
@@ -163,6 +173,7 @@ class ClockConstraintResult:
         self.util = None
         self.timing = None
         self.runtime = None
+        self.errors = None
 
 
 class Result:
@@ -251,8 +262,8 @@ class Result:
         if not all_constraints:
             return False
         most_loose_constraint = all_constraints.pop()
-        return self.GetTimingResult(most_loose_constraint,
-                                    TimingResult.SAYS_NO_TIMING_PATHS_FOUND)
+        return self.GetErrorResult(most_loose_constraint,
+                                   ErrorResult.SAYS_NO_TIMING_PATHS_FOUND)
 
     def HasResults(self):
         return bool(self.constraints)
@@ -264,6 +275,18 @@ class Result:
                 raise ValueError('missing results for timing'.format(
                     repr(self)))
             return constr.timing.GetLabel(label)
+        except ValueError as err:
+            print('{} {}, see {}'.format(
+                repr(self), err, self.path), file=sys.stderr)
+            return None
+
+    def GetErrorResult(self, constraint, label):
+        try:
+            constr = self.GetClockConstraintResult(constraint)
+            if constr.errors is None:
+                raise ValueError('missing results for errors'.format(
+                    repr(self)))
+            return constr.errors.GetLabel(label)
         except ValueError as err:
             print('{} {}, see {}'.format(
                 repr(self), err, self.path), file=sys.stderr)
@@ -295,14 +318,17 @@ class Result:
             util = UtilizationResult()
             runtime = RuntimeResult()
             timing = TimingResult()
+            errors = ErrorResult()
             with open(constraint_result.file_path) as f:
                 for i, line in enumerate(f):
                     util.MatchNext(line)
                     runtime.MatchNext(line)
                     timing.MatchNext(line)
+                    errors.MatchNext(line)
             constraint_result.util = util
             constraint_result.runtime = runtime
             constraint_result.timing = timing
+            constraint_result.errors = errors
 
 
 class LabelConfig:
@@ -341,8 +367,8 @@ class ResultCollection:
                         [TimingResult.SLACK_MET_OR_NOT_LABEL,
                          TimingResult.CRITICAL_PATH_SLACK_LABEL,
                          TimingResult.ARRIVAL_TIME_LABEL]),
-                (lambda x: x.GetTimingResult, None,
-                        [TimingResult.SAYS_NO_TIMING_PATHS_FOUND])]
+                (lambda x: x.GetErrorResult, None,
+                        [ErrorResult.SAYS_NO_TIMING_PATHS_FOUND])]
 
         self.label_configs = dict()
         for getter, match_group, labels in self.metrics:
