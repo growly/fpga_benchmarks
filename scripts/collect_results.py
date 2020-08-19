@@ -23,18 +23,27 @@ TEST_RESULT_FILE_RE = re.compile(r'test_(\d+).txt')
 TEST_LOG_FILE_RE = re.compile(r'test_(\d+)\.log')
 YOSYS_LOG_FILE_RE = re.compile(r'yosys\.log')
 
+ERROR_MATCHERS = {
+    'yosys errors': re.compile(r'^ERROR:', re.IGNORECASE),
+    'vivado errors': re.compile(r'^ERROR:', re.IGNORECASE),
+    'vivado critical warnings': re.compile(r'^CRITICAL WARNING:', re.IGNORECASE),
+    'no clocks': re.compile(r'.*Vivado 12-3502.*')  # Design has no clocks defined.
+}
 
-def GetErrorsInFile(filename, matcher=re.compile(r'^error:', re.IGNORECASE)):
+
+def GetErrorsInFile(filename, error_matchers, results):
     errors_found = []
     try:
         with open(filename) as f:
+            basename = os.path.basename(filename)
             for i, line in enumerate(f):
-                match = matcher.match(line)
-                if match:
-                    errors_found.append('{}: {}'.format(i, line))
+                for key, matcher in error_matchers.items():
+                    match = matcher.match(line)
+                    if match:
+                        # To strip() or not to strip()?
+                        results[key].append('{}:{}: {}'.format(basename, i, line))
     except Exception as e:
-        print('Error opening {}'.format(filename), file=sys.stderr)
-    return errors_found
+        print('Error opening {}: {}'.format(filename, e), file=sys.stderr)
 
 
 class LineMatcher:
@@ -188,6 +197,17 @@ class ClockConstraintResult:
         self.timing = None
         self.runtime = None
         self.misc = None
+        self.errors_and_warnings = collections.defaultdict(list)
+
+    def DigestErrors(self):
+        # TODO(aryap): Here we assume that the file to parse is either the
+        # error log or the command output, since we know that there can't be
+        # both (vivado_yosys.sh renames the .log to .txt on success). We might
+        # need to separate which file we search for each type of error.
+        filename = self.file_path or self.log_path
+        if not filename:
+            return
+        GetErrorsInFile(filename, ERROR_MATCHERS, self.errors_and_warnings)
 
 
 class Result:
@@ -202,16 +222,20 @@ class Result:
         self.constraints = dict()
         # Usually this indicates an error.
         self.yosys_logs = []
+        # Map some sort of key describing the error line we matched to all the
+        # lines which matched it.
+        self.errors_and_warnings = collections.defaultdict(list)
 
     def __repr__(self):
         return '({}-{}) {}, {} '.format(
             self.device, self.grade, self.ip, self.synth_method)
 
-    def ErrorsInYosysLogs(self):
-        errors_found = []
-        for log in self.yosys_logs:
-            errors_found.extend(GetErrorsInFile(log))
-        return errors_found
+    def AllErrors(self):
+        errors = list(self.errors_and_warnings.values())
+        for _, constraint_result in self.constraints.items():
+            errors.extend(list(constraint_result.errors_and_warnings.values()))
+        # 'errors' is still a list of lists.
+        return functools.reduce(operator.add, errors) if errors else []
 
     def GetClockConstraintResult(self, constraint):
         if constraint not in self.constraints:
@@ -270,16 +294,10 @@ class Result:
         most_loose_constraint = all_constraints.pop()
         result = self.GetMiscResult(most_loose_constraint,
                                     MiscResult.SAYS_NO_TIMING_PATHS_FOUND)
+        if 'no clocks' in self.constraints[most_loose_constraint].errors_and_warnings:
+            print('{} has no clocks!'.format(repr(self)))
+            return False
         return result == True
-
-    def GenericErrors(self):
-        """Collect all the 'error's in the log_path, if any."""
-        errors = []
-        for _, result in self.constraints.items():
-            if result.log_path is None:
-                continue
-            errors.extend(GetErrorsInFile(result.log_path))
-        return errors
 
     def HasResults(self):
         return bool(self.constraints)
@@ -309,6 +327,7 @@ class Result:
             return None
 
     def ParseResults(self):
+        print('Parsing results for {}'.format(self))
         for f in os.listdir(self.path):
             f_path = os.path.join(self.path, f)
             match = TEST_RESULT_FILE_RE.match(f)
@@ -347,6 +366,15 @@ class Result:
             constraint_result.runtime = runtime
             constraint_result.timing = timing
             constraint_result.misc = misc
+
+        self.DigestErrors()
+
+    def DigestErrors(self):
+        print('Collecting errors for {}'.format(self))
+        for _, result in self.constraints.items():
+            result.DigestErrors()
+        for log in self.yosys_logs:
+            GetErrorsInFile(log, ERROR_MATCHERS, self.errors_and_warnings)
 
 
 class LabelConfig:
@@ -548,14 +576,11 @@ class ResultCollection:
                         elif result.IsProbablyCombinational():
                             description = 'yes'
                         else:
-                            errors = result.GenericErrors()
+                            errors = result.AllErrors()
                             if errors:
-                                description = 'vivado errors: ' + '; '.join(errors)
+                                description = '; '.join(errors)
                             else:
                                 description = 'unknown failure'
-                    yosys_errors = result.ErrorsInYosysLogs()
-                    if yosys_errors:
-                        description = 'yosys errors: ' + '; '.join(yosys_errors)
                 else:
                     description = 'no result'
                 summary.append(description)

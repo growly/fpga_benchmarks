@@ -5,7 +5,7 @@ RUN_DIR="${SCRIPT_DIR}/../runs"
 TEST_SCRIPT="${SCRIPT_DIR}/vivado_yosys.sh"
 STATIC_TEST_ARGS="-s 30000"
 BENCHMARK_DIR=  # $(readlink -f "${1:-vtr/verilog}")
-BATCH_SIZE=10 # Will run 3x as many jobs as this at once
+BATCH_SIZE=5 # Actually spawns 3x this many jobs, one for each synth method (below)
 USE_LSF=false
 DEVICE="xc7a200"
 SYNTH_METHODS="vivado yosys yosys-abc9"
@@ -80,9 +80,6 @@ fi
 
 pushd ${RUN_DIR}
 
-i=0
-pids=()
-
 LSF_PREFIX=
 LSF_PREFIX_LOG=
 LSF_MEMORY_LIMIT_KB=$((192*1024))  # 192 GB, our default unit is apparently MB
@@ -95,26 +92,34 @@ if [ ${USE_LSF} = true ]; then
 fi
 
 launch_job() {
-  benchmark="$1"
-  method="$2"
+  pid_index=$1
+  benchmark="$2"
+  method="$3"
   if [ -n "${LSF_PREFIX}" ]; then
     # Add a meaningful log file to the LSF command if it's being used.
     LSF_PREFIX_LOG="-o bsub_${method}_$(basename ${benchmarks[i]}).log"
   fi
-  echo ${LSF_PREFIX} ${LSF_PREFIX_LOG} ${TEST_SCRIPT} -i "${benchmark}" ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE}
+  echo ${pid_index}: ${LSF_PREFIX} ${LSF_PREFIX_LOG} ${TEST_SCRIPT} -i "${benchmark}" ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE}
   ${LSF_PREFIX} ${LSF_PREFIX_LOG} ${TEST_SCRIPT} -i "${benchmark}" ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} &
+  pids[${pid_index}]=$!
 }
 
-# Dispatch ${BATCH_SIZE}-many jobs in parallel and wait for them to complete,
-# then continue, until all jobs are complete.
+# Turn the list of methods into an array so we have more power.
+read -r -a synth_method_array <<< "${SYNTH_METHODS}"
+
+# Dispatch ${BATCH_SIZE}-many groups of jobs in parallel and wait for them to
+# complete, then continue, until all jobs are complete.
 batch_controlled_launch() {
-  i=0
+  let "i=0"
   while [ ${i} -lt ${num_benchmarks} ]; do
+    unset pids
+    pids=()
     for ((j=0;j<${BATCH_SIZE} && i < ${num_benchmarks};j++)); do
-      for method in ${SYNTH_METHODS}; do
-        launch_job "${benchmarks[i]}" "${method}"
+      let "k=0"
+      for method in "${synth_method_array[@]}"; do
+        launch_job "$(( j*${#synth_method_array[@]} + k ))" "${benchmarks[i]}" "${method}"
+        let "k=k+1"
       done
-      pids[${j}]=$!
       let "i=i+1"
     done
     echo "Dispatched ${#pids[@]} jobs"
@@ -133,8 +138,8 @@ token_controlled_launch() {
   tokens=0
   while [ ${i} -lt ${num_benchmarks} ]; do
     for ((j=0;j<${BATCH_SIZE} && i < ${num_benchmarks};j++)); do
-      for method in ${SYNTH_METHODS}; do
-        launch_job "${benchmarks[i]}" "${method}"
+      for method in "${synth_method_array[@]}"; do
+        launch_job 0 "${benchmarks[i]}" "${method}"
         if (( tokens++ >= BATCH_SIZE )); then
           wait -n
           let "tokens=tokens-1"
@@ -145,14 +150,12 @@ token_controlled_launch() {
   done
 }
 
-token_controlled_launch
-
 # Test is wait -n makes sense?
 # Really to test if we're on bash >4.3. I mean, _really_ we want something portable.
 # "All builtins return an exit status of 2 to indicate incorrect usage,
 # generally invalid options or missing arguments."
 # https://www.gnu.org/software/bash/manual/html_node/Exit-Status.html
-wait -n
+bash -c "wait -n" 2>/dev/null
 return_value=$?
 if (( return_value == 2 )); then
   echo "Using batch-controlled launch"

@@ -96,6 +96,7 @@ cd ${test_name}
 
 synth_case() {
   run_name="test_${1}"
+  xdc_file="test_${1}.xdc"
 
   if [ -f test_${1}.txt ]; then
     echo "${test_name} reusing cached test_${1}."
@@ -113,7 +114,6 @@ EOT
     cat >> test_${1}.tcl <<EOT
 cd $(dirname ${path})
 EOT
-    verilog_source=
     # FIXME(aryap): When spawning these jobs in parallel. If one jobs reads the
     # .gz and another reads a .v (created on a previous run and included as an
     # input to this run), they might both write to the same .tcl file here.
@@ -137,7 +137,7 @@ if {[file exists "$(dirname ${path})/${ip}.top"] == 1} {
   set_property TOP [lindex [find_top] 0] [current_fileset]
 }
 cd ${pwd}
-read_xdc test_${1}.xdc
+read_xdc -unmanaged ${xdc_file}
 synth_design -part ${xl_device} -mode out_of_context ${SYNTH_DESIGN_OPTS}
 opt_design -directive Explore
 EOT
@@ -185,22 +185,35 @@ EOT
 
     cat >> test_${1}.tcl <<EOT
 read_edif ${edif}
-read_xdc test_${1}.xdc
+read_xdc -unmanaged ${xdc_file}
 link_design -part ${xl_device} -mode out_of_context -top ${ip}
 EOT
   fi
 
+  cat > "${xdc_file}" <<EOT
+# Auto-generated XDC file; read with read_xdc -unmanaged
+EOT
   speed_ns=$(printf %.2f "$((speed))e-3")
   clock_file="$(dirname ${path})/${ip}.clock"
   clock_expr=
   if [ -f "${clock_file}" ]; then
     clock_expr=$(<${clock_file})
-  else
-    clock_expr="[get_ports -nocase -regexp .*cl(oc)?k.*]"
-  fi
-  cat > test_${1}.xdc <<EOT
+    cat >> "${xdc_file}" <<EOT
+if {[llength [get_ports -quiet -nocase ${clock_expr}]] == 0} {
+  puts "ERROR: Explicit clock ${clock_expr} from ${clock_file} not found"
+}
 create_clock -period ${speed_ns} ${clock_expr}
 EOT
+  else
+    clock_expr="[get_ports -quiet -nocase -regexp .*cl(oc)?k.*]"
+    cat >> "${xdc_file}" <<EOT
+if {[llength ${clock_expr}] != 0} {
+  create_clock -period ${speed_ns} ${clock_expr}
+} else {
+  puts "WARNING: Clock constraint omitted because expr \"${clock_expr}\" matched nothing."
+}
+EOT
+  fi
   cat >> test_${1}.tcl <<EOT
 report_design_analysis
 place_design -directive Explore
