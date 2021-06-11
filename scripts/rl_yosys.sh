@@ -8,6 +8,7 @@
 
 input=
 dev="xc7a200"
+family="xc7"
 grade=1
 speed=5000  # picoseconds
 synth="yosys" # yosys | yosys-abc9 | vivado
@@ -160,6 +161,7 @@ EOT
       else
           #echo "read_verilog $(basename ${path})" > ${ip}.ys
           echo "read_verilog ${path}" > ${ip}.ys
+         
       fi
 
       # If the top is specified in a .top file, specify that to Yosys so that
@@ -171,8 +173,92 @@ EOT
       fi
 
       cat >> ${ip}.ys <<EOT
-read_verilog ${mem_file}
-synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif}
+# read_verilog ${mem_file}
+# synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif}
+read_verilog -lib -specify +/xilinx/cells_sim.v
+read_verilog -lib +/xilinx/cells_xtra.v
+hierarchy -check -auto-top
+
+proc
+flatten    #(with '-flatten')
+tribuf -logic
+deminout
+opt_expr
+opt_clean
+check
+opt -nodffe -nosdff
+fsm
+opt
+wreduce    
+peepopt
+opt_clean
+pmux2shiftx   
+clean          
+
+memory_dff
+techmap -map +/mul2dsp.v -map +/xilinx/xc7_dsp_map.v -D DSP_A_MAXWIDTH=25 -D DSP_B_MAXWIDTH=18 -D DSP_A_MAXWIDTH_PARTIAL=18 -D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=9 -D DSP_SIGNEDONLY=1 -D DSP_NAME=MUL25X18
+select a:mul2dsp
+setattr -unset mul2dsp
+opt_expr -fine
+wreduce
+select -clear
+xilinx_dsp -family xc7
+chtype -set $mul t:$__soft_mul
+
+techmap -map +/cmp2lut.v -map +/cmp2lcu.v -D LUT_WIDTH=6
+alumacc
+share
+opt
+memory -nomap
+opt_clean
+
+#memory_bram -rules +/xilinx/xc7_urams.txt
+#techmap -map +/xilinx/xc7_urams_map.v
+
+memory_bram -rules +/xilinx/xc7_xcu_brams.txt
+techmap -map +/xilinx/xc7_brams_map.v
+
+memory_bram -rules +/xilinx/lut6_lutrams.txt
+techmap -map +/xilinx/lutrams_map.v
+
+opt -fast -full
+memory_map
+
+opt -full
+xilinx_srl -variable -minlen 3    
+techmap  -map +/techmap.v -D LUT_SIZE=6 -map +/xilinx/arith_map.v 
+opt -fast
+
+#iopadmap -bits -outpad OBUF I:O -inpad IBUF O:I -toutpad $__XILINX_TOUTPAD OE:I:O -tinoutpad $__XILINX_TINOUTPAD OE:O:I:IO A:top    (skip if '-noiopad')
+techmap -map +/techmap.v -map +/xilinx/cells_map.v
+clean
+
+dfflegalize -cell $_DFFE_?P?P_ 01 -cell $_SDFFE_?P?P_ 01 -cell $_DLATCH_?P?_ 01 
+zinit -all w:* t:$_SDFFE_*    
+# techmap -map +/xilinx/ff_map.v   # (-abc9)
+
+opt_expr -mux_undef -noclkinv
+abc -luts 2:2,3,6:5,10,20,40 -dff    
+clean
+techmap -map +/xilinx/ff_map.v    #(only if not '-abc9')
+xilinx_srl -fixed -minlen 3    #(skip if '-nosrl')
+techmap -map +/xilinx/lut_map.v -map +/xilinx/cells_map.v -D LUT_WIDTH=6
+xilinx_dffopt 
+opt_lut_ins -tech xilinx
+
+clkbufmap -buf BUFG O:I    #(skip if '-noclkbuf')
+extractinv -inv INV O:I    #(only if '-ise')
+clean
+
+hierarchy -check
+stat -tech xilinx
+check -noinit
+blackbox =A:whitebox
+
+write_edif -pvector bra 
+
+write_blif 
+
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT
 # synth_xilinx -flatten ${synth_with_abc9} -edif ${edif}

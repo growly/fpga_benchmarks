@@ -146,7 +146,6 @@ EOT
   else
     edif="${ip}.edif"
     synth_with_abc9=
-    mem_file="$(dirname ${path})/dual_port_ram.v"
     if [ "${synth}" = "yosys-abc9" ]; then
       synth_with_abc9="-abc9"
     fi
@@ -171,7 +170,6 @@ EOT
       fi
 
       cat >> ${ip}.ys <<EOT
-read_verilog ${mem_file}
 synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif}
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT
