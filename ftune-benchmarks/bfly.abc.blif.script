@@ -1,0 +1,1 @@
+read /home/mkang/fpga_benchmarks/ftune-benchmarks/bfly.abc.blif;strash;read dontCare;refactor -z;dc2;refactor;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1;print_stats;

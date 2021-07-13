@@ -77,15 +77,15 @@ if [[ "${synth}" == *"vivado"* ]] && [ ! -x "${VIVADO}" ]; then
   exit 11
 fi
 
-# echo "speed=${speed}"
-# echo "dev=${dev}"
-# echo "grade=${grade}"
-# echo "ip=${ip}"
-# echo "path=${path}"
-# echo "clean=${clean}"
-# echo "xl_device=${xl_device}"
-# echo "YOSYS=${YOSYS}"
-# echo "VIVADO=${VIVADO}"
+echo "speed=${speed}"
+echo "dev=${dev}"
+echo "grade=${grade}"
+echo "ip=${ip}"
+echo "path=${path}"
+echo "clean=${clean}"
+echo "xl_device=${xl_device}"
+echo "YOSYS=${YOSYS}"
+echo "VIVADO=${VIVADO}"
 
 test_name="tab_${synth}_${ip}_${dev}_${grade}"
 
@@ -112,81 +112,72 @@ set_property IS_ENABLED 0 [get_drc_checks {PDRC-43}]
 EOT
 
   pwd=${PWD}
-  if [ "${synth}" = "vivado" ]; then
-    cat >> test_${1}.tcl <<EOT
-cd $(dirname ${path})
-EOT
-    # FIXME(aryap): When spawning these jobs in parallel. If one jobs reads the
-    # .gz and another reads a .v (created on a previous run and included as an
-    # input to this run), they might both write to the same .tcl file here.
-    #if [ "${path##*.}" == "gz" ]; then
-    #  # This is portable to BWRC machines:
-    #  gunzip -c ${path} > ${path%.gz}
-    #  # This is too modern:
-    #  # gunzip -f -k ${path}
-    #fi
-    cat >> test_${1}.tcl <<EOT
-if {[file exists "$(dirname ${path})/${ip}_vivado.tcl"] == 1} {
-  source ${ip}_vivado.tcl
-} else {
-  read_verilog $(basename ${path%.gz})
-  #read_verilog ${path}
-}
-if {[file exists "$(dirname ${path})/${ip}.top"] == 1} {
-  set fp [open $(dirname ${path})/${ip}.top]
-  set_property TOP [string trim [read \$fp]] [current_fileset]
-} else {
-  set_property TOP [lindex [find_top] 0] [current_fileset]
-}
-cd ${pwd}
-read_xdc -unmanaged ${xdc_file}
-synth_design -part ${xl_device} -mode out_of_context ${SYNTH_DESIGN_OPTS}
-opt_design -directive Explore
-EOT
-
+  edif="${ip}.edif"
+  synth_with_abc9=
+  if [ "${synth}" = "yosys-abc9" ]; then
+    synth_with_abc9="-abc9"
+  fi
+  if [ -f "${edif}" ]; then
+    echo "${test_name} reusing cached ${edif}"
   else
-    edif="${ip}.edif"
-    synth_with_abc9=
-    mem_file="$(dirname ${path})/dual_port_ram.v"
-    if [ "${synth}" = "yosys-abc9" ]; then
-      synth_with_abc9="-abc9"
-    fi
-    if [ -f "${edif}" ]; then
-      echo "${test_name} reusing cached ${edif}"
-    else
-      if [ -f "$(dirname ${path})/${ip}.ys" ]; then
-        echo "script ${ip}.ys" > ${ip}.ys
-      elif [ ${path:-5} == ".vhdl" ]; then
-          echo "read -vhdl $(basename ${path})" > ${ip}.ys
-      else
-          #echo "read_verilog $(basename ${path})" > ${ip}.ys
-          echo "read_verilog ${path}" > ${ip}.ys
-      fi
+    # if [ -f "$(dirname ${path})/${ip}.ys" ]; then
+    #   echo "script ${ip}.ys" > ${ip}.ys
+    # elif [ ${path:-5} == ".vhdl" ]; then
+    #     echo "read -vhdl $(basename ${path})" > ${ip}.ys
+    # else
+    #     #echo "read_verilog $(basename ${path})" > ${ip}.ys
+    #     echo "read_verilog ${path}" > ${ip}.ys
+    # fi
 
-      # If the top is specified in a .top file, specify that to Yosys so that
-      # the hierarchy can be trimmed of other garbage (I mean, unnecessary
-      # artifacts).
-      top_file="$(dirname ${path})/${ip}.top"
-      if [ -f "${top_file}" ]; then
-        echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
-      fi
+    # # If the top is specified in a .top file, specify that to Yosys so that
+    # # the hierarchy can be trimmed of other garbage (I mean, unnecessary
+    # # artifacts).
+    # top_file="$(dirname ${path})/${ip}.top"
+    # if [ -f "${top_file}" ]; then
+    #   echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
+    # fi
+# Part running YOSYS
+      # echo -e "read_verilog $path; write_blif $ip.blif " | $YOSYS %TODO: read verilog and output BLIF
+      ln -s ../scripts/abc .
+      design=$ip
+      ftune_input=$path #TODO: use generated BLIF files $ip.blif in tab_.. dir
+      repeat=1
+      iteration=6
+      target=4
+      sample=5
+      stage=1
+      echo "ftune is working on file: " ${path}
+      echo "*************  level-0 tuning starts *********** "
+      # level-1 tuning
+      echo -e "ftune -d $ftune_input -r $repeat -t $target -p 1 -i $iteration -s $sample" | ./abc
+      
+      ## randomly pick one of the ftune script
+      shuf -n 1 $ftune_input.script > $design.script
+      echo -e "read $ftune_input; source $design.script;strash;write internal.blif;ps" | ./abc
+      
+      for (( c=1; c<=$stage; c++ ))
+      do
+        # level-2 tuning
+        echo "*************  level[$c] tuning starts *********** "
+        echo -e "ftune -d internal.blif -r $repeat -t $target -p 1 -i $iteration -s $sample" | ./abc
+        ## randomly pick one of the ftune script
+        shuf -n 1 internal.blif.script > $design.script
+        echo -e "read internal.blif; source $design.script;write internal.blif" | ./abc
+      done
 
+      cp internal.blif $design.ftune.blif
       cat >> ${ip}.ys <<EOT
-synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif}
-write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
+read_blif ${design}.ftune.blif 
+write_edif ${edif}
 EOT
-# synth_xilinx -flatten ${synth_with_abc9} -edif ${edif}
-
-      echo "${test_name} running ${ip}.ys..."
-      #pushd $(dirname ${path}) > /dev/null
-      if ! ${YOSYS} -l ${pwd}/yosys.log ${pwd}/${ip}.ys > /dev/null 2>&1; then
-        cat ${pwd}/yosys.log
-        exit 1
-      fi
-      #popd > /dev/null
-      mv yosys.log yosys.txt
-    fi
-
+      # echo "${test_name} running ${ip}.ys..."
+      # #pushd $(dirname ${path}) > /dev/null
+      # if ! ${YOSYS} -l ${pwd}/yosys.log ${pwd}/${ip}.ys > /dev/null 2>&1; then
+      #   cat ${pwd}/yosys.log
+      #   exit 1
+      # fi
+      # #popd > /dev/null
+      # mv yosys.log yosys.txt
     cat >> test_${1}.tcl <<EOT
 read_edif ${edif}
 read_xdc -unmanaged ${xdc_file}
@@ -220,8 +211,6 @@ EOT
   fi
   cat >> test_${1}.tcl <<EOT
 report_design_analysis
-place_design -directive Explore
-route_design -directive Explore
 report_utilization
 report_timing -no_report_unconstrained
 report_clocks
@@ -238,7 +227,10 @@ EOT
   mv test_${1}.log test_${1}.txt
 }
 
-remaining_iterations=6
+
+# ONLY ONE RUN FOR NOW
+
+remaining_iterations=1
 speed_upper_bound=${speed}
 speed_lower_bound=0
 met_timing=false
@@ -290,6 +282,6 @@ while [ ${remaining_iterations} -gt 0 ]; do
   fi
 done
 
-if [ -n "${best_speed}" ]; then
-  echo "${best_speed}" > best_speed.txt
-fi
+# if [ -n "${best_speed}" ]; then
+#   echo "${best_speed}" > best_speed.txt
+# fi

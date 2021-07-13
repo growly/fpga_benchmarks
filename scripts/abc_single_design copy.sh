@@ -77,15 +77,15 @@ if [[ "${synth}" == *"vivado"* ]] && [ ! -x "${VIVADO}" ]; then
   exit 11
 fi
 
-# echo "speed=${speed}"
-# echo "dev=${dev}"
-# echo "grade=${grade}"
-# echo "ip=${ip}"
-# echo "path=${path}"
-# echo "clean=${clean}"
-# echo "xl_device=${xl_device}"
-# echo "YOSYS=${YOSYS}"
-# echo "VIVADO=${VIVADO}"
+echo "speed=${speed}"
+echo "dev=${dev}"
+echo "grade=${grade}"
+echo "ip=${ip}"
+echo "path=${path}"
+echo "clean=${clean}"
+echo "xl_device=${xl_device}"
+echo "YOSYS=${YOSYS}"
+echo "VIVADO=${VIVADO}"
 
 test_name="tab_${synth}_${ip}_${dev}_${grade}"
 
@@ -112,70 +112,58 @@ set_property IS_ENABLED 0 [get_drc_checks {PDRC-43}]
 EOT
 
   pwd=${PWD}
-  if [ "${synth}" = "vivado" ]; then
-    cat >> test_${1}.tcl <<EOT
-cd $(dirname ${path})
-EOT
-    # FIXME(aryap): When spawning these jobs in parallel. If one jobs reads the
-    # .gz and another reads a .v (created on a previous run and included as an
-    # input to this run), they might both write to the same .tcl file here.
-    #if [ "${path##*.}" == "gz" ]; then
-    #  # This is portable to BWRC machines:
-    #  gunzip -c ${path} > ${path%.gz}
-    #  # This is too modern:
-    #  # gunzip -f -k ${path}
-    #fi
-    cat >> test_${1}.tcl <<EOT
-if {[file exists "$(dirname ${path})/${ip}_vivado.tcl"] == 1} {
-  source ${ip}_vivado.tcl
-} else {
-  read_verilog $(basename ${path%.gz})
-  #read_verilog ${path}
-}
-if {[file exists "$(dirname ${path})/${ip}.top"] == 1} {
-  set fp [open $(dirname ${path})/${ip}.top]
-  set_property TOP [string trim [read \$fp]] [current_fileset]
-} else {
-  set_property TOP [lindex [find_top] 0] [current_fileset]
-}
-cd ${pwd}
-read_xdc -unmanaged ${xdc_file}
-synth_design -part ${xl_device} -mode out_of_context ${SYNTH_DESIGN_OPTS}
-opt_design -directive Explore
-EOT
-
+  edif="${ip}.edif"
+  synth_with_abc9=
+  if [ "${synth}" = "yosys-abc9" ]; then
+    synth_with_abc9="-abc9"
+  fi
+  if [ -f "${edif}" ]; then
+    echo "${test_name} reusing cached ${edif}"
   else
-    edif="${ip}.edif"
-    synth_with_abc9=
-    mem_file="$(dirname ${path})/dual_port_ram.v"
-    if [ "${synth}" = "yosys-abc9" ]; then
-      synth_with_abc9="-abc9"
-    fi
-    if [ -f "${edif}" ]; then
-      echo "${test_name} reusing cached ${edif}"
+    if [ -f "$(dirname ${path})/${ip}.ys" ]; then
+      echo "script ${ip}.ys" > ${ip}.ys
+    elif [ ${path:-5} == ".vhdl" ]; then
+        echo "read -vhdl $(basename ${path})" > ${ip}.ys
     else
-      if [ -f "$(dirname ${path})/${ip}.ys" ]; then
-        echo "script ${ip}.ys" > ${ip}.ys
-      elif [ ${path:-5} == ".vhdl" ]; then
-          echo "read -vhdl $(basename ${path})" > ${ip}.ys
-      else
-          #echo "read_verilog $(basename ${path})" > ${ip}.ys
-          echo "read_verilog ${path}" > ${ip}.ys
-      fi
+        #echo "read_verilog $(basename ${path})" > ${ip}.ys
+        echo "read_verilog ${path}" > ${ip}.ys
+    fi
 
-      # If the top is specified in a .top file, specify that to Yosys so that
-      # the hierarchy can be trimmed of other garbage (I mean, unnecessary
-      # artifacts).
-      top_file="$(dirname ${path})/${ip}.top"
-      if [ -f "${top_file}" ]; then
-        echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
-      fi
+    # If the top is specified in a .top file, specify that to Yosys so that
+    # the hierarchy can be trimmed of other garbage (I mean, unnecessary
+    # artifacts).
+    top_file="$(dirname ${path})/${ip}.top"
+    if [ -f "${top_file}" ]; then
+      echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
+    fi
 
       cat >> ${ip}.ys <<EOT
 synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif}
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT
-# synth_xilinx -flatten ${synth_with_abc9} -edif ${edif}
+
+
+# Part running YOSYS
+    echo ${path}
+    echo ${ip}
+    # echo "ftune is working on file: " ${path}
+
+    # ## randomly pick one of the ftune script
+    # shuf -n 1 $ftune_input.script > $design.script
+    # echo -e "read $ftune_input; source $design.script;strash;write internal.blif;ps" | ./abc
+
+    # #for i in {1..$stage}
+    # for (( c=1; c<=$stage; c++ ))
+    # do
+    #   # level-2 tuning
+    #   echo "*************  level[$c] tuning starts *********** "
+    #   echo -e "ftune -d internal.blif -r $repeat -t $target -p 1 -i $iteration -s $sample" | ./abc
+    #   ## randomly pick one of the ftune script
+    #   shuf -n 1 internal.blif.script > $design.script
+    #   echo -e "read internal.blif; source $design.script;write internal.blif" | ./abc
+    # done
+
+    # cp internal.blif $design.ftune.blif
 
       echo "${test_name} running ${ip}.ys..."
       #pushd $(dirname ${path}) > /dev/null
@@ -185,8 +173,6 @@ EOT
       fi
       #popd > /dev/null
       mv yosys.log yosys.txt
-    fi
-
     cat >> test_${1}.tcl <<EOT
 read_edif ${edif}
 read_xdc -unmanaged ${xdc_file}
@@ -220,8 +206,6 @@ EOT
   fi
   cat >> test_${1}.tcl <<EOT
 report_design_analysis
-place_design -directive Explore
-route_design -directive Explore
 report_utilization
 report_timing -no_report_unconstrained
 report_clocks
@@ -238,58 +222,60 @@ EOT
   mv test_${1}.log test_${1}.txt
 }
 
-remaining_iterations=6
-speed_upper_bound=${speed}
-speed_lower_bound=0
-met_timing=false
 
-# TODO(aryap): Might not want this to exit the script if a run is broken, since
-# previous runs might have had results we want to keep (i.e. dump to
-# 'best_speed.txt').
-check_timing() {
-  timing_results_file="test_${1}.txt"
-  if [ ! -f "${timing_results_file}" ]; then
-    echo "${test_name} broken run; could not find timing results: ${timing_results_file}"
-    exit 3
-  fi
 
-  if grep -qE '^Slack \(MET\)' "${timing_results_file}"; then
-    met_timing=true
-  elif grep -qE '^Slack \(VIOLATED\)' "${timing_results_file}"; then
-    met_timing=false
-  else
-    echo "${test_name} broken run, could not find 'Slack: (VIOLATED|MET)' in results file: ${timing_results_file}"
-    exit 4
-  fi
-}
+# remaining_iterations=6
+# speed_upper_bound=${speed}
+# speed_lower_bound=0
+# met_timing=false
 
-last_speed=
-while [ ${remaining_iterations} -gt 0 ]; do
-  echo "${test_name} Commencing iteration @ speed: ${speed}"
+# # TODO(aryap): Might not want this to exit the script if a run is broken, since
+# # previous runs might have had results we want to keep (i.e. dump to
+# # 'best_speed.txt').
+# check_timing() {
+#   timing_results_file="test_${1}.txt"
+#   if [ ! -f "${timing_results_file}" ]; then
+#     echo "${test_name} broken run; could not find timing results: ${timing_results_file}"
+#     exit 3
+#   fi
 
-  synth_case "${speed}"
+#   if grep -qE '^Slack \(MET\)' "${timing_results_file}"; then
+#     met_timing=true
+#   elif grep -qE '^Slack \(VIOLATED\)' "${timing_results_file}"; then
+#     met_timing=false
+#   else
+#     echo "${test_name} broken run, could not find 'Slack: (VIOLATED|MET)' in results file: ${timing_results_file}"
+#     exit 4
+#   fi
+# }
 
-  check_timing "${speed}"
+# last_speed=
+# while [ ${remaining_iterations} -gt 0 ]; do
+#   echo "${test_name} Commencing iteration @ speed: ${speed}"
 
-  if [ "${met_timing}" = true ]; then
-    speed_upper_bound=${speed}
-    best_speed=${speed}
-    echo "${test_name} MET      timing @ speed: ${speed}"
-  elif [ "${met_timing}" = false ]; then
-    speed_lower_bound=${speed}
-    echo "${test_name} VIOLATED timing @ speed: ${speed}"
-  fi
-  last_speed=${speed}
-  speed=$(((speed_upper_bound + speed_lower_bound) / 2))
-  remaining_iterations=$((remaining_iterations - 1))
+#   synth_case "${speed}"
 
-  # If we're trying to run the same speed twice in a row, we should stop.
-  if [ -n "${last_speed}" -a "${last_speed}" = "${speed}" ]; then
-    echo "${test_name} search not making progress since last speed: ${speed}"
-    break
-  fi
-done
+#   check_timing "${speed}"
 
-if [ -n "${best_speed}" ]; then
-  echo "${best_speed}" > best_speed.txt
-fi
+#   if [ "${met_timing}" = true ]; then
+#     speed_upper_bound=${speed}
+#     best_speed=${speed}
+#     echo "${test_name} MET      timing @ speed: ${speed}"
+#   elif [ "${met_timing}" = false ]; then
+#     speed_lower_bound=${speed}
+#     echo "${test_name} VIOLATED timing @ speed: ${speed}"
+#   fi
+#   last_speed=${speed}
+#   speed=$(((speed_upper_bound + speed_lower_bound) / 2))
+#   remaining_iterations=$((remaining_iterations - 1))
+
+#   # If we're trying to run the same speed twice in a row, we should stop.
+#   if [ -n "${last_speed}" -a "${last_speed}" = "${speed}" ]; then
+#     echo "${test_name} search not making progress since last speed: ${speed}"
+#     break
+#   fi
+# done
+
+# if [ -n "${best_speed}" ]; then
+#   echo "${best_speed}" > best_speed.txt
+# fi
