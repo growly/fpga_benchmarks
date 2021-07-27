@@ -1,0 +1,1556 @@
+Sequence	PathDelay
+strash;rewrite;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8125
+strash;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8358
+strash;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;resub -K 8;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;resub -K 8;resub -K 8;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7796
+strash;dc2;resub -K 8;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8284
+strash;rewrite;dc2;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite -z;dc2;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8388
+strash;refactor -z;dc2;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8368
+strash;resub -K 8;dc2;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8407
+strash;rewrite;rewrite;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8099
+strash;rewrite -z;rewrite;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;rewrite;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;refactor -z;rewrite;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;resub -K 8;rewrite;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;rewrite;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8287
+strash;rewrite;rewrite -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8271
+strash;rewrite -z;rewrite -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor -z;rewrite -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;resub -K 8;rewrite -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8385
+strash;dc2;rewrite -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite;refactor;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8274
+strash;refactor;refactor;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8330
+strash;refactor -z;refactor;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8330
+strash;resub -K 8;refactor;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;dc2;refactor;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8287
+strash;rewrite;refactor -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;refactor -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8274
+strash;refactor;refactor -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8330
+strash;refactor -z;refactor -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8330
+strash;rewrite -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;resub -K 8;refactor -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7796
+strash;dc2;refactor -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8287
+strash;rewrite;resub -K 8;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;resub -K 8;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;resub -K 8;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8330
+strash;refactor -z;resub -K 8;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8330
+strash;resub -K 8;resub -K 8;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8193
+strash;dc2;resub -K 8;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8287
+strash;rewrite;dc2;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite -z;dc2;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8285
+strash;refactor;dc2;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8388
+strash;refactor -z;dc2;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8390
+strash;resub -K 8;dc2;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;rewrite -z;rewrite;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;rewrite;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;refactor -z;rewrite;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;rewrite;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;rewrite;rewrite -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8173
+strash;rewrite -z;rewrite -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8191
+strash;refactor;rewrite -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8365
+strash;refactor -z;rewrite -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;resub -K 8;rewrite -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;rewrite -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8436
+strash;rewrite;refactor;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite -z;refactor;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8173
+strash;refactor;refactor;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8388
+strash;refactor -z;refactor;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8390
+strash;resub -K 8;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;resub -K 8;refactor;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8179
+strash;refactor;refactor -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8213
+strash;refactor -z;refactor -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8390
+strash;resub -K 8;refactor -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;refactor -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;resub -K 8;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;resub -K 8;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;dc2;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;resub -K 8;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;refactor -z;resub -K 8;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;resub -K 8;resub -K 8;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;resub -K 8;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8430
+strash;refactor;dc2;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8135
+strash;refactor -z;dc2;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8381
+strash;resub -K 8;dc2;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite;rewrite;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;rewrite;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8127
+strash;refactor;rewrite;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;refactor -z;rewrite;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;rewrite;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8179
+strash;rewrite -z;rewrite -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8191
+strash;refactor;rewrite -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;rewrite -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8417
+strash;resub -K 8;rewrite -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8499
+strash;dc2;rewrite -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;refactor;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite -z;refactor;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;refactor -z;refactor;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8289
+strash;dc2;refactor;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor;refactor -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;resub -K 8;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;resub -K 8;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;refactor;resub -K 8;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;resub -K 8;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7796
+strash;resub -K 8;resub -K 8;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;resub -K 8;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite;dc2;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;refactor;dc2;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;refactor -z;dc2;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8390
+strash;resub -K 8;dc2;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;rewrite;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8191
+strash;refactor;rewrite;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;resub -K 8;rewrite;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8276
+strash;dc2;rewrite;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;rewrite -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8427
+strash;rewrite -z;rewrite -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8329
+strash;refactor;rewrite -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8275
+strash;dc2;rewrite -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;rewrite;refactor;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8187
+strash;dc2;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;refactor;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8408
+strash;refactor -z;refactor;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;resub -K 8;refactor;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;refactor -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8179
+strash;refactor;refactor -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8447
+strash;refactor -z;refactor -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8450
+strash;rewrite;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8395
+strash;rewrite;resub -K 8;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;rewrite -z;resub -K 8;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8221
+strash;refactor;resub -K 8;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;resub -K 8;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7803
+strash;resub -K 8;resub -K 8;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8277
+strash;dc2;resub -K 8;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite;dc2;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8199
+strash;rewrite -z;dc2;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;refactor;dc2;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8464
+strash;refactor -z;dc2;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8290
+strash;rewrite -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8422
+strash;resub -K 8;dc2;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8403
+strash;rewrite;rewrite;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite -z;rewrite;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8179
+strash;refactor;rewrite;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;refactor -z;rewrite;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;rewrite;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8170
+strash;rewrite -z;rewrite -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8273
+strash;refactor;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;rewrite -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;resub -K 8;rewrite -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8499
+strash;dc2;rewrite -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;refactor;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite -z;refactor;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8391
+strash;refactor -z;refactor;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8390
+strash;resub -K 8;refactor;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8289
+strash;dc2;refactor;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite;refactor -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;refactor;refactor -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8212
+strash;refactor -z;refactor -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8387
+strash;resub -K 8;refactor -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;refactor -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;resub -K 8;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8393
+strash;refactor;resub -K 8;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;refactor -z;resub -K 8;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7973
+strash;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;resub -K 8;resub -K 8;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8289
+strash;dc2;resub -K 8;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;refactor;dc2;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;refactor -z;dc2;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8391
+strash;resub -K 8;dc2;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;rewrite;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;dc2;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;refactor -z;rewrite;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;rewrite;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;rewrite -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8170
+strash;rewrite -z;rewrite -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;refactor;rewrite -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor -z;rewrite -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;resub -K 8;rewrite -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;dc2;rewrite -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8450
+strash;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite;refactor;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite -z;refactor;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8212
+strash;refactor -z;refactor;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8387
+strash;resub -K 8;refactor;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;refactor;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;refactor -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8267
+strash;refactor;refactor -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8390
+strash;refactor -z;refactor -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8388
+strash;rewrite -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;resub -K 8;refactor -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite;resub -K 8;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;resub -K 8;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8280
+strash;refactor;resub -K 8;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8290
+strash;refactor -z;resub -K 8;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8290
+strash;resub -K 8;resub -K 8;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;resub -K 8;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite;dc2;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;refactor;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8505
+strash;refactor;dc2;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8391
+strash;refactor -z;dc2;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8411
+strash;resub -K 8;dc2;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;rewrite;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7866
+strash;refactor;rewrite;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;refactor -z;rewrite;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;resub -K 8;rewrite;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;rewrite;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8480
+strash;rewrite;rewrite -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8429
+strash;rewrite -z;rewrite -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8116
+strash;refactor;rewrite -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;resub -K 8;rewrite -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8385
+strash;dc2;rewrite -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;rewrite;refactor;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;refactor;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8280
+strash;refactor;refactor;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;refactor -z;refactor;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7973
+strash;resub -K 8;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;resub -K 8;refactor;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;refactor;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;refactor -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8170
+strash;refactor;refactor -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7973
+strash;refactor -z;refactor -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7973
+strash;resub -K 8;refactor -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7796
+strash;dc2;refactor -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;resub -K 8;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;dc2;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;resub -K 8;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;refactor -z;resub -K 8;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7973
+strash;resub -K 8;resub -K 8;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8289
+strash;dc2;resub -K 8;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8430
+strash;refactor;dc2;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8135
+strash;refactor -z;dc2;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8390
+strash;resub -K 8;dc2;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8433
+strash;rewrite;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;rewrite;rewrite;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;rewrite;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8127
+strash;refactor;rewrite;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;refactor -z;rewrite;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;rewrite;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8179
+strash;rewrite -z;rewrite -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8320
+strash;refactor;rewrite -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8409
+strash;refactor -z;rewrite -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8313
+strash;rewrite -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8458
+strash;resub -K 8;rewrite -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8385
+strash;dc2;rewrite -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8201
+strash;rewrite;refactor;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;refactor -z;refactor;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8391
+strash;resub -K 8;refactor;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8286
+strash;refactor;refactor -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8216
+strash;refactor -z;refactor -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8391
+strash;resub -K 8;refactor -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;rewrite;resub -K 8;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;resub -K 8;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;resub -K 8;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8168
+strash;refactor -z;resub -K 8;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8354
+strash;resub -K 8;resub -K 8;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;resub -K 8;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8436
+strash;refactor -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8364
+strash;rewrite;dc2;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8168
+strash;refactor -z;dc2;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8384
+strash;resub -K 8;dc2;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8170
+strash;rewrite -z;rewrite;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8198
+strash;refactor;rewrite;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8342
+strash;resub -K 8;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;resub -K 8;rewrite;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;dc2;rewrite;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;rewrite -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;rewrite -z;rewrite -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8344
+strash;refactor;rewrite -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor -z;rewrite -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8076
+strash;resub -K 8;rewrite -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8190
+strash;dc2;rewrite -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;rewrite;refactor;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;rewrite -z;refactor;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;dc2;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;refactor;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;refactor;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;refactor -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7990
+strash;refactor;refactor -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite;resub -K 8;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;rewrite -z;resub -K 8;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8430
+strash;refactor;resub -K 8;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;resub -K 8;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;resub -K 8;resub -K 8;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;dc2;resub -K 8;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8008
+strash;refactor -z;dc2;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7960
+strash;rewrite -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8604
+strash;resub -K 8;dc2;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8411
+strash;rewrite;rewrite;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;rewrite -z;rewrite;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8547
+strash;refactor;rewrite;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor -z;rewrite;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;resub -K 8;rewrite;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;dc2;rewrite;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;rewrite;rewrite -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;rewrite -z;rewrite -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8276
+strash;refactor;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8306
+strash;refactor;rewrite -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8076
+strash;resub -K 8;rewrite -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;dc2;rewrite -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;refactor;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;rewrite -z;refactor;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;refactor;refactor;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8076
+strash;resub -K 8;refactor;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8284
+strash;dc2;refactor;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;refactor -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8195
+strash;rewrite;refactor -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;refactor -z;refactor -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7952
+strash;resub -K 8;refactor -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite;resub -K 8;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8173
+strash;rewrite -z;resub -K 8;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;resub -K 8;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7961
+strash;refactor -z;resub -K 8;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7961
+strash;resub -K 8;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7932
+strash;resub -K 8;resub -K 8;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8190
+strash;dc2;resub -K 8;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite;dc2;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;rewrite -z;dc2;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8007
+strash;refactor -z;dc2;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7957
+strash;resub -K 8;dc2;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8409
+strash;rewrite;rewrite;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;rewrite -z;rewrite;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8401
+strash;dc2;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;rewrite;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8284
+strash;dc2;rewrite;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;rewrite -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8189
+strash;rewrite -z;rewrite -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8397
+strash;refactor;rewrite -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8177
+strash;refactor -z;rewrite -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8076
+strash;resub -K 8;rewrite -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;dc2;rewrite -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;rewrite;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite;refactor;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;rewrite -z;refactor;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;refactor;refactor;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;refactor;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;refactor -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8171
+strash;refactor;refactor -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7892
+strash;rewrite -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;resub -K 8;refactor -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;dc2;refactor -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite -z;resub -K 8;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8429
+strash;refactor;resub -K 8;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;resub -K 8;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;resub -K 8;resub -K 8;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8206
+strash;dc2;resub -K 8;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8297
+strash;refactor;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8281
+strash;refactor;dc2;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8008
+strash;refactor -z;dc2;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7960
+strash;resub -K 8;dc2;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8411
+strash;rewrite;rewrite;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;rewrite;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8189
+strash;refactor;rewrite;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8177
+strash;refactor -z;rewrite;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7946
+strash;resub -K 8;rewrite;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8187
+strash;dc2;rewrite;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8166
+strash;rewrite;rewrite -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8189
+strash;rewrite -z;rewrite -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8402
+strash;refactor;rewrite -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8177
+strash;refactor -z;rewrite -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8076
+strash;resub -K 8;rewrite -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8283
+strash;dc2;rewrite -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8189
+strash;rewrite;refactor;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7892
+strash;resub -K 8;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;resub -K 8;refactor;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8166
+strash;rewrite -z;refactor -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;refactor;refactor -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8193
+strash;dc2;refactor -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8447
+strash;rewrite;resub -K 8;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8099
+strash;rewrite -z;resub -K 8;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;dc2;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;resub -K 8;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;resub -K 8;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7796
+strash;resub -K 8;resub -K 8;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;resub -K 8;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8447
+strash;rewrite;dc2;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8432
+strash;refactor;dc2;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8008
+strash;refactor -z;dc2;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7973
+strash;resub -K 8;dc2;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;rewrite;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7866
+strash;rewrite -z;rewrite;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;refactor -z;rewrite;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;resub -K 8;rewrite;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8385
+strash;dc2;rewrite;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;rewrite -z;rewrite -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8591
+strash;refactor;rewrite -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8444
+strash;refactor -z;rewrite -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7903
+strash;rewrite -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;rewrite -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8385
+strash;dc2;rewrite -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite;refactor;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8271
+strash;refactor;refactor;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;resub -K 8;refactor;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;dc2;refactor;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8444
+strash;rewrite -z;refactor -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8173
+strash;refactor;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor;refactor -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7796
+strash;resub -K 8;refactor -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7796
+strash;dc2;refactor -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;rewrite -z;resub -K 8;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8430
+strash;refactor;resub -K 8;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;resub -K 8;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;resub -K 8;resub -K 8;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;dc2;resub -K 8;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;rewrite;dc2;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8360
+strash;refactor;dc2;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8006
+strash;refactor -z;dc2;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7971
+strash;resub -K 8;dc2;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8428
+strash;rewrite;rewrite;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8199
+strash;rewrite -z;rewrite;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8127
+strash;refactor;rewrite;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;refactor -z;rewrite;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;resub -K 8;rewrite;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;rewrite;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8411
+strash;rewrite;rewrite -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8173
+strash;rewrite -z;rewrite -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7949
+strash;refactor;rewrite -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;refactor -z;rewrite -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7963
+strash;resub -K 8;rewrite -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8908
+strash;dc2;rewrite -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8438
+strash;rewrite;refactor;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite -z;refactor;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8173
+strash;dc2;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;refactor;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8008
+strash;refactor -z;refactor;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7960
+strash;resub -K 8;refactor;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8411
+strash;rewrite;refactor -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8179
+strash;refactor;refactor -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7962
+strash;refactor -z;refactor -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8825
+strash;rewrite;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;rewrite;resub -K 8;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite -z;resub -K 8;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;resub -K 8;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7973
+strash;refactor -z;resub -K 8;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;resub -K 8;resub -K 8;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;resub -K 8;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;rewrite;dc2;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8127
+strash;refactor;dc2;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7967
+strash;refactor -z;dc2;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7974
+strash;rewrite -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;resub -K 8;dc2;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8352
+strash;rewrite -z;rewrite;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8547
+strash;refactor;rewrite;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor -z;rewrite;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;dc2;rewrite;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;rewrite;rewrite -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8170
+strash;rewrite -z;rewrite -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8276
+strash;refactor;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;refactor;rewrite -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8042
+strash;resub -K 8;rewrite -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;dc2;rewrite -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;refactor;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8354
+strash;rewrite -z;refactor;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8169
+strash;resub -K 8;refactor;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8284
+strash;dc2;refactor;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;refactor -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;rewrite;refactor -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8086
+strash;rewrite -z;refactor -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7911
+strash;refactor;refactor -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7952
+strash;refactor -z;refactor -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7949
+strash;resub -K 8;refactor -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite;resub -K 8;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;rewrite -z;resub -K 8;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;resub -K 8;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;refactor -z;resub -K 8;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8162
+strash;resub -K 8;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;resub -K 8;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;dc2;resub -K 8;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8186
+strash;rewrite;dc2;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;rewrite -z;dc2;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8007
+strash;refactor -z;dc2;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7957
+strash;resub -K 8;dc2;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8409
+strash;rewrite;rewrite;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8278
+strash;rewrite -z;rewrite;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;dc2;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;refactor;rewrite;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;dc2;rewrite;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;rewrite -z;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8270
+strash;rewrite;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8112
+strash;rewrite -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8387
+strash;refactor;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8296
+strash;refactor -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8287
+strash;resub -K 8;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8172
+strash;refactor;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;refactor -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;resub -K 8;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7932
+strash;dc2;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8296
+strash;refactor -z;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8362
+strash;refactor;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor -z;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8272
+strash;resub -K 8;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8212
+strash;rewrite;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;refactor -z;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8198
+strash;resub -K 8;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;rewrite -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8548
+strash;refactor;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;resub -K 8;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8544
+strash;dc2;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8205
+strash;rewrite -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8532
+strash;refactor;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8285
+strash;refactor -z;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;resub -K 8;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8044
+strash;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8180
+strash;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;refactor;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;refactor -z;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;resub -K 8;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;refactor -z;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;resub -K 8;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8838
+strash;rewrite;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8352
+strash;rewrite -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8548
+strash;refactor;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8479
+strash;refactor -z;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8134
+strash;resub -K 8;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8268
+strash;rewrite;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7916
+strash;refactor;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;refactor -z;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8114
+strash;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8110
+strash;dc2;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;rewrite -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8369
+strash;refactor;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;refactor -z;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;dc2;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8607
+strash;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8198
+strash;refactor -z;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8120
+strash;resub -K 8;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8157
+strash;dc2;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8227
+strash;refactor;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8398
+strash;refactor -z;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;dc2;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8459
+strash;rewrite -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8573
+strash;refactor;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8154
+strash;refactor -z;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;resub -K 8;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8386
+strash;dc2;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8396
+strash;refactor;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8476
+strash;refactor -z;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8160
+strash;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8424
+strash;resub -K 8;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8548
+strash;refactor;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;refactor -z;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;resub -K 8;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8348
+strash;dc2;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8770
+strash;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8368
+strash;refactor;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;refactor -z;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8157
+strash;dc2;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;refactor;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8251
+strash;refactor -z;refactor;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;refactor;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8157
+strash;dc2;refactor;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8368
+strash;rewrite;refactor -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8414
+strash;refactor;refactor -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;refactor -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;refactor -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8361
+strash;rewrite -z;resub -K 8;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;resub -K 8;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;resub -K 8;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;resub -K 8;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;dc2;resub -K 8;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8169
+strash;refactor -z;dc2;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8158
+strash;resub -K 8;dc2;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;rewrite;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8799
+strash;dc2;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8112
+strash;resub -K 8;rewrite;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;dc2;rewrite;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8258
+strash;rewrite -z;rewrite -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8735
+strash;refactor;rewrite -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;refactor -z;rewrite -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;rewrite -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8154
+strash;dc2;rewrite -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8194
+strash;rewrite;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8607
+strash;refactor;refactor;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8406
+strash;refactor -z;refactor;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8154
+strash;dc2;refactor;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8114
+strash;rewrite -z;refactor -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8041
+strash;refactor;refactor -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;refactor -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;rewrite -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;resub -K 8;refactor -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;resub -K 8;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;resub -K 8;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8462
+strash;refactor;resub -K 8;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;resub -K 8;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;resub -K 8;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;dc2;resub -K 8;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8396
+strash;refactor;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8297
+strash;refactor;dc2;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8476
+strash;refactor -z;dc2;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8160
+strash;resub -K 8;dc2;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8398
+strash;rewrite;rewrite;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;rewrite;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8231
+strash;refactor;rewrite;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8112
+strash;resub -K 8;rewrite;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;dc2;rewrite;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8532
+strash;rewrite;rewrite -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8255
+strash;rewrite -z;rewrite -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor;rewrite -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;refactor -z;rewrite -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;rewrite -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8327
+strash;dc2;rewrite -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8114
+strash;rewrite -z;refactor;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8147
+strash;refactor;refactor;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;refactor;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;resub -K 8;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;refactor;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;refactor -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8683
+strash;refactor;refactor -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;refactor -z;refactor -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;refactor -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;resub -K 8;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8019
+strash;dc2;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8434
+strash;refactor;resub -K 8;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;refactor -z;resub -K 8;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;resub -K 8;resub -K 8;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;resub -K 8;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8541
+strash;refactor;dc2;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8419
+strash;refactor -z;dc2;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;resub -K 8;dc2;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8398
+strash;rewrite;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8274
+strash;rewrite;rewrite;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8256
+strash;rewrite -z;rewrite;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8573
+strash;refactor;rewrite;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;refactor -z;rewrite;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;resub -K 8;rewrite;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8388
+strash;dc2;rewrite;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8189
+strash;rewrite -z;rewrite -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;rewrite -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;rewrite -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;resub -K 8;rewrite -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;dc2;rewrite -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8254
+strash;refactor;refactor;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;refactor;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;refactor;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;refactor;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;refactor -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8155
+strash;refactor;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8090
+strash;refactor;refactor -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;refactor -z;refactor -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;resub -K 8;refactor -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;resub -K 8;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8150
+strash;rewrite -z;resub -K 8;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8573
+strash;refactor;resub -K 8;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;resub -K 8;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;resub -K 8;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8348
+strash;dc2;resub -K 8;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8090
+strash;rewrite;dc2;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8360
+strash;refactor;dc2;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor -z;dc2;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8156
+strash;resub -K 8;dc2;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;rewrite -z;rewrite;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8415
+strash;refactor;rewrite;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;refactor -z;rewrite;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8420
+strash;resub -K 8;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8341
+strash;resub -K 8;rewrite;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;rewrite;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;rewrite -z;rewrite -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;refactor;rewrite -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8398
+strash;refactor -z;rewrite -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;rewrite -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8635
+strash;dc2;rewrite -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8268
+strash;rewrite;refactor;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8154
+strash;rewrite -z;refactor;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8258
+strash;dc2;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;refactor;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8476
+strash;refactor -z;refactor;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8160
+strash;resub -K 8;refactor;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;refactor -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8041
+strash;refactor;refactor -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8294
+strash;refactor -z;refactor -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8100
+strash;resub -K 8;refactor -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8089
+strash;rewrite;resub -K 8;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;rewrite -z;resub -K 8;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8355
+strash;refactor;resub -K 8;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;refactor -z;resub -K 8;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;resub -K 8;resub -K 8;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;dc2;resub -K 8;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;refactor;dc2;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7924
+strash;refactor -z;dc2;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8389
+strash;rewrite -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8427
+strash;resub -K 8;dc2;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8268
+strash;rewrite;rewrite;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;rewrite;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;refactor;rewrite;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;resub -K 8;rewrite;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;rewrite -z;rewrite -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8603
+strash;refactor;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor;rewrite -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;refactor -z;rewrite -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8348
+strash;resub -K 8;rewrite -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;refactor;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;resub -K 8;refactor;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8167
+strash;rewrite;refactor -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8041
+strash;refactor;refactor -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;refactor -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;refactor -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;resub -K 8;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8153
+strash;refactor;resub -K 8;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;resub -K 8;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8276
+strash;resub -K 8;resub -K 8;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;resub -K 8;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8285
+strash;refactor -z;dc2;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;resub -K 8;dc2;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7916
+strash;rewrite -z;rewrite;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8603
+strash;dc2;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8155
+strash;resub -K 8;rewrite;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8386
+strash;dc2;rewrite;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;rewrite -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8169
+strash;refactor;rewrite -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;refactor -z;rewrite -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;rewrite -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;dc2;rewrite -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8212
+strash;rewrite;refactor;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8607
+strash;refactor;refactor;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8406
+strash;refactor -z;refactor;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8154
+strash;dc2;refactor;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8114
+strash;rewrite -z;refactor -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8041
+strash;refactor;refactor -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;refactor -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;rewrite -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;resub -K 8;refactor -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;dc2;refactor -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7877
+strash;rewrite -z;resub -K 8;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8465
+strash;refactor;resub -K 8;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;resub -K 8;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;resub -K 8;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8348
+strash;dc2;resub -K 8;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8396
+strash;dc2;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8209
+strash;refactor;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor;dc2;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8476
+strash;refactor -z;dc2;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8160
+strash;resub -K 8;dc2;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;dc2;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;rewrite -z;rewrite;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;refactor;rewrite;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;resub -K 8;rewrite;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8341
+strash;rewrite;rewrite -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;rewrite -z;rewrite -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8603
+strash;refactor;rewrite -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;refactor -z;rewrite -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;refactor;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8369
+strash;refactor -z;refactor;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8528
+strash;resub -K 8;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;resub -K 8;refactor;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8472
+strash;refactor;refactor -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8505
+strash;refactor -z;refactor -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8480
+strash;resub -K 8;refactor -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;resub -K 8;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8153
+strash;dc2;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;resub -K 8;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8296
+strash;refactor -z;resub -K 8;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;resub -K 8;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;resub -K 8;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8285
+strash;refactor -z;dc2;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;resub -K 8;dc2;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8367
+strash;rewrite;rewrite;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;rewrite;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8417
+strash;refactor;rewrite;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;rewrite;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8395
+strash;rewrite -z;rewrite -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8422
+strash;refactor;rewrite -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;rewrite -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;resub -K 8;rewrite -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;dc2;rewrite -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;refactor;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;refactor;refactor;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8505
+strash;refactor -z;refactor;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8480
+strash;resub -K 8;refactor;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;rewrite -z;refactor -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8458
+strash;refactor;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor;refactor -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8286
+strash;refactor -z;refactor -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8364
+strash;resub -K 8;refactor -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;resub -K 8;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8604
+strash;refactor;resub -K 8;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8306
+strash;refactor -z;resub -K 8;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8195
+strash;resub -K 8;resub -K 8;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7932
+strash;dc2;resub -K 8;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;rewrite;dc2;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8281
+strash;refactor -z;dc2;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8166
+strash;resub -K 8;dc2;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;dc2;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;rewrite;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8357
+strash;refactor;rewrite;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;resub -K 8;rewrite;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;dc2;rewrite;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;rewrite -z;rewrite -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;refactor;rewrite -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;refactor -z;rewrite -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;dc2;rewrite -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;refactor;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8112
+strash;rewrite -z;refactor;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8387
+strash;dc2;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;refactor;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8296
+strash;refactor -z;refactor;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8172
+strash;refactor;refactor -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;refactor -z;refactor -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;resub -K 8;refactor -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8160
+strash;rewrite;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8194
+strash;rewrite;resub -K 8;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite -z;resub -K 8;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8153
+strash;refactor;resub -K 8;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8296
+strash;refactor -z;resub -K 8;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;resub -K 8;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;resub -K 8;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8362
+strash;refactor;dc2;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor -z;dc2;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8272
+strash;rewrite -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8163
+strash;resub -K 8;dc2;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;rewrite;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;rewrite;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;refactor -z;rewrite;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8198
+strash;resub -K 8;rewrite;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;rewrite;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8351
+strash;rewrite -z;rewrite -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8548
+strash;refactor;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8141
+strash;refactor;rewrite -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;rewrite -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8544
+strash;dc2;rewrite -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8205
+strash;rewrite -z;refactor;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8532
+strash;refactor;refactor;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8285
+strash;refactor -z;refactor;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8161
+strash;resub -K 8;refactor;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8139
+strash;rewrite;refactor -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;refactor -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8044
+strash;refactor;refactor -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;refactor -z;refactor -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;resub -K 8;refactor -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;resub -K 8;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;resub -K 8;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;refactor -z;resub -K 8;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;resub -K 8;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;resub -K 8;resub -K 8;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;resub -K 8;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8352
+strash;rewrite -z;dc2;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8548
+strash;refactor;dc2;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8479
+strash;refactor -z;dc2;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8134
+strash;resub -K 8;dc2;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;dc2;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8268
+strash;rewrite;rewrite;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;rewrite;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8417
+strash;dc2;resub -K 8;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;rewrite;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;rewrite -z;rewrite -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8422
+strash;refactor;rewrite -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8152
+strash;refactor -z;rewrite -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;resub -K 8;rewrite -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;dc2;rewrite -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite;refactor;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;refactor;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;refactor;refactor;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;refactor;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8041
+strash;refactor;refactor -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8492
+strash;resub -K 8;refactor -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;resub -K 8;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8604
+strash;refactor;resub -K 8;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;resub -K 8;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;resub -K 8;resub -K 8;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;dc2;resub -K 8;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8171
+strash;refactor;dc2;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8281
+strash;refactor -z;dc2;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8166
+strash;resub -K 8;dc2;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;dc2;rewrite;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8041
+strash;rewrite -z;rewrite;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8422
+strash;refactor;rewrite;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;refactor -z;rewrite;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;rewrite;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8157
+strash;dc2;rewrite;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;rewrite -z;rewrite -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8041
+strash;refactor;rewrite -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8114
+strash;resub -K 8;rewrite -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;dc2;rewrite -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8614
+strash;refactor;refactor;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8150
+strash;refactor -z;refactor;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;rewrite -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8354
+strash;resub -K 8;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8425
+strash;resub -K 8;refactor;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;dc2;refactor;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;refactor -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8391
+strash;refactor;refactor -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;refactor -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;dc2;refactor -z;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8091
+strash;rewrite -z;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8787
+strash;dc2;dc2;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8428
+strash;refactor;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;refactor -z;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;dc2;resub -K 8;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8352
+strash;refactor;dc2;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8138
+strash;refactor -z;dc2;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;resub -K 8;dc2;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;dc2;rewrite -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8287
+strash;rewrite;rewrite;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;rewrite;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;refactor;rewrite;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;rewrite;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;rewrite -z;rewrite -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor;rewrite -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;rewrite -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8897
+strash;resub -K 8;rewrite -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8336
+strash;dc2;rewrite -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;refactor;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;refactor;refactor;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8505
+strash;refactor -z;refactor;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8480
+strash;resub -K 8;refactor;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;rewrite -z;refactor -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8458
+strash;refactor;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8289
+strash;refactor;refactor -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8286
+strash;refactor -z;refactor -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8364
+strash;resub -K 8;refactor -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;resub -K 8;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8124
+strash;refactor;resub -K 8;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8306
+strash;refactor -z;resub -K 8;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8195
+strash;resub -K 8;resub -K 8;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;resub -K 8;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8281
+strash;refactor -z;dc2;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8166
+strash;resub -K 8;dc2;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;dc2;refactor;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;rewrite;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8402
+strash;refactor;rewrite;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;resub -K 8;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8358
+strash;resub -K 8;rewrite;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;dc2;rewrite;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8460
+strash;rewrite -z;rewrite -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8415
+strash;refactor;rewrite -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;refactor -z;rewrite -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8153
+strash;dc2;rewrite -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;rewrite -z;refactor;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8412
+strash;dc2;rewrite;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;refactor;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8286
+strash;refactor -z;refactor;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8364
+strash;resub -K 8;refactor;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8472
+strash;refactor;refactor -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8505
+strash;refactor -z;refactor -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8480
+strash;resub -K 8;refactor -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8276
+strash;rewrite;resub -K 8;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;resub -K 8;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8787
+strash;refactor;resub -K 8;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8306
+strash;refactor -z;resub -K 8;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;resub -K 8;resub -K 8;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;resub -K 8;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;dc2;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8136
+strash;refactor -z;dc2;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8166
+strash;rewrite -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;resub -K 8;dc2;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;dc2;refactor -z;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;rewrite;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;rewrite;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;rewrite;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;dc2;rewrite;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;rewrite -z;rewrite -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8423
+strash;refactor;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8165
+strash;refactor;rewrite -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;refactor -z;rewrite -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8333
+strash;dc2;rewrite -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;refactor;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;rewrite -z;refactor;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;refactor;refactor;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8306
+strash;refactor -z;refactor;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8195
+strash;resub -K 8;refactor;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8341
+strash;rewrite;refactor -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;refactor -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;refactor -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8484
+strash;refactor -z;refactor -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8484
+strash;resub -K 8;refactor -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;rewrite -z;resub -K 8;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8604
+strash;refactor;resub -K 8;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8306
+strash;refactor -z;resub -K 8;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8195
+strash;resub -K 8;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;resub -K 8;resub -K 8;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7932
+strash;dc2;resub -K 8;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8362
+strash;refactor;dc2;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor -z;dc2;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8156
+strash;resub -K 8;dc2;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;resub -K 8;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;rewrite;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;dc2;rewrite -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;rewrite;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;refactor -z;rewrite;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8198
+strash;resub -K 8;rewrite;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;dc2;rewrite;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8552
+strash;rewrite -z;rewrite -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;rewrite -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;rewrite -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;rewrite -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;rewrite;refactor;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;refactor;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8349
+strash;refactor;refactor;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8281
+strash;refactor -z;refactor;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8166
+strash;resub -K 8;refactor;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;refactor -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8158
+strash;refactor;refactor -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8183
+strash;refactor -z;refactor -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;rewrite -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8342
+strash;resub -K 8;refactor -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;resub -K 8;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;resub -K 8;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;resub -K 8;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8283
+strash;refactor -z;resub -K 8;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8192
+strash;resub -K 8;resub -K 8;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;dc2;resub -K 8;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;dc2;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8352
+strash;rewrite -z;dc2;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8297
+strash;refactor;dc2;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8570
+strash;refactor -z;dc2;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8133
+strash;resub -K 8;dc2;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;dc2;refactor -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;rewrite;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;rewrite;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;rewrite;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;rewrite;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8825
+strash;rewrite;rewrite -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8405
+strash;rewrite -z;rewrite -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8353
+strash;refactor;rewrite -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8256
+strash;refactor -z;rewrite -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;dc2;rewrite -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;refactor;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;refactor;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8387
+strash;refactor;refactor;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;refactor;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8287
+strash;resub -K 8;refactor;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8172
+strash;refactor;refactor -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;resub -K 8;refactor -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;rewrite -z;resub -K 8;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;dc2;refactor;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;resub -K 8;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;resub -K 8;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;resub -K 8;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;dc2;resub -K 8;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;dc2;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor -z;dc2;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8272
+strash;resub -K 8;dc2;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;rewrite;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor -z;rewrite -z;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8609
+strash;rewrite;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8212
+strash;rewrite;rewrite;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8259
+strash;rewrite -z;rewrite;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8352
+strash;refactor;rewrite;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8156
+strash;resub -K 8;rewrite;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8388
+strash;dc2;rewrite;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;rewrite -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;rewrite -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;rewrite -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;refactor -z;rewrite -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8164
+strash;resub -K 8;rewrite -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8154
+strash;dc2;rewrite -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;refactor;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;rewrite -z;refactor;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;refactor;refactor;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;refactor -z;refactor;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8154
+strash;dc2;refactor;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;refactor -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;rewrite -z;refactor -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8201
+strash;refactor;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;refactor;refactor -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;refactor -z;refactor -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8137
+strash;resub -K 8;refactor -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8337
+strash;dc2;refactor -z;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;resub -K 8;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8150
+strash;rewrite -z;resub -K 8;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8403
+strash;refactor;resub -K 8;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;refactor -z;resub -K 8;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8088
+strash;resub -K 8;resub -K 8;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;dc2;resub -K 8;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8838
+strash;rewrite;dc2;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;dc2;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8396
+strash;refactor;dc2;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor -z;dc2;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8156
+strash;resub -K 8;dc2;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;rewrite -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;rewrite;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8357
+strash;refactor;rewrite;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8196
+strash;resub -K 8;rewrite;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8345
+strash;dc2;rewrite;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8343
+strash;rewrite -z;rewrite -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;refactor;rewrite -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8148
+strash;refactor -z;rewrite -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;dc2;rewrite -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;refactor;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8112
+strash;rewrite -z;refactor;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8387
+strash;dc2;refactor -z;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;refactor;refactor;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8296
+strash;refactor -z;refactor;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;refactor -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8172
+strash;refactor;refactor -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;refactor -z;refactor -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;resub -K 8;refactor -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;refactor -z;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite;resub -K 8;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite -z;resub -K 8;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8153
+strash;refactor;resub -K 8;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8296
+strash;refactor -z;resub -K 8;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;resub -K 8;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;dc2;resub -K 8;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;dc2;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;rewrite -z;dc2;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8362
+strash;refactor;dc2;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8282
+strash;refactor -z;dc2;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8272
+strash;rewrite -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8204
+strash;resub -K 8;dc2;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;dc2;refactor;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite;rewrite;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;rewrite;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8330
+strash;refactor;rewrite;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;refactor -z;rewrite;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8151
+strash;resub -K 8;rewrite;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8334
+strash;dc2;rewrite;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;rewrite -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8405
+strash;rewrite -z;rewrite -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8407
+strash;refactor;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8368
+strash;refactor;rewrite -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8270
+strash;refactor -z;rewrite -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;rewrite -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;rewrite -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8262
+strash;rewrite;refactor;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7800
+strash;rewrite -z;refactor;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;refactor;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;refactor -z;refactor;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;resub -K 8;refactor;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;refactor -z;resub -K 8;refactor;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8368
+strash;rewrite;refactor -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8202
+strash;rewrite -z;refactor -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;refactor -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8346
+strash;refactor -z;refactor -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8347
+strash;resub -K 8;refactor -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8340
+strash;dc2;refactor -z;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8265
+strash;rewrite;resub -K 8;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;rewrite -z;resub -K 8;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	7814
+strash;refactor;resub -K 8;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8306
+strash;refactor -z;resub -K 8;refactor -z;resub -K 8;strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1	8195
