@@ -7,6 +7,7 @@ STATIC_TEST_ARGS="-s 30000"
 BENCHMARK_DIR=  # $(readlink -f "${1:-vtr/verilog}")
 BATCH_SIZE=5 # Actually spawns 3x this many jobs, one for each synth method (below)
 USE_LSF=false
+USE_SLURM=false
 DEVICE="xc7a200"
 SYNTH_METHODS="vivado yosys yosys-abc9"
 
@@ -24,6 +25,8 @@ while [ "$1" != "" ]; do
                             ;;
     -j | --batch_size)      shift
                             BATCH_SIZE="$1"
+                            ;;
+    -s | --slurm)           USE_SLURM=true
                             ;;
     -l | --lsf)             USE_LSF=true
                             ;;
@@ -92,6 +95,14 @@ if [ ${USE_LSF} = true ]; then
 fi
 
 launch_job() {
+  if [ ${USE_SLURM} = true ]; then
+    launch_slurm_job $1 $2 $3
+  else
+    launch_lsf_job $1 $2 $3
+  fi
+}
+
+launch_lsf_job() {
   pid_index=$1
   benchmark="$2"
   method="$3"
@@ -102,6 +113,36 @@ launch_job() {
   echo ${pid_index}: ${LSF_PREFIX} ${LSF_PREFIX_LOG} ${TEST_SCRIPT} -i "${benchmark}" ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE}
   ${LSF_PREFIX} ${LSF_PREFIX_LOG} ${TEST_SCRIPT} -i "${benchmark}" ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} &
   pids[${pid_index}]=$!
+}
+
+launch_slurm_job() {
+  pid_index=$1
+  benchmark="$2"
+  method="$3"
+  slurm_script_name=$(mktemp)
+  cat > "${slurm_script_name}" <<EOT
+#!/bin/bash
+# generated at $(date) by run_all.sh
+# Job name:
+#SBATCH --job-name=aryap-test
+#
+# Account:
+#SBATCH --account=fc_bdmesh
+#
+# Partition:
+#SBATCH --partition=savio	
+#
+# Quality of Service:
+#SBATCH --qos=savio_normal
+#
+# Wall clock limit:
+#SBATCH --time=00:00:30
+#
+## Command(s) to run:
+${TEST_SCRIPT} -i "${benchmark}" ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE}
+EOT
+  # TODO: run slurm script with sbatch?
+  echo "now run ${slurm_script_name}"
 }
 
 # Turn the list of methods into an array so we have more power.
