@@ -220,14 +220,15 @@ EOT
   fi
   cat >> test_${1}.tcl <<EOT
 report_design_analysis
-place_design -directive Explore
-route_design -directive Explore
 report_utilization
-report_timing -no_report_unconstrained
-report_clocks
-report_design_analysis
-report_power
-report_io
+# place_design -directive Explore
+# route_design -directive Explore
+# report_utilization
+# report_timing -no_report_unconstrained
+# report_clocks
+# report_design_analysis
+# report_power
+# report_io
 EOT
 
   echo "${test_name} running test_${1}..."
@@ -238,7 +239,7 @@ EOT
   mv test_${1}.log test_${1}.txt
 }
 
-remaining_iterations=6
+remaining_iterations=1
 speed_upper_bound=${speed}
 speed_lower_bound=0
 met_timing=false

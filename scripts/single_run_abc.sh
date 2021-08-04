@@ -10,7 +10,7 @@ input=
 dev="xc7a200"
 grade=1
 speed=5000  # picoseconds
-synth="yosys" # yosys | yosys-abc9 | vivado
+synth="yosys-abc9" # yosys | yosys-abc9 | vivado
 clean=false
 idx=0
 RANDOM_SEQ_LEN=0
@@ -183,7 +183,7 @@ EOT
       if [ -f "${top_file}" ]; then
         echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
       fi
-      python3 $SCRIPT_DIR/exhaustive_search.py --in_idx=${2} --random_seq_len=${3} > ${ip}.${2}.abc.script
+      python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} > ${ip}.${2}.abc.script
       cat >> ${ip}.ys <<EOT
 synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} -script  ${ip}.${2}.abc.script
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
@@ -198,7 +198,7 @@ EOT
     #   fi
     #   #popd > /dev/null
     #   mv yosys.log yosys.txt
-      ${YOSYS} ${pwd}/${ip}.ys > /dev/null 2>&1
+      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys.log > /dev/null 2>&1
     fi
 
     cat >> test_${1}.tcl <<EOT

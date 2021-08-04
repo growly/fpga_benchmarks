@@ -23,6 +23,7 @@ while [ "$1" != "" ]; do
   shift
 done
 
+
 ip=$( echo $(basename -- ${RESULTS_DIR}) | sed 's/run\_//' )
 # FIXME(aryap): also in vivado_yosys.sh: .gz inputs must be expanded to
 # .v/.vhdl and merged with the other inputs, and then sources de-duplicated.
@@ -55,12 +56,18 @@ fi
 echo "Input is ${RESULTS_DIR}: ${#logs[@]} files"
 
 rm $ip.out.csv
-printf "Sequence\tPathDelay\n" >> $ip.out.csv
+printf "Sequence\tPathDelay\tLogicDelay\tNetDelay\tLUTsLogic\tRegsFF\tRegsLatch\n" >> $ip.out.csv
 
 let "i=0"
 while [ ${i} -lt ${num_results} ]; do
     SEQ=$( cat ${scripts[i]})
-    DELAY_PS=$(grep "Path Delay"  ${logs[i]} | sed 's/[^0-9]*//g')
-    printf "$SEQ\t$DELAY_PS\n" >> $ip.out.csv
+    DELAY_NS=$(grep "Path Delay"  ${logs[i]} | sed 's/[^0-9.]*//g')
+    LOGIC_DELAY_NS=$( grep "Logic Delay"  ${logs[i]} |  sed -e 's/[^0-9.(%)]*//g; s/%/%%/g' )
+    NET_DELAY_NS=$( grep "Net Delay"  ${logs[i]} |  sed -e 's/[^0-9.(%)]*//g; s/%/%%/g' )
+    LUT_LOGIC=$( grep "LUT as Logic" ${logs[i]} |  sed 's/[^0-9]*|//g; s/[ \t]*\([0-9]\{1,\}\).*/\1/' )
+    REG_FF=$( grep "Register as Flip Flop" ${logs[i]} |  sed 's/[^0-9]*|//g; s/[ \t]*\([0-9]\{1,\}\).*/\1/' )
+    REG_LATCH=$( grep "Register as Latch" ${logs[i]} |  sed 's/[^0-9]*|//g; s/[ \t]*\([0-9]\{1,\}\).*/\1/' )
+    printf "$SEQ\t$DELAY_NS\t$LOGIC_DELAY_NS\t$NET_DELAY_NS\t$LUT_LOGIC\t$REG_FF\t$REG_LATCH\n" >> $ip.out.csv
+
     let "i=i+1"
 done

@@ -9,14 +9,14 @@ BATCH_SIZE=8 # Actually spawns 3x this many jobs, one for each synth method (bel
 USE_LSF=false
 DEVICE="xc7a200"
 # SYNTH_METHODS "yosys yosys-abc9"
-SYNTH_METHODS="yosys"
+SYNTH_METHODS="yosys-abc9"
 
 RANDOM_SEQ_LEN=0
 NUM_OPTS=6
-MIN_PASS_LENGTH=3
+MIN_PASS_LENGTH=1
 MIN_NUM_RUNS=$(( ($NUM_OPTS**($MIN_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) ))
 
-MAX_PASS_LENGTH=4
+MAX_PASS_LENGTH=5
 MAX_NUM_RUNS=$(( ($NUM_OPTS**($MAX_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) ))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 
@@ -58,8 +58,8 @@ if [ -z "${RUN_DIR}" ]; then
 fi
 
 if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
-  MIN_NUM_RUNS=0
-  MAX_NUM_RUNS=3000
+  MIN_NUM_RUNS=100
+  MAX_NUM_RUNS=500
 fi
 
 # FIXME(aryap): also in vivado_yosys.sh: .gz inputs must be expanded to

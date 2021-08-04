@@ -3,21 +3,40 @@
 import argparse
 import sys,os,random
 
+abc9=True
 options = ["rewrite", "rewrite -z", "refactor", "refactor -z", "resub -K 8", "resub -K 4", "resub -K 12", "resub -N 2", "resub -N 3", "balance",  "dc2"]
-closure = "strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1"
-closure_whitebox_delay = "strash;ifraig;scorr;dc2;strash;dch -f;if -v;mfs2;print_stats"
+options_abc9 = ["&dc2", "&shrink", "&speedup", "&syn2", "&synch2", "&retime"]
+
+opener = "strash;ifraig;scorr;"
+opener_abc9 = "&scorr;&sweep;"
+
+# closure_ftune = "strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1"
+closure_whitebox_delay = "strash;ifraig;scorr;strash;dch -f;if -v;mfs2;print_stats -l"
+closure = "dretime; strash; dch -f; if -v; mfs2" # LUTPACK or not; dretime or not with -
+closure_abc9 = "&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l"
 
 def get_sequence(idx): 
-    num_options = len(options) 
-    seq = "strash;"
+    if abc9: 
+        num_options = len(options) 
+    else : 
+        num_options = len(options_abc9)
+    seq = ""
+    if abc9 : 
+        seq += opener_abc9
+    else: 
+        seq += opener
     i = idx
     while True:
         remainder = i % num_options
         divisor = i // num_options
-        seq += options[remainder] + ";"
+        if abc9: seq += options_abc9[remainder] + ";"
+        else : seq += options[remainder] + ";"
         if divisor <= 0 : break;
         else : i = divisor
-    seq += closure_whitebox_delay
+    if abc9: 
+        seq += closure_abc9
+    else :
+        seq += closure_whitebox_delay
     return seq
 
 def get_random_sequence(seq_len): 
@@ -27,7 +46,7 @@ def get_random_sequence(seq_len):
     random.seed()
     for i in range(seq_len) :
         r = random.randint(0, num_options)
-        if r < num_options:
+        if r <0 :
             seq += options[r] + ";"
     seq += closure_whitebox_delay
     return seq
