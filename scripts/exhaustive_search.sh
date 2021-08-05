@@ -16,14 +16,6 @@ RANDOM_SEQ_LEN=0
 NUM_OPTS=4
 
 
-# Calculate which indices to run exhaustive search on
-MIN_PASS_LENGTH=0
-MIN_NUM_RUNS=$(( ($NUM_OPTS**($MIN_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
-
-MAX_PASS_LENGTH=5
-MAX_NUM_RUNS=$(( ($NUM_OPTS**($MAX_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
-echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
-
 # NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
 # nice too to recursively expand symlinks, but it isn't available on BWRC
 # servers, and we have a more portable solution so I'm not installing it.
@@ -63,41 +55,7 @@ if [ -z "${RUN_DIR}" ]; then
   exit 2
 fi
 
-if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
-  MIN_NUM_RUNS=100
-  MAX_NUM_RUNS=500
-fi
-
-# FIXME(aryap): also in vivado_yosys.sh: .gz inputs must be expanded to
-# .v/.vhdl and merged with the other inputs, and then sources de-duplicated.
-# Could use sort/uniq? Or write the algorithm in bash (worse). Expanding .gz
-# inputs must be removed from the vivado_yosys.sh script so it doesn't have to
-# deal with with multiple runs clobbering the same test scripts.
-
-# TODO(aryap): It'd be nice to be able to handle a list of sources, or any
-# expansion.
-# if [ -d "${BENCHMARK_DIR}" ]; then
-#   # TODO(aryap): This is a dangerously-bash bashism
-#   shopt -s nullglob
-#   #benchmarks=( ${BENCHMARK_DIR}/*.{v,vhdl,gz} )
-#   benchmarks=( ${BENCHMARK_DIR}/*.{v,vhdl} )
-#   num_benchmarks=${#benchmarks[@]}
-#   echo "Found ${num_benchmarks} benchmarks:"
-#   for file in "${benchmarks[@]}"; do
-#     echo "  ${file}"
-#   done
-#   shopt -u nullglob
-# elif [ -f "${BENCHMARK_DIR}" ]; then
-#   # Input is just one file
-#   benchmarks="${BENCHMARK_DIR}"
-#   num_benchmarks=1
-# else
-#   echo "Unsuitable input source: ${BENCHMARK_DIR}"
-#   exit 3
-# fi
-# echo "Input is ${BENCHMARK_DIR}: ${#benchmarks[@]} files"
-# echo "Output is: ${RUN_DIR}"
-
+# Setup run output directory
 if ! [ -d "${RUN_DIR}" ]; then
   mkdir -p "${RUN_DIR}"
 fi
@@ -105,7 +63,22 @@ fi
 pushd ${RUN_DIR}
 
 
-# LSF SETTINGS
+# Calculate which indices to run exhaustive search on
+MIN_PASS_LENGTH=2
+MIN_NUM_RUNS=$(( ($NUM_OPTS**($MIN_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
+
+MAX_PASS_LENGTH=5
+MAX_NUM_RUNS=$(( ($NUM_OPTS**($MAX_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
+echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
+
+# IF USING RANDOM; set up min/max indices manually
+if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
+  MIN_NUM_RUNS=0
+  MAX_NUM_RUNS=100
+fi
+
+
+# LSF config
 LSF_PREFIX=
 LSF_PREFIX_LOG=
 LSF_MEMORY_LIMIT_KB=$((192*1024))  # 192 GB, our default unit is apparently MB
@@ -129,11 +102,20 @@ launch_job() {
 # Launch Jobs with slurm (on Savio cluster)
 launch_slurm_job() {
   pid_index=$1
-  benchmark="$2"
-  method="$3"
+  benchmark=$2
+  method=$3
   seq_index=$4
+  
+  # Name of "IP" (current benchmark)
+  verilog_file="$(basename -- $benchmark)"
+  ip=${verilog_file%.*}
+  if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
+      slurm_script_name="${ip}_random_$3_$4_${RANDOM_SEQ_LEN}"
+  else
+      slurm_script_name="${ip}_$3_$4"      
+  fi
 
-  slurm_script_name="$4_$2_$3_$1"
+  echo $slurm_script_name
   cat > "${slurm_script_name}.sh" <<EOT
 #!/bin/bash
 # generated at $(date) by run_all.sh
@@ -150,18 +132,20 @@ launch_slurm_job() {
 #SBATCH --qos=savio_normal
 #
 # Wall clock limit:
-#SBATCH --time=00:00:30
+#SBATCH --time=00:30:00
 #
 ## Command(s) to run:
-echo ${pid_index}: ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
-${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} &
+echo ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
+${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
 EOT
   # TODO: run slurm script with sbatch?
-  echo ${pid_index}: ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
+  echo "${pid_index} ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m ${method} -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}"
   sbatch "${slurm_script_name}.sh"
   pids[${pid_index}]=$!
 }
 
+# Launch job on LSF wiht prefix OR locally
+# 
 launch_lsf_job() {
   pid_index=$1
   benchmark=$2
@@ -237,4 +221,13 @@ else
   token_controlled_launch
 fi
 
+if [ ${USE_SLURM} = true ]; then
+  cat > "Makefile" <<EOT
+clean:
+	mkdir -p slurm_out
+	mkdir -p slurm_scripts
+	mv slurm-*.out slurm_out
+	mv *.sh slurm_scrips
+EOT
+fi 
 popd
