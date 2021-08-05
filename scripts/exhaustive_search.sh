@@ -7,17 +7,21 @@ STATIC_TEST_ARGS="-s 5000"
 BENCHMARK_DIR=  # $(readlink -f "${1:-vtr/verilog}")
 BATCH_SIZE=8 # Actually spawns 3x this many jobs, one for each synth method (below)
 USE_LSF=false
+USE_SLURM=false
 DEVICE="xc7a200"
 # SYNTH_METHODS "yosys yosys-abc9"
 SYNTH_METHODS="yosys-abc9"
 
 RANDOM_SEQ_LEN=0
-NUM_OPTS=6
-MIN_PASS_LENGTH=1
-MIN_NUM_RUNS=$(( ($NUM_OPTS**($MIN_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) ))
+NUM_OPTS=4
+
+
+# Calculate which indices to run exhaustive search on
+MIN_PASS_LENGTH=0
+MIN_NUM_RUNS=$(( ($NUM_OPTS**($MIN_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
 
 MAX_PASS_LENGTH=5
-MAX_NUM_RUNS=$(( ($NUM_OPTS**($MAX_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) ))
+MAX_NUM_RUNS=$(( ($NUM_OPTS**($MAX_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 
 # NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
@@ -37,6 +41,8 @@ while [ "$1" != "" ]; do
                             ;;
     -j | --batch_size)      shift
                             BATCH_SIZE="$1"
+                            ;;
+    -s | --slurm)           USE_SLURM=true
                             ;;
     -l | --lsf)             USE_LSF=true
                             ;;
@@ -98,6 +104,8 @@ fi
 
 pushd ${RUN_DIR}
 
+
+# LSF SETTINGS
 LSF_PREFIX=
 LSF_PREFIX_LOG=
 LSF_MEMORY_LIMIT_KB=$((192*1024))  # 192 GB, our default unit is apparently MB
@@ -109,7 +117,52 @@ if [ ${USE_LSF} = true ]; then
   LSF_PREFIX="bsub -K -q normal -M ${LSF_MEMORY_LIMIT_KB} -v ${LSF_SWAP_LIMIT_KB}"
 fi
 
+# LAUNCH JOB-SLURM or LSF or Local
 launch_job() {
+  if [ ${USE_SLURM} = true ]; then
+    launch_slurm_job $1 $2 $3 $4
+  else
+    launch_lsf_job $1 $2 $3 $4
+  fi
+}
+
+# Launch Jobs with slurm (on Savio cluster)
+launch_slurm_job() {
+  pid_index=$1
+  benchmark="$2"
+  method="$3"
+  seq_index=$4
+
+  slurm_script_name="$4_$2_$3_$1"
+  cat > "${slurm_script_name}.sh" <<EOT
+#!/bin/bash
+# generated at $(date) by run_all.sh
+# Job name:
+#SBATCH --job-name=${slurm_script_name}
+#
+# Account:
+#SBATCH --account=fc_bdmesh
+#
+# Partition:
+#SBATCH --partition=savio	
+#
+# Quality of Service:
+#SBATCH --qos=savio_normal
+#
+# Wall clock limit:
+#SBATCH --time=00:00:30
+#
+## Command(s) to run:
+echo ${pid_index}: ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
+${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} &
+EOT
+  # TODO: run slurm script with sbatch?
+  echo ${pid_index}: ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
+  sbatch "${slurm_script_name}.sh"
+  pids[${pid_index}]=$!
+}
+
+launch_lsf_job() {
   pid_index=$1
   benchmark=$2
   method=$3
@@ -128,7 +181,6 @@ read -r -a synth_method_array <<< "${SYNTH_METHODS}"
 
 # Dispatch ${BATCH_SIZE}-many groups of jobs in parallel and wait for them to
 # complete, then continue, until all jobs are complete.
-
 batch_controlled_launch() {
   let "i=$MIN_NUM_RUNS"
   while [ ${i} -lt ${MAX_NUM_RUNS} ]; do

@@ -3,9 +3,8 @@
 import argparse
 import sys,os,random
 
-abc9=True
 options = ["rewrite", "rewrite -z", "refactor", "refactor -z", "resub -K 8", "resub -K 4", "resub -K 12", "resub -N 2", "resub -N 3", "balance",  "dc2"]
-options_abc9 = ["&dc2", "&shrink", "&syn2", "&synch2", "&retime"]
+options_abc9 = ["&dc2", "&syn2", "&synch2", "&retime"]
 
 opener = "strash;ifraig;scorr;"
 opener_abc9 = "&scorr;&sweep;"
@@ -63,11 +62,12 @@ def main():
             description='Create ABC script for each permuted sequence of synthesis transformations')
     parser.add_argument('--random_seq_len', type=int, default=0, help='Random: length of target sequence')
     parser.add_argument('--in_idx', type=int, help='Index of current sequence')
+    parser.add_argument('--abc9', type=int, help='Index of current sequence')
     args = parser.parse_args()
 
     if args.random_seq_len > 0:
         print(get_random_sequence(args.random_seq_len))
-    elif abc9:
+    elif args.abc9 > 0:
         print(get_sequence_abc9(args.in_idx))
     else :
         print(get_sequence(args.in_idx))

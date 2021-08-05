@@ -160,9 +160,11 @@ EOT
   else
     edif="${ip}.edif"
     synth_with_abc9=
+    synth_abc9=0
     mem_file="$(dirname ${path})/dual_port_ram.v"
     if [ "${synth}" = "yosys-abc9" ]; then
       synth_with_abc9="-abc9"
+      synth_abc9=1
     fi
     if [ -f "${edif}" ]; then
       echo "${test_name} reusing cached ${edif}"
@@ -183,7 +185,7 @@ EOT
       if [ -f "${top_file}" ]; then
         echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
       fi
-      python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} > ${ip}.${2}.abc.script
+      python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} --abc9=$synth_abc9 > ${ip}.${2}.abc.script
       cat >> ${ip}.ys <<EOT
 synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} -script  ${ip}.${2}.abc.script
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
