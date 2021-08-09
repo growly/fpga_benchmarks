@@ -1,0 +1,681 @@
+Sequence	PathDelay	LogicDelay	NetDelay	LUTsLogic	RegsFF	RegsLatch
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.602	8.699(64%)	4.903(36%)	2062	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.611	8.699(64%)	4.912(36%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2079	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.260	9.172(65%)	5.088(35%)	2140	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2079	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.602	8.699(64%)	4.903(36%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.260	9.172(65%)	5.088(35%)	2140	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2079	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.290	9.172(65%)	5.118(35%)	2126	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.821	8.907(65%)	4.914(35%)	2090	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2079	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.275	9.172(65%)	5.103(35%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2110	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2085	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.288	9.172(65%)	5.116(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2059	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2071	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.275	9.172(65%)	5.103(35%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2094	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2064	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2060	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2100	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.829	8.907(65%)	4.922(35%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2061	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2094	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2031	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2097	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2017	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2071	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2059	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2031	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2059	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2095	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2043	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2101	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2088	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.672	10.055(74%)	3.617(26%)	2027	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2007	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.246	9.172(65%)	5.074(35%)	2099	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2029	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2047	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2041	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2101	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2007	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2041	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.275	9.172(65%)	5.103(35%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2031	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2059	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2101	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2007	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2041	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2148	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.313	9.172(65%)	5.141(35%)	2200	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.532	3.107(23%)	10.425(77%)	2134	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.757	9.172(63%)	5.585(37%)	2152	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2166	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.618	8.699(64%)	4.919(36%)	2162	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2183	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.307	9.172(65%)	5.135(35%)	2136	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.289	9.172(65%)	5.117(35%)	2095	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2055	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2128	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2114	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.757	9.172(63%)	5.585(37%)	2152	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.307	9.172(65%)	5.135(35%)	2136	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2114	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.602	8.699(64%)	4.903(36%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.602	8.699(64%)	4.903(36%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.260	9.172(65%)	5.088(35%)	2140	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2079	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.275	9.172(65%)	5.103(35%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2031	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2059	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2101	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2007	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2041	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.260	9.172(65%)	5.088(35%)	2140	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.757	9.172(63%)	5.585(37%)	2152	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.307	9.172(65%)	5.135(35%)	2136	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2114	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2079	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2061	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2168	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.821	8.907(65%)	4.914(35%)	2123	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2122	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2176	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2152	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2139	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2104	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.297	9.172(65%)	5.125(35%)	2118	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2125	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2082	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2176	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2104	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2082	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2129	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2110	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2162	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2164	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2114	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.619	8.699(64%)	4.920(36%)	2107	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.245	9.172(65%)	5.073(35%)	2120	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2091	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.675	10.055(74%)	3.620(26%)	2115	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2110	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2162	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2110	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.289	9.172(65%)	5.117(35%)	2138	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2132	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2104	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.299	9.172(65%)	5.127(35%)	2123	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2124	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2123	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2141	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2110	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2106	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2111	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2169	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2061	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.299	9.172(65%)	5.127(35%)	2123	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2169	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2176	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2104	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2082	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2162	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2110	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.299	9.172(65%)	5.127(35%)	2123	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2169	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.275	9.172(65%)	5.103(35%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2114	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2102	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2109	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2120	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2130	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2102	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2113	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.301	9.172(65%)	5.129(35%)	2093	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2097	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2120	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2120	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2109	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2113	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2120	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2153	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2105	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2109	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2149	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2084	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2031	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2059	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2101	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2007	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2041	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.757	9.172(63%)	5.585(37%)	2152	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.307	9.172(65%)	5.135(35%)	2136	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2114	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2046	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.762	9.172(63%)	5.590(37%)	2147	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2074	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&retime;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2061	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2176	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2104	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2082	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2162	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2117	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.322	9.172(65%)	5.150(35%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2110	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.299	9.172(65%)	5.127(35%)	2123	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.679	10.055(74%)	3.624(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.678	10.055(74%)	3.623(26%)	2169	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2185	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2108	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2083	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&dc2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2135	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.286	9.172(65%)	5.114(35%)	2080	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2109	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2113	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2120	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2149	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.684	10.055(74%)	3.629(26%)	2067	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2078	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&syn2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.602	8.699(64%)	4.903(36%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&synch2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.249	9.172(65%)	5.077(35%)	2154	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2066	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&synch2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2023	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&synch2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2073	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&synch2;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&retime;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.682	10.055(74%)	3.627(26%)	2121	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&retime;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.602	8.699(64%)	4.903(36%)	2077	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&retime;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.681	10.055(74%)	3.626(26%)	2058	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&retime;&syn2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.674	10.055(74%)	3.619(26%)	2096	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&dc2;&dc2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.282	9.172(65%)	5.110(35%)	2133	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&syn2;&dc2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.673	10.055(74%)	3.618(26%)	2086	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&synch2;&dc2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	13.683	10.055(74%)	3.628(26%)	2039	605	9
+read_lut /global/home/users/minwoo_kang/fpga_benchmarks/scripts/lut_library/LUTLIB_2.txt
+&scorr;&sweep;&retime;&dc2;&synch2;&syn2;&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l	14.260	9.172(65%)	5.088(35%)	2140	605	9
