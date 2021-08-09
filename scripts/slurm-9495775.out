@@ -1,0 +1,3 @@
+Found 340 results:
+Input is /global/home/users/minwoo_kang/fpga_benchmarks/run_lib2_or1200: 340 files
+rm: cannot remove 'lib2_or1200.out.csv': No such file or directory

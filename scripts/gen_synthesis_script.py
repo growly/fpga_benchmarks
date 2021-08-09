@@ -14,7 +14,7 @@ opener_abc9 = "&scorr;&sweep;"
 # closure_ftune = "strash;ifraig;scorr;dc2;strash;dch -f;if -K 6;mfs2;lutpack -S 1"
 closure_whitebox_delay = "strash;ifraig;scorr;strash;dch -f;if -v;mfs2;print_stats -l"
 closure = "dretime; strash; dch -f; if -v; mfs2" # LUTPACK or not; dretime or not with -
-closure_abc9 = "&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l;print_stats -l"
+closure_abc9 = "&dch -f; &ps; &if -W 300 -v; &mfs; &ps -l"
 
 def get_seq(idx): 
     num_options = len(options) 

@@ -43,7 +43,7 @@ printf "Sequence\tPathDelay\tLogicDelay\tNetDelay\tLUTsLogic\tRegsFF\tRegsLatch\
 
 let "i=0"
 while [ ${i} -lt ${num_results} ]; do
-   SEQ=$( cat ${scripts[i]})
+   SEQ=$( grep "&scorr" ${scripts[i]})
    DELAY_NS=$(grep "Path Delay"  ${logs[i]} | sed 's/[^0-9.]*//g')
    LOGIC_DELAY_NS=$( grep "Logic Delay"  ${logs[i]} |  sed -e 's/[^0-9.(%)]*//g; s/%/%%/g' )
    NET_DELAY_NS=$( grep "Net Delay"  ${logs[i]} |  sed -e 's/[^0-9.(%)]*//g; s/%/%%/g' )
