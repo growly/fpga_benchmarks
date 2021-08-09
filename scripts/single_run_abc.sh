@@ -14,6 +14,7 @@ synth="yosys-abc9" # yosys | yosys-abc9 | vivado
 clean=false
 idx=0
 RANDOM_SEQ_LEN=0
+LUT_LIBRARY=0
 SCRIPT_DIR="$( dirname "$( readlink -f "${BASH_SOURCE[0]}" )" )"
 
 
@@ -27,6 +28,9 @@ while [ "$1" != "" ]; do
                             ;;
     -r | --random )         shift
                             RANDOM_SEQ_LEN="$1"
+                            ;;
+    -l | --lut_library )    shift
+                            LUT_LIBRARY="$1"
                             ;;
     -d | --device )         shift
                             dev="$1"
@@ -96,6 +100,7 @@ fi
 # echo "xl_device=${xl_device}"
 # echo "YOSYS=${YOSYS}"
 # echo "VIVADO=${VIVADO}"
+
 test_name="tab_${synth}_${ip}_${dev}_${idx}"
 if [ ${RANDOM_SEQ_LEN} -gt 0  ]; then
   test_name="tab_${synth}_${ip}_${dev}_random_${idx}"
@@ -161,7 +166,7 @@ EOT
     edif="${ip}.edif"
     synth_with_abc9=
     synth_abc9=0
-    mem_file="$(dirname ${path})/dual_port_ram.v"
+    mem_file="$SCRIPT_DIR/include/dual_port_ram.v"
     if [ "${synth}" = "yosys-abc9" ]; then
       synth_with_abc9="-abc9"
       synth_abc9=1
@@ -185,8 +190,9 @@ EOT
       if [ -f "${top_file}" ]; then
         echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
       fi
-      python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} --abc9=$synth_abc9 > ${ip}.${2}.abc.script
+      python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} --abc9=$synth_abc9 --lut_library $4 > ${ip}.${2}.abc.script
       cat >> ${ip}.ys <<EOT
+read_verilog ${mem_file}
 synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} -script  ${ip}.${2}.abc.script
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT
@@ -200,7 +206,8 @@ EOT
     #   fi
     #   #popd > /dev/null
     #   mv yosys.log yosys.txt
-      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys.log > /dev/null 2>&1
+#      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys.log > /dev/null 2>&1
+      ${YOSYS} ${pwd}/${ip}.ys > /dev/null 2>&1
     fi
 
     cat >> test_${1}.tcl <<EOT
@@ -235,6 +242,7 @@ if {[llength ${clock_expr}] != 0} {
 EOT
   fi
   cat >> test_${1}.tcl <<EOT
+#report_timing_summary
 report_design_analysis
 report_utilization
 # For now, don't do place and route
@@ -278,7 +286,7 @@ report_timing() {
 #     report_timing   "${speed}"    "${idx}"
 # done
 echo "Running for Sequence # ${idx}"
-synth_case  "${speed}"  "${idx}"  ${RANDOM_SEQ_LEN}
+synth_case  ${speed}  ${idx}  ${RANDOM_SEQ_LEN} ${LUT_LIBRARY}
 # report_timing   "${speed}"    "${idx}"
 
 remaining_iterations=0

@@ -11,9 +11,10 @@ USE_SLURM=false
 DEVICE="xc7a200"
 # SYNTH_METHODS "yosys yosys-abc9"
 SYNTH_METHODS="yosys-abc9"
+LUT_LIB=0
 
 RANDOM_SEQ_LEN=0
-NUM_OPTS=4
+NUM_OPTS=12
 
 
 # NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
@@ -33,6 +34,9 @@ while [ "$1" != "" ]; do
                             ;;
     -j | --batch_size)      shift
                             BATCH_SIZE="$1"
+                            ;;
+    -b | --lut_lib)         shift
+                            LUT_LIB="$1"
                             ;;
     -s | --slurm)           USE_SLURM=true
                             ;;
@@ -64,17 +68,17 @@ pushd ${RUN_DIR}
 
 
 # Calculate which indices to run exhaustive search on
-MIN_PASS_LENGTH=2
+MIN_PASS_LENGTH=0
 MIN_NUM_RUNS=$(( ($NUM_OPTS**($MIN_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
 
-MAX_PASS_LENGTH=5
+MAX_PASS_LENGTH=3
 MAX_NUM_RUNS=$(( ($NUM_OPTS**($MAX_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 
 # IF USING RANDOM; set up min/max indices manually
 if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
   MIN_NUM_RUNS=0
-  MAX_NUM_RUNS=100
+  MAX_NUM_RUNS=1
 fi
 
 
@@ -110,7 +114,7 @@ launch_slurm_job() {
   verilog_file="$(basename -- $benchmark)"
   ip=${verilog_file%.*}
   if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
-      slurm_script_name="${ip}_random_$3_$4_${RANDOM_SEQ_LEN}"
+      slurm_script_name="${ip}_random_$3_max${RANDOM_SEQ_LEN}_$4"
   else
       slurm_script_name="${ip}_$3_$4"      
   fi
@@ -130,16 +134,18 @@ launch_slurm_job() {
 #
 # Quality of Service:
 #SBATCH --qos=savio_normal
+# Num Cores per Task
+#SBATCH --cpus-per-task=4
 #
 # Wall clock limit:
 #SBATCH --time=00:30:00
 #
 ## Command(s) to run:
-echo ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
-${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}
+echo ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}
+${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}
 EOT
   # TODO: run slurm script with sbatch?
-  echo "${pid_index} ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m ${method} -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN}"
+  echo "${pid_index} ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m ${method} -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}"
   sbatch "${slurm_script_name}.sh"
   pids[${pid_index}]=$!
 }
@@ -224,10 +230,7 @@ fi
 if [ ${USE_SLURM} = true ]; then
   cat > "Makefile" <<EOT
 clean:
-	mkdir -p slurm_out
-	mkdir -p slurm_scripts
-	mv slurm-*.out slurm_out
-	mv *.sh slurm_scrips
+	rm *.out *.sh
 EOT
 fi 
 popd
