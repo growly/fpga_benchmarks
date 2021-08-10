@@ -39,7 +39,7 @@ fi
 echo "Input is ${RESULTS_DIR}: ${#logs[@]} files"
 
 rm $ip.out.csv
-printf "Sequence\tPathDelay\tLogicDelay\tNetDelay\tLUTsLogic\tRegsFF\tRegsLatch\n" >> $ip.out.csv
+printf "Index\tSequence\tPathDelay\tLogicDelay\tNetDelay\tLUTsLogic\tRegsFF\tRegsLatch\n" >> $ip.out.csv
 
 let "i=0"
 while [ ${i} -lt ${num_results} ]; do
@@ -50,6 +50,6 @@ while [ ${i} -lt ${num_results} ]; do
    LUT_LOGIC=$( grep "LUT as Logic" ${logs[i]} |  sed 's/[^0-9]*|//g; s/[ \t]*\([0-9]\{1,\}\).*/\1/' )
    REG_FF=$( grep "Register as Flip Flop" ${logs[i]} |  sed 's/[^0-9]*|//g; s/[ \t]*\([0-9]\{1,\}\).*/\1/' )
    REG_LATCH=$( grep "Register as Latch" ${logs[i]} |  sed 's/[^0-9]*|//g; s/[ \t]*\([0-9]\{1,\}\).*/\1/' )
-   printf "$SEQ\t$DELAY_NS\t$LOGIC_DELAY_NS\t$NET_DELAY_NS\t$LUT_LOGIC\t$REG_FF\t$REG_LATCH\n" >> ${ip}.out.csv
+   printf "$i\t$SEQ\t$DELAY_NS\t$LOGIC_DELAY_NS\t$NET_DELAY_NS\t$LUT_LOGIC\t$REG_FF\t$REG_LATCH\n" >> ${ip}.out.csv
    let "i=i+1"
 done

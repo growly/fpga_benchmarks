@@ -14,7 +14,8 @@ SYNTH_METHODS="yosys-abc9"
 LUT_LIB=0
 
 RANDOM_SEQ_LEN=0
-NUM_OPTS=12
+NUM_OPTS=6
+PERMUTATIONS=$(( 1 * 3))
 
 
 # NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
@@ -69,10 +70,10 @@ pushd ${RUN_DIR}
 
 # Calculate which indices to run exhaustive search on
 MIN_PASS_LENGTH=0
-MIN_NUM_RUNS=$(( ($NUM_OPTS**($MIN_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
+MIN_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MIN_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1) ))
 
-MAX_PASS_LENGTH=1
-MAX_NUM_RUNS=$(( ($NUM_OPTS**($MAX_PASS_LENGTH+1) - 1) / ($NUM_OPTS-1) - 1))
+MAX_PASS_LENGTH=2
+MAX_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MAX_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1)  ))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 
 # IF USING RANDOM; set up min/max indices manually
@@ -130,7 +131,7 @@ launch_slurm_job() {
 #SBATCH --account=fc_bdmesh
 #
 # Partition:
-#SBATCH --partition=savio	
+#SBATCH --partition=savio
 #
 # Quality of Service:
 #SBATCH --qos=savio_normal
@@ -138,7 +139,7 @@ launch_slurm_job() {
 #SBATCH --cpus-per-task=4
 #
 # Wall clock limit:
-#SBATCH --time=00:30:00
+#SBATCH --time=00:15:00
 #
 ## Command(s) to run:
 echo ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}
