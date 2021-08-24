@@ -18,7 +18,7 @@
 #SBATCH --time=00:10:00
 #
 ## Command(s) to run:
-ip="lib1_or1200"
+ip="lib0_or1200"
 RESULTS_DIR="/global/home/users/minwoo_kang/fpga_benchmarks/run_$ip"
 
 if [ -d "${RESULTS_DIR}" ]; then

@@ -19,7 +19,7 @@ aig_zero_cost_replace_ops = ["", ""]
 #                "&put;resub -K 12 -N 2;&get", "&put;resub -K 12 -N 3;&get",
 #                "&put;resub -K 16 -N 2;&get", "&put;resub -K 8; &get",
 #                "&if -W 300 -x", "&if -W 300 -g"]
-aig_ind_ops = ["&dc2", "&syn2", "&b", "&b -d",
+aig_ind_ops = ["&put;rewrite;&get -n","&dc2", "&syn2", "&b", "&b -d",
                "&if -W 300 -x", "&if -W 300 -g"]
 aig_ch_ops = ["&synch2", "&dch", "&dch -f"]
 
