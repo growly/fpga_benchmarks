@@ -12,14 +12,13 @@ aig_permute_in = [""]
 #                "&put;resub -K 12 -N 2 -z;&get -n;", "&put;resub -K 12 -N 3 -z;&get -n;",
 #                "&put;resub -K 16 -N 2 -z;&get -n;", "&put;resub -K 16 -N 3 -z;&get -n;"]
 
-#aig_zero_cost_replace_ops = ["", "&put;resub -z;&get;"]
 aig_zero_cost_replace_ops = ["", ""]
 # aig_ind_ops = ["&dc2", "&syn2", "&b", "&b -d",
 #                "&put;resub -K 8 -N 2;&get", "&put;resub -K 8 -N 3;&get",
 #                "&put;resub -K 12 -N 2;&get", "&put;resub -K 12 -N 3;&get",
 #                "&put;resub -K 16 -N 2;&get", "&put;resub -K 8; &get",
 #                "&if -W 300 -x", "&if -W 300 -g"]
-aig_ind_ops = ["&put;rewrite;&get -n","&dc2", "&syn2", "&b", "&b -d",
+aig_ind_ops = ["&dc2", "&syn2", "&b", "&b -d",
                "&if -W 300 -x", "&if -W 300 -g"]
 aig_ch_ops = ["&synch2", "&dch", "&dch -f"]
 
@@ -175,6 +174,8 @@ def main():
         print(new_get_seq_abc9(args.in_idx, lut_lib_num))
     else :
         print(get_seq(args.in_idx))
+    print("write_blif internal.blif")
 
 if __name__ == '__main__':
     main()    
+    
