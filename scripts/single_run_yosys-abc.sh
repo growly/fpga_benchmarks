@@ -206,8 +206,8 @@ EOT
     #   fi
     #   #popd > /dev/null
     #   mv yosys.log yosys.txt
-      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys.log > /dev/null 2>&1
-#      ${YOSYS} ${pwd}/${ip}.ys > /dev/null 2>&1
+#      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys.log > /dev/null 2>&1
+      ${YOSYS} ${pwd}/${ip}.ys > /dev/null 2>&1
     fi
 
     cat >> test_${1}.tcl <<EOT

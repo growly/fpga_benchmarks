@@ -18,8 +18,9 @@
 #SBATCH --time=00:10:00
 #
 ## Command(s) to run:
-ip="lib0_or1200"
-RESULTS_DIR="/global/home/users/minwoo_kang/fpga_benchmarks/run_$ip"
+ip=$1
+RESULTS_DIR=$2
+#RESULTS_DIR="/global/scratch/users/minwoo_kang/run_random_or1200"
 
 if [ -d "${RESULTS_DIR}" ]; then
     shopt -s nullglob
