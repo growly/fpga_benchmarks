@@ -193,7 +193,7 @@ EOT
       python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} --abc9=$synth_abc9 --lut_library $4 > ${ip}.${2}.abc.script
       cat >> ${ip}.ys <<EOT
 read_verilog ${mem_file}
-synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} -script  ${ip}.${2}.abc.script
+synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} -blif "${ip}.blif" -script  ${ip}.${2}.abc.script
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT
 # synth_xilinx -flatten ${synth_with_abc9} -edif ${edif}
