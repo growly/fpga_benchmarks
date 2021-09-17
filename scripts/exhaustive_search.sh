@@ -79,7 +79,7 @@ echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 # IF USING RANDOM; set up min/max indices manually
 if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
   MIN_NUM_RUNS=0
-  MAX_NUM_RUNS=1
+  MAX_NUM_RUNS=100
 fi
 
 

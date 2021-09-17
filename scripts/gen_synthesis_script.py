@@ -18,7 +18,7 @@ aig_zero_cost_replace_ops = ["", ""]
 #                "&put;resub -K 12 -N 2;&get", "&put;resub -K 12 -N 3;&get",
 #                "&put;resub -K 16 -N 2;&get", "&put;resub -K 8; &get",
 #                "&if -W 300 -x", "&if -W 300 -g"]
-aig_ind_ops = ["&dc2", "&syn2", "&syn3", "&syn4" "&b", "&b -d",
+aig_ind_ops = ["&dc2", "&syn2", "&syn3", "&syn4", "&b", "&b -d",
                "&if -W 300 -x -K 6", "&if -W 300 -g -K 6", "&if -W 300 -y -K 6"]
 aig_ch_ops = ["&synch2", "&dch", "&dch -f"]
 
@@ -122,16 +122,28 @@ def get_seq(idx):
     seq += closure_whitebox_delay
     return seq
 
-def get_rand_seq_abc9(seq_len): 
-    num_options = len(options_abc9) 
-    seq = opener_abc9
+def get_rand_seq_abc9(seq_len, lib_num, idx): 
+    num_options = len(aig_all_ops) 
+    seq = aig_sweep
 
-    random.seed(datetime.now())
-    for i in range(seq_len) :
-        r = random.randint(0, num_options)
-        if r < num_options :
-            seq += options_abc9[r] + ";"
-    seq += closure_abc9
+    random.seed(idx)
+    n_iter = 1
+    while True:
+        for i in range(seq_len) :
+            r = random.randint(0, 12)
+            if r < num_options :
+                seq += aig_all_ops[r] + ";"
+        if lib_num > 0:
+            seq +="&if -W 300 -v;&mfs;"
+        else:
+            seq +="&if -W 300 -K 6 -v;&mfs;"
+        s = random.randint(0, 2**n_iter)
+        if s == 0:
+            seq +="&st;"
+            continue
+        else: 
+            break
+            # iterate again!
     return seq
 
 def main():
@@ -147,12 +159,13 @@ def main():
     do_random = args.random_seq_len > 0
     lut_lib_num = args.lut_library
     
+    print("rec_start3 " + os.path.dirname(os.path.abspath(__file__)) + "/include/rec6Lib_final_filtered3_recanon.aig")
+
     if lut_lib_num > 0:
         print("read_lut " + os.path.dirname(os.path.abspath(__file__)) + "/lut_library/LUTLIB_{}.txt".format(lut_lib_num))
 
     if do_random:
-        if do_abc9:
-            print(get_rand_seq_abc9(args.random_seq_len))
+            print(get_rand_seq_abc9(args.random_seq_len, lut_lib_num, args.in_idx))
     elif do_abc9:
         #print(get_seq_abc9_w_perm(args.in_idx))
         print(get_seq_abc9(args.in_idx, lut_lib_num))
