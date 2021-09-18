@@ -7,6 +7,7 @@ import seaborn as sns
 import pandas as pd
 import glob, os.path, os
 
+
 # Load the data as Pandas DataFrame
 def load_data(pathname):
     filename=os.path.basename(pathname)
@@ -29,20 +30,27 @@ def load_data_from_dir(search):
 
     
 
-def scatterplot_seaborn_single(df, title):
+def scatterplot_seaborn_single(df, title, y_vars):
     sns.set_style("darkgrid")
-    ax = sns.scatterplot(x='Index', y ='PathDelay',  data=df);
+    fig = plt.gcf()
+    fig.set_size_inches(12, 8)
+
+    ax = sns.scatterplot(x=y_vars[0], y = y_vars[1],  data=df);
     plt.title(title)
-    plt.savefig(title+'index_pathdelay.png',  format='png', dpi=300)
+    plt.savefig(title+'_'+y_vars[0]+'_'+y_vars[1]+'.png',  format='png', dpi=300)
     plt.close() 
+
+def scatterplot_seaborn_all(dfs, y_vars):
+    for df in dfs:
+        title = df["Benchmark"][0]
+        scatterplot_seaborn_single(df,title, y_vars)
 
 def scatterplot_seaborn(dfs, title):
     df = pd.DataFrame()
     for this_df in dfs:
         df = df.append(this_df)
-    print(df)
     sns.set_style("darkgrid")
-    ax = sns.scatterplot(x='Index', y ='PathDelay',  data=dfs, hue="Benchmark", time="Benchmark");
+    ax = sns.scatterplot(x='Index', y ='PathDelay',  data=df, hue="Benchmark", style="Benchmark", size=0.1);
     plt.title(title)
     plt.savefig(title+'index_pathdelay.png',  format='png', dpi=300)
     plt.close() 
@@ -91,9 +99,9 @@ def plot_q2(q2_dfs, bmark):
 
 
 def main():
-    df, tag = load_data("results/random_or1200.out.csv")
-    scatterplot_seaborn_single(df,tag)
     dfs = load_data_from_dir("results/random*.csv")
-    scatterplot_seaborn(dfs, "Random Iterations")
+    scatterplot_seaborn_all(dfs, ['PathDelay', 'LUTsLogic'])
+    #dfs = load_data_from_dir("results/random*.csv")
+    #scatterplot_seaborn(dfs, "Random Iterations")
 if __name__ == "__main__":
     main()
