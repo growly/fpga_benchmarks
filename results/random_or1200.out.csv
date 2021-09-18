@@ -446,56 +446,556 @@ Index	Sequence	PathDelay	LogicDelay	NetDelay	LUTsLogic	RegsFF	RegsLatch
 444	&scorr;&sweep;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1976	605	9
 445	&scorr;&sweep;&synch2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1979	605	9
 446	&scorr;&sweep;&if -W 300 -g -K 6;&b;&b -d;&if -W 300 -K 6 -v;&mfs;	13.675	10.037(74%)	3.638(26%)	1999	605	9
-447	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2004	605	9
-448	&scorr;&sweep;&b;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.358	8.924(63%)	5.434(37%)	2031	605	9
-449	&scorr;&sweep;&synch2;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2092	605	9
-450	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1959	605	9
-451	&scorr;&sweep;&syn2;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2091	605	9
-452	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.811	8.889(65%)	4.922(35%)	2054	605	9
-453	&scorr;&sweep;&dc2;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;	13.866	9.031(66%)	4.835(34%)	2005	605	9
-454	&scorr;&sweep;&synch2;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2081	605	9
-455	&scorr;&sweep;&syn4;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2078	605	9
-456	&scorr;&sweep;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2003	605	9
-457	&scorr;&sweep;&b;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn4;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	2054	605	9
-458	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1944	605	9
-459	&scorr;&sweep;&synch2;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&dch;&if -W 300 -K 6 -v;&mfs;	13.674	10.055(74%)	3.619(26%)	1986	605	9
-460	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2018	605	9
-461	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2006	605	9
-462	&scorr;&sweep;&if -W 300 -x -K 6;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2001	605	9
-463	&scorr;&sweep;&syn2;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.685	10.055(74%)	3.630(26%)	1958	605	9
-464	&scorr;&sweep;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2003	605	9
-465	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.341	9.172(64%)	5.169(36%)	2018	605	9
-466	&scorr;&sweep;&dch;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1970	605	9
-467	&scorr;&sweep;&b -d;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1983	605	9
-468	&scorr;&sweep;&syn2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.116	8.575(61%)	5.541(39%)	1995	605	9
-469	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	13.614	8.681(64%)	4.933(36%)	2050	605	9
-470	&scorr;&sweep;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1986	605	9
-471	&scorr;&sweep;&b;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2027	605	9
-472	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.927	8.557(62%)	5.370(38%)	1998	605	9
-473	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.665	10.037(74%)	3.628(26%)	1983	605	9
-474	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.805	9.155(67%)	4.650(33%)	1978	605	9
-475	&scorr;&sweep;&b;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2015	605	9
-476	&scorr;&sweep;&syn4;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2045	605	9
-477	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1982	605	9
-478	&scorr;&sweep;&syn4;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dch -f;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	14.303	9.172(65%)	5.131(35%)	1977	605	9
-479	&scorr;&sweep;&b;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2018	605	9
-480	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.602	8.681(64%)	4.921(36%)	2016	605	9
-481	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1963	605	9
-482	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	1987	605	9
-483	&scorr;&sweep;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2021	605	9
-484	&scorr;&sweep;&syn4;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2016	605	9
-485	&scorr;&sweep;&dc2;&if -W 300 -K 6 -v;&mfs;	14.338	9.031(63%)	5.307(37%)	2035	605	9
-486	&scorr;&sweep;&syn3;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2098	605	9
-487	&scorr;&sweep;&if -W 300 -x -K 6;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	1950	605	9
-488	&scorr;&sweep;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1986	605	9
-489	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	1979	605	9
-490	&scorr;&sweep;&syn4;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2026	605	9
-491	&scorr;&sweep;&syn2;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1967	605	9
-492	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.557	9.923(74%)	3.634(26%)	1985	605	9
-493	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	1977	605	9
-494	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2000	605	9
-495	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2001	605	9
-496	&scorr;&sweep;&b -d;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	13.677	10.055(74%)	3.622(26%)	1969	605	9
-497	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2048	605	9
-498	&scorr;&sweep;&b -d;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.878	8.889(65%)	4.989(35%)	1982	605	9
-499	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2069	605	9
+447	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.675	10.037(74%)	3.638(26%)	2020	605	9
+448	&scorr;&sweep;&dch;&b;&dch;&if -W 300 -K 6 -v;&mfs;	14.317	9.172(65%)	5.145(35%)	2001	605	9
+449	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1993	605	9
+450	&scorr;&sweep;&syn3;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;	14.017	8.889(64%)	5.128(36%)	1972	605	9
+451	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2006	605	9
+452	&scorr;&sweep;&syn3;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.953	9.031(65%)	4.922(35%)	1964	605	9
+453	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.675	10.037(74%)	3.638(26%)	2010	605	9
+454	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dch;&syn4;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2046	605	9
+455	&scorr;&sweep;&if -W 300 -y -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1948	605	9
+456	&scorr;&sweep;&dch -f;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dch -f;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1989	605	9
+457	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2004	605	9
+458	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2005	605	9
+459	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2026	605	9
+460	&scorr;&sweep;&dc2;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2027	605	9
+461	&scorr;&sweep;&dc2;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2121	605	9
+462	&scorr;&sweep;&b -d;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.995	8.557(62%)	5.438(38%)	2023	605	9
+463	&scorr;&sweep;&syn3;&b;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	2034	605	9
+464	&scorr;&sweep;&dch -f;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2043	605	9
+465	&scorr;&sweep;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.322	9.172(65%)	5.150(35%)	1999	605	9
+466	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2076	605	9
+467	&scorr;&sweep;&synch2;&if -W 300 -g -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	14.018	8.889(64%)	5.129(36%)	2008	605	9
+468	&scorr;&sweep;&b;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.358	8.924(63%)	5.434(37%)	2031	605	9
+469	&scorr;&sweep;&dc2;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.876	9.031(66%)	4.845(34%)	2041	605	9
+470	&scorr;&sweep;&syn2;&dc2;&b;&if -W 300 -K 6 -v;&mfs;	14.327	9.172(65%)	5.155(35%)	2070	605	9
+471	&scorr;&sweep;&syn2;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2100	605	9
+472	&scorr;&sweep;&dch;&dch;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2010	605	9
+473	&scorr;&sweep;&syn4;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.055(74%)	3.617(26%)	2022	605	9
+474	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&synch2;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1937	605	9
+475	&scorr;&sweep;&syn3;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	1940	605	9
+476	&scorr;&sweep;&if -W 300 -x -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2015	605	9
+477	&scorr;&sweep;&dc2;&if -W 300 -K 6 -v;&mfs;	14.338	9.031(63%)	5.307(37%)	2035	605	9
+478	&scorr;&sweep;&dch;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2012	605	9
+479	&scorr;&sweep;&synch2;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2092	605	9
+480	&scorr;&sweep;&b -d;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2026	605	9
+481	&scorr;&sweep;&dch -f;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2002	605	9
+482	&scorr;&sweep;&syn4;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.659	10.037(74%)	3.622(26%)	1968	605	9
+483	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.598	8.681(64%)	4.917(36%)	2024	605	9
+484	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2015	605	9
+485	&scorr;&sweep;&syn3;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	1990	605	9
+486	&scorr;&sweep;&dch -f;&syn4;&dch;&if -W 300 -K 6 -v;&mfs;	14.940	9.296(63%)	5.644(37%)	2045	605	9
+487	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2085	605	9
+488	&scorr;&sweep;&b;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	2057	605	9
+489	&scorr;&sweep;&b;&syn4;&if -W 300 -K 6 -v;&mfs;	13.678	10.055(74%)	3.623(26%)	2054	605	9
+490	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1959	605	9
+491	&scorr;&sweep;&synch2;&synch2;&dch;&if -W 300 -K 6 -v;&mfs;	13.808	8.889(65%)	4.919(35%)	1997	605	9
+492	&scorr;&sweep;&b -d;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.830	9.031(66%)	4.799(34%)	2083	605	9
+493	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	1981	605	9
+494	&scorr;&sweep;&dch;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2006	605	9
+495	&scorr;&sweep;&dch;&b;&if -W 300 -K 6 -v;&mfs;&st;&b;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1939	605	9
+496	&scorr;&sweep;&syn4;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2028	605	9
+497	&scorr;&sweep;&dc2;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2028	605	9
+498	&scorr;&sweep;&dc2;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2065	605	9
+499	&scorr;&sweep;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	14.774	9.172(63%)	5.602(37%)	2030	605	9
+500	&scorr;&sweep;&dch;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	1975	605	9
+501	&scorr;&sweep;&syn2;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2091	605	9
+502	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.612	8.681(64%)	4.931(36%)	2102	605	9
+503	&scorr;&sweep;&if -W 300 -y -K 6;&dch;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2046	605	9
+504	&scorr;&sweep;&dc2;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2024	605	9
+505	&scorr;&sweep;&if -W 300 -g -K 6;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2033	605	9
+506	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1993	605	9
+507	&scorr;&sweep;&syn4;&b;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	14.155	8.805(63%)	5.350(37%)	1989	605	9
+508	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2091	605	9
+509	&scorr;&sweep;&dc2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2024	605	9
+510	&scorr;&sweep;&if -W 300 -x -K 6;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&dch -f;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.615	8.681(64%)	4.934(36%)	1948	605	9
+511	&scorr;&sweep;&dc2;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2029	605	9
+512	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.811	8.889(65%)	4.922(35%)	2054	605	9
+513	&scorr;&sweep;&dch;&dc2;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2015	605	9
+514	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&b;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2045	605	9
+515	&scorr;&sweep;&dch -f;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2021	605	9
+516	&scorr;&sweep;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	1977	605	9
+517	&scorr;&sweep;&b;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.679	10.055(74%)	3.624(26%)	2073	605	9
+518	&scorr;&sweep;&dch;&if -W 300 -K 6 -v;&mfs;	14.242	9.172(65%)	5.070(35%)	1954	605	9
+519	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.675	10.037(74%)	3.638(26%)	2020	605	9
+520	&scorr;&sweep;&syn3;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&synch2;&b;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	1976	605	9
+521	&scorr;&sweep;&syn2;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.877	8.889(65%)	4.988(35%)	2054	605	9
+522	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2009	605	9
+523	&scorr;&sweep;&dc2;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;	13.866	9.031(66%)	4.835(34%)	2005	605	9
+524	&scorr;&sweep;&syn2;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2065	605	9
+525	&scorr;&sweep;&syn3;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1956	605	9
+526	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2042	605	9
+527	&scorr;&sweep;&dch -f;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2042	605	9
+528	&scorr;&sweep;&b;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2046	605	9
+529	&scorr;&sweep;&b;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1966	605	9
+530	&scorr;&sweep;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1983	605	9
+531	&scorr;&sweep;&if -W 300 -x -K 6;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.661	10.037(74%)	3.624(26%)	1972	605	9
+532	&scorr;&sweep;&b;&syn3;&if -W 300 -K 6 -v;&mfs;	13.864	9.031(66%)	4.833(34%)	1961	605	9
+533	&scorr;&sweep;&b -d;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1998	605	9
+534	&scorr;&sweep;&synch2;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2081	605	9
+535	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dch;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2012	605	9
+536	&scorr;&sweep;&dch -f;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2008	605	9
+537	&scorr;&sweep;&syn4;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.615	8.681(64%)	4.934(36%)	2009	605	9
+538	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2004	605	9
+539	&scorr;&sweep;&synch2;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1954	605	9
+540	&scorr;&sweep;&dc2;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1986	605	9
+541	&scorr;&sweep;&dch -f;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2012	605	9
+542	&scorr;&sweep;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.257	9.172(65%)	5.085(35%)	1985	605	9
+543	&scorr;&sweep;&dch -f;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&dch -f;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&dch;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1967	605	9
+544	&scorr;&sweep;&syn2;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;&st;&b;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	1998	605	9
+545	&scorr;&sweep;&syn4;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2078	605	9
+546	&scorr;&sweep;&dc2;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2003	605	9
+547	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.571	8.681(64%)	4.890(36%)	1962	605	9
+548	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;	14.050	8.681(62%)	5.369(38%)	2002	605	9
+549	&scorr;&sweep;&b -d;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;	13.557	9.923(74%)	3.634(26%)	2021	605	9
+550	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	14.356	8.924(63%)	5.432(37%)	2000	605	9
+551	&scorr;&sweep;&b -d;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	13.677	10.055(74%)	3.622(26%)	1969	605	9
+552	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dch;&syn4;&if -W 300 -K 6 -v;&mfs;	14.229	9.172(65%)	5.057(35%)	2069	605	9
+553	&scorr;&sweep;&syn2;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1972	605	9
+554	&scorr;&sweep;&syn2;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.304	9.172(65%)	5.132(35%)	2056	605	9
+555	&scorr;&sweep;&dch -f;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1996	605	9
+556	&scorr;&sweep;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2003	605	9
+557	&scorr;&sweep;&b;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn4;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	2054	605	9
+558	&scorr;&sweep;&b;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	14.168	9.031(64%)	5.137(36%)	1978	605	9
+559	&scorr;&sweep;&syn4;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	13.670	10.055(74%)	3.615(26%)	2015	605	9
+560	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	2002	605	9
+561	&scorr;&sweep;&syn3;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.598	8.681(64%)	4.917(36%)	1966	605	9
+562	&scorr;&sweep;&syn2;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2100	605	9
+563	&scorr;&sweep;&syn3;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	14.184	8.805(63%)	5.379(37%)	1981	605	9
+564	&scorr;&sweep;&dch -f;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.877	9.031(66%)	4.846(34%)	2033	605	9
+565	&scorr;&sweep;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2055	605	9
+566	&scorr;&sweep;&syn3;&dch;&syn4;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2095	605	9
+567	&scorr;&sweep;&dch;&synch2;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dch;&dch;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1977	605	9
+568	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1944	605	9
+569	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	1982	605	9
+570	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dch;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -g -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	1994	605	9
+571	&scorr;&sweep;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2056	605	9
+572	&scorr;&sweep;&b;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	1994	605	9
+573	&scorr;&sweep;&b;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2058	605	9
+574	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2043	605	9
+575	&scorr;&sweep;&dc2;&dch -f;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.872	9.031(66%)	4.841(34%)	2028	605	9
+576	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.794	9.031(66%)	4.763(34%)	2034	605	9
+577	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2027	605	9
+578	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1976	605	9
+579	&scorr;&sweep;&synch2;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&dch;&if -W 300 -K 6 -v;&mfs;	13.674	10.055(74%)	3.619(26%)	1986	605	9
+580	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.661	10.037(74%)	3.624(26%)	2052	605	9
+581	&scorr;&sweep;&b -d;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1991	605	9
+582	&scorr;&sweep;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	13.904	9.031(65%)	4.873(35%)	2048	605	9
+583	&scorr;&sweep;&dc2;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&dch;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2019	605	9
+584	&scorr;&sweep;&syn4;&dc2;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&b;&synch2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1958	605	9
+585	&scorr;&sweep;&if -W 300 -x -K 6;&b;&synch2;&if -W 300 -K 6 -v;&mfs;	13.611	8.699(64%)	4.912(36%)	1995	605	9
+586	&scorr;&sweep;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	13.692	9.013(66%)	4.679(34%)	1986	605	9
+587	&scorr;&sweep;&b;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.911	8.805(64%)	5.106(36%)	2013	605	9
+588	&scorr;&sweep;&if -W 300 -x -K 6;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.600	8.681(64%)	4.919(36%)	2054	605	9
+589	&scorr;&sweep;&dc2;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	14.341	9.031(63%)	5.310(37%)	2050	605	9
+590	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2018	605	9
+591	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b -d;&syn4;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2030	605	9
+592	&scorr;&sweep;&b;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	1932	605	9
+593	&scorr;&sweep;&b -d;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&b;&b -d;&if -W 300 -K 6 -v;&mfs;	13.667	10.037(74%)	3.630(26%)	2078	605	9
+594	&scorr;&sweep;&dc2;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;	14.331	9.031(64%)	5.300(36%)	2031	605	9
+595	&scorr;&sweep;&syn3;&syn4;&dch;&if -W 300 -K 6 -v;&mfs;	13.676	10.055(74%)	3.621(26%)	2043	605	9
+596	&scorr;&sweep;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;	13.557	9.923(74%)	3.634(26%)	2021	605	9
+597	&scorr;&sweep;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	1957	605	9
+598	&scorr;&sweep;&if -W 300 -g -K 6;&syn4;&b;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.621	8.681(64%)	4.940(36%)	1994	605	9
+599	&scorr;&sweep;&dch;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	14.299	9.172(65%)	5.127(35%)	2079	605	9
+600	&scorr;&sweep;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;	13.810	9.031(66%)	4.779(34%)	2007	605	9
+601	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2006	605	9
+602	&scorr;&sweep;&dc2;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn4;&b;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2070	605	9
+603	&scorr;&sweep;&if -W 300 -x -K 6;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1944	605	9
+604	&scorr;&sweep;&dch;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1999	605	9
+605	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2003	605	9
+606	&scorr;&sweep;&if -W 300 -g -K 6;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.796	9.031(66%)	4.765(34%)	1937	605	9
+607	&scorr;&sweep;&syn4;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2020	605	9
+608	&scorr;&sweep;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1991	605	9
+609	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2022	605	9
+610	&scorr;&sweep;&dch;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2005	605	9
+611	&scorr;&sweep;&b -d;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2064	605	9
+612	&scorr;&sweep;&if -W 300 -x -K 6;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2001	605	9
+613	&scorr;&sweep;&b -d;&dch;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.685	10.055(74%)	3.630(26%)	1967	605	9
+614	&scorr;&sweep;&dc2;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2005	605	9
+615	&scorr;&sweep;&syn3;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.598	8.681(64%)	4.917(36%)	1966	605	9
+616	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1974	605	9
+617	&scorr;&sweep;&dch;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2002	605	9
+618	&scorr;&sweep;&dc2;&syn4;&b;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2048	605	9
+619	&scorr;&sweep;&dch;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2045	605	9
+620	&scorr;&sweep;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1990	605	9
+621	&scorr;&sweep;&syn3;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1956	605	9
+622	&scorr;&sweep;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;	13.863	9.031(66%)	4.832(34%)	2028	605	9
+623	&scorr;&sweep;&syn2;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.685	10.055(74%)	3.630(26%)	1958	605	9
+624	&scorr;&sweep;&dc2;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1995	605	9
+625	&scorr;&sweep;&syn3;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.941	8.823(64%)	5.118(36%)	2034	605	9
+626	&scorr;&sweep;&dch;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1969	605	9
+627	&scorr;&sweep;&dch -f;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2008	605	9
+628	&scorr;&sweep;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.257	9.172(65%)	5.085(35%)	1985	605	9
+629	&scorr;&sweep;&if -W 300 -y -K 6;&synch2;&syn4;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2064	605	9
+630	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2002	605	9
+631	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	1994	605	9
+632	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2048	605	9
+633	&scorr;&sweep;&b;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2004	605	9
+634	&scorr;&sweep;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2003	605	9
+635	&scorr;&sweep;&synch2;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	1957	605	9
+636	&scorr;&sweep;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1975	605	9
+637	&scorr;&sweep;&dc2;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2131	605	9
+638	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2010	605	9
+639	&scorr;&sweep;&if -W 300 -x -K 6;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	13.609	8.681(64%)	4.928(36%)	1967	605	9
+640	&scorr;&sweep;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;	13.679	10.055(74%)	3.624(26%)	2038	605	9
+641	&scorr;&sweep;&dc2;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2000	605	9
+642	&scorr;&sweep;&dch;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn3;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1969	605	9
+643	&scorr;&sweep;&syn2;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;	13.888	8.907(65%)	4.981(35%)	2058	605	9
+644	&scorr;&sweep;&dch;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1981	605	9
+645	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.341	9.172(64%)	5.169(36%)	2018	605	9
+646	&scorr;&sweep;&synch2;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	1987	605	9
+647	&scorr;&sweep;&if -W 300 -x -K 6;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	1968	605	9
+648	&scorr;&sweep;&if -W 300 -y -K 6;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.388	2.983(23%)	10.405(77%)	2068	605	9
+649	&scorr;&sweep;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	13.898	9.031(65%)	4.867(35%)	2018	605	9
+650	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	13.895	9.031(65%)	4.864(35%)	2039	605	9
+651	&scorr;&sweep;&b;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;	14.094	9.137(65%)	4.957(35%)	1920	605	9
+652	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2034	605	9
+653	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	13.608	8.681(64%)	4.927(36%)	1987	605	9
+654	&scorr;&sweep;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;	13.863	9.031(66%)	4.832(34%)	2028	605	9
+655	&scorr;&sweep;&synch2;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1968	605	9
+656	&scorr;&sweep;&dch;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1970	605	9
+657	&scorr;&sweep;&b -d;&dch -f;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	1971	605	9
+658	&scorr;&sweep;&dch -f;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1979	605	9
+659	&scorr;&sweep;&dc2;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	13.874	9.031(66%)	4.843(34%)	1993	605	9
+660	&scorr;&sweep;&if -W 300 -g -K 6;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;	13.620	8.699(64%)	4.921(36%)	2049	605	9
+661	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2021	605	9
+662	&scorr;&sweep;&b -d;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2086	605	9
+663	&scorr;&sweep;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	13.667	10.037(74%)	3.630(26%)	2032	605	9
+664	&scorr;&sweep;&syn3;&if -W 300 -y -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	13.877	8.889(65%)	4.988(35%)	2078	605	9
+665	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2010	605	9
+666	&scorr;&sweep;&b -d;&syn4;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2073	605	9
+667	&scorr;&sweep;&b -d;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1983	605	9
+668	&scorr;&sweep;&syn2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.116	8.575(61%)	5.541(39%)	1995	605	9
+669	&scorr;&sweep;&syn3;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.667	10.037(74%)	3.630(26%)	2037	605	9
+670	&scorr;&sweep;&dch -f;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2002	605	9
+671	&scorr;&sweep;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2026	605	9
+672	&scorr;&sweep;&dc2;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2013	605	9
+673	&scorr;&sweep;&synch2;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1994	605	9
+674	&scorr;&sweep;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	13.904	9.031(65%)	4.873(35%)	2048	605	9
+675	&scorr;&sweep;&synch2;&b;&dch;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1968	605	9
+676	&scorr;&sweep;&dc2;&synch2;&dch;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2005	605	9
+677	&scorr;&sweep;&syn2;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	2056	605	9
+678	&scorr;&sweep;&if -W 300 -y -K 6;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1971	605	9
+679	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	13.614	8.681(64%)	4.933(36%)	2050	605	9
+680	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1977	605	9
+681	&scorr;&sweep;&synch2;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1977	605	9
+682	&scorr;&sweep;&b;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	14.037	8.889(64%)	5.148(36%)	1993	605	9
+683	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&b;&if -W 300 -K 6 -v;&mfs;	13.817	9.031(66%)	4.786(34%)	2009	605	9
+684	&scorr;&sweep;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2003	605	9
+685	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1994	605	9
+686	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	1974	605	9
+687	&scorr;&sweep;&syn4;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2016	605	9
+688	&scorr;&sweep;&b;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.801	9.031(66%)	4.770(34%)	1932	605	9
+689	&scorr;&sweep;&b;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2050	605	9
+690	&scorr;&sweep;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1986	605	9
+691	&scorr;&sweep;&dch -f;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2048	605	9
+692	&scorr;&sweep;&syn3;&dch -f;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2022	605	9
+693	&scorr;&sweep;&synch2;&dch -f;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	14.326	9.172(65%)	5.154(35%)	1964	605	9
+694	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2091	605	9
+695	&scorr;&sweep;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2003	605	9
+696	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.805	9.031(66%)	4.774(34%)	2020	605	9
+697	&scorr;&sweep;&b;&b -d;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2008	605	9
+698	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.918	8.805(64%)	5.113(36%)	1959	605	9
+699	&scorr;&sweep;&dc2;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.864	9.031(66%)	4.833(34%)	2000	605	9
+700	&scorr;&sweep;&dch -f;&b -d;&b;&if -W 300 -K 6 -v;&mfs;	13.868	9.031(66%)	4.837(34%)	2028	605	9
+701	&scorr;&sweep;&b;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2027	605	9
+702	&scorr;&sweep;&b;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1984	605	9
+703	&scorr;&sweep;&dch -f;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2057	605	9
+704	&scorr;&sweep;&dch;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1996	605	9
+705	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1951	605	9
+706	&scorr;&sweep;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;	14.306	9.172(65%)	5.134(35%)	1994	605	9
+707	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;	14.189	8.805(63%)	5.384(37%)	2020	605	9
+708	&scorr;&sweep;&b;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1958	605	9
+709	&scorr;&sweep;&dc2;&synch2;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2038	605	9
+710	&scorr;&sweep;&syn3;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1963	605	9
+711	&scorr;&sweep;&syn4;&dch -f;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2053	605	9
+712	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.927	8.557(62%)	5.370(38%)	1998	605	9
+713	&scorr;&sweep;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.878	8.889(65%)	4.989(35%)	1986	605	9
+714	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	1959	605	9
+715	&scorr;&sweep;&if -W 300 -x -K 6;&b;&syn3;&if -W 300 -K 6 -v;&mfs;	13.598	8.681(64%)	4.917(36%)	1990	605	9
+716	&scorr;&sweep;&dch -f;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2000	605	9
+717	&scorr;&sweep;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2067	605	9
+718	&scorr;&sweep;&syn4;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2055	605	9
+719	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.600	8.681(64%)	4.919(36%)	2006	605	9
+720	&scorr;&sweep;&b;&dch;&syn2;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	2094	605	9
+721	&scorr;&sweep;&syn2;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1980	605	9
+722	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	14.715	9.172(63%)	5.543(37%)	1986	605	9
+723	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.665	10.037(74%)	3.628(26%)	1983	605	9
+724	&scorr;&sweep;&b -d;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.593	8.681(64%)	4.912(36%)	1994	605	9
+725	&scorr;&sweep;&dch -f;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1970	605	9
+726	&scorr;&sweep;&if -W 300 -y -K 6;&dch -f;&dc2;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2088	605	9
+727	&scorr;&sweep;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2003	605	9
+728	&scorr;&sweep;&syn3;&dch -f;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	14.184	8.805(63%)	5.379(37%)	1957	605	9
+729	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2018	605	9
+730	&scorr;&sweep;&if -W 300 -g -K 6;&b;&synch2;&if -W 300 -K 6 -v;&mfs;	13.945	9.031(65%)	4.914(35%)	1970	605	9
+731	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.600	8.681(64%)	4.919(36%)	2006	605	9
+732	&scorr;&sweep;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2003	605	9
+733	&scorr;&sweep;&dc2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2024	605	9
+734	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.805	9.155(67%)	4.650(33%)	1978	605	9
+735	&scorr;&sweep;&syn3;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2055	605	9
+736	&scorr;&sweep;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.055(74%)	3.617(26%)	2053	605	9
+737	&scorr;&sweep;&dch;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1998	605	9
+738	&scorr;&sweep;&synch2;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1993	605	9
+739	&scorr;&sweep;&dch;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2006	605	9
+740	&scorr;&sweep;&dc2;&if -W 300 -g -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2067	605	9
+741	&scorr;&sweep;&b;&syn4;&if -W 300 -K 6 -v;&mfs;	13.678	10.055(74%)	3.623(26%)	2054	605	9
+742	&scorr;&sweep;&dch -f;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1995	605	9
+743	&scorr;&sweep;&syn2;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	1995	605	9
+744	&scorr;&sweep;&dc2;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2006	605	9
+745	&scorr;&sweep;&b;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2015	605	9
+746	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.598	8.681(64%)	4.917(36%)	1989	605	9
+747	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;	13.598	8.681(64%)	4.917(36%)	1988	605	9
+748	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2049	605	9
+749	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	14.356	8.924(63%)	5.432(37%)	2000	605	9
+750	&scorr;&sweep;&b;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2072	605	9
+751	&scorr;&sweep;&if -W 300 -g -K 6;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.675	10.055(74%)	3.620(26%)	2008	605	9
+752	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.824	9.031(66%)	4.793(34%)	1981	605	9
+753	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2015	605	9
+754	&scorr;&sweep;&dc2;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2013	605	9
+755	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2012	605	9
+756	&scorr;&sweep;&syn4;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2045	605	9
+757	&scorr;&sweep;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.670	10.055(74%)	3.615(26%)	2053	605	9
+758	&scorr;&sweep;&syn4;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.803	9.155(67%)	4.648(33%)	1971	605	9
+759	&scorr;&sweep;&dch;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2001	605	9
+760	&scorr;&sweep;&if -W 300 -y -K 6;&synch2;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2035	605	9
+761	&scorr;&sweep;&if -W 300 -x -K 6;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2012	605	9
+762	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1996	605	9
+763	&scorr;&sweep;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;	13.906	9.031(65%)	4.875(35%)	2080	605	9
+764	&scorr;&sweep;&b;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	1984	605	9
+765	&scorr;&sweep;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;	14.194	8.805(63%)	5.389(37%)	1995	605	9
+766	&scorr;&sweep;&if -W 300 -g -K 6;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1950	605	9
+767	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1982	605	9
+768	&scorr;&sweep;&dch;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2030	605	9
+769	&scorr;&sweep;&dch;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2043	605	9
+770	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	1969	605	9
+771	&scorr;&sweep;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.869	8.889(65%)	4.980(35%)	1984	605	9
+772	&scorr;&sweep;&b;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;	14.071	9.137(65%)	4.934(35%)	1957	605	9
+773	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.673	10.055(74%)	3.618(26%)	2037	605	9
+774	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2002	605	9
+775	&scorr;&sweep;&synch2;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1966	605	9
+776	&scorr;&sweep;&if -W 300 -x -K 6;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn4;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.055(74%)	3.617(26%)	2020	605	9
+777	&scorr;&sweep;&syn4;&dch;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2023	605	9
+778	&scorr;&sweep;&syn4;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dch -f;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	14.303	9.172(65%)	5.131(35%)	1977	605	9
+779	&scorr;&sweep;&b;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2018	605	9
+780	&scorr;&sweep;&dch;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1968	605	9
+781	&scorr;&sweep;&syn2;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	1973	605	9
+782	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2060	605	9
+783	&scorr;&sweep;&syn2;&syn3;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1977	605	9
+784	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -y -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	14.085	9.155(65%)	4.930(35%)	2049	605	9
+785	&scorr;&sweep;&if -W 300 -g -K 6;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	13.602	8.681(64%)	4.921(36%)	2050	605	9
+786	&scorr;&sweep;&if -W 300 -g -K 6;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.943	9.031(65%)	4.912(35%)	2008	605	9
+787	&scorr;&sweep;&b -d;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.558	9.923(74%)	3.635(26%)	1971	605	9
+788	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	13.776	9.031(66%)	4.745(34%)	1996	605	9
+789	&scorr;&sweep;&dc2;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2035	605	9
+790	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.602	8.681(64%)	4.921(36%)	2016	605	9
+791	&scorr;&sweep;&dch -f;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dch;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1951	605	9
+792	&scorr;&sweep;&syn2;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2021	605	9
+793	&scorr;&sweep;&dc2;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.834	9.031(66%)	4.803(34%)	2011	605	9
+794	&scorr;&sweep;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;	14.318	9.172(65%)	5.146(35%)	2037	605	9
+795	&scorr;&sweep;&synch2;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	14.047	8.681(62%)	5.366(38%)	1987	605	9
+796	&scorr;&sweep;&dc2;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	14.773	9.172(63%)	5.601(37%)	2019	605	9
+797	&scorr;&sweep;&syn3;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	1985	605	9
+798	&scorr;&sweep;&syn3;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	1982	605	9
+799	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	2030	605	9
+800	&scorr;&sweep;&b -d;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1967	605	9
+801	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1963	605	9
+802	&scorr;&sweep;&syn4;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2028	605	9
+803	&scorr;&sweep;&synch2;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2002	605	9
+804	&scorr;&sweep;&syn2;&if -W 300 -x -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	1999	605	9
+805	&scorr;&sweep;&b -d;&synch2;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2023	605	9
+806	&scorr;&sweep;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	2027	605	9
+807	&scorr;&sweep;&b;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.319	9.172(65%)	5.147(35%)	2041	605	9
+808	&scorr;&sweep;&if -W 300 -y -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1948	605	9
+809	&scorr;&sweep;&b -d;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2007	605	9
+810	&scorr;&sweep;&syn4;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	14.305	9.172(65%)	5.133(35%)	2008	605	9
+811	&scorr;&sweep;&syn4;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&dc2;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1984	605	9
+812	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	1987	605	9
+813	&scorr;&sweep;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.800	9.031(66%)	4.769(34%)	1951	605	9
+814	&scorr;&sweep;&syn3;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	14.037	8.889(64%)	5.148(36%)	1984	605	9
+815	&scorr;&sweep;&dch -f;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2017	605	9
+816	&scorr;&sweep;&synch2;&synch2;&b;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1981	605	9
+817	&scorr;&sweep;&b;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2063	605	9
+818	&scorr;&sweep;&synch2;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2006	605	9
+819	&scorr;&sweep;&if -W 300 -x -K 6;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2021	605	9
+820	&scorr;&sweep;&if -W 300 -y -K 6;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b;&if -W 300 -K 6 -v;&mfs;	14.042	8.681(62%)	5.361(38%)	1984	605	9
+821	&scorr;&sweep;&if -W 300 -y -K 6;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1994	605	9
+822	&scorr;&sweep;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2003	605	9
+823	&scorr;&sweep;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2021	605	9
+824	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.661	10.037(74%)	3.624(26%)	2016	605	9
+825	&scorr;&sweep;&synch2;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2006	605	9
+826	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	14.031	8.681(62%)	5.350(38%)	1969	605	9
+827	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2039	605	9
+828	&scorr;&sweep;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2025	605	9
+829	&scorr;&sweep;&dc2;&b;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2000	605	9
+830	&scorr;&sweep;&syn2;&syn2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;	14.520	8.840(61%)	5.680(39%)	2037	605	9
+831	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.541	3.107(23%)	10.434(77%)	1988	605	9
+832	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.685	10.055(74%)	3.630(26%)	1998	605	9
+833	&scorr;&sweep;&dc2;&dch;&dc2;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2000	605	9
+834	&scorr;&sweep;&syn4;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	2016	605	9
+835	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.808	8.889(65%)	4.919(35%)	1984	605	9
+836	&scorr;&sweep;&synch2;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	1984	605	9
+837	&scorr;&sweep;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.878	8.889(65%)	4.989(35%)	1986	605	9
+838	&scorr;&sweep;&if -W 300 -x -K 6;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2001	605	9
+839	&scorr;&sweep;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;	13.557	9.923(74%)	3.634(26%)	2021	605	9
+840	&scorr;&sweep;&syn4;&b;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2064	605	9
+841	&scorr;&sweep;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2056	605	9
+842	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.716	9.172(63%)	5.544(37%)	2011	605	9
+843	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2007	605	9
+844	&scorr;&sweep;&synch2;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.667	10.037(74%)	3.630(26%)	1983	605	9
+845	&scorr;&sweep;&dc2;&if -W 300 -K 6 -v;&mfs;	14.338	9.031(63%)	5.307(37%)	2035	605	9
+846	&scorr;&sweep;&syn3;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.661	10.037(74%)	3.624(26%)	2024	605	9
+847	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	13.803	9.155(67%)	4.648(33%)	1946	605	9
+848	&scorr;&sweep;&synch2;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2059	605	9
+849	&scorr;&sweep;&synch2;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2014	605	9
+850	&scorr;&sweep;&b;&if -W 300 -g -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	2053	605	9
+851	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&b;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2026	605	9
+852	&scorr;&sweep;&syn2;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	1956	605	9
+853	&scorr;&sweep;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;	13.882	9.031(66%)	4.851(34%)	2002	605	9
+854	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	2002	605	9
+855	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.681	10.055(74%)	3.626(26%)	1999	605	9
+856	&scorr;&sweep;&syn3;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2098	605	9
+857	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b;&synch2;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2001	605	9
+858	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2034	605	9
+859	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.780	8.681(63%)	5.099(37%)	1924	605	9
+860	&scorr;&sweep;&syn3;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	14.297	9.172(65%)	5.125(35%)	1997	605	9
+861	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2005	605	9
+862	&scorr;&sweep;&if -W 300 -y -K 6;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2042	605	9
+863	&scorr;&sweep;&dch -f;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.242	9.172(65%)	5.070(35%)	2048	605	9
+864	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.661	10.037(74%)	3.624(26%)	1991	605	9
+865	&scorr;&sweep;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1988	605	9
+866	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2029	605	9
+867	&scorr;&sweep;&if -W 300 -x -K 6;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	1950	605	9
+868	&scorr;&sweep;&syn2;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.714	9.013(66%)	4.701(34%)	2037	605	9
+869	&scorr;&sweep;&dch;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1998	605	9
+870	&scorr;&sweep;&dc2;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	13.877	9.031(66%)	4.846(34%)	2029	605	9
+871	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1996	605	9
+872	&scorr;&sweep;&dch;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2005	605	9
+873	&scorr;&sweep;&b -d;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	13.899	9.031(65%)	4.868(35%)	2050	605	9
+874	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.661	10.037(74%)	3.624(26%)	2058	605	9
+875	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&if -W 300 -K 6 -v;&mfs;	13.674	10.055(74%)	3.619(26%)	2066	605	9
+876	&scorr;&sweep;&syn2;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	1994	605	9
+877	&scorr;&sweep;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1983	605	9
+878	&scorr;&sweep;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1986	605	9
+879	&scorr;&sweep;&dc2;&b;&b;&if -W 300 -K 6 -v;&mfs;	13.886	9.031(66%)	4.855(34%)	2055	605	9
+880	&scorr;&sweep;&dch;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2015	605	9
+881	&scorr;&sweep;&syn4;&b;&if -W 300 -K 6 -v;&mfs;	13.679	10.055(74%)	3.624(26%)	2051	605	9
+882	&scorr;&sweep;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2009	605	9
+883	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2018	605	9
+884	&scorr;&sweep;&dch;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.819	9.031(66%)	4.788(34%)	2033	605	9
+885	&scorr;&sweep;&syn4;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	13.659	10.037(74%)	3.622(26%)	2024	605	9
+886	&scorr;&sweep;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	14.774	9.172(63%)	5.602(37%)	2030	605	9
+887	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	13.598	8.681(64%)	4.917(36%)	1991	605	9
+888	&scorr;&sweep;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1958	605	9
+889	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	1979	605	9
+890	&scorr;&sweep;&syn4;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2026	605	9
+891	&scorr;&sweep;&synch2;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.679	10.055(74%)	3.624(26%)	1970	605	9
+892	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&b;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	1953	605	9
+893	&scorr;&sweep;&b;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	14.317	9.172(65%)	5.145(35%)	2000	605	9
+894	&scorr;&sweep;&dc2;&dch;&dch;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1965	605	9
+895	&scorr;&sweep;&dch -f;&synch2;&b;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2028	605	9
+896	&scorr;&sweep;&dch;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;	14.306	9.172(65%)	5.134(35%)	1999	605	9
+897	&scorr;&sweep;&dc2;&b;&synch2;&if -W 300 -K 6 -v;&mfs;	13.865	9.031(66%)	4.834(34%)	2011	605	9
+898	&scorr;&sweep;&dch -f;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2032	605	9
+899	&scorr;&sweep;&dch;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2038	605	9
+900	&scorr;&sweep;&syn4;&dch;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2023	605	9
+901	&scorr;&sweep;&syn2;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1967	605	9
+902	&scorr;&sweep;&synch2;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2000	605	9
+903	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.849	9.031(66%)	4.818(34%)	1981	605	9
+904	&scorr;&sweep;&if -W 300 -y -K 6;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&dch -f;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2031	605	9
+905	&scorr;&sweep;&syn2;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.888	8.907(65%)	4.981(35%)	2052	605	9
+906	&scorr;&sweep;&dc2;&b;&if -W 300 -K 6 -v;&mfs;	13.886	9.031(66%)	4.855(34%)	2056	605	9
+907	&scorr;&sweep;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	13.943	9.031(65%)	4.912(35%)	1962	605	9
+908	&scorr;&sweep;&dch;&synch2;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1967	605	9
+909	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2005	605	9
+910	&scorr;&sweep;&dch -f;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	14.312	9.172(65%)	5.140(35%)	2015	605	9
+911	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2014	605	9
+912	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.557	9.923(74%)	3.634(26%)	1985	605	9
+913	&scorr;&sweep;&synch2;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1971	605	9
+914	&scorr;&sweep;&b -d;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	1979	605	9
+915	&scorr;&sweep;&dc2;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	14.354	9.172(64%)	5.182(36%)	2005	605	9
+916	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	13.675	10.055(74%)	3.620(26%)	1959	605	9
+917	&scorr;&sweep;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1990	605	9
+918	&scorr;&sweep;&syn2;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.302	9.172(65%)	5.130(35%)	2058	605	9
+919	&scorr;&sweep;&dch;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	14.332	9.172(64%)	5.160(36%)	1989	605	9
+920	&scorr;&sweep;&dch;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.668	10.037(74%)	3.631(26%)	2072	605	9
+921	&scorr;&sweep;&b;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -K 6 -v;&mfs;	13.805	9.031(66%)	4.774(34%)	1948	605	9
+922	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2008	605	9
+923	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	1977	605	9
+924	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	13.245	2.859(22%)	10.386(78%)	2006	605	9
+925	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	1986	605	9
+926	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2023	605	9
+927	&scorr;&sweep;&if -W 300 -y -K 6;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1960	605	9
+928	&scorr;&sweep;&if -W 300 -g -K 6;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&b;&syn3;&if -W 300 -K 6 -v;&mfs;	13.659	10.037(74%)	3.622(26%)	1977	605	9
+929	&scorr;&sweep;&dch;&dch -f;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2001	605	9
+930	&scorr;&sweep;&syn3;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	14.201	8.805(63%)	5.396(37%)	2008	605	9
+931	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dc2;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	13.792	9.137(67%)	4.655(33%)	2013	605	9
+932	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	14.062	8.681(62%)	5.381(38%)	2031	605	9
+933	&scorr;&sweep;&syn2;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2077	605	9
+934	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2000	605	9
+935	&scorr;&sweep;&b -d;&b;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.364	9.172(64%)	5.192(36%)	2058	605	9
+936	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.664	10.037(74%)	3.627(26%)	2014	605	9
+937	&scorr;&sweep;&if -W 300 -x -K 6;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.670	10.055(74%)	3.615(26%)	2071	605	9
+938	&scorr;&sweep;&if -W 300 -y -K 6;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2032	605	9
+939	&scorr;&sweep;&dc2;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2040	605	9
+940	&scorr;&sweep;&if -W 300 -x -K 6;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.323	9.172(65%)	5.151(35%)	1984	605	9
+941	&scorr;&sweep;&dc2;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	13.877	9.031(66%)	4.846(34%)	2029	605	9
+942	&scorr;&sweep;&syn4;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2052	605	9
+943	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1961	605	9
+944	&scorr;&sweep;&b -d;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;	13.796	9.031(66%)	4.765(34%)	2048	605	9
+945	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2001	605	9
+946	&scorr;&sweep;&syn4;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;	14.323	9.172(65%)	5.151(35%)	2066	605	9
+947	&scorr;&sweep;&syn3;&if -W 300 -K 6 -v;&mfs;	13.864	9.031(66%)	4.833(34%)	1963	605	9
+948	&scorr;&sweep;&syn2;&dch;&dc2;&if -W 300 -K 6 -v;&mfs;	13.945	9.031(65%)	4.914(35%)	2054	605	9
+949	&scorr;&sweep;&dc2;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2055	605	9
+950	&scorr;&sweep;&syn3;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2006	605	9
+951	&scorr;&sweep;&dch;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	13.684	10.055(74%)	3.629(26%)	2031	605	9
+952	&scorr;&sweep;&dch;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	14.332	9.172(64%)	5.160(36%)	1989	605	9
+953	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.799	9.031(66%)	4.768(34%)	1950	605	9
+954	&scorr;&sweep;&b -d;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	14.322	9.172(65%)	5.150(35%)	1940	605	9
+955	&scorr;&sweep;&if -W 300 -g -K 6;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	13.602	8.681(64%)	4.921(36%)	2050	605	9
+956	&scorr;&sweep;&b -d;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	13.677	10.055(74%)	3.622(26%)	1969	605	9
+957	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	14.326	9.172(65%)	5.154(35%)	1981	605	9
+958	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1954	605	9
+959	&scorr;&sweep;&b;&synch2;&dch;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1979	605	9
+960	&scorr;&sweep;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dch -f;&dc2;&if -W 300 -K 6 -v;&mfs;	13.663	10.037(74%)	3.626(26%)	2007	605	9
+961	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2003	605	9
+962	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2012	605	9
+963	&scorr;&sweep;&dc2;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	14.353	9.172(64%)	5.181(36%)	2029	605	9
+964	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2077	605	9
+965	&scorr;&sweep;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	13.683	10.055(74%)	3.628(26%)	1996	605	9
+966	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1948	605	9
+967	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	13.662	10.037(74%)	3.625(26%)	2048	605	9
+968	&scorr;&sweep;&b;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&if -W 300 -y -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;	13.752	8.681(64%)	5.071(36%)	2047	605	9
+969	&scorr;&sweep;&b;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.679	10.055(74%)	3.624(26%)	2073	605	9
+970	&scorr;&sweep;&dch -f;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1990	605	9
+971	&scorr;&sweep;&syn3;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	2006	605	9
+972	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2000	605	9
+973	&scorr;&sweep;&if -W 300 -g -K 6;&dch -f;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dch;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1966	605	9
+974	&scorr;&sweep;&b -d;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&dc2;&b;&if -W 300 -K 6 -v;&mfs;	13.601	8.681(64%)	4.920(36%)	2058	605	9
+975	&scorr;&sweep;&dch;&dc2;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	2015	605	9
+976	&scorr;&sweep;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.670	10.037(74%)	3.633(26%)	2037	605	9
+977	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	13.805	9.031(66%)	4.774(34%)	1953	605	9
+978	&scorr;&sweep;&b -d;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	13.878	8.889(65%)	4.989(35%)	1982	605	9
+979	&scorr;&sweep;&if -W 300 -x -K 6;&b;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&dch;&if -W 300 -K 6 -v;&mfs;	13.609	8.681(64%)	4.928(36%)	1975	605	9
+980	&scorr;&sweep;&syn4;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2022	605	9
+981	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&b;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1989	605	9
+982	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2005	605	9
+983	&scorr;&sweep;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1974	605	9
+984	&scorr;&sweep;&b -d;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	1965	605	9
+985	&scorr;&sweep;&syn2;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	13.682	10.055(74%)	3.627(26%)	1959	605	9
+986	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.674	10.037(74%)	3.637(26%)	2001	605	9
+987	&scorr;&sweep;&b;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1996	605	9
+988	&scorr;&sweep;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.673	10.037(74%)	3.636(26%)	1976	605	9
+989	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2069	605	9
+990	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2036	605	9
+991	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&syn3;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1939	605	9
+992	&scorr;&sweep;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&b -d;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1977	605	9
+993	&scorr;&sweep;&dc2;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2004	605	9
+994	&scorr;&sweep;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	1997	605	9
+995	&scorr;&sweep;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	13.943	9.031(65%)	4.912(35%)	1962	605	9
+996	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;	13.557	9.923(74%)	3.634(26%)	1996	605	9
+997	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	13.672	10.037(74%)	3.635(26%)	2018	605	9
+998	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	13.675	10.055(74%)	3.620(26%)	1973	605	9
+999	&scorr;&sweep;&dch;&syn2;&if -W 300 -K 6 -v;&mfs;	13.671	10.037(74%)	3.634(26%)	2005	605	9
