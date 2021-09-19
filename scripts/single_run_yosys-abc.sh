@@ -16,7 +16,7 @@ idx=0
 RANDOM_SEQ_LEN=0
 LUT_LIBRARY=0
 SCRIPT_DIR="$( dirname "$( readlink -f "${BASH_SOURCE[0]}" )" )"
-
+run_vivado=true
 
 while [ "$1" != "" ]; do
   case $1 in
@@ -46,6 +46,9 @@ while [ "$1" != "" ]; do
                             ;;
     -c | --clean )          shift
                             clean=true
+                            ;;
+    -rv | --run_vivado )          shift
+                            run_vivado=true
                             ;;
     * )                     echo "computer says no: ${1}"
                             exit 1
@@ -171,7 +174,9 @@ EOT
       synth_with_abc9="-abc9"
       synth_abc9=1
     fi
+    force=true
     if [ -f "${edif}" ]; then
+#    if [ "$force" == false ]; then
       echo "${test_name} reusing cached ${edif}"
     else
       if [ -f "$(dirname ${path})/${ip}.ys" ]; then
@@ -207,7 +212,9 @@ EOT
     #   fi
     #   #popd > /dev/null
     #   mv yosys.log yosys.txt
-      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys.log > /dev/null 2>&1
+      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys_og.log > /dev/null 2>&1
+      grep "Del =" ${pwd}/yosys_og.log > ${pwd}/yosys.log
+      rm ${pwd}/yosys_og.log
 #      ${YOSYS} ${pwd}/${ip}.ys > /dev/null 2>&1
     fi
 
@@ -258,9 +265,11 @@ report_utilization
 EOT
 
   echo "${test_name} running test_${1}..."
-  if ! $VIVADO -nojournal -log test_${1}.log -mode batch -source test_${1}.tcl > /dev/null 2>&1; then
-    cat test_${1}.log
-    exit 1
+  if [ "$run_vivado" = true ];then
+      if ! $VIVADO -nojournal -log test_${1}.log -mode batch -source test_${1}.tcl > /dev/null 2>&1; then
+	  cat test_${1}.log
+	  exit 1
+      fi
   fi
 #   mv test_${1}.log test_${1}.txt
 }

@@ -144,6 +144,7 @@ def get_rand_seq_abc9(seq_len, lib_num, idx):
         else: 
             break
             # iterate again!
+            seq +="&ps -l -D abc.txt"
     return seq
 
 def main():
