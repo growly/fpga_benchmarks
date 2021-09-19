@@ -1,0 +1,501 @@
+Index	Sequence	PathDelay	LogicDelay	NetDelay	LUTsLogic	RegsFF	RegsLatch
+0	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.502	4.471(22%)	16.031(78%)	7296	2784	0
+1	&scorr;&sweep;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.919	4.400(23%)	15.519(77%)	7233	2784	0
+2	&scorr;&sweep;&synch2;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.180	4.823(23%)	16.357(77%)	7460	2784	0
+3	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	21.465	4.489(21%)	16.976(79%)	7470	2784	0
+4	&scorr;&sweep;&synch2;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.689	4.158(21%)	16.531(79%)	7735	2784	0
+5	&scorr;&sweep;&syn3;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	20.775	4.471(22%)	16.304(78%)	7365	2784	0
+6	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	25.505	5.463(22%)	20.042(78%)	7499	2784	0
+7	&scorr;&sweep;&dc2;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;	20.201	4.458(23%)	15.743(77%)	7516	2784	0
+8	&scorr;&sweep;&synch2;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.995	4.823(23%)	16.172(77%)	7423	2784	0
+9	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	21.644	4.595(22%)	17.049(78%)	7468	2784	0
+10	&scorr;&sweep;&syn4;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	17.225	5.215(31%)	12.010(69%)	7561	2784	0
+11	&scorr;&sweep;&syn3;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	20.520	4.699(23%)	15.821(77%)	7348	2784	0
+12	&scorr;&sweep;&b;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	18.542	4.392(24%)	14.150(76%)	7727	2784	0
+13	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	21.026	4.595(22%)	16.431(78%)	7373	2784	0
+14	&scorr;&sweep;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	21.289	4.843(23%)	16.446(77%)	7350	2784	0
+15	&scorr;&sweep;&syn4;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;						
+16	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	21.727	4.595(22%)	17.132(78%)	7314	2784	0
+17	&scorr;&sweep;&dc2;&dch;&if -W 300 -K 6 -v;&mfs;	24.773	5.339(22%)	19.434(78%)	7613	2784	0
+18	&scorr;&sweep;&syn4;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	20.167	4.582(23%)	15.585(77%)	7502	2784	0
+19	&scorr;&sweep;&b;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+20	&scorr;&sweep;&dch -f;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.273	4.471(23%)	15.802(77%)	7317	2784	0
+21	&scorr;&sweep;&syn4;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	18.582	3.838(21%)	14.744(79%)	7533	2784	0
+22	&scorr;&sweep;&dch -f;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	22.951	4.967(22%)	17.984(78%)	7326	2784	0
+23	&scorr;&sweep;&b;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	22.493	4.896(22%)	17.597(78%)	7493	2784	0
+24	&scorr;&sweep;&if -W 300 -g -K 6;&b;&dch;&if -W 300 -K 6 -v;&mfs;	27.783	5.959(22%)	21.824(78%)	7383	2784	0
+25	&scorr;&sweep;&if -W 300 -y -K 6;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	19.941	4.451(23%)	15.490(77%)	7891	2784	0
+26	&scorr;&sweep;&syn2;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;	17.922	4.857(28%)	13.065(72%)	7635	2784	0
+27	&scorr;&sweep;&if -W 300 -y -K 6;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;	19.660	4.458(23%)	15.202(77%)	7581	2784	0
+28	&scorr;&sweep;&dc2;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	21.734	4.719(22%)	17.015(78%)	7392	2784	0
+29	&scorr;&sweep;&b;&if -W 300 -y -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;	22.459	4.719(22%)	17.740(78%)	7323	2784	0
+30	&scorr;&sweep;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	19.670	4.516(23%)	15.154(77%)	7870	2784	0
+31	&scorr;&sweep;&synch2;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;	20.772	4.764(23%)	16.008(77%)	7437	2784	0
+32	&scorr;&sweep;&dc2;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	20.026	4.471(23%)	15.555(77%)	7399	2784	0
+33	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.535	4.268(22%)	15.267(78%)	7647	2784	0
+34	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.611	4.595(23%)	16.016(77%)	7286	2784	0
+35	&scorr;&sweep;&b;&b;&dch;&if -W 300 -K 6 -v;&mfs;	26.916	5.835(22%)	21.081(78%)	7405	2784	0
+36	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;	23.399	5.091(22%)	18.308(78%)	7282	2784	0
+37	&scorr;&sweep;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;	20.387	4.471(22%)	15.916(78%)	7348	2784	0
+38	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dc2;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	18.638	4.034(22%)	14.604(78%)	7368	2784	0
+39	&scorr;&sweep;&if -W 300 -g -K 6;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;						
+40	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	18.808	3.975(22%)	14.833(78%)	7741	2784	0
+41	&scorr;&sweep;&dch;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	23.678	5.215(23%)	18.463(77%)	7504	2784	0
+42	&scorr;&sweep;&synch2;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dch -f;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -g -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;	20.241	4.400(22%)	15.841(78%)	7357	2784	0
+43	&scorr;&sweep;&syn2;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.638	4.471(22%)	16.167(78%)	7302	2784	0
+44	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	18.341	4.268(24%)	14.073(76%)	7728	2784	0
+45	&scorr;&sweep;&dc2;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;	24.400	5.339(22%)	19.061(78%)	7452	2784	0
+46	&scorr;&sweep;&syn2;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.851	4.595(23%)	16.256(77%)	7371	2784	0
+47	&scorr;&sweep;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	21.084	4.699(23%)	16.385(77%)	7465	2784	0
+48	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	20.470	4.471(22%)	15.999(78%)	7581	2784	0
+49	&scorr;&sweep;&synch2;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;	19.387	5.188(27%)	14.199(73%)	7483	2784	0
+50	&scorr;&sweep;&syn3;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	20.093	4.458(23%)	15.635(77%)	7647	2784	0
+51	&scorr;&sweep;&if -W 300 -g -K 6;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&syn3;&if -W 300 -K 6 -v;&mfs;	20.963	4.524(22%)	16.439(78%)	7248	2784	0
+52	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	24.468	5.339(22%)	19.129(78%)	7388	2784	0
+53	&scorr;&sweep;&syn3;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;	22.210	4.843(22%)	17.367(78%)	7431	2784	0
+54	&scorr;&sweep;&synch2;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	21.042	4.582(22%)	16.460(78%)	7378	2784	0
+55	&scorr;&sweep;&if -W 300 -x -K 6;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -x -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;						
+56	&scorr;&sweep;&syn2;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	20.804	4.471(22%)	16.333(78%)	7315	2784	0
+57	&scorr;&sweep;&syn4;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.315	4.458(22%)	15.857(78%)	7776	2784	0
+58	&scorr;&sweep;&b -d;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	18.541	4.276(24%)	14.265(76%)	7428	2784	0
+59	&scorr;&sweep;&dch -f;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	26.075	5.587(22%)	20.488(78%)	7356	2784	0
+60	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;	19.527	4.458(23%)	15.069(77%)	7454	2784	0
+61	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	19.764	4.471(23%)	15.293(77%)	7512	2784	0
+62	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.166	4.516(24%)	14.650(76%)	7780	2784	0
+63	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.038	4.471(23%)	15.567(77%)	7274	2784	0
+64	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.128	4.595(23%)	15.533(77%)	7274	2784	0
+65	&scorr;&sweep;&synch2;&if -W 300 -g -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+66	&scorr;&sweep;&dch;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	20.391	4.276(21%)	16.115(79%)	7531	2784	0
+67	&scorr;&sweep;&if -W 300 -x -K 6;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;	21.475	4.595(22%)	16.880(78%)	7390	2784	0
+68	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;						
+69	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;						
+70	&scorr;&sweep;&if -W 300 -y -K 6;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	18.074	4.975(28%)	13.099(72%)	7540	2784	0
+71	&scorr;&sweep;&dc2;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.594	4.400(23%)	15.194(77%)	7506	2784	0
+72	&scorr;&sweep;&if -W 300 -y -K 6;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.158	4.595(23%)	15.563(77%)	7314	2784	0
+73	&scorr;&sweep;&syn2;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;	20.693	4.458(22%)	16.235(78%)	7403	2784	0
+74	&scorr;&sweep;&dc2;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	22.759	4.719(21%)	18.040(79%)	7597	2784	0
+75	&scorr;&sweep;&syn3;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	20.775	4.471(22%)	16.304(78%)	7365	2784	0
+76	&scorr;&sweep;&syn4;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+77	&scorr;&sweep;&dch -f;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.919	4.223(22%)	15.696(78%)	7316	2784	0
+78	&scorr;&sweep;&b;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	19.897	4.282(22%)	15.615(78%)	7179	2784	0
+79	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	26.306	5.835(23%)	20.471(77%)	7319	2784	0
+80	&scorr;&sweep;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;	21.892	4.719(22%)	17.173(78%)	7478	2784	0
+81	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	25.754	5.711(23%)	20.043(77%)	7308	2784	0
+82	&scorr;&sweep;&b -d;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	20.405	4.458(22%)	15.947(78%)	7827	2784	0
+83	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	23.377	5.091(22%)	18.286(78%)	7367	2784	0
+84	&scorr;&sweep;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.416	4.640(23%)	15.776(77%)	7599	2784	0
+85	&scorr;&sweep;&if -W 300 -g -K 6;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;	20.435	4.347(22%)	16.088(78%)	7725	2784	0
+86	&scorr;&sweep;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.584	4.471(23%)	15.113(77%)	7221	2784	0
+87	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.089	4.241(23%)	14.848(77%)	7721	2784	0
+88	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.326	4.524(23%)	15.802(77%)	7351	2784	0
+89	&scorr;&sweep;&syn4;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -K 6 -v;&mfs;	18.483	4.152(23%)	14.331(77%)	7433	2784	0
+90	&scorr;&sweep;&syn3;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	21.305	4.648(22%)	16.657(78%)	7367	2784	0
+91	&scorr;&sweep;&syn3;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	19.250	4.241(23%)	15.009(77%)	7131	2784	0
+92	&scorr;&sweep;&synch2;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b -d;&syn4;&if -W 300 -K 6 -v;&mfs;	19.497	4.513(24%)	14.984(76%)	7838	2784	0
+93	&scorr;&sweep;&if -W 300 -g -K 6;&b -d;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b -d;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	18.657	5.306(29%)	13.351(71%)	7414	2784	0
+94	&scorr;&sweep;&syn2;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;	19.218	4.437(24%)	14.781(76%)	7407	2784	0
+95	&scorr;&sweep;&b;&dc2;&syn4;&if -W 300 -K 6 -v;&mfs;	19.909	4.458(23%)	15.451(77%)	7706	2784	0
+96	&scorr;&sweep;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.038	4.471(23%)	15.567(77%)	7170	2784	0
+97	&scorr;&sweep;&b -d;&dch;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	24.274	5.215(22%)	19.059(78%)	7265	2784	0
+98	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;						
+99	&scorr;&sweep;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	19.417	4.516(24%)	14.901(76%)	7627	2784	0
+100	&scorr;&sweep;&if -W 300 -g -K 6;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	19.579	4.471(23%)	15.108(77%)	7216	2784	0
+101	&scorr;&sweep;&dch;&dc2;&if -W 300 -K 6 -v;&mfs;	23.060	4.967(22%)	18.093(78%)	7441	2784	0
+102	&scorr;&sweep;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	20.936	4.595(22%)	16.341(78%)	7316	2784	0
+103	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	25.754	5.711(23%)	20.043(77%)	7308	2784	0
+104	&scorr;&sweep;&b -d;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	21.232	4.595(22%)	16.637(78%)	7319	2784	0
+105	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;	21.238	4.471(22%)	16.767(78%)	7285	2784	0
+106	&scorr;&sweep;&synch2;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;						
+107	&scorr;&sweep;&synch2;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	21.687	4.888(23%)	16.799(77%)	7510	2784	0
+108	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	23.645	5.215(23%)	18.430(77%)	7532	2784	0
+109	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	20.498	4.524(23%)	15.974(77%)	7668	2784	0
+110	&scorr;&sweep;&dc2;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.776	4.719(23%)	16.057(77%)	7467	2784	0
+111	&scorr;&sweep;&b -d;&dch -f;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.997	4.595(22%)	16.402(78%)	7342	2784	0
+112	&scorr;&sweep;&dc2;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	22.343	4.843(22%)	17.500(78%)	7355	2784	0
+113	&scorr;&sweep;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&b;&dch;&dch;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;						
+114	&scorr;&sweep;&dc2;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.129	4.451(23%)	15.678(77%)	7698	2784	0
+115	&scorr;&sweep;&syn2;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;						
+116	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	28.879	6.331(22%)	22.548(78%)	7449	2784	0
+117	&scorr;&sweep;&syn2;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.373	4.524(23%)	15.849(77%)	7416	2784	0
+118	&scorr;&sweep;&if -W 300 -x -K 6;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.036	4.392(24%)	14.644(76%)	7241	2784	0
+119	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.584	4.471(23%)	15.113(77%)	7120	2784	0
+120	&scorr;&sweep;&dc2;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	21.015	4.595(22%)	16.420(78%)	7399	2784	0
+121	&scorr;&sweep;&if -W 300 -y -K 6;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	27.245	5.711(21%)	21.534(79%)	7509	2784	0
+122	&scorr;&sweep;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;	21.287	4.843(23%)	16.444(77%)	7307	2784	0
+123	&scorr;&sweep;&if -W 300 -y -K 6;&dch;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	20.912	4.613(23%)	16.299(77%)	7235	2784	0
+124	&scorr;&sweep;&syn3;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	22.422	4.843(22%)	17.579(78%)	7361	2784	0
+125	&scorr;&sweep;&if -W 300 -x -K 6;&dc2;&dch;&if -W 300 -K 6 -v;&mfs;	23.851	5.215(22%)	18.636(78%)	7529	2784	0
+126	&scorr;&sweep;&synch2;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	19.734	5.281(27%)	14.453(73%)	7497	2784	0
+127	&scorr;&sweep;&if -W 300 -x -K 6;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	19.784	4.334(22%)	15.450(78%)	7544	2784	0
+128	&scorr;&sweep;&syn3;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	18.761	4.099(22%)	14.662(78%)	7793	2784	0
+129	&scorr;&sweep;&if -W 300 -y -K 6;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;						
+130	&scorr;&sweep;&dc2;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	20.631	4.458(22%)	16.173(78%)	7473	2784	0
+131	&scorr;&sweep;&syn4;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	19.990	4.334(22%)	15.656(78%)	7698	2784	0
+132	&scorr;&sweep;&b;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;	19.997	4.575(23%)	15.422(77%)	7785	2784	0
+133	&scorr;&sweep;&b;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	20.185	4.640(23%)	15.545(77%)	7328	2784	0
+134	&scorr;&sweep;&dch -f;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;	23.359	4.967(22%)	18.392(78%)	7448	2784	0
+135	&scorr;&sweep;&syn3;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;	19.313	4.117(22%)	15.196(78%)	7813	2784	0
+136	&scorr;&sweep;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	19.417	4.516(24%)	14.901(76%)	7627	2784	0
+137	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	19.017	4.392(24%)	14.625(76%)	7630	2784	0
+138	&scorr;&sweep;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	20.037	4.223(22%)	15.814(78%)	7825	2784	0
+139	&scorr;&sweep;&b -d;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&dch;&if -W 300 -K 6 -v;&mfs;						
+140	&scorr;&sweep;&syn2;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	18.893	4.268(23%)	14.625(77%)	7658	2784	0
+141	&scorr;&sweep;&dch -f;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;	19.811	4.451(23%)	15.360(77%)	7548	2784	0
+142	&scorr;&sweep;&if -W 300 -g -K 6;&dc2;&dch;&if -W 300 -K 6 -v;&mfs;	26.359	5.587(22%)	20.772(78%)	7678	2784	0
+143	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;						
+144	&scorr;&sweep;&dch -f;&dch;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	21.097	4.706(23%)	16.391(77%)	7652	2784	0
+145	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	18.731	4.099(22%)	14.632(78%)	7826	2784	0
+146	&scorr;&sweep;&b;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.064	4.595(22%)	16.469(78%)	7205	2784	0
+147	&scorr;&sweep;&dch -f;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	22.420	4.719(22%)	17.701(78%)	7347	2784	0
+148	&scorr;&sweep;&dc2;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.916	4.967(23%)	16.949(77%)	7327	2784	0
+149	&scorr;&sweep;&b;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&b;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b;&b -d;&if -W 300 -K 6 -v;&mfs;						
+150	&scorr;&sweep;&dch;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	19.808	4.034(21%)	15.774(79%)	7551	2784	0
+151	&scorr;&sweep;&b -d;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	23.626	5.091(22%)	18.535(78%)	7583	2784	0
+152	&scorr;&sweep;&b -d;&dch -f;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;						
+153	&scorr;&sweep;&dch;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;						
+154	&scorr;&sweep;&synch2;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	20.303	4.458(22%)	15.845(78%)	7505	2784	0
+155	&scorr;&sweep;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	20.986	4.595(22%)	16.391(78%)	7320	2784	0
+156	&scorr;&sweep;&syn2;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	18.950	4.241(23%)	14.709(77%)	7543	2784	0
+157	&scorr;&sweep;&dch -f;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dch;&syn2;&if -W 300 -K 6 -v;&mfs;	20.238	4.524(23%)	15.714(77%)	7459	2784	0
+158	&scorr;&sweep;&synch2;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	20.329	4.458(22%)	15.871(78%)	7595	2784	0
+159	&scorr;&sweep;&dch -f;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&dch -f;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&synch2;&dch;&if -W 300 -K 6 -v;&mfs;	17.095	4.609(27%)	12.486(73%)	7359	2784	0
+160	&scorr;&sweep;&b -d;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	24.497	5.339(22%)	19.158(78%)	7441	2784	0
+161	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&synch2;&b;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;						
+162	&scorr;&sweep;&if -W 300 -K 6 -v;&mfs;	24.612	5.463(23%)	19.149(77%)	7363	2784	0
+163	&scorr;&sweep;&syn3;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;						
+164	&scorr;&sweep;&dc2;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	22.905	4.967(22%)	17.938(78%)	7435	2784	0
+165	&scorr;&sweep;&if -W 300 -g -K 6;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;	24.315	5.339(22%)	18.976(78%)	7525	2784	0
+166	&scorr;&sweep;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	27.567	6.083(23%)	21.484(77%)	7447	2784	0
+167	&scorr;&sweep;&b;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	19.918	4.347(22%)	15.571(78%)	7356	2784	0
+168	&scorr;&sweep;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&b;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	20.203	4.282(22%)	15.921(78%)	7478	2784	0
+169	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	19.639	4.223(22%)	15.416(78%)	7275	2784	0
+170	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	27.955	5.959(22%)	21.996(78%)	7254	2784	0
+171	&scorr;&sweep;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	19.683	4.334(23%)	15.349(77%)	7597	2784	0
+172	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	26.287	5.835(23%)	20.452(77%)	7302	2784	0
+173	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;	23.363	5.091(22%)	18.272(78%)	7307	2784	0
+174	&scorr;&sweep;&dc2;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	24.100	5.091(22%)	19.009(78%)	7587	2784	0
+175	&scorr;&sweep;&if -W 300 -g -K 6;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	25.453	5.587(22%)	19.866(78%)	7300	2784	0
+176	&scorr;&sweep;&b -d;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	20.205	4.640(23%)	15.565(77%)	7332	2784	0
+177	&scorr;&sweep;&dch;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	21.317	4.471(21%)	16.846(79%)	7302	2784	0
+178	&scorr;&sweep;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.026	4.471(23%)	15.555(77%)	7289	2784	0
+179	&scorr;&sweep;&dch -f;&syn4;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -K 6 -v;&mfs;	18.311	4.034(23%)	14.277(77%)	7196	2784	0
+180	&scorr;&sweep;&syn4;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.589	4.347(23%)	15.242(77%)	7559	2784	0
+181	&scorr;&sweep;&if -W 300 -x -K 6;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;	19.543	4.471(23%)	15.072(77%)	7348	2784	0
+182	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;						
+183	&scorr;&sweep;&dch -f;&if -W 300 -K 6 -v;&mfs;	27.481	5.835(22%)	21.646(78%)	7443	2784	0
+184	&scorr;&sweep;&synch2;&dch;&if -W 300 -K 6 -v;&mfs;	20.024	4.471(23%)	15.553(77%)	7350	2784	0
+185	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	25.752	5.587(22%)	20.165(78%)	7378	2784	0
+186	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	21.477	4.530(22%)	16.947(78%)	7391	2784	0
+187	&scorr;&sweep;&syn4;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.258	4.640(25%)	14.618(75%)	7780	2784	0
+188	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	23.984	5.339(23%)	18.645(77%)	7316	2784	0
+189	&scorr;&sweep;&dc2;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;	22.186	4.843(22%)	17.343(78%)	7362	2784	0
+190	&scorr;&sweep;&dch;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	23.667	5.215(23%)	18.452(77%)	7510	2784	0
+191	&scorr;&sweep;&syn3;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	20.185	4.640(23%)	15.545(77%)	7324	2784	0
+192	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;						
+193	&scorr;&sweep;&if -W 300 -g -K 6;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	21.470	4.595(22%)	16.875(78%)	7351	2784	0
+194	&scorr;&sweep;&syn4;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	18.084	5.215(29%)	12.869(71%)	7692	2784	0
+195	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;						
+196	&scorr;&sweep;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	21.448	4.530(22%)	16.918(78%)	7414	2784	0
+197	&scorr;&sweep;&b -d;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	19.377	4.210(22%)	15.167(78%)	7799	2784	0
+198	&scorr;&sweep;&syn2;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	19.676	4.223(22%)	15.453(78%)	7808	2784	0
+199	&scorr;&sweep;&b;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	20.244	4.471(23%)	15.773(77%)	7372	2784	0
+200	&scorr;&sweep;&if -W 300 -x -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;						
+201	&scorr;&sweep;&syn2;&dch -f;&syn3;&if -W 300 -K 6 -v;&mfs;	20.758	4.582(23%)	16.176(77%)	7390	2784	0
+202	&scorr;&sweep;&b;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	26.186	5.711(22%)	20.475(78%)	7396	2784	0
+203	&scorr;&sweep;&dc2;&b;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -K 6 -v;&mfs;	20.652	4.524(22%)	16.128(78%)	7549	2784	0
+204	&scorr;&sweep;&dch;&dc2;&dch;&if -W 300 -K 6 -v;&mfs;	22.799	4.843(22%)	17.956(78%)	7613	2784	0
+205	&scorr;&sweep;&dch -f;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;	21.832	4.719(22%)	17.113(78%)	7281	2784	0
+206	&scorr;&sweep;&dc2;&b;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&dch;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;						
+207	&scorr;&sweep;&synch2;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.611	4.595(23%)	16.016(77%)	7258	2784	0
+208	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+209	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+210	&scorr;&sweep;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	25.110	5.463(22%)	19.647(78%)	7394	2784	0
+211	&scorr;&sweep;&b;&if -W 300 -K 6 -v;&mfs;	22.518	4.967(23%)	17.551(77%)	7354	2784	0
+212	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+213	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;						
+214	&scorr;&sweep;&dch;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	23.667	5.215(23%)	18.452(77%)	7510	2784	0
+215	&scorr;&sweep;&syn3;&if -W 300 -K 6 -v;&mfs;	22.577	4.967(23%)	17.610(77%)	7305	2784	0
+216	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;	21.173	4.719(23%)	16.454(77%)	7274	2784	0
+217	&scorr;&sweep;&syn3;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.629	4.530(22%)	16.099(78%)	7268	2784	0
+218	&scorr;&sweep;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	27.893	6.083(22%)	21.810(78%)	7379	2784	0
+219	&scorr;&sweep;&syn2;&b;&b -d;&if -W 300 -K 6 -v;&mfs;						
+220	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;	26.882	5.835(22%)	21.047(78%)	7476	2784	0
+221	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	18.843	4.144(22%)	14.699(78%)	7716	2784	0
+222	&scorr;&sweep;&b -d;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	18.945	5.470(29%)	13.475(71%)	7421	2784	0
+223	&scorr;&sweep;&syn4;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	17.037	4.964(30%)	12.073(70%)	7416	2784	0
+224	&scorr;&sweep;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;	22.270	4.843(22%)	17.427(78%)	7290	2784	0
+225	&scorr;&sweep;&synch2;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;						
+226	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	28.879	6.331(22%)	22.548(78%)	7449	2784	0
+227	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	21.697	4.843(23%)	16.854(77%)	7317	2784	0
+228	&scorr;&sweep;&dc2;&syn4;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	17.859	5.025(29%)	12.834(71%)	7316	2784	0
+229	&scorr;&sweep;&syn3;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	18.651	4.334(24%)	14.317(76%)	7831	2784	0
+230	&scorr;&sweep;&syn3;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	19.814	4.347(22%)	15.467(78%)	7342	2784	0
+231	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	21.195	4.706(23%)	16.489(77%)	7351	2784	0
+232	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;	21.096	4.582(22%)	16.514(78%)	7379	2784	0
+233	&scorr;&sweep;&syn3;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.216	4.595(22%)	16.621(78%)	7273	2784	0
+234	&scorr;&sweep;&syn2;&b;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&dch -f;&if -W 300 -K 6 -v;&mfs;	18.808	5.025(27%)	13.783(73%)	7589	2784	0
+235	&scorr;&sweep;&dc2;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	21.594	4.823(23%)	16.771(77%)	7347	2784	0
+236	&scorr;&sweep;&if -W 300 -y -K 6;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	19.574	5.306(28%)	14.268(72%)	7743	2784	0
+237	&scorr;&sweep;&b;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	18.770	4.099(22%)	14.671(78%)	7233	2784	0
+238	&scorr;&sweep;&dch;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;	22.365	4.719(22%)	17.646(78%)	7400	2784	0
+239	&scorr;&sweep;&synch2;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;	21.184	4.719(23%)	16.465(77%)	7362	2784	0
+240	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	18.222	4.851(27%)	13.371(73%)	7717	2784	0
+241	&scorr;&sweep;&if -W 300 -x -K 6;&dch -f;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	25.527	5.587(22%)	19.940(78%)	7349	2784	0
+242	&scorr;&sweep;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	21.658	4.471(21%)	17.187(79%)	7499	2784	0
+243	&scorr;&sweep;&if -W 300 -g -K 6;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	25.894	5.587(22%)	20.307(78%)	7702	2784	0
+244	&scorr;&sweep;&dch -f;&dch;&dc2;&if -W 300 -K 6 -v;&mfs;	22.508	4.843(22%)	17.665(78%)	7433	2784	0
+245	&scorr;&sweep;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;	21.085	4.699(23%)	16.386(77%)	7508	2784	0
+246	&scorr;&sweep;&syn2;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;	19.516	3.851(20%)	15.665(80%)	7733	2784	0
+247	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&b;&syn2;&if -W 300 -K 6 -v;&mfs;						
+248	&scorr;&sweep;&b;&if -W 300 -x -K 6;&syn3;&if -W 300 -K 6 -v;&mfs;	20.830	4.595(23%)	16.235(77%)	7310	2784	0
+249	&scorr;&sweep;&dch -f;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&syn4;&b;&if -W 300 -K 6 -v;&mfs;	19.961	4.158(21%)	15.803(79%)	7594	2784	0
+250	&scorr;&sweep;&dch -f;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	20.375	4.595(23%)	15.780(77%)	7352	2784	0
+251	&scorr;&sweep;&synch2;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.821	4.276(21%)	16.545(79%)	7439	2784	0
+252	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&dch;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&dch;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;						
+253	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	21.743	4.843(23%)	16.900(77%)	7418	2784	0
+254	&scorr;&sweep;&dc2;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.551	4.099(21%)	15.452(79%)	7563	2784	0
+255	&scorr;&sweep;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	23.474	5.091(22%)	18.383(78%)	7407	2784	0
+256	&scorr;&sweep;&if -W 300 -g -K 6;&b;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	22.732	4.843(22%)	17.889(78%)	7323	2784	0
+257	&scorr;&sweep;&synch2;&syn3;&dch;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	21.180	4.719(23%)	16.461(77%)	7397	2784	0
+258	&scorr;&sweep;&synch2;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	20.366	4.595(23%)	15.771(77%)	7536	2784	0
+259	&scorr;&sweep;&dch -f;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	21.855	4.947(23%)	16.908(77%)	7370	2784	0
+260	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.042	4.086(22%)	14.956(78%)	7631	2784	0
+261	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn2;&b;&if -W 300 -K 6 -v;&mfs;						
+262	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.042	4.086(22%)	14.956(78%)	7659	2784	0
+263	&scorr;&sweep;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;	21.085	4.699(23%)	16.386(77%)	7508	2784	0
+264	&scorr;&sweep;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	25.493	5.587(22%)	19.906(78%)	7615	2784	0
+265	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	18.980	4.276(23%)	14.704(77%)	7665	2784	0
+266	&scorr;&sweep;&syn2;&if -W 300 -x -K 6;&b;&if -W 300 -K 6 -v;&mfs;	20.355	4.524(23%)	15.831(77%)	7324	2784	0
+267	&scorr;&sweep;&syn3;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;	20.357	4.458(22%)	15.899(78%)	7351	2784	0
+268	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.215	4.117(22%)	15.098(78%)	7668	2784	0
+269	&scorr;&sweep;&if -W 300 -x -K 6;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	20.063	4.524(23%)	15.539(77%)	7325	2784	0
+270	&scorr;&sweep;&synch2;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	21.172	4.524(22%)	16.648(78%)	7504	2784	0
+271	&scorr;&sweep;&syn2;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&syn2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dch;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;	19.178	5.306(28%)	13.872(72%)	7518	2784	0
+272	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	19.210	4.558(24%)	14.652(76%)	7519	2784	0
+273	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	20.038	4.471(23%)	15.567(77%)	7311	2784	0
+274	&scorr;&sweep;&b;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	19.627	4.640(24%)	14.987(76%)	7721	2784	0
+275	&scorr;&sweep;&if -W 300 -y -K 6;&syn4;&synch2;&if -W 300 -K 6 -v;&mfs;	19.660	4.458(23%)	15.202(77%)	7581	2784	0
+276	&scorr;&sweep;&b -d;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.743	4.223(22%)	15.520(78%)	7283	2784	0
+277	&scorr;&sweep;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;						
+278	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	25.723	5.711(23%)	20.012(77%)	7292	2784	0
+279	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch -f;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;						
+280	&scorr;&sweep;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	20.170	4.400(22%)	15.770(78%)	7294	2784	0
+281	&scorr;&sweep;&synch2;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;	18.702	5.091(28%)	13.611(72%)	7302	2784	0
+282	&scorr;&sweep;&b;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&dch;&b;&syn3;&if -W 300 -K 6 -v;&mfs;	19.254	4.327(23%)	14.927(77%)	7230	2784	0
+283	&scorr;&sweep;&syn2;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.787	4.719(22%)	17.068(78%)	7325	2784	0
+284	&scorr;&sweep;&syn4;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	19.749	4.034(21%)	15.715(79%)	7784	2784	0
+285	&scorr;&sweep;&syn3;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	21.745	4.843(23%)	16.902(77%)	7447	2784	0
+286	&scorr;&sweep;&dch;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	23.634	5.091(22%)	18.543(78%)	7442	2784	0
+287	&scorr;&sweep;&syn3;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn4;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	18.943	4.086(22%)	14.857(78%)	7653	2784	0
+288	&scorr;&sweep;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	19.670	4.516(23%)	15.154(77%)	7870	2784	0
+289	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.811	4.400(23%)	15.411(77%)	7274	2784	0
+290	&scorr;&sweep;&b -d;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	23.797	5.215(22%)	18.582(78%)	7443	2784	0
+291	&scorr;&sweep;&syn4;&b;&syn4;&if -W 300 -K 6 -v;&mfs;	19.670	4.516(23%)	15.154(77%)	7868	2784	0
+292	&scorr;&sweep;&synch2;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.821	4.276(21%)	16.545(79%)	7439	2784	0
+293	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	23.984	5.339(23%)	18.645(77%)	7316	2784	0
+294	&scorr;&sweep;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;	21.085	4.699(23%)	16.386(77%)	7508	2784	0
+295	&scorr;&sweep;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;	21.606	4.719(22%)	16.887(78%)	7393	2784	0
+296	&scorr;&sweep;&dch;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b;&synch2;&syn4;&if -W 300 -K 6 -v;&mfs;	19.070	4.203(23%)	14.867(77%)	7505	2784	0
+297	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	17.840	5.088(29%)	12.752(71%)	7170	2784	0
+298	&scorr;&sweep;&dc2;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	23.059	5.091(23%)	17.968(77%)	7642	2784	0
+299	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	19.395	4.451(23%)	14.944(77%)	7798	2784	0
+300	&scorr;&sweep;&b -d;&if -W 300 -K 6 -v;&mfs;	22.120	4.843(22%)	17.277(78%)	7356	2784	0
+301	&scorr;&sweep;&dch;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	20.762	4.582(23%)	16.180(77%)	7256	2784	0
+302	&scorr;&sweep;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	21.477	4.530(22%)	16.947(78%)	7337	2784	0
+303	&scorr;&sweep;&b;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.703	4.347(23%)	15.356(77%)	7352	2784	0
+304	&scorr;&sweep;&syn2;&dch -f;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.038	4.471(23%)	15.567(77%)	7367	2784	0
+305	&scorr;&sweep;&dc2;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	22.186	4.772(22%)	17.414(78%)	7420	2784	0
+306	&scorr;&sweep;&b -d;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	22.483	4.896(22%)	17.587(78%)	7469	2784	0
+307	&scorr;&sweep;&syn4;&b -d;&syn4;&if -W 300 -K 6 -v;&mfs;	19.670	4.516(23%)	15.154(77%)	7861	2784	0
+308	&scorr;&sweep;&dch;&dch -f;&dch -f;&if -W 300 -K 6 -v;&mfs;	24.516	5.215(22%)	19.301(78%)	7600	2784	0
+309	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	18.819	4.079(22%)	14.740(78%)	7622	2784	0
+310	&scorr;&sweep;&dc2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	26.249	5.587(22%)	20.662(78%)	7597	2784	0
+311	&scorr;&sweep;&dc2;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.191	4.392(23%)	14.799(77%)	7673	2784	0
+312	&scorr;&sweep;&dch;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.021	4.347(22%)	15.674(78%)	7356	2784	0
+313	&scorr;&sweep;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;	21.392	4.719(23%)	16.673(77%)	7306	2784	0
+314	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	19.696	4.276(22%)	15.420(78%)	7690	2784	0
+315	&scorr;&sweep;&dc2;&b;&syn3;&if -W 300 -K 6 -v;&mfs;	21.922	4.823(23%)	17.099(77%)	7352	2784	0
+316	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	19.338	4.410(23%)	14.928(77%)	7737	2784	0
+317	&scorr;&sweep;&dch;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	20.933	4.400(22%)	16.533(78%)	7510	2784	0
+318	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.611	4.595(23%)	16.016(77%)	7299	2784	0
+319	&scorr;&sweep;&synch2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.025	4.471(23%)	15.554(77%)	7445	2784	0
+320	&scorr;&sweep;&if -W 300 -g -K 6;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	20.210	4.392(22%)	15.818(78%)	7717	2784	0
+321	&scorr;&sweep;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;	20.387	4.471(22%)	15.916(78%)	7348	2784	0
+322	&scorr;&sweep;&dch;&dch;&b -d;&if -W 300 -K 6 -v;&mfs;	23.575	5.091(22%)	18.484(78%)	7419	2784	0
+323	&scorr;&sweep;&syn4;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	18.451	4.392(24%)	14.059(76%)	7815	2784	0
+324	&scorr;&sweep;&synch2;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	20.814	4.400(22%)	16.414(78%)	7313	2784	0
+325	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	22.758	4.843(22%)	17.915(78%)	7440	2784	0
+326	&scorr;&sweep;&synch2;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	23.900	5.215(22%)	18.685(78%)	7265	2784	0
+327	&scorr;&sweep;&b -d;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.279	4.524(23%)	15.755(77%)	7276	2784	0
+328	&scorr;&sweep;&syn4;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;	18.587	3.851(21%)	14.736(79%)	7833	2784	0
+329	&scorr;&sweep;&b -d;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	19.464	4.333(23%)	15.131(77%)	7086	2784	0
+330	&scorr;&sweep;&dc2;&b;&dch;&if -W 300 -K 6 -v;&mfs;	25.241	5.463(22%)	19.778(78%)	7593	2784	0
+331	&scorr;&sweep;&syn2;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.787	4.719(22%)	17.068(78%)	7325	2784	0
+332	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	20.431	4.347(22%)	16.084(78%)	7830	2784	0
+333	&scorr;&sweep;&dc2;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	23.338	4.967(22%)	18.371(78%)	7432	2784	0
+334	&scorr;&sweep;&syn4;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	19.933	4.347(22%)	15.586(78%)	7645	2784	0
+335	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&b;&dch;&if -W 300 -K 6 -v;&mfs;	20.390	4.276(21%)	16.114(79%)	7801	2784	0
+336	&scorr;&sweep;&b;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.247	4.471(23%)	15.776(77%)	7205	2784	0
+337	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	22.543	4.967(23%)	17.576(77%)	7338	2784	0
+338	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&dch -f;&if -W 300 -K 6 -v;&mfs;	22.179	4.595(21%)	17.584(79%)	7451	2784	0
+339	&scorr;&sweep;&syn4;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	18.659	4.268(23%)	14.391(77%)	7488	2784	0
+340	&scorr;&sweep;&syn2;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	20.604	4.458(22%)	16.146(78%)	7437	2784	0
+341	&scorr;&sweep;&dc2;&syn3;&dch -f;&if -W 300 -K 6 -v;&mfs;	23.338	4.967(22%)	18.371(78%)	7432	2784	0
+342	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	24.369	5.339(22%)	19.030(78%)	7344	2784	0
+343	&scorr;&sweep;&dch;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	23.023	4.843(22%)	18.180(78%)	7347	2784	0
+344	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	23.469	5.091(22%)	18.378(78%)	7379	2784	0
+345	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.779	4.223(22%)	15.556(78%)	7088	2784	0
+346	&scorr;&sweep;&if -W 300 -x -K 6;&b -d;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	17.246	4.727(28%)	12.519(72%)	7583	2784	0
+347	&scorr;&sweep;&syn3;&dch;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	19.930	4.334(22%)	15.596(78%)	7348	2784	0
+348	&scorr;&sweep;&syn4;&dc2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	18.864	4.516(24%)	14.348(76%)	7727	2784	0
+349	&scorr;&sweep;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	18.863	4.392(24%)	14.471(76%)	7596	2784	0
+350	&scorr;&sweep;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	21.634	4.706(22%)	16.928(78%)	7336	2784	0
+351	&scorr;&sweep;&if -W 300 -x -K 6;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;	22.787	4.967(22%)	17.820(78%)	7446	2784	0
+352	&scorr;&sweep;&b -d;&syn4;&if -W 300 -K 6 -v;&mfs;	19.549	4.365(23%)	15.184(77%)	7763	2784	0
+353	&scorr;&sweep;&b;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.729	4.575(24%)	15.154(76%)	7561	2784	0
+354	&scorr;&sweep;&synch2;&if -W 300 -K 6 -v;&mfs;	25.033	5.463(22%)	19.570(78%)	7377	2784	0
+355	&scorr;&sweep;&b -d;&b -d;&syn2;&if -W 300 -K 6 -v;&mfs;	20.986	4.595(22%)	16.391(78%)	7323	2784	0
+356	&scorr;&sweep;&synch2;&dch;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b;&b -d;&if -W 300 -K 6 -v;&mfs;	19.465	5.281(28%)	14.184(72%)	7324	2784	0
+357	&scorr;&sweep;&dch;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	21.300	4.582(22%)	16.718(78%)	7497	2784	0
+358	&scorr;&sweep;&dc2;&dch;&if -W 300 -K 6 -v;&mfs;	24.773	5.339(22%)	19.434(78%)	7613	2784	0
+359	&scorr;&sweep;&dch;&synch2;&synch2;&if -W 300 -K 6 -v;&mfs;	21.938	4.843(23%)	17.095(77%)	7337	2784	0
+360	&scorr;&sweep;&if -W 300 -x -K 6;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	20.604	4.471(22%)	16.133(78%)	7567	2784	0
+361	&scorr;&sweep;&b -d;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.573	4.524(22%)	16.049(78%)	7329	2784	0
+362	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	24.464	5.339(22%)	19.125(78%)	7345	2784	0
+363	&scorr;&sweep;&if -W 300 -x -K 6;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	20.582	4.595(23%)	15.987(77%)	7291	2784	0
+364	&scorr;&sweep;&syn3;&b -d;&dch -f;&if -W 300 -K 6 -v;&mfs;	21.709	4.843(23%)	16.866(77%)	7489	2784	0
+365	&scorr;&sweep;&syn3;&synch2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.549	4.489(22%)	16.060(78%)	7312	2784	0
+366	&scorr;&sweep;&b;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.729	4.575(24%)	15.154(76%)	7561	2784	0
+367	&scorr;&sweep;&synch2;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	20.366	4.595(23%)	15.771(77%)	7536	2784	0
+368	&scorr;&sweep;&dc2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	21.741	4.843(23%)	16.898(77%)	7390	2784	0
+369	&scorr;&sweep;&b;&dch;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.548	4.489(22%)	16.059(78%)	7625	2784	0
+370	&scorr;&sweep;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	21.342	4.595(22%)	16.747(78%)	7579	2784	0
+371	&scorr;&sweep;&synch2;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	20.191	5.521(28%)	14.670(72%)	7612	2784	0
+372	&scorr;&sweep;&syn4;&dch;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	17.624	5.091(29%)	12.533(71%)	7465	2784	0
+373	&scorr;&sweep;&b -d;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.600	4.595(23%)	16.005(77%)	7220	2784	0
+374	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.233	3.910(21%)	15.323(79%)	7615	2784	0
+375	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	25.752	5.587(22%)	20.165(78%)	7378	2784	0
+376	&scorr;&sweep;&if -W 300 -y -K 6;&b;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&dc2;&synch2;&if -W 300 -K 6 -v;&mfs;	21.655	4.699(22%)	16.956(78%)	7338	2784	0
+377	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	19.950	4.516(23%)	15.434(77%)	7558	2784	0
+378	&scorr;&sweep;&if -W 300 -x -K 6;&b -d;&b;&if -W 300 -K 6 -v;&mfs;	22.641	4.967(22%)	17.674(78%)	7316	2784	0
+379	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	22.847	5.091(23%)	17.756(77%)	7362	2784	0
+380	&scorr;&sweep;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	21.773	4.719(22%)	17.054(78%)	7314	2784	0
+381	&scorr;&sweep;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.451	4.719(22%)	16.732(78%)	7304	2784	0
+382	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;						
+383	&scorr;&sweep;&syn3;&dc2;&if -W 300 -K 6 -v;&mfs;	21.085	4.699(23%)	16.386(77%)	7508	2784	0
+384	&scorr;&sweep;&b;&b;&dc2;&if -W 300 -K 6 -v;&mfs;	21.346	4.595(22%)	16.751(78%)	7588	2784	0
+385	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dch;&b;&if -W 300 -K 6 -v;&mfs;	20.015	4.276(22%)	15.739(78%)	7638	2784	0
+386	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	22.326	4.967(23%)	17.359(77%)	7379	2784	0
+387	&scorr;&sweep;&if -W 300 -x -K 6;&dch;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.144	4.595(22%)	16.549(78%)	7242	2784	0
+388	&scorr;&sweep;&b;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	19.453	4.451(23%)	15.002(77%)	7654	2784	0
+389	&scorr;&sweep;&syn4;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	18.801	3.975(22%)	14.826(78%)	7831	2784	0
+390	&scorr;&sweep;&b;&if -W 300 -x -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	19.915	4.516(23%)	15.399(77%)	7376	2784	0
+391	&scorr;&sweep;&syn2;&if -W 300 -g -K 6;&dch;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;	19.897	4.276(22%)	15.621(78%)	7316	2784	0
+392	&scorr;&sweep;&dc2;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	21.104	4.582(22%)	16.522(78%)	7332	2784	0
+393	&scorr;&sweep;&b -d;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	24.887	5.339(22%)	19.548(78%)	7440	2784	0
+394	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.535	4.268(22%)	15.267(78%)	7647	2784	0
+395	&scorr;&sweep;&b;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.672	4.471(22%)	16.201(78%)	7432	2784	0
+396	&scorr;&sweep;&dch -f;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	23.115	4.967(22%)	18.148(78%)	7422	2784	0
+397	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	23.654	5.091(22%)	18.563(78%)	7357	2784	0
+398	&scorr;&sweep;&syn3;&b -d;&if -W 300 -K 6 -v;&mfs;	21.392	4.719(23%)	16.673(77%)	7306	2784	0
+399	&scorr;&sweep;&syn2;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.038	4.471(23%)	15.567(77%)	7269	2784	0
+400	&scorr;&sweep;&dch;&if -W 300 -K 6 -v;&mfs;	27.583	5.959(22%)	21.624(78%)	7412	2784	0
+401	&scorr;&sweep;&syn2;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	20.604	4.458(22%)	16.146(78%)	7437	2784	0
+402	&scorr;&sweep;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	27.893	6.083(22%)	21.810(78%)	7379	2784	0
+403	&scorr;&sweep;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.035	4.471(23%)	15.564(77%)	7156	2784	0
+404	&scorr;&sweep;&synch2;&dch;&syn2;&if -W 300 -K 6 -v;&mfs;	20.704	4.582(23%)	16.122(77%)	7448	2784	0
+405	&scorr;&sweep;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	18.690	4.513(25%)	14.177(75%)	7708	2784	0
+406	&scorr;&sweep;&b;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	22.840	4.967(22%)	17.873(78%)	7372	2784	0
+407	&scorr;&sweep;&syn4;&syn4;&dc2;&if -W 300 -K 6 -v;&mfs;	19.425	4.640(24%)	14.785(76%)	7729	2784	0
+408	&scorr;&sweep;&dc2;&syn2;&b;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	21.012	4.530(22%)	16.482(78%)	7196	2784	0
+409	&scorr;&sweep;&b;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&dc2;&if -W 300 -x -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	20.861	4.933(24%)	15.928(76%)	7195	2784	0
+410	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	19.654	4.334(23%)	15.320(77%)	7762	2784	0
+411	&scorr;&sweep;&b;&b;&if -W 300 -K 6 -v;&mfs;	24.366	5.339(22%)	19.027(78%)	7358	2784	0
+412	&scorr;&sweep;&b -d;&syn2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.096	4.471(23%)	15.625(77%)	7324	2784	0
+413	&scorr;&sweep;&dc2;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	21.813	4.706(22%)	17.107(78%)	7237	2784	0
+414	&scorr;&sweep;&dch;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	23.046	5.181(23%)	17.865(77%)	7435	2784	0
+415	&scorr;&sweep;&syn3;&syn4;&dch;&if -W 300 -K 6 -v;&mfs;	18.188	5.214(29%)	12.974(71%)	7842	2784	0
+416	&scorr;&sweep;&b -d;&b -d;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	20.606	4.451(22%)	16.155(78%)	7187	2784	0
+417	&scorr;&sweep;&syn2;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn2;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;						
+418	&scorr;&sweep;&syn2;&dc2;&if -W 300 -K 6 -v;&mfs;	21.084	4.699(23%)	16.385(77%)	7465	2784	0
+419	&scorr;&sweep;&if -W 300 -g -K 6;&dch;&synch2;&if -W 300 -K 6 -v;&mfs;	21.727	4.595(22%)	17.132(78%)	7314	2784	0
+420	&scorr;&sweep;&synch2;&if -W 300 -x -K 6;&dc2;&if -W 300 -K 6 -v;&mfs;	21.687	4.888(23%)	16.799(77%)	7510	2784	0
+421	&scorr;&sweep;&b -d;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	20.215	4.640(23%)	15.575(77%)	7311	2784	0
+422	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	23.213	5.091(22%)	18.122(78%)	7368	2784	0
+423	&scorr;&sweep;&if -W 300 -y -K 6;&b -d;&syn3;&if -W 300 -K 6 -v;&mfs;	22.661	4.967(22%)	17.694(78%)	7349	2784	0
+424	&scorr;&sweep;&if -W 300 -x -K 6;&synch2;&dch;&if -W 300 -K 6 -v;&mfs;	19.681	4.099(21%)	15.582(79%)	7367	2784	0
+425	&scorr;&sweep;&dch;&dch -f;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	23.610	5.091(22%)	18.519(78%)	7510	2784	0
+426	&scorr;&sweep;&if -W 300 -y -K 6;&synch2;&b;&if -W 300 -K 6 -v;&mfs;	20.235	4.471(23%)	15.764(77%)	7293	2784	0
+427	&scorr;&sweep;&if -W 300 -y -K 6;&dch;&if -W 300 -K 6 -v;&mfs;	28.686	6.207(22%)	22.479(78%)	7344	2784	0
+428	&scorr;&sweep;&synch2;&syn3;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	21.059	4.595(22%)	16.464(78%)	7326	2784	0
+429	&scorr;&sweep;&syn3;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;						
+430	&scorr;&sweep;&syn3;&syn3;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.059	4.347(22%)	15.712(78%)	7315	2784	0
+431	&scorr;&sweep;&synch2;&b -d;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b;&if -W 300 -K 6 -v;&mfs;	20.659	4.365(22%)	16.294(78%)	7262	2784	0
+432	&scorr;&sweep;&syn2;&if -W 300 -y -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	21.789	4.648(22%)	17.141(78%)	7515	2784	0
+433	&scorr;&sweep;&syn3;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	21.364	4.595(22%)	16.769(78%)	7278	2784	0
+434	&scorr;&sweep;&syn2;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;						
+435	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	22.313	4.843(22%)	17.470(78%)	7401	2784	0
+436	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	26.272	5.835(23%)	20.437(77%)	7301	2784	0
+437	&scorr;&sweep;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dc2;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&b;&syn2;&if -W 300 -K 6 -v;&mfs;	18.478	4.327(24%)	14.151(76%)	7206	2784	0
+438	&scorr;&sweep;&b;&dch;&b;&if -W 300 -K 6 -v;&mfs;	20.741	4.471(22%)	16.270(78%)	7571	2784	0
+439	&scorr;&sweep;&dch;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	21.999	4.719(22%)	17.280(78%)	7380	2784	0
+440	&scorr;&sweep;&dch;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;	20.414	4.582(23%)	15.832(77%)	7628	2784	0
+441	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&if -W 300 -K 6 -v;&mfs;						
+442	&scorr;&sweep;&b;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&b;&if -W 300 -K 6 -v;&mfs;&st;&dch;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&b;&if -W 300 -y -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;						
+443	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&synch2;&if -W 300 -g -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;						
+444	&scorr;&sweep;&syn2;&syn3;&if -W 300 -K 6 -v;&mfs;	20.936	4.595(22%)	16.341(78%)	7316	2784	0
+445	&scorr;&sweep;&synch2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.025	4.471(23%)	15.554(77%)	7445	2784	0
+446	&scorr;&sweep;&if -W 300 -g -K 6;&b;&b -d;&if -W 300 -K 6 -v;&mfs;						
+447	&scorr;&sweep;&syn4;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.381	4.210(22%)	15.171(78%)	7695	2784	0
+448	&scorr;&sweep;&b;&dc2;&dch -f;&if -W 300 -K 6 -v;&mfs;	28.612	6.207(22%)	22.405(78%)	7466	2784	0
+449	&scorr;&sweep;&synch2;&syn4;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.680	4.158(21%)	16.522(79%)	7662	2784	0
+450	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.533	4.471(22%)	16.062(78%)	7337	2784	0
+451	&scorr;&sweep;&syn2;&syn4;&syn3;&if -W 300 -K 6 -v;&mfs;	19.516	3.851(20%)	15.665(80%)	7733	2784	0
+452	&scorr;&sweep;&if -W 300 -y -K 6;&dc2;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	20.759	4.347(21%)	16.412(79%)	7484	2784	0
+453	&scorr;&sweep;&dc2;&b -d;&synch2;&if -W 300 -K 6 -v;&mfs;	25.450	5.463(22%)	19.987(78%)	7467	2784	0
+454	&scorr;&sweep;&synch2;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	20.091	4.437(23%)	15.654(77%)	7785	2784	0
+455	&scorr;&sweep;&syn4;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	20.186	4.327(22%)	15.859(78%)	7715	2784	0
+456	&scorr;&sweep;&synch2;&syn2;&if -W 300 -K 6 -v;&mfs;	20.611	4.595(23%)	16.016(77%)	7344	2784	0
+457	&scorr;&sweep;&b;&b;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn4;&if -W 300 -K 6 -v;&mfs;	19.559	4.158(22%)	15.401(78%)	7784	2784	0
+458	&scorr;&sweep;&if -W 300 -g -K 6;&syn3;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&b;&if -W 300 -K 6 -v;&mfs;	19.699	4.347(23%)	15.352(77%)	7194	2784	0
+459	&scorr;&sweep;&synch2;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&dch;&if -W 300 -K 6 -v;&mfs;	22.420	4.830(22%)	17.590(78%)	7384	2784	0
+460	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	24.043	5.215(22%)	18.828(78%)	7360	2784	0
+461	&scorr;&sweep;&if -W 300 -g -K 6;&syn2;&dch;&if -W 300 -K 6 -v;&mfs;	23.337	4.843(21%)	18.494(79%)	7358	2784	0
+462	&scorr;&sweep;&if -W 300 -x -K 6;&b;&b;&if -W 300 -K 6 -v;&mfs;	23.918	5.091(22%)	18.827(78%)	7313	2784	0
+463	&scorr;&sweep;&syn2;&b;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&b;&if -W 300 -K 6 -v;&mfs;	20.143	4.458(23%)	15.685(77%)	7243	2784	0
+464	&scorr;&sweep;&syn2;&syn2;&if -W 300 -K 6 -v;&mfs;	21.773	4.719(22%)	17.054(78%)	7314	2784	0
+465	&scorr;&sweep;&dch -f;&if -W 300 -g -K 6;&dch -f;&if -W 300 -K 6 -v;&mfs;	25.505	5.463(22%)	20.042(78%)	7499	2784	0
+466	&scorr;&sweep;&dch;&dc2;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&syn2;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+467	&scorr;&sweep;&b -d;&syn3;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.732	4.524(22%)	16.208(78%)	7284	2784	0
+468	&scorr;&sweep;&syn2;&b;&dch -f;&if -W 300 -K 6 -v;&mfs;	23.236	5.091(22%)	18.145(78%)	7414	2784	0
+469	&scorr;&sweep;&b -d;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn3;&if -W 300 -K 6 -v;&mfs;&st;&b;&syn2;&syn4;&if -W 300 -K 6 -v;&mfs;	19.103	4.241(23%)	14.862(77%)	7595	2784	0
+470	&scorr;&sweep;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	21.448	4.530(22%)	16.918(78%)	7414	2784	0
+471	&scorr;&sweep;&b;&syn2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	22.059	4.843(22%)	17.216(78%)	7337	2784	0
+472	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;	20.611	4.595(23%)	16.016(77%)	7229	2784	0
+473	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	20.158	4.595(23%)	15.563(77%)	7301	2784	0
+474	&scorr;&sweep;&b -d;&if -W 300 -g -K 6;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&dc2;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&b;&b;&if -W 300 -K 6 -v;&mfs;						
+475	&scorr;&sweep;&b;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&syn4;&syn2;&if -W 300 -K 6 -v;&mfs;	18.461	4.117(23%)	14.344(77%)	7782	2784	0
+476	&scorr;&sweep;&syn4;&syn2;&b;&if -W 300 -K 6 -v;&mfs;	19.933	4.347(22%)	15.586(78%)	7642	2784	0
+477	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;						
+478	&scorr;&sweep;&syn4;&b -d;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;&st;&syn4;&dch -f;&dc2;&if -W 300 -K 6 -v;&mfs;&st;&syn3;&syn4;&if -W 300 -K 6 -v;&mfs;						
+479	&scorr;&sweep;&b;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	20.071	4.276(22%)	15.795(78%)	7310	2784	0
+480	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -g -K 6;&b -d;&if -W 300 -K 6 -v;&mfs;						
+481	&scorr;&sweep;&syn3;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	22.589	4.967(22%)	17.622(78%)	7311	2784	0
+482	&scorr;&sweep;&if -W 300 -g -K 6;&if -W 300 -g -K 6;&syn2;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -x -K 6;&dc2;&dc2;&if -W 300 -K 6 -v;&mfs;	19.604	4.210(22%)	15.394(78%)	7485	2784	0
+483	&scorr;&sweep;&dch -f;&b;&if -W 300 -K 6 -v;&mfs;&st;&if -W 300 -g -K 6;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.815	4.575(24%)	15.240(76%)	7481	2784	0
+484	&scorr;&sweep;&syn4;&dch -f;&synch2;&if -W 300 -K 6 -v;&mfs;&st;&b -d;&syn4;&syn4;&if -W 300 -K 6 -v;&mfs;	17.800	4.964(28%)	12.836(72%)	7728	2784	0
+485	&scorr;&sweep;&dc2;&if -W 300 -K 6 -v;&mfs;	22.488	4.843(22%)	17.645(78%)	7610	2784	0
+486	&scorr;&sweep;&syn3;&dch -f;&syn4;&if -W 300 -K 6 -v;&mfs;	19.788	4.276(22%)	15.512(78%)	7691	2784	0
+487	&scorr;&sweep;&if -W 300 -x -K 6;&syn4;&b -d;&if -W 300 -K 6 -v;&mfs;&st;&dch;&dc2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;						
+488	&scorr;&sweep;&syn2;&synch2;&if -W 300 -K 6 -v;&mfs;	21.448	4.530(22%)	16.918(78%)	7414	2784	0
+489	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&b -d;&if -W 300 -K 6 -v;&mfs;						
+490	&scorr;&sweep;&syn4;&dch -f;&syn2;&if -W 300 -K 6 -v;&mfs;	19.086	4.334(23%)	14.752(77%)	7610	2784	0
+491	&scorr;&sweep;&syn2;&synch2;&syn3;&if -W 300 -K 6 -v;&mfs;	20.303	4.581(23%)	15.722(77%)	7306	2784	0
+492	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -y -K 6;&synch2;&if -W 300 -K 6 -v;&mfs;	21.073	4.595(22%)	16.478(78%)	7317	2784	0
+493	&scorr;&sweep;&if -W 300 -g -K 6;&synch2;&dch -f;&if -W 300 -K 6 -v;&mfs;	20.741	4.347(21%)	16.394(79%)	7411	2784	0
+494	&scorr;&sweep;&if -W 300 -y -K 6;&syn3;&syn2;&if -W 300 -K 6 -v;&mfs;	20.818	4.764(23%)	16.054(77%)	7319	2784	0
+495	&scorr;&sweep;&if -W 300 -y -K 6;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	23.984	5.339(23%)	18.645(77%)	7316	2784	0
+496	&scorr;&sweep;&b -d;&b -d;&dch;&if -W 300 -K 6 -v;&mfs;	24.887	5.339(22%)	19.548(78%)	7440	2784	0
+497	&scorr;&sweep;&syn4;&if -W 300 -x -K 6;&if -W 300 -K 6 -v;&mfs;	19.166	4.516(24%)	14.650(76%)	7780	2784	0
+498	&scorr;&sweep;&b -d;&synch2;&dc2;&if -W 300 -K 6 -v;&mfs;	20.317	4.458(22%)	15.859(78%)	7575	2784	0
+499	&scorr;&sweep;&if -W 300 -x -K 6;&if -W 300 -x -K 6;&syn4;&if -W 300 -K 6 -v;&mfs;	20.431	4.347(22%)	16.084(78%)	7830	2784	0

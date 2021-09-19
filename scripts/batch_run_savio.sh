@@ -72,14 +72,14 @@ pushd ${RUN_DIR}
 MIN_PASS_LENGTH=0
 MIN_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MIN_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1) ))
 
-MAX_PASS_LENGTH=1
+MAX_PASS_LENGTH=4
 MAX_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MAX_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1)  ))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 
 # IF USING RANDOM; set up min/max indices manually
 if [ ${RANDOM_SEQ_LEN} -gt 0 ]; then
-  MIN_NUM_RUNS=0
-  MAX_NUM_RUNS=500
+  MIN_NUM_RUNS=487
+  MAX_NUM_RUNS=489
 fi
 
 
@@ -139,7 +139,7 @@ launch_slurm_job() {
 #SBATCH --cpus-per-task=4
 #
 # Wall clock limit:
-#SBATCH --time=00:15:00
+#SBATCH --time=01:00:00
 #
 ## Command(s) to run:
 echo ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}
