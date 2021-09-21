@@ -14,8 +14,8 @@ SYNTH_METHODS="yosys-abc9"
 LUT_LIB=0
 
 RANDOM_SEQ_LEN=0
-NUM_OPTS=9
-PERMUTATIONS=$(( 1 * 3))
+NUM_OPTS=14
+PERMUTATIONS=$(( 1 * 1))
 
 
 # NOTE(aryap): 'realpath' is a nice tool to do 'readlink -f' which is itself a
@@ -72,7 +72,7 @@ pushd ${RUN_DIR}
 MIN_PASS_LENGTH=0
 MIN_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MIN_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1) ))
 
-MAX_PASS_LENGTH=4
+MAX_PASS_LENGTH=3
 MAX_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MAX_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1)  ))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 

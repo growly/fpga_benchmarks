@@ -212,9 +212,9 @@ EOT
     #   fi
     #   #popd > /dev/null
     #   mv yosys.log yosys.txt
-      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys_og.log > /dev/null 2>&1
-      grep "Del =" ${pwd}/yosys_og.log > ${pwd}/yosys.log
-      rm ${pwd}/yosys_og.log
+      ${YOSYS} ${pwd}/${ip}.ys -l ${pwd}/yosys.log > /dev/null 2>&1
+#      grep "Del =" ${pwd}/yosys_og.log > ${pwd}/yosys.log
+#      rm ${pwd}/yosys_og.log
 #      ${YOSYS} ${pwd}/${ip}.ys > /dev/null 2>&1
     fi
 

@@ -21,8 +21,8 @@ aig_zero_cost_replace_ops = ["", ""]
 aig_ind_ops = ["&dc2", "&syn2", "&syn3", "&syn4", "&b", "&b -d",
                "&if -W 300 -x -K 6", "&if -W 300 -g -K 6", "&if -W 300 -y -K 6"]
 aig_ch_ops = ["&synch2", "&dch", "&dch -f"]
-
-aig_all_ops = aig_ind_ops + aig_ch_ops
+abc9_ops = aig_ind_ops + aig_ch_ops + ["&if -W 300 -K 6 -v;&mfs;&st", "&if -W 300 -K 6 -v;&st"]
+abc9_ops_lib = aig_ind_ops + aig_ch_ops + ["&if -W 300 -v;&mfs;&st", "&if -W 300 -v;&st"]
 
 # old stuff
 options = ["rewrite", "rewrite -z", "refactor", "refactor -z", "resub -K 8", "resub -K 4", "resub -K 12", "resub -N 0", "resub -N 2", "resub -N 3", "balance",  "dc2"]
@@ -36,7 +36,7 @@ def parse_index_single_list(idx):
     i = idx
     ind_idx = []
     while i >= 0 :
-        num_options = len(aig_all_ops)
+        num_options = len(abc9_ops)
         remainder = i % num_options
         divisor = i // num_options
         ind_idx.append(remainder)
@@ -48,19 +48,11 @@ def parse_index_single_list(idx):
 
 def parse_index(idx):
     i = idx
-
-    # Ordering of Inputs and Vars
-    # perm_idx = i % len(aig_permute_in)
-    # i = i // len(aig_permute_in)
     perm_idx = 0
     # Structural choice AIG optimization options
     ch_idx = i % len(aig_ch_ops)
     i = i // len(aig_ch_ops)
 
-    # # Step 1.5. (optional) add zero-cost replacement
-    # zero_cost_idx = i % len(aig_zero_cost_replace_ops)
-    # i = i // len(aig_zero_cost_replace_ops)
-    
     # Tech Indepdent AIG rewriting optimization options
     ind_idx = []
     while i >= 0 :
@@ -78,14 +70,14 @@ def get_seq_abc9_single_list(idx, lib_num):
     seq = aig_sweep
     i = idx
     ind_idx = parse_index_single_list(idx)
-    for op in ind_idx:
-        seq += aig_ind_ops[op] + ";"
-
     if lib_num > 0:
+        for op in ind_idx:
+            seq += abc9_ops_lib[op]  + ";"
         seq +="&if -W 300 -v;&mfs;"
     else:
-        seq +="&if -W 300 -K 6 -v;&mfs;"
-
+        for op in ind_idx:
+            seq += abc9_ops[op] + ";"
+        seq += "&if -W 300 -K 6 -v;&mfs;"
     return seq
 
 def get_seq_abc9(idx, lib_num):
@@ -122,7 +114,8 @@ def get_seq(idx):
     seq += closure_whitebox_delay
     return seq
 
-def get_rand_seq_abc9(seq_len, lib_num, idx): 
+def get_rand_seq_abc9(seq_len, lib_num, idx):
+    aig_all_ops = aig_ch_ops + aig_ind_ops
     num_options = len(aig_all_ops) 
     seq = aig_sweep
 
@@ -169,7 +162,7 @@ def main():
             print(get_rand_seq_abc9(args.random_seq_len, lut_lib_num, args.in_idx))
     elif do_abc9:
         #print(get_seq_abc9_w_perm(args.in_idx))
-        print(get_seq_abc9(args.in_idx, lut_lib_num))
+        print(get_seq_abc9_single_list(args.in_idx, lut_lib_num))
     else :
         print(get_seq(args.in_idx))
     # print("write_blif internal.blif")

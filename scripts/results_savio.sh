@@ -26,7 +26,7 @@ if [ -d "${RESULTS_DIR}" ]; then
     shopt -s nullglob
     logs=( ${RESULTS_DIR}/*/test_5000.log )
     scripts=( ${RESULTS_DIR}/*/*.abc.script )
-    yosys_logs=( ${RESULTS_DIR}/*/yosys.log )
+    yosys_logs=( ${RESULTS_DIR}/*/yosys_og.log )
     num_results=${#logs[@]}
     echo "Found ${num_results} results:"
     shopt -u nullglob
