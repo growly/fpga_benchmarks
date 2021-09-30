@@ -387,7 +387,7 @@ Index	Sequence	Path_Delay	Logic_Delay	Net_Delay	Logic_to_Net_Ratio	Slice_LUTs	LU
 385	&scorr;&sweep;&dc2;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	24.747	5.339(22%)	19.408(78%)	22	7428	0	7428	2784	0	2414	   7177
 386	&scorr;&sweep;&syn2;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;										1533	   8203
 387	&scorr;&sweep;&syn3;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	19.477	4.099(22%)	15.378(78%)	22	7428	0	7428	2784	0	1533	   8207
-388	&scorr;&sweep;&syn4;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	17.678	3.851(22%)	13.827(78%)	22	7746	0	7746	2784	0	1yosys-abc: src/map/if/ifReduce	   8152
+388	&scorr;&sweep;&syn4;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	17.678	3.851(22%)	13.827(78%)	22	7746	0	7746	2784	0		   8152
 389	&scorr;&sweep;&b;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	21.559	4.719(22%)	16.840(78%)	22	7409	0	7409	2784	0	2875	   7353
 390	&scorr;&sweep;&b -d;&dch -f;&b -d;&if -W 300 -K 6 -v;&mfs;	23.780	5.215(22%)	18.565(78%)	22	7415	0	7415	2784	0	2879	   7317
 391	&scorr;&sweep;&synch2;&if -W 300 -y -K 6;&if -W 300 -K 6 -v;&mfs;	19.794	4.471(23%)	15.323(77%)	23	7246	0	7246	2784	0	2880	   7325
@@ -715,7 +715,7 @@ Index	Sequence	Path_Delay	Logic_Delay	Net_Delay	Logic_to_Net_Ratio	Slice_LUTs	LU
 713	&scorr;&sweep;&dch;&dch;&if -W 300 -K 6 -v;&mfs;	23.437	4.967(22%)	18.470(78%)	22	7446	0	7446	2784	0	1533	   7902
 714	&scorr;&sweep;&syn3;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	22.582	4.967(22%)	17.615(78%)	22	7312	0	7312	2784	0	1533	   7876
 715	&scorr;&sweep;&syn4;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	18.812	4.295(23%)	14.517(77%)	23	7719	0	7719	2784	0	1533	   7875
-716	&scorr;&sweep;&b;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	21.852	4.719(22%)	17.133(78%)	22	7314	0	7314	2784	0	yosys-abc: src/map/if/ifReduce	   7912
+716	&scorr;&sweep;&b;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	21.852	4.719(22%)	17.133(78%)	22	7314	0	7314	2784	0	   7912
 717	&scorr;&sweep;&b -d;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	22.276	4.843(22%)	17.433(78%)	22	7339	0	7339	2784	0	2878	   7291
 718	&scorr;&sweep;&if -W 300 -x -K 6;&b;&if -W 300 -g -K 6;&if -W 300 -K 6 -v;&mfs;	22.776	4.843(22%)	17.933(78%)	22	7310	0	7310	2784	0	1533	   7991
 719	&scorr;&sweep;&if -W 300 -g -K 6&b&if -W 300 -g -K 6&if -W 300 -K 6 -v;&mfs;	24.612	5.463(23%)	19.149(77%)	23	7330	0	7330	2784	0	1533	   7937

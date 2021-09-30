@@ -111,10 +111,15 @@ def main():
     plot_singles(dfs, "random", ['Slice_LUTs', 'Path_Delay'], plot_type="scatter-ratios")
     plot_stacked(dfs, ['Index', 'Path_Delay'], plot_type="scatter")
     plot_stacked(dfs, ['Index', 'Slice_LUTs'], plot_type="scatter")
-    for df in dfs:
-        if df.iloc[0]['Benchmark'] == "or1200":
-            plot_single(df, "Vivado_vs_ABC", ['ABC_Delay', 'Path_Delay'], plot_type="scatter")
-            plot_single(df, "Vivado_vs_ABC", ['ABC_Area', 'Slice_LUTs'], plot_type="scatter")
+    # for df in dfs:
+    #     if df.iloc[0]['Benchmark'] == "or1200":
+    #         plot_single(df, "Vivado_vs_ABC", ['ABC_Delay', 'Path_Delay'], plot_type="scatter")
+    #         plot_single(df, "Vivado_vs_ABC", ['ABC_Area', 'Slice_LUTs'], plot_type="scatter")
+    exh = load_data_from_dir("results/exh*.csv")
+    plot_single(exh[0], "VTR_Armcore", ['ABC_Delay', 'Path_Delay'], plot_type="scatter")
+    plot_single(exh[0], "VTR_Armcore", ['ABC_Area', 'Slice_LUTs'], plot_type="scatter")
+    plot_single(exh[0], "Exhaustive_Armcore", ['Slice_LUTs','Path_Delay'], plot_type="scatter-ratios")
+
 
 if __name__ == "__main__":
     main()
