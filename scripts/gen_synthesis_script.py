@@ -80,6 +80,23 @@ def get_seq_abc9_single_list(idx, lib_num):
         seq += "&if -W 300 -K 6 -v;&mfs;"
     return seq
 
+def get_abc9_stochastic(idx, lib_num):
+    seq = aig_sweep
+    i = idx
+    ind_idx = parse_index_single_list(idx)
+    if lib_num > 0:
+        seq += "&if -W 300 -v;&stochsyn -v -I 10 -N 1000 \"&st;"
+        for op in ind_idx:
+            seq += abc9_ops_lib[op]  + ";"
+        seq +="&if -W 300 -v;&mfs\";"
+    else:
+        seq += "&if -W 300 -K 6 -v;&stochsyn -v -I 10 -N 1000 \"&st;"
+        for op in ind_idx:
+            seq += abc9_ops[op] + ";"
+        seq += "&if -W 300 -K 6 -v;&mfs\";"
+    seq += "&ps -l"
+    return seq
+
 def get_seq_abc9(idx, lib_num):
     seq = aig_sweep
     i = idx
@@ -147,10 +164,12 @@ def main():
     parser.add_argument('--in_idx', type=int, help='Index of current sequence', default=-1)
     parser.add_argument('--abc9', type=int, help='Whether or not run ABC9', default=0)
     parser.add_argument('--lut_library', type=int, help='Index of LUT Library to use: 0 is default', default=0)
+    parser.add_argument('--stochastic', type=int, help='Whether to use stochastic synthesis', default=0)
     args = parser.parse_args()
 
     do_abc9 = args.abc9 > 0
     do_random = args.random_seq_len > 0
+    do_stochastic = args.stochastic > 0
     lut_lib_num = args.lut_library
     
     print("rec_start3 " + os.path.dirname(os.path.abspath(__file__)) + "/include/rec6Lib_final_filtered3_recanon.aig")
@@ -158,10 +177,12 @@ def main():
     if lut_lib_num > 0:
         print("read_lut " + os.path.dirname(os.path.abspath(__file__)) + "/lut_library/LUTLIB_{}.txt".format(lut_lib_num))
 
+    if do_stochastic:
+        print(get_abc9_stochastic(args.in_idx, lut_lib_num))
+        return
     if do_random:
-            print(get_rand_seq_abc9(args.random_seq_len, lut_lib_num, args.in_idx))
+        print(get_rand_seq_abc9(args.random_seq_len,lut_lib_num, args.in_idx))
     elif do_abc9:
-        #print(get_seq_abc9_w_perm(args.in_idx))
         print(get_seq_abc9_single_list(args.in_idx, lut_lib_num))
     else :
         print(get_seq(args.in_idx))

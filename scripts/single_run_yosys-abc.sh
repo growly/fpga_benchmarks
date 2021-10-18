@@ -17,7 +17,7 @@ RANDOM_SEQ_LEN=0
 LUT_LIBRARY=0
 SCRIPT_DIR="$( dirname "$( readlink -f "${BASH_SOURCE[0]}" )" )"
 run_vivado=true
-
+STOCHASTIC=0
 while [ "$1" != "" ]; do
   case $1 in
     -i | --input )          shift
@@ -31,6 +31,9 @@ while [ "$1" != "" ]; do
                             ;;
     -l | --lut_library )    shift
                             LUT_LIBRARY="$1"
+                            ;;
+    -t | --stochastic)      shift
+                            STOCHASTIC="$1"
                             ;;
     -d | --device )         shift
                             dev="$1"
@@ -195,10 +198,10 @@ EOT
       if [ -f "${top_file}" ]; then
         echo "hierarchy -check -top $(<${top_file})" >> ${ip}.ys
       fi
-      python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} --abc9=$synth_abc9 --lut_library $4 > ${ip}.${2}.abc.script
+      python3 $SCRIPT_DIR/gen_synthesis_script.py --in_idx=${2} --random_seq_len=${3} --abc9=$synth_abc9 --lut_library $4 --stochastic $STOCHASTIC > ${ip}.${2}.abc.script
       cat >> ${ip}.ys <<EOT
 read_verilog ${mem_file}
-synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} -script  ${ip}.${2}.abc.script
+synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} -script ${ip}.${2}.abc.script
 #synth_xilinx -dff -flatten -noiopad ${synth_with_abc9} -edif ${edif} 
 write_verilog -noexpr -norename ${pwd}/${ip}_syn.v
 EOT

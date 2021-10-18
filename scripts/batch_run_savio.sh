@@ -13,6 +13,7 @@ DEVICE="xc7a200"
 SYNTH_METHODS="yosys-abc9"
 LUT_LIB=0
 
+STOCHASTIC=0
 RANDOM_SEQ_LEN=0
 NUM_OPTS=14
 PERMUTATIONS=$(( 1 * 1))
@@ -32,6 +33,9 @@ while [ "$1" != "" ]; do
                             ;;
     -r | --random )         shift
                             RANDOM_SEQ_LEN=$1
+                            ;;
+    -t | --stoch )         shift
+                            STOCHASTIC=$1
                             ;;
     -j | --batch_size)      shift
                             BATCH_SIZE="$1"
@@ -72,7 +76,7 @@ pushd ${RUN_DIR}
 MIN_PASS_LENGTH=0
 MIN_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MIN_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1) ))
 
-MAX_PASS_LENGTH=3
+MAX_PASS_LENGTH=1
 MAX_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MAX_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1)  ))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 
@@ -142,11 +146,11 @@ launch_slurm_job() {
 #SBATCH --time=01:00:00
 #
 ## Command(s) to run:
-echo ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}
-${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}
+echo ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}  -t ${STOCHASTIC}
+${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m "${method}" -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}  -t ${STOCHASTIC}
 EOT
   # TODO: run slurm script with sbatch?
-  echo "${pid_index} ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m ${method} -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB}"
+  echo "${pid_index} ${TEST_SCRIPT} -i $benchmark ${STATIC_TEST_ARGS} -m ${method} -d ${DEVICE} -n ${seq_index} -r ${RANDOM_SEQ_LEN} -l ${LUT_LIB} -t ${STOCHASTIC}"
   sbatch "${slurm_script_name}.sh"
   pids[${pid_index}]=$!
 }
