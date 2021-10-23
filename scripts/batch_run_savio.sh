@@ -73,10 +73,10 @@ pushd ${RUN_DIR}
 
 
 # Calculate which indices to run exhaustive search on
-MIN_PASS_LENGTH=0
+MIN_PASS_LENGTH=1
 MIN_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MIN_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1) ))
 
-MAX_PASS_LENGTH=1
+MAX_PASS_LENGTH=4
 MAX_NUM_RUNS=$(( $PERMUTATIONS * (($NUM_OPTS**($MAX_PASS_LENGTH+1)-1) / ($NUM_OPTS-1) - 1)  ))
 echo $(( $MAX_NUM_RUNS - $MIN_NUM_RUNS ))
 
