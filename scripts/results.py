@@ -35,15 +35,15 @@ def load_data_from_dir(dirname, ip):
         index = os.path.basename(script).split('.')[1]
         if len(edif_file) < 1:
             print("No Vivado Log @ Index {}".format(index))
-            path_delay.append(np.Nan)
-            logic_delay.append(np.Nan)
-            net_delay.append(np.Nan)
-            Logic_Delay_Percentage.append(np.Nan)
-            Slice_LUTs.append(np.Nan)
-            lut_Logic.append(np.Nan)
-            lut_mem.append(np.Nan)
-            reg_ff.append(np.Nan)
-            reg_latch.append(np.Nan)
+            path_delay.append(np.nan)
+            logic_delay.append(np.nan)
+            net_delay.append(np.nan)
+            Logic_Delay_Percentage.append(np.nan)
+            Slice_LUTs.append(np.nan)
+            lut_Logic.append(np.nan)
+            lut_mem.append(np.nan)
+            reg_ff.append(np.nan)
+            reg_latch.append(np.nan)
         else:
             with open(vivado_log[0], "r") as fp:
                 path_delay.append(re.findall(r'\d+.\d+', lines_that_contain("Path Delay", fp)[0])[0])
