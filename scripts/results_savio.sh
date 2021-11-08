@@ -15,7 +15,7 @@
 #SBATCH --cpus-per-task=4
 #
 # Wall clock limit:
-#SBATCH --time=00:10:00
+#SBATCH --time=01:00:00
 #
 ## Command(s) to run:
 ip=$1
@@ -26,7 +26,7 @@ if [ -d "${RESULTS_DIR}" ]; then
     shopt -s nullglob
     logs=( ${RESULTS_DIR}/*/test_5000.log )
     scripts=( ${RESULTS_DIR}/*/*.abc.script )
-    yosys_logs=( ${RESULTS_DIR}/*/yosys_og.log )
+    yosys_logs=( ${RESULTS_DIR}/*/yosys.log )
     num_results=${#logs[@]}
     echo "Found ${num_results} results:"
     shopt -u nullglob
