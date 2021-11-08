@@ -29,6 +29,7 @@ def load_data_from_dir(dirname, ip):
     # Get data from Yosys and Vivado logs
     for subdir in subdirs:
         vivado_log = glob.glob(os.path.normpath(subdir + "/test_5000.log"))
+        print(vivado_log)
         yosys_log = glob.glob(os.path.normpath(subdir + "/yosys.log"))
         index = os.path.basename(script).split('.')[1]
         if len(vivado_log) < 1:
