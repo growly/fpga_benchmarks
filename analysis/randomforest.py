@@ -36,6 +36,7 @@ abc9_ops = aig_ind_ops + aig_ch_ops + ["&if -W 300 -K 6 -v", "&mfs", "&st"]
 labels_abc9_ops = ["&dc2", "&syn2", "&syn3", "&syn4", "&b", "&b -d", "&if -x", "&if -g", "&if -y", "&synch2", "&dch", "&dch -f", "&if", "&mfs", "&st"]
 final_passes = ["&dc2", "&syn2", "&syn3", "&syn4", "&b", "&b -d", "&if -x", "&if -g", "&if -y", "&synch2", "&dch -f", "&dch","&st"]
 
+bmark_baseline_delays={"armcore":24.612, "bgm_original": 17.834}
 def make_hist(seq):
     hist = {key: 0 for key in abc9_ops}
     if len(seq) > 1 :
@@ -71,63 +72,55 @@ def to_relative_impact(df, y_val):
     values = df[y_val].values
     previous = df['Previous'].values
     seqs = df['Sequence'].values
-
-    # print(long_seqs.values[111])
-    # for i, seq in enumerate(df['Sequence'].values):
-    #     if seq == [] :
-    #         print(i)
     assert len(values) == len(seqs) == len(previous)
     improvements = np.zeros(len(values))
     values = df[y_val].values
     previous = df['Previous'].values
     seqs = df['Sequence'].values
 
+    baseline = bmark_baseline_delays[df.loc[0, "Benchmark"]]
     for i in range(len(values)):
         for j in range(len(values)):
             if len(previous[i]) < 2 : 
-                improvements[i] = 24.612 - values[i]
+                improvements[i] = baseline - values[i]
             elif previous[i] == seqs[j]: 
                 improvements[i] = values[j] - values[i] 
     df['Improvement'] = improvements
-    #df.to_csv('results/processed_armcore.csv', sep='\t')
     return df
 
 
-def plot_feature_importances(df, y_val, params):
-    X = get_transform_hist(df, y_val)
-    binner = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='uniform')
-    y = binner.fit_transform(df[y_val].to_numpy().reshape(len(df[y_val]), 1))
-    rf = RandomForestClassifier(**params)
+# def plot_feature_importances(df, y_val, params):
+#     X = get_transform_hist(df, y_val)
+#     binner = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='uniform')
+#     y = binner.fit_transform(df[y_val].to_numpy().reshape(len(df[y_val]), 1))
+#     rf = RandomForestClassifier(**params)
 
-    # rf.fit(X, y.reshape(len(y),))
-    importances = rf.feature_importances_
+#     # rf.fit(X, y.reshape(len(y),))
+#     importances = rf.feature_importances_
 
-    sns.set_style("darkgrid")
-    fig = plt.gcf()
-    fig.set_size_inches(12,8)
-    with sns.plotting_context(font_scale=0.5):
-        ax = sns.barplot(y=X.columns, x=importances)
-        ax.set_xlabel("Feature Importance")
-        plt.savefig("HistoryPassImportance.png", format="png", dpi=300)
-        plt.close
-    from sklearn.tree import plot_tree
-    import graphviz
-    from sklearn.tree import export_graphviz
-    print(y)
-    dot_data = export_graphviz(rf.estimators_[99], 
-                           feature_names=X.columns,
-                           filled=True, impurity=True, 
-                           rounded=True)
+#     sns.set_style("darkgrid")
+#     fig = plt.gcf()
+#     fig.set_size_inches(12,8)
+#     with sns.plotting_context(font_scale=0.5):
+#         ax = sns.barplot(y=X.columns, x=importances)
+#         ax.set_xlabel("Feature Importance")
+#         plt.savefig("HistoryPassImportance.png", format="png", dpi=300)
+#         plt.close
+#     from sklearn.tree import plot_tree
+#     import graphviz
+#     from sklearn.tree import export_graphviz
+#     print(y)
+#     dot_data = export_graphviz(rf.estimators_[99], 
+#                            feature_names=X.columns,
+#                            filled=True, impurity=True, 
+#                            rounded=True)
 
-    graph = graphviz.Source(dot_data, format='png')
-    graph.render('DecisionTree0')
+#     graph = graphviz.Source(dot_data, format='png')
+#     graph.render('DecisionTree0')
 
 
 def run_random_forest(df):
     X = []
-    # X = get_transform_hist(df, y_val)
-    # binner = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='uniform')
-    # y = binner.fit_transform(df[y_val].to_numpy().reshape(len(df[y_val]), 1))
     for p in abc9_ops:
         subset = df.loc[df['Final_Pass'] == p]
         if subset.empty:
@@ -149,7 +142,7 @@ def run_random_forest(df):
         ax = sns.heatmap(X, xticklabels=labels_abc9_ops, yticklabels=final_passes, cmap='coolwarm')
         ax.set_xlabel('Histogram of Previous Passes', fontsize=axis_label, weight='bold')
         ax.set_ylabel('Final Pass', fontsize=axis_label, weight='bold')
-        plt.savefig("HistoryPassImportance.png", format="png", dpi=300)
+        plt.savefig(dfs[0].loc[0, "Benchmark"]+"_HistoryPassImportance.png", format="png", dpi=300)
         plt.close
 
 def rf_grid_search(subset):
@@ -178,8 +171,10 @@ def rf_grid_search(subset):
 
 
 def main():
-    dfs = plots.load_data_from_dir("results/exh_*.csv")
+    dfs = plots.load_data_from_dir("results/exh*.csv")
     proc_df = to_relative_impact(dfs[0].dropna(subset=['Path_Delay']), 'Path_Delay')
+    #proc_df = to_relative_impact(dfs[0], 'Path_Delay')
+
     run_random_forest(proc_df)
 
     # proc_dfs = plots.load_data_from_dir("results/processed_*.csv")
