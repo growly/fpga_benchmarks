@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import glob, os.path, os
-import argparse, re
+import argparse, re,csv
 
 def lines_that_contain(string, fp):
     return [line for line in fp if string in line]
@@ -33,18 +33,7 @@ def load_data_from_dir(dirname, ip):
         yosys_log = glob.glob(os.path.normpath(subdir + "/yosys.log"))
         script = glob.glob(os.path.normpath(subdir + "/*.abc.script"))
         index = os.path.basename(script[0]).split('.')[1]
-        if len(edif_file) < 1:
-            print("No Vivado Log @ Index {}".format(index))
-            path_delay.append(np.nan)
-            logic_delay.append(np.nan)
-            net_delay.append(np.nan)
-            Logic_Delay_Percentage.append(np.nan)
-            Slice_LUTs.append(np.nan)
-            lut_Logic.append(np.nan)
-            lut_mem.append(np.nan)
-            reg_ff.append(np.nan)
-            reg_latch.append(np.nan)
-        else:
+        try:
             with open(vivado_log[0], "r") as fp:
                 path_delay.append(re.findall(r'\d+.\d+', lines_that_contain("Path Delay", fp)[0])[0])
                 fp.seek(0)
@@ -64,20 +53,29 @@ def load_data_from_dir(dirname, ip):
                 reg_ff.append(re.findall(r'\d+.\d+', lines_that_contain("Register as Flip Flop", fp)[0])[0])
                 fp.seek(0)
                 reg_latch.append(re.findall(r'\d+.\d+', lines_that_contain("Register as Latch", fp)[0])[0])
-        if len(yosys_log) < 1:
-            print("No Yosys Log @ Index {}".format(index))
-            abc_delay.append(np.nan)
-            abc_area.append(np.nan)
-        else:
-            with open(yosys_log[0], "r") as fp:
-                last_if_line =  lines_that_contain("Del =", fp)[-1]
+        except:
+            path_delay.append(np.nan)
+            logic_delay.append(np.nan)
+            net_delay.append(np.nan)
+            Logic_Delay_Percentage.append(np.nan)
+            Slice_LUTs.append(np.nan)
+            lut_Logic.append(np.nan)
+            lut_mem.append(np.nan)
+            reg_ff.append(np.nan)
+            reg_latch.append(np.nan)
+        with open(yosys_log[0], "r") as fp:
+            last_if_line =  lines_that_contain("Del =", fp)[-1]
+            try:
                 abc_delay.append(re.findall(r'\d+.\d+',last_if_line)[0])
                 abc_area.append(re.findall(r'\d+.\d+', last_if_line)[1])
+            except IndexError:
+                print(index)
+                abc_delay.append(np.nan)
+                abc_area.append(np.nan)
     data["Path_Delay"] = path_delay; data["Logic_Delay"] = logic_delay; data["Net_Delay"] = net_delay; data["Logic_Delay_Percentage"] = Logic_Delay_Percentage
     data["Slice_LUTs"] = Slice_LUTs; data["LUT_as_Logic"] = lut_Logic; data["LUT_as_Memory"] = lut_mem
     data["RegsFF"] = reg_ff; data["RegsLatch"] = reg_latch
     data["ABC_Delay"] = abc_delay; data["ABC_Area"] = abc_area
-
     return data
 
 
@@ -90,12 +88,16 @@ def main():
 
     bmark = os.path.basename(dir)
     ip = bmark[bmark.find('run') + 4 :]
-
+    csv_file = ip+".out.csv"
     df_dict = load_data_from_dir(dir, ip)
-    df = pd.DataFrame(df_dict)
+    
+    for key in df_dict.keys():
+        print(key, len(df_dict[key]))
+    
     # df["Benchmark"] = ip
     print("outputting to: " + ip+".out.csv")
-    df.to_csv(ip+".out.csv", sep="\t")
+    df = pd.DataFrame.from_dict(df_dict)
+    df.to_csv(ip+".out.csv", sep="\t",index=False)
     # Generate scatterplots for random runs
     # dfs = load_data_from_dir("results/random*.csv")
 
