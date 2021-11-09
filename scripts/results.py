@@ -30,9 +30,9 @@ def load_data_from_dir(dirname, ip):
     for subdir in subdirs:
         vivado_log = glob.glob(os.path.normpath(subdir + "/test_5000.log"))
         edif_file = glob.glob(os.path.normpath(subdir + "/*.edif"))
-        print(vivado_log)
         yosys_log = glob.glob(os.path.normpath(subdir + "/yosys.log"))
-        index = os.path.basename(script).split('.')[1]
+        script = glob.glob(os.path.normpath(subdir + "/*.abc.script"))
+        index = os.path.basename(script[0]).split('.')[1]
         if len(edif_file) < 1:
             print("No Vivado Log @ Index {}".format(index))
             path_delay.append(np.nan)
@@ -66,6 +66,8 @@ def load_data_from_dir(dirname, ip):
                 reg_latch.append(re.findall(r'\d+.\d+', lines_that_contain("Register as Latch", fp)[0])[0])
         if len(yosys_log) < 1:
             print("No Yosys Log @ Index {}".format(index))
+            abc_delay.append(np.nan)
+            abc_area.append(np.nan)
         else:
             with open(yosys_log[0], "r") as fp:
                 last_if_line =  lines_that_contain("Del =", fp)[-1]
