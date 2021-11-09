@@ -63,15 +63,16 @@ def load_data_from_dir(dirname, ip):
             lut_mem.append(np.nan)
             reg_ff.append(np.nan)
             reg_latch.append(np.nan)
-        with open(yosys_log[0], "r") as fp:
-            last_if_line =  lines_that_contain("Del =", fp)[-1]
-            try:
+            
+        try:
+            with open(yosys_log[0], "r") as fp:
+                last_if_line =  lines_that_contain("Del =", fp)[-1]
                 abc_delay.append(re.findall(r'\d+.\d+',last_if_line)[0])
                 abc_area.append(re.findall(r'\d+.\d+', last_if_line)[1])
-            except IndexError:
-                print(index)
-                abc_delay.append(np.nan)
-                abc_area.append(np.nan)
+        except:
+            print(index)
+            abc_delay.append(np.nan)
+            abc_area.append(np.nan)
     data["Path_Delay"] = path_delay; data["Logic_Delay"] = logic_delay; data["Net_Delay"] = net_delay; data["Logic_Delay_Percentage"] = Logic_Delay_Percentage
     data["Slice_LUTs"] = Slice_LUTs; data["LUT_as_Logic"] = lut_Logic; data["LUT_as_Memory"] = lut_mem
     data["RegsFF"] = reg_ff; data["RegsLatch"] = reg_latch
