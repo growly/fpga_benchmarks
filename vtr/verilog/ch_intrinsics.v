@@ -6,6 +6,33 @@
 `define MEMORY_CONTROLLER_ADDR_SIZE 32
 `define MEMORY_CONTROLLER_DATA_SIZE 32
 
+//single_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module single_port_ram #(
+    parameter ADDR_WIDTH = 5, 
+    parameter DATA_WIDTH = 8 
+) (
+    input clk,
+    input [ADDR_WIDTH-1:0] addr,
+    input [DATA_WIDTH-1:0] data,
+    input we,
+    output reg [DATA_WIDTH-1:0] out
+);
+
+    localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we) begin
+            myBlockram[addr] = data;
+        end
+        out = myBlockram[addr]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // single_port_ram
+
 
 module memory_controller
 (
@@ -28,13 +55,13 @@ reg str_write_enable;
 reg [7:0] str_in;
 wire [7:0] str_out;
 
-//single_port_ram _str (
-//	.clk( clk ),
-//	.addr( str_address ),
-//	.we( str_write_enable ),
-//	.data( str_in ),
-//	.out( str_out )
-//);
+single_port_ram _str (
+	.clk( clk ),
+	.addr( str_address ),
+	.we( str_write_enable ),
+	.data( str_in ),
+	.out( str_out )
+);
 
 
 wire  tag;

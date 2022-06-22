@@ -933,6 +933,45 @@
 `define OR1200_DCFGR_WPCI		1'b0	// WP counters not impl.
 
 `define OR1200_DCFGR_RES1		28'h0000000
+
+//dual_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module dual_port_ram #(
+    parameter ADDR_WIDTH = 5,
+    parameter DATA_WIDTH = 32 
+) (
+    input clk,
+
+    input [ADDR_WIDTH-1:0] addr1,
+    input [ADDR_WIDTH-1:0] addr2,
+    input [DATA_WIDTH-1:0] data1,
+    input [DATA_WIDTH-1:0] data2,
+    input we1,
+    input we2,
+    output reg [DATA_WIDTH-1:0] out1,
+    output reg [DATA_WIDTH-1:0] out2
+);
+
+    localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we1) begin
+            myBlockram[addr1] = data1;
+        end
+        out1 = myBlockram[addr1]; //New data read-during write behaviour (blocking assignments)
+    end
+
+    always@(posedge clk) begin //Port 2
+        if(we2) begin
+            myBlockram[addr2] = data2;
+        end
+        out2 = myBlockram[addr2]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // dual_port_ram
  
 
 module or1200_flat( // or1200_cpu
@@ -3099,82 +3138,77 @@ assign const_zero_data = 32'b00000000000000000000000000000000;
 wire [31:0] dont_care_out;
 wire [31:0] dont_care_out2;
 
-// aryap: removed for benchmark graph generation
-//dual_port_ram rf_a(	
-//
-//  .clk (clk),
-//  .we1(const_zero),
-//  .we2(rf_we),
-//  .data1(const_zero_data),
-//  .data2(rf_dataw),
-//  .out1(from_rfa),
-//  .out2 (dont_care_out),
-//  .addr1(rf_addra),
-//  .addr2(rf_addrw));
-//
+dual_port_ram rf_a(	
+
+  .clk (clk),
+  .we1(const_zero),
+  .we2(rf_we),
+  .data1(const_zero_data),
+  .data2(rf_dataw),
+  .out1(from_rfa),
+  .out2 (dont_care_out),
+  .addr1(rf_addra),
+  .addr2(rf_addrw));
+
 // Instantiation of register file two-port RAM A
 //
-/*
-or1200_tpram_32x32 rf_a(
-	// Port A
-	.clk_a(clk),
-	.rst_a(rst),
-	.ce_a(rf_ena),
-	.we_a(1'b0),
-	.oe_a(1'b1),
-	.addr_a(rf_addra),
-	.di_a(32'h00000000),
-	.do_a(from_rfa),
-
-	// Port B
-	.clk_b(clk),
-	.rst_b(rst),
-	.ce_b(rf_we),
-	.we_b(rf_we),
-	.oe_b(1'b0),
-	.addr_b(rf_addrw),
-	.di_b(rf_dataw),
-	.do_b()
-);
-*/
+//or1200_tpram_32x32 rf_a(
+//	// Port A
+//	.clk_a(clk),
+//	.rst_a(rst),
+//	.ce_a(rf_ena),
+//	.we_a(1'b0),
+//	.oe_a(1'b1),
+//	.addr_a(rf_addra),
+//	.di_a(32'h00000000),
+//	.do_a(from_rfa),
+//
+//	// Port B
+//	.clk_b(clk),
+//	.rst_b(rst),
+//	.ce_b(rf_we),
+//	.we_b(rf_we),
+//	.oe_b(1'b0),
+//	.addr_b(rf_addrw),
+//	.di_b(rf_dataw),
+//	.do_b()
+//);
 //
 // Instantiation of register file two-port RAM B
 //
 
-// aryap: removed for benchmark graph generation
-//dual_port_ram rf_b(	
-//  .clk (clk),
-//  .we1(const_zero),
-//  .we2(rf_we),
-//  .data1(const_zero_data),
-//  .data2(rf_dataw),
-//  .out1(from_rfb),
-//  .out2 (dont_care_out2),
-//  .addr1(addrb),
-//  .addr2(rf_addrw));
-/*
-or1200_tpram_32x32 rf_b(
-	// Port A
-	.clk_a(clk),
-	.rst_a(rst),
-	.ce_a(rf_enb),
-	.we_a(1'b0),
-	.oe_a(1'b1),
-	.addr_a(addrb),
-	.di_a(32'h00000000),
-	.do_a(from_rfb),
+dual_port_ram rf_b(	
+  .clk (clk),
+  .we1(const_zero),
+  .we2(rf_we),
+  .data1(const_zero_data),
+  .data2(rf_dataw),
+  .out1(from_rfb),
+  .out2 (dont_care_out2),
+  .addr1(addrb),
+  .addr2(rf_addrw));
 
-	// Port B
-	.clk_b(clk),
-	.rst_b(rst),
-	.ce_b(rf_we),
-	.we_b(rf_we),
-	.oe_b(1'b0),
-	.addr_b(rf_addrw),
-	.di_b(rf_dataw),
-	.do_b()
-);
-*/
+//or1200_tpram_32x32 rf_b(
+//	// Port A
+//	.clk_a(clk),
+//	.rst_a(rst),
+//	.ce_a(rf_enb),
+//	.we_a(1'b0),
+//	.oe_a(1'b1),
+//	.addr_a(addrb),
+//	.di_a(32'h00000000),
+//	.do_a(from_rfb),
+//
+//	// Port B
+//	.clk_b(clk),
+//	.rst_b(rst),
+//	.ce_b(rf_we),
+//	.we_b(rf_we),
+//	.oe_b(1'b0),
+//	.addr_b(rf_addrw),
+//	.di_b(rf_dataw),
+//	.do_b()
+//);
 wire unused;
 assign unused = |spr_addr;
 endmodule

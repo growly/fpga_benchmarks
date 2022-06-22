@@ -2,6 +2,45 @@
 //top level module of LU factorization
 //by Wei Zhang
 
+//dual_port_ram module
+(* keep_hierarchy *)
+module dual_port_ram #(
+    parameter ADDR_WIDTH = 7,
+    parameter DATA_WIDTH = 12 
+) (
+    input clk,
+
+    input [ADDR_WIDTH-1:0] addr1,
+    input [ADDR_WIDTH-1:0] addr2,
+    input [DATA_WIDTH-1:0] data1,
+    input [DATA_WIDTH-1:0] data2,
+    input we1,
+    input we2,
+    output reg [DATA_WIDTH-1:0] out1,
+    output reg [DATA_WIDTH-1:0] out2
+);
+
+    localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we1) begin
+            myBlockram[addr1] = data1;
+        end
+        out1 = myBlockram[addr1]; //New data read-during write behaviour (blocking assignments)
+    end
+
+    always@(posedge clk) begin //Port 2
+        if(we2) begin
+            myBlockram[addr2] = data2;
+        end
+        out2 = myBlockram[addr2]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // dual_port_ram
+	
+
 `define NWIDTH 6'b010100
 `define BLOCKWIDTH 4'b0111
 `define DDRWIDTH 7'b0100000
@@ -2597,25 +2636,24 @@ module ram (
 	output	[`RAMWIDTH-1:0]  q;
 	wire	[`RAMWIDTH-1:0]  value_out;
 	wire [`RAMWIDTH-1:0] subwire;
-	assign q = subwire | dummy;
 	wire [`RAMWIDTH-1:0] uselessdata;
  assign uselessdata = 1024'b0;
 wire j;
 assign j = |byteena_a;
  wire [`RAMWIDTH-1:0]dummy;
+ assign q = subwire | dummy;
  assign dummy = value_out & 1024'b0;
-// aryap: removed for benchmark graph generation
-//dual_port_ram inst1( 
-//.clk (clk),
-//.we1(wren),
-//.we2(1'b0),
-//.data1(data),
-//.data2(uselessdata),
-//.out1(value_out),
-//.out2(subwire),
-//.addr1(wraddress),
-//.addr2(rdaddress));
-
+ 
+dual_port_ram inst1( 
+.clk (clk),
+.we1(wren),
+.we2(1'b0),
+.data1(data),
+.data2(uselessdata),
+.out1(value_out),
+.out2(subwire),
+.addr1(wraddress),
+.addr2(rdaddress));
 
 endmodule
 
@@ -2638,24 +2676,23 @@ module ram1 (
 	output	[`RAMWIDTH-1:0]  q;
 	wire	[`RAMWIDTH-1:0]  value_out;
 	wire [`RAMWIDTH-1:0] subwire;
-	assign q = subwire | dummy;
 	wire [`RAMWIDTH-1:0] uselessdata;
  assign uselessdata = 1024'b0;
 wire j;
 assign j = |byteena_a;
  wire [`RAMWIDTH-1:0]dummy;
+assign q = subwire | dummy;
  assign dummy = value_out & 1024'b0;
-// aryap: removed for benchmark graph generation
-//dual_port_ram inst1( 
-//.clk (clk),
-//.we1(wren),
-//.we2(1'b0),
-//.data1(data),
-//.data2(uselessdata),
-//.out1(value_out),
-//.out2(subwire),
-//.addr1(wraddress),
-//.addr2(rdaddress));
+dual_port_ram inst1( 
+.clk (clk),
+.we1(wren),
+.we2(1'b0),
+.data1(data),
+.data2(uselessdata),
+.out1(value_out),
+.out2(subwire),
+.addr1(wraddress),
+.addr2(rdaddress));
 
 
 endmodule
@@ -2679,24 +2716,24 @@ module ram2 (
 	output	[`RAMWIDTH-1:0]  q;
 	wire	[`RAMWIDTH-1:0]  value_out;
 	wire [`RAMWIDTH-1:0] subwire;
-	assign q = subwire | dummy;
 	wire [`RAMWIDTH-1:0] uselessdata;
  assign uselessdata = 1024'b0;
 wire j;
 assign j = |byteena_a;
  wire [`RAMWIDTH-1:0]dummy;
+assign q = subwire | dummy;
  assign dummy = value_out & 1024'b0;
-// aryap: removed for benchmark graph generation
-//dual_port_ram inst1( 
-//.clk (clk),
-//.we1(wren),
-//.we2(1'b0),
-//.data1(data),
-//.data2(uselessdata),
-//.out1(value_out),
-//.out2(subwire),
-//.addr1(wraddress),
-//.addr2(rdaddress));
+
+dual_port_ram inst1( 
+.clk (clk),
+.we1(wren),
+.we2(1'b0),
+.data1(data),
+.data2(uselessdata),
+.out1(value_out),
+.out2(subwire),
+.addr1(wraddress),
+.addr2(rdaddress));
 
 
 endmodule
@@ -2720,24 +2757,24 @@ module ram3 (
 	output	[`RAMWIDTH-1:0]  q;
 	wire	[`RAMWIDTH-1:0]  value_out;
 	wire [`RAMWIDTH-1:0] subwire;
-	assign q = subwire | dummy;
 	wire [`RAMWIDTH-1:0] uselessdata;
  assign uselessdata = 1024'b0;
 wire j;
 assign j = |byteena_a;
- wire [`RAMWIDTH-1:0]dummy;
- assign dummy = value_out & 1024'b0;
-// aryap: removed for benchmark graph generation
-//dual_port_ram inst1( 
-//.clk (clk),
-//.we1(wren),
-//.we2(1'b0),
-//.data1(data),
-//.data2(uselessdata),
-//.out1(value_out),
-//.out2(subwire),
-//.addr1(wraddress),
-//.addr2(rdaddress));
+wire [`RAMWIDTH-1:0]dummy;
+assign q = subwire | dummy;
+assign dummy = value_out & 1024'b0;
+
+dual_port_ram inst1( 
+.clk (clk),
+.we1(wren),
+.we2(1'b0),
+.data1(data),
+.data2(uselessdata),
+.out1(value_out),
+.out2(subwire),
+.addr1(wraddress),
+.addr2(rdaddress));
 
 
 endmodule
@@ -2764,20 +2801,20 @@ module top_ram (
 	wire [32-1:0] sub_wire0;
 	wire [32-1:0] q;
 	wire [32-1:0] junk_output;
-	assign q = sub_wire0 | dummy;
 	wire[32-1:0] dummy;
+	assign q = sub_wire0 | dummy;
 	assign dummy = junk_output & 32'b0;
-// aryap: removed for benchmark graph generation
-// dual_port_ram inst2(
-// .clk (clk),
-// .we1(wren),
-// .we2(1'b0),
-// .data1(data),
-// .data2(data),
-// .out1(junk_output),
-// .out2(sub_wire0),
-// .addr1(wraddress),
-// .addr2(rdaddress));
+
+ dual_port_ram inst2(
+ .clk (clk),
+ .we1(wren),
+ .we2(1'b0),
+ .data1(data),
+ .data2(data),
+ .out1(junk_output),
+ .out2(sub_wire0),
+ .addr1(wraddress),
+ .addr2(rdaddress));
 
 endmodule
 
@@ -3295,18 +3332,17 @@ begin // : STATUS_COUNTER
 	else if ((wrreq) && (!rdreq) && (status_cnt != 64 ))
 		status_cnt <= status_cnt + 1'b1;
 end 
-// aryap: removed for benchmark graph generation
-//  dual_port_ram ram_addr(
-//.we1      (wrreq)      , // write enable
-// .we2      (rdreq)       , // Read enable
-//.addr1 (wr_pointer) , // address_0 input 
-//.addr2 (rd_pointer) , // address_q input  
-//.data1    (data)    , // data_0 bi-directional
-//.data2    (junk_input),   // data_1 bi-directional
-//.clk(clk),
-//.out1	(data_ram),
-//.out2	(junk_output)
-// ); 
+ dual_port_ram ram_addr(
+.we1      (wrreq)      , // write enable
+.we2      (rdreq)       , // Read enable
+.addr1 (wr_pointer) , // address_0 input 
+.addr2 (rd_pointer) , // address_q input  
+.data1    (data)    , // data_0 bi-directional
+.data2    (junk_input),   // data_1 bi-directional
+.clk(clk),
+.out1	(data_ram),
+.out2	(junk_output)
+); 
 
 
 endmodule
@@ -3406,17 +3442,17 @@ begin // : STATUS_COUNTER
 end 
 assign usedw = status_cnt[`wFIFOSIZEWIDTH-1:0];
 // aryap: removed for benchmark graph generation
-//  dual_port_ram ram_addr(
-//.we1      (wrreq)      , // write enable
-// .we2      (rdreq)       , // Read enable
-//.addr1 (wr_pointer) , // address_0 input 
-//.addr2 (rd_pointer) , // address_q input  
-//.data1    (data)    , // data_0 bi-directional
-//.data2    (junk_input),   // data_1 bi-directional
-//.clk(clk),
-//.out1	(data_ram),
-//.out2	(junk_output)
-// ); 
+ dual_port_ram ram_addr(
+.we1      (wrreq)      , // write enable
+.we2      (rdreq)       , // Read enable
+.addr1 (wr_pointer) , // address_0 input 
+.addr2 (rd_pointer) , // address_q input  
+.data1    (data)    , // data_0 bi-directional
+.data2    (junk_input),   // data_1 bi-directional
+.clk(clk),
+.out1	(data_ram),
+.out2	(junk_output)
+); 
 
 
 endmodule
@@ -3480,18 +3516,17 @@ begin // : STATUS_COUNTER
 	else if ((wrreq) && (!rdreq) && (status_cnt != 5'b10000))
 		status_cnt <= status_cnt + 1;
 end
-// aryap: removed for benchmark graph generation
-//  dual_port_ram ram_addr(
-//.we1      (wrreq)      , // write enable
-// .we2      (rdreq)       , // Read enable
-//.addr1 (wr_pointer) , // address_0 input 
-//.addr2 (rd_pointer) , // address_q input  
-//.data1    (data)    , // data_0 bi-directional
-//.data2    (junk_input),   // data_1 bi-directional
-//.clk(clk),
-//.out1	(data_ram),
-//.out2	(junk_output)
-// ); 
+ dual_port_ram ram_addr(
+.we1      (wrreq)      , // write enable
+.we2      (rdreq)       , // Read enable
+.addr1 (wr_pointer) , // address_0 input 
+.addr2 (rd_pointer) , // address_q input  
+.data1    (data)    , // data_0 bi-directional
+.data2    (junk_input),   // data_1 bi-directional
+.clk(clk),
+.out1	(data_ram),
+.out2	(junk_output)
+); 
 
 
 endmodule
@@ -3551,17 +3586,16 @@ begin // : STATUS_COUNTER
 	else if ((wrreq) && (!rdreq) && (status_cnt != 16 ))
 		status_cnt <= status_cnt + 1'b1;
 end
-// aryap: removed for benchmark graph generation
-//	dual_port_ram ram_addr(
-//	.we1      (wrreq)      , // write enable
-//	.we2      (rdreq)       , // Read enable
-//	.addr1 (wr_pointer) , // address_0 input
-//	.addr2 (rd_pointer) , // address_q input
-//	.data1    (data)    , // data_0 bi-directional
-//	.data2    (junk_input),   // data_1 bi-directional
-//	.clk(clk),
-//	.out1	(data_ram),
-//	.out2	(junk_output));
+	dual_port_ram ram_addr(
+	.we1      (wrreq)      , // write enable
+	.we2      (rdreq)       , // Read enable
+	.addr1 (wr_pointer) , // address_0 input
+	.addr2 (rd_pointer) , // address_q input
+	.data1    (data)    , // data_0 bi-directional
+	.data2    (junk_input),   // data_1 bi-directional
+	.clk(clk),
+	.out1	(data_ram),
+	.out2	(junk_output));
 
 
 endmodule

@@ -61,6 +61,44 @@
 //
 //
 
+//dual_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module dual_port_ram #(
+    parameter ADDR_WIDTH = 12,
+    parameter DATA_WIDTH = 32 
+) (
+    input clk,
+
+    input [ADDR_WIDTH-1:0] addr1,
+    input [ADDR_WIDTH-1:0] addr2,
+    input [DATA_WIDTH-1:0] data1,
+    input [DATA_WIDTH-1:0] data2,
+    input we1,
+    input we2,
+    output reg [DATA_WIDTH-1:0] out1,
+    output reg [DATA_WIDTH-1:0] out2
+);
+
+    localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we1) begin
+            myBlockram[addr1] = data1;
+        end
+        out1 = myBlockram[addr1]; //New data read-during write behaviour (blocking assignments)
+    end
+
+    always@(posedge clk) begin //Port 2
+        if(we2) begin
+            myBlockram[addr2] = data2;
+        end
+        out2 = myBlockram[addr2]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // dual_port_ram
 
 
 module mkDelayWorker32B(wciS0_Clk,
@@ -1503,17 +1541,17 @@ module mkDelayWorker32B(wciS0_Clk,
 wire [255:0] dp_out_not_used1;
 wire [255:0] dp_out_not_used2;
 
-  //dual_port_ram dpram1 (
-  //      					.clk(wciS0_Clk),
-  //      				    .addr1(mesgRF_memory__ADDRA),
-  //      				    .addr2(mesgRF_memory__ADDRB),
-  //      				    .data1(mesgRF_memory__DIA),
-  //      				    .data2(mesgRF_memory__DIB),
-  //      				    .we1(mesgRF_memory__WEA),
-  //      				    .we2(mesgRF_memory__WEB),
-  //      				    .out1(dp_out_not_used1),
-  //      				    .out2(mesgRF_memory__DOB)
-  //      					);
+  dual_port_ram #( .ADDR_WIDTH(10), .DATA_WIDTH(256)) dpram1 (
+        					.clk(wciS0_Clk),
+        				    .addr1(mesgRF_memory__ADDRA),
+        				    .addr2(mesgRF_memory__ADDRB),
+        				    .data1(mesgRF_memory__DIA),
+        				    .data2(mesgRF_memory__DIB),
+        				    .we1(mesgRF_memory__WEA),
+        				    .we2(mesgRF_memory__WEB),
+        				    .out1(dp_out_not_used1),
+        				    .out2(mesgRF_memory__DOB)
+        					);
 
   // submodule mesgWF_memory
 //#(.PIPELINED(1'b0),
@@ -1521,17 +1559,17 @@ wire [255:0] dp_out_not_used2;
 //	  .DATA_WIDTH(32'b1056),
 //	  .MEMSIZE(11'b1024)) mesgWF_memory(
 	  
- //dual_port_ram dpram2   (
- //       					.clk(wciS0_Clk),
- //       				    .addr1(mesgWF_memory__ADDRA),
- //       				    .addr2(mesgWF_memory__ADDRB),
- //       				    .data1(mesgWF_memory__DIA),
- //       				    .data2(mesgWF_memory__DIB),
- //       				    .we1(mesgWF_memory__WEA),
- //       				    .we2(mesgWF_memory__WEB),
- //       				    .out1(dp_out_not_used2),
- //       				    .out2(mesgWF_memory__DOB)
- //       					);
+ dual_port_ram #( .ADDR_WIDTH(10), .DATA_WIDTH(256)) dpram2   (
+        					.clk(wciS0_Clk),
+        				    .addr1(mesgWF_memory__ADDRA),
+        				    .addr2(mesgWF_memory__ADDRB),
+        				    .data1(mesgWF_memory__DIA),
+        				    .data2(mesgWF_memory__DIB),
+        				    .we1(mesgWF_memory__WEA),
+        				    .we2(mesgWF_memory__WEB),
+        				    .out1(dp_out_not_used2),
+        				    .out2(mesgWF_memory__DOB)
+        					);
 
   // submodule metaRF
   arSRLFIFO_a 	ars1	(
@@ -4120,18 +4158,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 32'b00000000000000000000000000000000;
  
- // aryap: removed for benchmark
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		dout		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram #( .ADDR_WIDTH(4), .DATA_WIDTH(32))   ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		dout		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 ////////////////////////////////////////////////////////////////////
 //
@@ -4506,18 +4543,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 32'b00000000000000000000000000000000;
  
- // aryap: removed for benchmark
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		dout		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram #( .ADDR_WIDTH(4), .DATA_WIDTH(32))   ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		dout		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 ////////////////////////////////////////////////////////////////////
 //
@@ -4896,17 +4932,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
  
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		dout		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram  #( .ADDR_WIDTH(4), .DATA_WIDTH(128))  ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		dout		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 ////////////////////////////////////////////////////////////////////
 //
@@ -5285,17 +5321,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
  
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		dout		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram   #( .ADDR_WIDTH(4), .DATA_WIDTH(128))  ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		dout		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 ////////////////////////////////////////////////////////////////////
 //
@@ -5675,17 +5711,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 60'b000000000000000000000000000000000000000000000000000000000000;
  
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		dout		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram  #( .ADDR_WIDTH(4), .DATA_WIDTH(60))   ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		dout		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 ////////////////////////////////////////////////////////////////////
 //
@@ -6062,17 +6098,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 313'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
  
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		dout		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram   #( .ADDR_WIDTH(4), .DATA_WIDTH(313))  ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		dout		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 ////////////////////////////////////////////////////////////////////
 //
@@ -6452,17 +6488,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 131'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
  
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		dout		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram  #( .ADDR_WIDTH(4), .DATA_WIDTH(131))   ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		dout		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 ////////////////////////////////////////////////////////////////////
 //

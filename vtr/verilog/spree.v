@@ -113,6 +113,72 @@
 `define     FUNC_BGEZAL      5'b10001
 */
 
+//single_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module single_port_ram #(
+	parameter ADDR_WIDTH = 5,
+    parameter DATA_WIDTH = 32 
+) (
+	input clk,
+
+	input [ADDR_WIDTH-1:0] addr,
+    input [DATA_WIDTH-1:0] data,
+    input we,
+    output reg [DATA_WIDTH-1:0] out
+);
+
+	localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we) begin
+            myBlockram[addr] = data;
+        end
+        out = myBlockram[addr]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // single_port_ram
+
+//dual_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module dual_port_ram #(
+    parameter ADDR_WIDTH = 10,
+    parameter DATA_WIDTH = 32 
+) (
+    input clk,
+
+    input [ADDR_WIDTH-1:0] addr1,
+    input [ADDR_WIDTH-1:0] addr2,
+    input [DATA_WIDTH-1:0] data1,
+    input [DATA_WIDTH-1:0] data2,
+    input we1,
+    input we2,
+    output reg [DATA_WIDTH-1:0] out1,
+    output reg [DATA_WIDTH-1:0] out2
+);
+
+    localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we1) begin
+            myBlockram[addr1] = data1;
+        end
+        out1 = myBlockram[addr1]; //New data read-during write behaviour (blocking assignments)
+    end
+
+    always@(posedge clk) begin //Port 2
+        if(we2) begin
+            myBlockram[addr2] = data2;
+        end
+        out2 = myBlockram[addr2]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // dual_port_ram
 
 module system ( 
 	clk,
@@ -1717,27 +1783,25 @@ assign a_readdataout = a_readdataout_temp;
 
 wire wren1;
 assign wren1 = (c_we & (|c_reg));
-// aryap: removed for benchmark graph generation
-//single_port_ram regfile1_replace (
-//	.clk (clk),
-//	.we(wren1),
-//	.data(c_writedatain),
-//	.out(a_readdataout_temp),
-//	.addr(c_reg[4:0])
-//);
+single_port_ram regfile1_replace (
+	.clk (clk),
+	.we(wren1),
+	.data(c_writedatain),
+	.out(a_readdataout_temp),
+	.addr(c_reg[4:0])
+);
 
 //Reg file duplicated to avoid contention 
 //between 2 read and 1 write
 //MORE MEMORY
 
-// aryap: removed for benchmark graph generation
-//single_port_ram regfile2_replace(
-//	.clk (clk),
-//	.we(wren1),
-//	.data(c_writedatain),
-//	.out(b_readdataout_temp),
-//	.addr(c_reg[4:0])
-//);		
+single_port_ram regfile2_replace(
+	.clk (clk),
+	.we(wren1),
+	.data(c_writedatain),
+	.out(b_readdataout_temp),
+	.addr(c_reg[4:0])
+);		
 
 //Odin II does not recognize that address 
 //registers are being used to read and 
@@ -1978,18 +2042,17 @@ assign next_pc_wire = next_pc [9:0];
 
 wire [31:0]dummyout2;
 
-// aryap: removed for benchmark graph generation
-//dual_port_ram imem_replace(
-//	.clk (clk),
-//	.we1(wren1),
-//	.we2(boot_iwe),
-//	.data1(load_data),
-//	.data2(boot_idata),
-//	.out1(instr),
-//	.out2(dummyout2),
-//	.addr1(next_pc_wire),
-//	.addr2(boot_iaddr[9:0])
-//);
+dual_port_ram imem_replace(
+	.clk (clk),
+	.we1(wren1),
+	.we2(boot_iwe),
+	.data1(load_data),
+	.data2(boot_idata),
+	.out1(instr),
+	.out2(dummyout2),
+	.addr1(next_pc_wire),
+	.addr2(boot_iaddr[9:0])
+);
 
 wire [31:0] dummyin1;
 assign dummyin1 = 32'b00000000000000000000000000000000;
@@ -2149,14 +2212,13 @@ wire [9:0] memaddr_wrd;
 
 
 assign memaddr_wrd = d_address[`DM_ADDRESSWIDTH:2];
-// aryap: removed for benchmark graph generation
-//single_port_ram dmem_replace(
-//	.clk (clk),
-//	.we(will_be_wren1),
-//	.data(d_writedatamem),
-//	.out(d_readdatain),
-//	.addr(memaddr_wrd)
-//);
+single_port_ram #(.ADDR_WIDTH(10), .DATA_WIDTH(32)) dmem_replace(
+	.clk (clk),
+	.we(will_be_wren1),
+	.data(d_writedatamem),
+	.out(d_readdatain),
+	.addr(memaddr_wrd)
+);
 // 1 cycle stall state machine
 
 wire en_and_not_d_write;
