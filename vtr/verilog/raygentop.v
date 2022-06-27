@@ -1,3 +1,31 @@
+ //single_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module single_port_ram #(
+	parameter ADDR_WIDTH = 8,
+    parameter DATA_WIDTH = 21 
+) (
+	input clk,
+
+	input [ADDR_WIDTH-1:0] addr,
+    input [DATA_WIDTH-1:0] data,
+    input we,
+    output reg [DATA_WIDTH-1:0] out
+);
+
+	localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we) begin
+            myBlockram[addr] = data;
+        end
+        out = myBlockram[addr]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // single_port_ram
+ 
  module paj_raygentop_hierarchy_no_mem (rgwant_addr, rgwant_data, rgread_ready, rgaddr_ready, rgdata_ready, rgwant_read, rgdatain, rgdataout, rgaddrin, rgCont, rgStat, rgCfgData, rgwant_CfgData, rgCfgData_ready, tm3_sram_data_in, tm3_sram_data_out, tm3_sram_addr, tm3_sram_we, tm3_sram_oe, tm3_sram_adsp, tm3_clk_v0, fbdata, fbdatavalid, fbnextscanline, raygroup01, raygroupvalid01, busy01, raygroup10, raygroupvalid10, busy10, globalreset, rgData, rgAddr, rgWE, rgAddrValid, rgDone, rgResultData, rgResultReady, rgResultSource);
 
     output rgwant_addr; 
@@ -566,14 +594,13 @@ module rgconfigmemory (CfgAddr, CfgData, CfgData_Ready, want_CfgData, origx, ori
 	 end
 //changed to odin 2 ram specifications
 
-// aryap: removed for benchmark graph generation
-//single_port_ram new_ram(
-//  .clk (clk),
-//  .we(we),
-//  .data(datain),
-//  .out(dataout),
-//  .addr(addr)
-//  );
+single_port_ram new_ram(
+ .clk (clk),
+ .we(we),
+ .data(datain),
+ .out(dataout),
+ .addr(addr)
+ );
   
   
  endmodule

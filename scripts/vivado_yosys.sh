@@ -157,7 +157,7 @@ EOT
           echo "read -vhdl $(basename ${path})" > ${ip}.ys
       else
           #echo "read_verilog $(basename ${path})" > ${ip}.ys
-          echo "read_verilog ${path}" > ${ip}.ys
+          echo "read_verilog -nomem2reg ${path}" > ${ip}.ys
       fi
 
       # If the top is specified in a .top file, specify that to Yosys so that

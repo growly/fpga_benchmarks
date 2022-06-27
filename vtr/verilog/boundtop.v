@@ -1629,6 +1629,34 @@ reg     temp_datavalid;
  //    the true depth is 2**depth                     --
 
  //-----------------------------------------------------
+
+ //single_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module single_port_ram #(
+	parameter ADDR_WIDTH = 10,
+    parameter DATA_WIDTH = 32 
+) (
+	input clk,
+
+	input [ADDR_WIDTH-1:0] addr,
+    input [DATA_WIDTH-1:0] data,
+    input we,
+    output reg [DATA_WIDTH-1:0] out
+);
+
+	localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we) begin
+            myBlockram[addr] = data;
+        end
+        out = myBlockram[addr]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // single_port_ram
  
  //modifying this to black box ram implementation
     
@@ -1644,14 +1672,13 @@ reg     temp_datavalid;
 
 
 
-// aryap: removed for benchmark graph generation
-//single_port_ram new_ram(
-//  .clk (clk),
-//  .we(we),
-//  .data(datain),
-//  .out(dataout),
-//  .addr(addr)
-//  );
+single_port_ram new_ram(
+ .clk (clk),
+ .we(we),
+ .data(datain),
+ .out(dataout),
+ .addr(addr)
+ );
   
   
  endmodule

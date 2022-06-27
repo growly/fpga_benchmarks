@@ -22,7 +22,44 @@
 //
 //
 
+//dual_port_ram module
+(* keep_hierarchy *)
+(* ram_block *)
+module dual_port_ram #(
+    parameter ADDR_WIDTH = 4,
+    parameter DATA_WIDTH = 153 
+) (
+    input clk,
 
+    input [ADDR_WIDTH-1:0] addr1,
+    input [ADDR_WIDTH-1:0] addr2,
+    input [DATA_WIDTH-1:0] data1,
+    input [DATA_WIDTH-1:0] data2,
+    input we1,
+    input we2,
+    output reg [DATA_WIDTH-1:0] out1,
+    output reg [DATA_WIDTH-1:0] out2
+);
+
+    localparam MEM_DEPTH = 2 ** ADDR_WIDTH;
+    (* RAM_STYLE="BLOCK" *)
+    reg [DATA_WIDTH-1:0] myBlockram [MEM_DEPTH-1:0];
+
+    always@(posedge clk) begin //Port 1
+        if(we1) begin
+            myBlockram[addr1] = data1;
+        end
+        out1 = myBlockram[addr1]; //New data read-during write behaviour (blocking assignments)
+    end
+
+    always@(posedge clk) begin //Port 2
+        if(we2) begin
+            myBlockram[addr2] = data2;
+        end
+        out2 = myBlockram[addr2]; //New data read-during write behaviour (blocking assignments)
+    end
+
+endmodule // dual_port_ram
 
 module mkPktMerge(CLK,
 		  RST_N,
@@ -553,18 +590,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 0;
  
- // aryap: removed for benchmarks
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		doutz		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram   ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		doutz		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
  wire [`dw-1:0] doutz;
 assign dout = (1'b1) ? doutz: junk_out;
@@ -951,18 +987,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 0;
  
- // aryap: removed for benchmarks
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		doutz		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram   ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		doutz		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
 wire [`dw-1:0] doutz;
 assign dout = (1'b1) ? doutz: junk_out;
@@ -1351,18 +1386,17 @@ reg			full_n_r, empty_n_r;
  // manually assign
  assign junk_in = 0;
  
- // aryap: removed for benchmarks
-//dual_port_ram   ram1(
-//	.clk(		clk		),
-//	.addr1(		rp		),
-//	.addr2(		wp		),
-//	.we1(		we		),
-//	.we2(		always_zero		),
-//	.out1(		doutz		),
-//	.out2(		junk_out		),
-//	.data1(		din		),
-//	.data2 (	junk_in)
-//	);
+dual_port_ram   ram1(
+	.clk(		clk		),
+	.addr1(		rp		),
+	.addr2(		wp		),
+	.we1(		we		),
+	.we2(		always_zero		),
+	.out1(		doutz		),
+	.out2(		junk_out		),
+	.data1(		din		),
+	.data2 (	junk_in)
+	);
  
  wire [`dw-1:0] doutz;
 assign dout = (1'b1) ? doutz: junk_out;
